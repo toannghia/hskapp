@@ -156,9 +156,13 @@ option { background: var(--card); color: var(--ink); }
   #top nav a { padding: 13px 4px; border-top: 1px solid var(--line); font-size: 16px; }
 }
 
-/* Cách viết: mỗi chữ một ô có lưới chữ Điền */
-.writers { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; }
-.writer { text-align: center; }
-.writer-box { width: 170px; height: 170px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); touch-action: none;
+/* Cách viết: mỗi chữ một thẻ, bên trái là ô chữ có lưới, bên phải là thông tin của chữ */
+:root { --stroke: #2d4373; --radical: #c0392b; }
+@media (prefers-color-scheme: dark) { :root { --stroke: #9db4e8; --radical: #ff7b6b; } }
+.charcard { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+.charbox { position: relative; }
+.charbox .replay { position: absolute; top: 6px; right: 6px; min-height: 34px; padding: 2px 10px; border-radius: 99px; }
+.charinfo { flex: 1 1 240px; display: grid; gap: 8px; }
+.writer-box { width: 220px; height: 220px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); touch-action: none;
   background-image: linear-gradient(var(--line), var(--line)), linear-gradient(var(--line), var(--line));
   background-size: 100% 1px, 1px 100%; background-position: center, center; background-repeat: no-repeat; }

@@ -351,52 +351,75 @@ const loadWriter = () => (writerLoading = writerLoading || new Promise((ok, fail
 }));
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
+// Cách đọc và nghĩa của một chữ đơn, lấy từ dữ liệu các bài học.
+function charInfo(c) {
+  for (const l of LESSONS) if (l.chars && l.chars[c]) return { pinyin: l.chars[c][0], vi: l.chars[c][1] };
+  for (const l of LESSONS) if (l.gloss && l.gloss[c]) return { pinyin: l.gloss[c][0], vi: l.gloss[c][1] };
+  return {};
+}
+
 function writePage(word, info, links) {
-  const chars = [...word].filter((c) => /[一-鿿]/.test(c));
+  const chars = [...word].filter((c) => /[\u4e00-\u9fff]/.test(c));
   const results = {};
   const status = h("div", { class: "sub" });
-  const grid = h("div", { class: "writers" });
+  const list = h("div", {});
   add(h("a", { href: links.back, class: "sub" }, "← Quay lại"),
     h("div", { class: "row", style: "align-items:baseline;margin-top:6px" },
       h("h1", { class: "zh", style: "font-size:40px;margin:0" }, word),
       h("span", { style: "color:var(--acc);font-size:20px" }, info.pinyin || ""), speakBtn(info.item || word)),
     h("div", {}, info.vi || ""),
-    h("div", { class: "sub", style: "margin:8px 0" }, "Bấm “Xem nét” để xem thứ tự nét. Bấm “Tập viết” rồi dùng chuột hoặc ngón tay viết từng nét theo đúng thứ tự; viết sai nét nào, nét đó sẽ được gợi ý."),
-    grid, status,
+    list, status,
     h("div", { class: "row", style: "margin-top:16px" },
       links.prev ? h("a", { class: "btn", href: links.prev }, "← Từ trước") : null,
       links.next ? h("a", { class: "btn pri", href: links.next }, "Từ tiếp theo →") : null));
   loadWriter().then(() => {
-    if (!grid.isConnected) return;
+    if (!list.isConnected) return;
     chars.forEach((c, k) => {
-      const box = h("div", { class: "writer-box" }), note = h("div", { class: "sub" }, " ");
-      const cell = h("div", { class: "writer" }, box, note);
-      grid.append(cell);
-      const writer = HanziWriter.create(box, c, { width: 170, height: 170, padding: 8, showOutline: true,
-        strokeColor: cssVar("--ink"), outlineColor: cssVar("--line"), drawingColor: cssVar("--acc"), highlightColor: cssVar("--ok"),
-        strokeAnimationSpeed: 0.8, delayBetweenStrokes: 250, drawingWidth: 22,
-        onLoadCharDataError: () => { note.textContent = "Chưa có dữ liệu nét cho chữ này."; } });
-      cell.append(h("div", { class: "row", style: "justify-content:center;margin-top:6px" },
-        h("button", { class: "btn", onclick: () => { writer.cancelQuiz(); writer.showCharacter(); writer.animateCharacter(); } }, "▶ Xem nét"),
-        h("button", { class: "btn", onclick: () => {
-          note.textContent = "Viết nét đầu tiên…";
-          writer.quiz({ showHintAfterMisses: 2,
-            onMistake: (d) => { note.textContent = `Nét ${d.strokeNum + 1}: chưa đúng (sai ${d.totalMistakes} lần)`; },
-            onCorrectStroke: (d) => { note.textContent = `Đúng nét ${d.strokeNum + 1}, còn ${d.strokesRemaining} nét`; },
-            onComplete: (d) => {
-              note.textContent = d.totalMistakes ? `Xong, sai ${d.totalMistakes} lần` : "Xong, không sai nét nào";
-              results[k] = d.totalMistakes;
-              if (Object.keys(results).length === chars.length && info.item && !results.graded) {
-                // Viết xong cả từ: tính như một lượt ôn (sai quá 2 lần mỗi chữ thì coi là chưa nhớ).
-                results.graded = true;
-                const miss = chars.reduce((s, _, i) => s + results[i], 0);
-                grade(info.item, miss <= chars.length * 2 ? 2 : 0, "write");
-                status.textContent = `Đã ghi nhận lượt tập viết từ này (tổng ${miss} lần sai nét).`;
-              }
-            } });
-        } }, "✍ Tập viết")));
+      const ci = charInfo(c);
+      const box = h("div", { class: "writer-box" });
+      const strokes = h("b", {}, "…"), radical = h("span", { class: "sub" }, "");
+      const note = h("div", { class: "sub", style: "min-height:1.5em" }, "");
+      // Nét thuộc bộ thủ tô màu đỏ, các nét còn lại tô màu xanh, để thấy cấu tạo của chữ.
+      const writer = HanziWriter.create(box, c, { width: 220, height: 220, padding: 10, showOutline: true,
+        strokeColor: cssVar("--stroke"), radicalColor: cssVar("--radical"), outlineColor: cssVar("--line"),
+        drawingColor: cssVar("--acc"), highlightColor: cssVar("--ok"),
+        strokeAnimationSpeed: 0.8, delayBetweenStrokes: 250, drawingWidth: 24,
+        onLoadCharDataSuccess: (data) => {
+          strokes.textContent = data.strokes.length;
+          const rad = (data.radStrokes || []).length;
+          radical.textContent = rad ? ` · bộ thủ gồm ${rad} nét (tô đỏ)` : "";
+        },
+        onLoadCharDataError: () => { strokes.textContent = "?"; note.textContent = "Chưa có dữ liệu nét cho chữ này."; } });
+      const replay = () => { writer.cancelQuiz(); writer.showCharacter(); writer.animateCharacter(); };
+      const practise = () => {
+        note.textContent = "Viết nét đầu tiên vào ô bên trái…";
+        writer.quiz({ showHintAfterMisses: 2,
+          onMistake: (d) => { note.textContent = `Nét ${d.strokeNum + 1}: chưa đúng (đã sai ${d.totalMistakes} lần)`; },
+          onCorrectStroke: (d) => { note.textContent = `Đúng nét ${d.strokeNum + 1}, còn ${d.strokesRemaining} nét`; },
+          onComplete: (d) => {
+            note.textContent = d.totalMistakes ? `Xong, sai ${d.totalMistakes} lần` : "Xong, không sai nét nào";
+            results[k] = d.totalMistakes;
+            if (Object.keys(results).length === chars.length && info.item && !results.graded) {
+              // Viết xong cả từ: tính như một lượt ôn (sai quá 2 lần mỗi chữ thì coi là chưa nhớ).
+              results.graded = true;
+              const miss = chars.reduce((s, _, i) => s + results[i], 0);
+              grade(info.item, miss <= chars.length * 2 ? 2 : 0, "write");
+              status.textContent = `Đã ghi nhận lượt tập viết từ này (tổng ${miss} lần sai nét).`;
+            }
+          } });
+      };
+      list.append(h("div", { class: "card charcard" },
+        h("div", { class: "charbox" }, box, h("button", { class: "btn replay", title: "Xem lại thứ tự nét", onclick: replay }, "↻")),
+        h("div", { class: "charinfo" },
+          h("div", {}, h("span", { class: "sub" }, "Chữ: "), h("b", { class: "zh", style: "font-size:26px" }, c)),
+          h("div", {}, h("span", { class: "sub" }, "Bính âm: "), h("b", { style: "color:var(--acc);font-size:20px" }, ci.pinyin || "—"), " ", speakBtn(c)),
+          h("div", {}, h("span", { class: "sub" }, "Số nét: "), strokes, radical),
+          ci.vi ? h("div", {}, h("span", { class: "sub" }, "Nghĩa của chữ: "), ci.vi) : null,
+          note,
+          h("button", { class: "btn pri", style: "width:100%;margin-top:8px", onclick: practise }, "✍ Tập viết"))));
+      setTimeout(() => writer.animateCharacter(), 400 + k * 250);
     });
-  }).catch(() => { grid.replaceChildren(h("div", { class: "card sub" }, "Không tải được công cụ viết chữ. Phần này cần có mạng; kiểm tra kết nối rồi tải lại trang.")); });
+  }).catch(() => { list.replaceChildren(h("div", { class: "card sub" }, "Không tải được công cụ viết chữ. Phần này cần có mạng; kiểm tra kết nối rồi tải lại trang.")); });
 }
 
 // Viết từ mới của một bài, có nút chuyển sang từ trước / từ sau.

@@ -71,7 +71,9 @@ def cvdict():
             if not m or not HAN.search(m.group(1)):
                 continue
             word, pin, defs = m.group(1), m.group(2), m.group(3).split("/")
-            defs = [d for d in defs if not re.match(r"^(LT:|CL:|biến thể|xem |cũng viết)", d)]
+            # Bỏ các ghi chú không phải nghĩa: lượng từ đi kèm, biến thể, chú thích cách đọc vùng miền.
+            defs = [d for d in defs if not re.match(r"^(LT:|CL:|biến thể|xem |cũng viết)", d)
+                    and not re.search(r"\[[a-z:]+\d\]|Đài Loan|[Pp]hát âm", d)]
             minor = pin[0].isupper() or not defs or re.match(r"^(họ |\(họ\)|tên )", defs[0])
             if word in _dict and (minor or not _dict[word].get("minor")):
                 continue           # giữ mục đầu tiên, trừ khi mục đó chỉ là họ / tên riêng
@@ -286,6 +288,9 @@ def main():
         lesson = {"id": n, "title": authored["title"], "audio": d["audio"],
                   "vocab": d["vocab"], "names": d["names"], "text": text, "textTokens": tokens,
                   "gloss": {w: [e["p"], e["vi"]] for w, e in scope.items() if w in used and w not in own},
+                  # Từng chữ đơn trong bảng từ: cách đọc và nghĩa của riêng chữ đó, dùng ở trang cách viết.
+                  "chars": {c: [cvdict()[c]["p"], cvdict()[c]["vi"]]
+                            for c in sorted({c for v in d["vocab"] for c in v["hanzi"]}) if c in cvdict()},
                   "grammar": authored.get("grammar", []), "exercises": authored.get("exercises", []),
                   "warnings": warnings}
         (out_dir / f"{n:02d}.json").write_text(json.dumps(lesson, ensure_ascii=False, indent=1))
