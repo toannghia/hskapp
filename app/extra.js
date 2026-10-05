@@ -182,3 +182,158 @@ route(/^game\/(\w+)$/, (scope) => {
   add(h("a", { href: back, class: "sub" }, "← Thoát"), h("h1", {}, "Ghép cặp"),
     h("div", { class: "row sub" }, "Bấm một chữ Hán rồi bấm nghĩa của nó.", clock), board);
 });
+
+// ---------- Đánh giá tiến trình học ----------
+// Tổng hợp mức thành thạo theo kỹ năng, xu hướng theo tuần, dự báo, và bài kiểm tra đánh giá có lưu điểm.
+const learnedLessons = () => LESSONS.filter((l) => l.items.some((i) => P.cards[i.id]));
+function skillLevels() {
+  const items = LESSONS.flatMap((l) => l.items);
+  const vocab = items.reduce((s, i) => s + ({ new: 0, learn: 0.5, known: 1 })[status(i.id)], 0) / Math.max(1, items.length);
+  let right = 0, total = 0, written = 0, toWrite = 0;
+  for (const l of LESSONS) for (const x of l.exercises) x.items.forEach((_, i) => {
+    const a = P.answers[ansKey(x, i)];
+    if (AUTO.has(x.type)) { total++; if (a && a.done && a.ok) right++; } else { toWrite++; if (a && a.done) written++; }
+  });
+  const days = new Set(P.log.map((e) => dayNum(e.t))), today = dayNum();
+  const steady = Array.from({ length: 14 }, (_, k) => today - k).filter((d) => days.has(d)).length / 14;
+  const tests = (P.tests || []).slice(-3);
+  const test = tests.length ? tests.reduce((s, t) => s + t.score / t.n, 0) / tests.length : null;
+  return { vocab, grammar: total ? right / total : 0, writing: toWrite ? written / toWrite : 0, steady, test };
+}
+function overallLevel(s) {
+  const parts = [[s.vocab, 0.45], [s.grammar, 0.3], [s.writing, 0.1]].concat(s.test == null ? [] : [[s.test, 0.15]]);
+  return parts.reduce((sum, [v, w]) => sum + v * w, 0) / parts.reduce((sum, [, w]) => sum + w, 0);
+}
+function weekStats(weeks = 6) {
+  const today = dayNum(), ev = cardEvents(), out = [];
+  for (let w = weeks - 1; w >= 0; w--) {
+    const hi = today - w * 7, lo = hi - 6;
+    const inWeek = ev.filter((e) => { const d = dayNum(e.t); return d >= lo && d <= hi; });
+    out.push({ lo, hi, reviews: inWeek.length, kept: inWeek.filter((e) => e.g > 0).length,
+      fresh: Object.values(P.cards).filter((c) => c.first >= lo && c.first <= hi).length });
+  }
+  return out;
+}
+const meter = (name, value, note) => h("div", { style: "margin:10px 0" },
+  h("div", { class: "row", style: "justify-content:space-between" }, h("b", {}, name), h("span", {}, value == null ? "chưa có" : pct(value))),
+  h("div", { class: "bar" }, h("i", { style: `width:${Math.round(100 * (value || 0))}%` })),
+  note ? h("div", { class: "sub" }, note) : null);
+
+route(/^assess$/, () => {
+  const s = skillLevels(), level = overallLevel(s), items = LESSONS.flatMap((l) => l.items);
+  const learned = items.filter((i) => P.cards[i.id]).length;
+  const started = learnedLessons().length, solid = LESSONS.filter((l) => lessonScore(l).total >= 0.85).length;
+  add(h("h1", {}, "Đánh giá tiến trình"),
+    h("div", { class: "grid" },
+      h("div", { class: "stat" }, h("b", {}, pct(level)), h("span", {}, `mức thành thạo chung · ${rank(level)}`)),
+      h("div", { class: "stat" }, h("b", {}, `${started}/${LESSONS.length}`), h("span", {}, "bài đã bắt đầu học")),
+      h("div", { class: "stat" }, h("b", {}, `${solid}/${LESSONS.length}`), h("span", {}, "bài đã vững (từ 85%)")),
+      h("div", { class: "stat" }, h("b", {}, `${learned}/${items.length}`), h("span", {}, "từ đã học"))),
+    h("h2", {}, "Theo kỹ năng"),
+    h("div", { class: "card" },
+      meter("Từ vựng", s.vocab, "Từ đang học tính một nửa, từ đã thuộc tính đủ."),
+      meter("Ngữ pháp và bài tập", s.grammar, "Tỉ lệ câu bài tập tự chấm đã làm đúng trên tổng số câu."),
+      meter("Viết", s.writing, "Tỉ lệ câu dịch và bài kể lại đã viết."),
+      meter("Bài kiểm tra", s.test, "Trung bình ba bài kiểm tra gần nhất."),
+      meter("Độ đều đặn", s.steady, "Số ngày có học trong 14 ngày gần đây.")));
+
+  const weeks = weekStats(), top = Math.max(1, ...weeks.map((w) => w.reviews));
+  add(h("h2", {}, "Xu hướng 6 tuần"),
+    h("div", { class: "card" },
+      h("div", { class: "bars" }, weeks.map((w) => h("div", { title: `${fmtDay(w.lo)}–${fmtDay(w.hi)}` },
+        h("span", {}, w.reviews || ""), h("i", { style: `height:${Math.round(90 * w.reviews / top)}px` }), h("small", {}, fmtDay(w.lo))))),
+      h("div", { class: "wrap", style: "margin-top:10px" }, h("table", { class: "cmp" },
+        h("tr", {}, ["Tuần bắt đầu", "Lượt ôn", "Tỉ lệ nhớ", "Từ mới"].map((t) => h("th", {}, t))),
+        weeks.map((w) => h("tr", {}, h("td", {}, fmtDay(w.lo)), h("td", {}, w.reviews),
+          h("td", {}, w.reviews ? pct(w.kept / w.reviews) : "—"), h("td", {}, w.fresh)))))));
+
+  // Dự báo theo nhịp học 14 ngày gần đây.
+  const today = dayNum();
+  const pace = Object.values(P.cards).filter((c) => c.first > today - 14).length / 14, left = items.length - learned;
+  const last = weeks[weeks.length - 1], prev = weeks[weeks.length - 2];
+  const notes = [];
+  if (pace > 0 && left > 0) notes.push(`Với nhịp hiện tại (khoảng ${pace.toFixed(1)} từ mới mỗi ngày), bạn sẽ học hết ${left} từ còn lại sau khoảng ${Math.ceil(left / pace)} ngày.`);
+  else if (left > 0) notes.push("Hai tuần qua bạn chưa học từ mới nào, nên chưa dự báo được ngày học hết.");
+  else notes.push("Bạn đã học hết toàn bộ từ mới hiện có.");
+  if (last.reviews && prev.reviews) {
+    const a = last.kept / last.reviews, b = prev.kept / prev.reviews;
+    notes.push(Math.abs(a - b) < 0.03 ? `Tỉ lệ nhớ tuần này giữ ở mức ${pct(a)}.` : a > b ? `Tỉ lệ nhớ tuần này tăng từ ${pct(b)} lên ${pct(a)}.` : `Tỉ lệ nhớ tuần này giảm từ ${pct(b)} xuống ${pct(a)}; nên giảm số từ mới mỗi ngày và ôn kỹ hơn.`);
+  }
+  const weakest = [["từ vựng", s.vocab], ["ngữ pháp và bài tập", s.grammar], ["viết", s.writing]].sort((x, y) => x[1] - y[1])[0];
+  notes.push(`Kỹ năng đang thấp nhất là ${weakest[0]} (${pct(weakest[1])}).`);
+  const due = dueItems().length;
+  if (due > 30) notes.push(`Đang tồn ${due} thẻ đến hạn; nên ôn hết trước khi học từ mới.`);
+  add(h("h2", {}, "Nhận xét và dự báo"), h("div", { class: "card" }, h("ul", { class: "exs" }, notes.map((n) => h("li", {}, n)))));
+
+  const tests = P.tests || [];
+  const scope = h("select", {}, h("option", { value: "learned" }, "Các bài đã học"), h("option", { value: "all" }, "Tất cả các bài"),
+    LESSONS.map((l) => h("option", { value: `l${l.id}` }, `Chỉ bài ${l.id}`)));
+  add(h("h2", {}, "Bài kiểm tra đánh giá"),
+    h("div", { class: "card" },
+      h("div", {}, "20 câu trộn ba dạng: chữ → nghĩa, nghĩa → chữ và chọn từ đúng theo ngữ pháp. Làm xong mới biết kết quả; điểm được lưu để theo dõi tiến bộ."),
+      h("div", { class: "row", style: "margin-top:10px" }, h("label", {}, "Phạm vi ", scope),
+        h("button", { class: "btn pri", onclick: () => go(`#/assess/test/${scope.value}`) }, "Bắt đầu kiểm tra")),
+      tests.length ? h("div", { class: "wrap", style: "margin-top:12px" }, h("table", { class: "cmp" },
+        h("tr", {}, ["Ngày", "Phạm vi", "Điểm", "Từ vựng", "Ngữ pháp"].map((t) => h("th", {}, t))),
+        tests.slice().reverse().slice(0, 12).map((t) => h("tr", {}, h("td", {}, fmtTime(t.t)), h("td", {}, scopeName(t.scope)),
+          h("td", {}, h("b", {}, `${t.score}/${t.n}`)), h("td", {}, `${t.vocab[0]}/${t.vocab[1]}`), h("td", {}, `${t.grammar[0]}/${t.grammar[1]}`)))))
+        : h("div", { class: "sub", style: "margin-top:8px" }, "Chưa làm bài kiểm tra nào.")));
+
+  add(h("h2", {}, "Từng bài"),
+    h("div", { class: "wrap" }, h("table", { class: "cmp" },
+      h("tr", {}, ["Bài", "Mức", "Xếp loại", "Nên làm"].map((t) => h("th", {}, t))),
+      LESSONS.map((l) => { const sc = lessonScore(l); const todo = sc.vocab < 0.5 ? ["Học từ mới", `#/study/l${l.id}/flash`]
+        : sc.ex < 0.7 ? ["Làm bài tập", `#/lesson/${l.id}/ex`] : sc.wr < 0.5 ? ["Viết bài", `#/lesson/${l.id}/ex`] : ["Kiểm tra", `#/assess/test/l${l.id}`];
+        return h("tr", {}, h("td", {}, `Bài ${l.id} `, h("span", { class: "zh" }, l.title.zh)), h("td", {}, pct(sc.total)), h("td", {}, rank(sc.total)),
+          h("td", {}, h("a", { href: todo[1] }, todo[0]))); }))));
+});
+const scopeName = (s) => (s === "learned" ? "Bài đã học" : s === "all" ? "Tất cả" : "Bài " + s.slice(1));
+
+route(/^assess\/test\/(\w+)$/, (scope) => {
+  let lessons = scope === "all" ? LESSONS : scope === "learned" ? learnedLessons() : LESSONS.filter((l) => `l${l.id}` === scope);
+  if (!lessons.length) lessons = LESSONS.slice(0, 1);
+  const pool = lessons.flatMap((l) => l.items);
+  const pickOthers = (it) => shuffle(pool.filter((o) => o.hanzi !== it.hanzi && o.vi !== it.vi)).slice(0, 3);
+  const grammarPool = shuffle(lessons.flatMap((l) => l.exercises.filter((x) => x.type === "choice").flatMap((x) => x.items)));
+  const grammar = grammarPool.slice(0, 6).map((g) => ({ kind: "grammar", q: g.q, options: g.options, a: g.a, why: g.why }));
+  const words = shuffle(pool).slice(0, 20 - grammar.length);
+  const vocab = words.map((it, k) => { const opts = shuffle([it, ...pickOthers(it)]);
+    return k % 2 ? { kind: "han", it, q: it.vi, options: opts.map((o) => o.hanzi), a: opts.indexOf(it) }
+      : { kind: "vi", it, q: it.hanzi, options: opts.map((o) => o.vi), a: opts.indexOf(it) }; });
+  const qs = shuffle([...vocab, ...grammar]);
+  const picked = [];
+  const stage = h("div", {});
+  add(h("a", { href: "#/assess", class: "sub" }, "← Thoát bài kiểm tra"), h("h1", {}, `Kiểm tra: ${scopeName(scope)}`), stage);
+
+  const ask = (k) => {
+    if (k >= qs.length) return finish();
+    const q = qs[k], zhQ = q.kind !== "han", zhOpt = q.kind !== "vi";
+    stage.replaceChildren(
+      h("div", { class: "sub" }, `Câu ${k + 1}/${qs.length} · ${{ vi: "Chọn nghĩa đúng", han: "Chọn chữ Hán đúng", grammar: "Chọn từ đúng điền vào chỗ trống" }[q.kind]}`),
+      h("div", { class: "bar" }, h("i", { style: `width:${Math.round(100 * k / qs.length)}%` })),
+      h("div", { class: "card flash", style: "min-height:150px;cursor:default" }, h("div", { class: zhQ ? (q.kind === "vi" ? "big" : "zh") : "vi", style: q.kind === "grammar" ? "font-size:24px" : "" }, q.q)),
+      h("div", { class: "opts" + (zhOpt ? " han" : "") }, q.options.map((o, j) => h("button", { class: "btn", onclick: () => { picked[k] = j; ask(k + 1); } }, o))));
+  };
+  const finish = () => {
+    const right = (kinds) => qs.filter((q, k) => kinds.includes(q.kind) && picked[k] === q.a).length;
+    const count = (kinds) => qs.filter((q) => kinds.includes(q.kind)).length;
+    const score = right(["vi", "han", "grammar"]);
+    P.tests = (P.tests || []).concat([{ t: Date.now(), scope, score, n: qs.length, vocab: [right(["vi", "han"]), count(["vi", "han"])], grammar: [right(["grammar"]), count(["grammar"])] }]);
+    // Từ làm sai được đưa về trạng thái cần ôn lại ngay.
+    qs.forEach((q, k) => { if (q.it && picked[k] !== q.a) P.cards[q.it.id] = nextCard(P.cards[q.it.id], 0); });
+    logEvent({ k: "test", r: scope, ok: score, n: qs.length });
+    save();
+    const wrong = qs.map((q, k) => ({ q, mine: picked[k] })).filter((x) => x.mine !== x.q.a);
+    stage.replaceChildren(...[
+      h("div", { class: "card", style: "text-align:center" }, h("h1", {}, `${score}/${qs.length} điểm`),
+        h("div", {}, `Từ vựng ${right(["vi", "han"])}/${count(["vi", "han"])} · Ngữ pháp ${right(["grammar"])}/${count(["grammar"])}`),
+        h("div", { class: "sub" }, rank(score / qs.length), wrong.length ? " · các từ làm sai đã được đưa vào lịch ôn" : ""),
+        h("div", { class: "row", style: "justify-content:center;margin-top:10px" },
+          h("button", { class: "btn pri", onclick: () => go("#/assess") }, "Xem đánh giá"), h("button", { class: "btn", onclick: render }, "Làm bài khác"))),
+      wrong.length ? h("h2", {}, `Câu làm sai (${wrong.length})`) : null,
+      wrong.map(({ q, mine }) => h("div", { class: "card" }, h("div", { class: q.kind === "han" ? "" : "zh" }, q.q),
+        h("div", { class: "fb bad" }, "Bạn chọn: ", h("span", { class: q.kind === "vi" ? "" : "zh" }, q.options[mine])),
+        h("div", { class: "fb ok" }, "Đáp án: ", h("span", { class: q.kind === "vi" ? "" : "zh" }, q.options[q.a]), q.it ? ` · ${q.it.pinyin}` : "", q.why ? ` — ${q.why}` : "")))].flat().filter(Boolean));
+  };
+  ask(0);
+});

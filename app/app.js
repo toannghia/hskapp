@@ -37,6 +37,10 @@ function merge(mine, theirs) {
   for (const [id, s] of Object.entries(mine.saved)) out.saved[id] = newer(s, out.saved[id], "t");
   const seen = new Set(out.log.map((e) => e.id));
   out.log = out.log.concat(mine.log.filter((e) => !seen.has(e.id))).sort((a, b) => a.t - b.t);
+  // Điểm kiểm tra và kỷ lục trò chơi: gộp theo thời điểm, không để bản nào đè mất bản nào.
+  const tests = new Map([...(out.tests || []), ...(mine.tests || [])].map((t) => [t.t, t]));
+  if (tests.size) out.tests = [...tests.values()].sort((a, b) => a.t - b.t);
+  if (mine.games) out.games = { ...(out.games || {}), ...mine.games };
   out.settings = mine.settings;
   return out;
 }

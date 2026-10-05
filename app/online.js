@@ -151,11 +151,12 @@ route(/^teacher$/, async () => {
       classes.map((c) => h("div", { class: "card" },
         h("h3", {}, c.name, h("span", { class: "tag acc" }, `mã lớp: ${c.code}`)),
         c.class_members.length ? h("div", { class: "wrap" }, h("table", { class: "cmp" },
-          h("tr", {}, h("th", {}, "Học viên"), h("th", {}, "Từ đã học"), h("th", {}, "Lượt ôn"), h("th", {}, "Hoạt động gần nhất")),
+          h("tr", {}, h("th", {}, "Học viên"), h("th", {}, "Từ đã học"), h("th", {}, "Lượt ôn"), h("th", {}, "Kiểm tra gần nhất"), h("th", {}, "Hoạt động gần nhất")),
           c.class_members.map((m) => {
             const p = progOf[m.user_id], doc = p ? p.doc : {};
             return h("tr", {}, h("td", {}, who(m.profiles)),
               h("td", {}, Object.keys(doc.cards || {}).length), h("td", {}, (doc.log || []).filter((e) => e.k === "card").length),
+              h("td", {}, (doc.tests || []).length ? `${doc.tests[doc.tests.length - 1].score}/${doc.tests[doc.tests.length - 1].n} (${doc.tests.length} bài)` : "chưa làm"),
               h("td", {}, p ? fmtTime(new Date(p.updated_at).getTime()) : "chưa học"));
           }))) : h("div", { class: "sub" }, "Chưa có học viên. Gửi mã lớp cho học viên để họ tự vào."))),
       h("div", { class: "row" }, name, h("button", { class: "btn", onclick: async () => {
