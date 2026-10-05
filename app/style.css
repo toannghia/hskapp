@@ -177,3 +177,7 @@ option { background: var(--card); color: var(--ink); }
 .answer .zh { font-size: 32px; white-space: nowrap; }
 .answer.ok b { color: var(--ok); } .answer.bad b { color: var(--bad); }
 @media (max-width: 480px) { .opts .btn { min-height: 50px; } .opts.han .btn { font-size: 23px; } main { padding-top: 12px; } }
+
+/* Chữa bài: chữ bị bỏ gạch đỏ, chữ thêm vào tô xanh */
+.del { color: var(--bad); text-decoration: line-through; background: var(--bad-soft); border-radius: 3px; }
+.ins { color: var(--ok); background: var(--ok-soft); border-radius: 3px; font-weight: 700; }

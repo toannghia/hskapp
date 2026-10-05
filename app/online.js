@@ -87,6 +87,7 @@ function joinScreen() {
 function drawAccount() {
   const nav = $("#top nav");
   nav.querySelectorAll(".role").forEach((x) => x.remove());
+  nav.append(h("a", { class: "role", href: "#/reviews" }, "Bài đã chữa"));
   if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, "Giáo viên"));
   if (ME.role === "admin") nav.append(h("a", { class: "role", href: "#/admin" }, "Quản trị"));
   nav.append(h("a", { class: "role", href: "#/password" }, "Mật khẩu"));
@@ -150,16 +151,50 @@ function useSupabase() {
 }
 
 // ---------- Nộp bài cho giáo viên (hiện dưới mỗi bài viết / câu dịch) ----------
-const subCache = {};   // exercise_id → danh sách bài đã nộp kèm phần chấm
+const subCache = {};   // exercise_id → danh sách bài đã nộp kèm phần chữa
 async function loadSubs(xid) {
   subCache[xid] = must(await sb.from("submissions").select("id,item_index,content,created_at,reviews(corrected,comment,score,created_at)")
     .eq("user_id", ME.id).eq("exercise_id", xid).order("created_at", { ascending: false }));
 }
-function reviewView(r) {
+const when = (iso) => fmtTime(new Date(iso).getTime());
+
+// So hai đoạn văn theo từng chữ để thấy giáo viên đã sửa chỗ nào: chữ bị bỏ gạch đỏ, chữ thêm vào tô xanh.
+function diffView(before, after) {
+  const a = [...before], b = [...after], n = a.length, m = b.length;
+  if (n * m > 400000) return h("span", { class: "zh" }, after);
+  const L = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const out = [];
+  const push = (cls, ch) => { const last = out[out.length - 1]; if (last && last.cls === cls) last.text += ch; else out.push({ cls, text: ch }); };
+  let i = 0, j = 0;
+  while (i < n && j < m) {
+    if (a[i] === b[j]) { push("", a[i]); i++; j++; }
+    else if (L[i + 1][j] >= L[i][j + 1]) push("del", a[i++]);
+    else push("ins", b[j++]);
+  }
+  while (i < n) push("del", a[i++]);
+  while (j < m) push("ins", b[j++]);
+  return h("span", { class: "zh" }, out.map((x) => (x.cls ? h("span", { class: x.cls }, x.text) : x.text)));
+}
+function reviewView(r, original) {
+  const changed = r.corrected && original && r.corrected !== original;
   return h("div", { class: "fb model" },
-    h("b", {}, "Giáo viên đã chấm", r.score != null ? ` · ${r.score}/10` : "", ` · ${fmtTime(new Date(r.created_at).getTime())}`),
-    r.corrected ? h("div", {}, "Bản sửa: ", h("span", { class: "zh" }, r.corrected)) : null,
+    h("b", {}, "Giáo viên đã chữa", r.score != null ? ` · ${r.score}/10` : "", ` · ${when(r.created_at)}`),
+    r.corrected ? h("div", {}, changed ? "Chỗ đã sửa: " : "Bài viết đúng, không phải sửa: ", changed ? diffView(original, r.corrected) : h("span", { class: "zh" }, r.corrected)) : null,
+    changed ? h("div", {}, "Bản đã sửa: ", h("span", { class: "zh" }, r.corrected)) : null,
     r.comment ? h("div", {}, "Nhận xét: ", r.comment) : null);
+}
+
+// Lưu bài viết ở bản online là tự gửi luôn cho giáo viên, không cần bấm nộp.
+async function autoSubmit(l, x, it, i, content, draw) {
+  if (!ONLINE || !content) return;
+  try {
+    if (!subCache[x.id]) await loadSubs(x.id);
+    if (subCache[x.id].some((s) => s.item_index === i && s.content === content)) return;
+    must(await sb.from("submissions").insert({ lesson_id: l.id, exercise_id: x.id, item_index: i, prompt: it.prompt || it.q, content }));
+    await loadSubs(x.id);
+    draw();
+  } catch (e) { console.error(e); }
 }
 function submitBox(l, x, it, i, a, draw) {
   if (!ONLINE || !a.done || !a.v) return null;
@@ -168,24 +203,66 @@ function submitBox(l, x, it, i, a, draw) {
     const mine = (subCache[x.id] || []).filter((s) => s.item_index === i);
     const sent = mine.find((s) => s.content === a.v);
     box.replaceChildren(
-      sent ? h("div", { class: "sub" }, `Đã nộp cho giáo viên lúc ${fmtTime(new Date(sent.created_at).getTime())}`, sent.reviews.length ? "" : " · đang chờ chấm")
-        : h("button", { class: "btn", onclick: async (e) => {
-          e.target.disabled = true;
-          const { error } = await sb.from("submissions").insert({ lesson_id: l.id, exercise_id: x.id, item_index: i, prompt: it.prompt || it.q, content: a.v });
-          if (error) { e.target.disabled = false; return alert("Chưa nộp được: " + error.message); }
-          await loadSubs(x.id); paint();
-        } }, mine.length ? "Nộp bản mới cho giáo viên" : "Nộp cho giáo viên"),
+      sent ? h("div", { class: "sub" }, `Đã gửi giáo viên lúc ${when(sent.created_at)}`, sent.reviews.length ? "" : " · đang chờ chữa")
+        : h("button", { class: "btn", onclick: (e) => { e.target.disabled = true; autoSubmit(l, x, it, i, a.v, draw).then(paint); } }, "Gửi giáo viên"),
       ...mine.filter((s) => s.reviews.length).flatMap((s) => [
-        s.content !== a.v ? h("div", { class: "sub", style: "margin-top:6px" }, "Bản đã nộp trước: ", h("span", { class: "zh" }, s.content)) : null,
-        ...s.reviews.map(reviewView)]).filter(Boolean));
+        s.content !== a.v ? h("div", { class: "sub", style: "margin-top:6px" }, "Bản đã gửi trước: ", h("span", { class: "zh" }, s.content)) : null,
+        ...s.reviews.map((r) => reviewView(r, s.content))]).filter(Boolean));
   };
-  if (subCache[x.id]) paint(); else loadSubs(x.id).then(paint).catch(() => box.replaceChildren(h("div", { class: "sub" }, "Chưa tải được phần giáo viên chấm.")));
+  if (subCache[x.id]) paint(); else loadSubs(x.id).then(paint).catch(() => box.replaceChildren(h("div", { class: "sub" }, "Chưa tải được phần giáo viên chữa.")));
   return box;
 }
+
+// Học viên: thông báo có bài mới được chữa, và trang xem lại toàn bộ bài đã chữa.
+let MY_GRADED = null;
+async function loadGraded() {
+  const rows = must(await sb.from("submissions").select("id,lesson_id,exercise_id,item_index,prompt,content,created_at,reviews(corrected,comment,score,created_at)")
+    .eq("user_id", ME.id).order("created_at", { ascending: false }).limit(200));
+  MY_GRADED = rows.filter((s) => s.reviews.length);
+  return MY_GRADED;
+}
+const newestReview = (s) => Math.max(...s.reviews.map((r) => new Date(r.created_at).getTime()));
+function reviewNotice() {
+  if (!ONLINE) return null;
+  const box = h("div", {});
+  const paint = () => {
+    const fresh = (MY_GRADED || []).filter((s) => newestReview(s) > (P.settings.seenReviewAt || 0)).length;
+    box.replaceChildren(...(fresh ? [h("a", { class: "card warn", href: "#/reviews", style: "display:block;color:inherit" },
+      h("b", {}, `Giáo viên vừa chữa ${fresh} bài của bạn`), h("div", { class: "sub" }, "Bấm để xem chỗ đã sửa và nhận xét."))] : []));
+  };
+  if (MY_GRADED) paint(); else loadGraded().then(paint).catch(() => {});
+  return box;
+}
+route(/^reviews$/, async () => {
+  if (!ONLINE) return go("#/");
+  add(h("h1", {}, "Bài đã được chữa"), h("p", { class: "sub" }, "Đang tải…"));
+  try {
+    const rows = await loadGraded();
+    P.settings.seenReviewAt = Date.now();
+    save();
+    view.replaceChildren(h("h1", {}, "Bài đã được chữa"));
+    add(rows.length ? rows.map((s) => h("div", { class: "card" },
+      h("div", { class: "sub" }, `${exerciseLabel(s)} · viết lúc ${when(s.created_at)}`),
+      s.prompt ? h("div", { class: "sub" }, "Đề: ", s.prompt) : null,
+      h("div", { style: "margin:6px 0" }, "Bài của bạn: ", h("span", { class: "zh" }, s.content)),
+      s.reviews.map((r) => reviewView(r, s.content)),
+      h("a", { class: "btn", style: "display:inline-block;margin-top:8px", href: `#/ex/${s.lesson_id}/${s.exercise_id}` }, "Mở bài tập này để viết lại")))
+      : h("div", { class: "card sub" }, "Chưa có bài nào được chữa. Khi bạn lưu bài viết hoặc câu dịch, bài được gửi cho giáo viên và kết quả sẽ hiện ở đây."));
+  } catch (e) { console.error(e); view.replaceChildren(h("h1", {}, "Bài đã được chữa"), h("div", { class: "card" }, "Không tải được: " + (e.message || e))); }
+});
 
 // ---------- Giáo viên ----------
 const newCode = () => Array.from({ length: 6 }, () => "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"[Math.floor(Math.random() * 32)]).join("");
 const who = (p) => (p ? p.full_name || p.email : "(không rõ)");
+function exerciseOf(s) {
+  const l = lessonById(s.lesson_id), x = l && l.exercises.find((e) => e.id === s.exercise_id);
+  return { l, x, it: x && x.items[s.item_index] };
+}
+function exerciseLabel(s) {
+  const { l, x } = exerciseOf(s);
+  return `Bài ${s.lesson_id}${l ? " " + l.title.zh : ""} · ${x ? x.title : s.exercise_id}${x && x.items.length > 1 ? ` · câu ${s.item_index + 1}` : ""}`;
+}
+const teacherFilter = { cls: "", student: "", show: "waiting" };
 
 route(/^teacher$/, async () => {
   if (!ONLINE || ME.role === "student") return go("#/");
@@ -195,36 +272,62 @@ route(/^teacher$/, async () => {
     const ids = [...new Set(classes.flatMap((c) => c.class_members.map((m) => m.user_id)))];
     const [prog, subs] = ids.length ? await Promise.all([
       sb.from("progress").select("user_id,doc,updated_at").in("user_id", ids).then(must),
-      sb.from("submissions").select("id,user_id,lesson_id,exercise_id,prompt,content,created_at,profiles(full_name,email),reviews(id,corrected,comment,score,created_at)")
-        .in("user_id", ids).order("created_at", { ascending: false }).limit(200).then(must),
+      sb.from("submissions").select("id,user_id,lesson_id,exercise_id,item_index,prompt,content,created_at,profiles(full_name,email),reviews(id,corrected,comment,score,created_at)")
+        .in("user_id", ids).order("created_at", { ascending: false }).limit(500).then(must),
     ]) : [[], []];
     const progOf = Object.fromEntries(prog.map((p) => [p.user_id, p]));
+    const people = Object.fromEntries(classes.flatMap((c) => c.class_members.map((m) => [m.user_id, m.profiles])));
     view.replaceChildren(h("h1", {}, "Giáo viên"));
 
-    const name = h("input", { placeholder: "Tên lớp mới", style: "padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--bg)" });
+    // --- Chữa bài viết ---
+    const f = teacherFilter;
+    const inClass = (uid) => !f.cls || (classes.find((c) => c.id === f.cls) || { class_members: [] }).class_members.some((m) => m.user_id === uid);
+    const list = h("div", {});
+    const paint = () => {
+      const rows = subs.filter((s) => inClass(s.user_id) && (!f.student || s.user_id === f.student));
+      // Mỗi câu chỉ giữ bản mới nhất của học viên; các bản cũ hơn xem được trong thẻ.
+      const latest = [], seen = new Set();
+      for (const s of rows) { const k = `${s.user_id}|${s.exercise_id}|${s.item_index}`; if (!seen.has(k)) { seen.add(k); latest.push({ ...s, older: rows.filter((o) => o !== s && `${o.user_id}|${o.exercise_id}|${o.item_index}` === k) }); } }
+      const waiting = latest.filter((s) => !s.reviews.length), graded = latest.filter((s) => s.reviews.length);
+      const shown = f.show === "waiting" ? waiting : f.show === "graded" ? graded : latest;
+      list.replaceChildren(
+        h("div", { class: "sub", style: "margin:8px 0" }, `Chờ chữa ${waiting.length} · đã chữa ${graded.length}`),
+        ...(shown.length ? shown.map(gradeCard) : [h("div", { class: "card sub" }, f.show === "waiting" ? "Không có bài nào đang chờ chữa." : "Không có bài nào.")]));
+    };
+    const pick = (key, options) => h("select", { onchange: (e) => { f[key] = e.target.value; if (key === "cls") { f.student = ""; render(); } else paint(); } },
+      options.map(([v, n]) => h("option", { value: v, selected: f[key] === v }, n)));
+    const students = ids.filter(inClass).map((id) => [id, who(people[id])]).sort((a, b) => a[1].localeCompare(b[1]));
+    add(h("h2", {}, "Chữa bài viết của học viên"),
+      h("div", { class: "row" },
+        h("label", {}, "Lớp ", pick("cls", [["", "Tất cả lớp"], ...classes.map((c) => [c.id, c.name])])),
+        h("label", {}, "Học viên ", pick("student", [["", "Tất cả"], ...students])),
+        h("label", {}, "Hiện ", pick("show", [["waiting", "Bài chờ chữa"], ["graded", "Bài đã chữa"], ["all", "Tất cả"]]))),
+      list);
+    paint();
+
+    // --- Lớp và tiến độ ---
+    const name = h("input", { placeholder: "Tên lớp mới", style: "padding:9px" });
     add(h("h2", {}, "Lớp của tôi"),
       classes.map((c) => h("div", { class: "card" },
         h("h3", {}, c.name, h("span", { class: "tag acc" }, `mã lớp: ${c.code}`)),
         c.class_members.length ? h("div", { class: "wrap" }, h("table", { class: "cmp" },
-          h("tr", {}, h("th", {}, "Học viên"), h("th", {}, "Từ đã học"), h("th", {}, "Lượt ôn"), h("th", {}, "Kiểm tra gần nhất"), h("th", {}, "Hoạt động gần nhất")),
+          h("tr", {}, h("th", {}, "Học viên"), h("th", {}, "Từ đã học"), h("th", {}, "Lượt ôn"), h("th", {}, "Kiểm tra gần nhất"), h("th", {}, "Bài viết"), h("th", {}, "Hoạt động gần nhất")),
           c.class_members.map((m) => {
             const p = progOf[m.user_id], doc = p ? p.doc : {};
+            const mine = subs.filter((s) => s.user_id === m.user_id);
             return h("tr", {}, h("td", {}, who(m.profiles)),
               h("td", {}, Object.keys(doc.cards || {}).length), h("td", {}, (doc.log || []).filter((e) => e.k === "card").length),
               h("td", {}, (doc.tests || []).length ? `${doc.tests[doc.tests.length - 1].score}/${doc.tests[doc.tests.length - 1].n} (${doc.tests.length} bài)` : "chưa làm"),
-              h("td", {}, p ? fmtTime(new Date(p.updated_at).getTime()) : "chưa học"));
-          }))) : h("div", { class: "sub" }, "Chưa có học viên. Gửi mã lớp cho học viên để họ tự vào."))),
+              h("td", {}, mine.length ? h("a", { href: "#", onclick: (e) => { e.preventDefault(); f.cls = c.id; f.student = m.user_id; f.show = "all"; render(); } },
+                `${mine.length} bài, ${mine.filter((s) => !s.reviews.length).length} chờ chữa`) : "chưa có"),
+              h("td", {}, p ? when(p.updated_at) : "chưa học"));
+          }))) : h("div", { class: "sub" }, "Chưa có học viên. Gửi mã lớp cho học viên, hoặc nhờ quản trị thêm tài khoản vào lớp."))),
       h("div", { class: "row" }, name, h("button", { class: "btn", onclick: async () => {
         if (!name.value.trim()) return name.focus();
         const { error } = await sb.from("classes").insert({ name: name.value.trim(), code: newCode(), teacher_id: ME.id });
         if (error) return alert("Chưa tạo được lớp: " + error.message);
         render();
       } }, "Tạo lớp")));
-
-    const waiting = subs.filter((s) => !s.reviews.length), graded = subs.filter((s) => s.reviews.length);
-    add(h("h2", {}, `Bài chờ chấm (${waiting.length})`),
-      waiting.length ? waiting.map(gradeCard) : h("div", { class: "card sub" }, "Không có bài nào đang chờ."),
-      graded.length ? h("details", {}, h("summary", { class: "sub" }, `Bài đã chấm (${graded.length})`), graded.map(gradeCard)) : null);
   } catch (e) {
     console.error(e);
     view.replaceChildren(h("h1", {}, "Giáo viên"), h("div", { class: "card" }, "Không tải được dữ liệu lớp: " + (e.message || e)));
@@ -233,24 +336,34 @@ route(/^teacher$/, async () => {
 
 function gradeCard(s) {
   const last = s.reviews[s.reviews.length - 1];
-  const fixed = h("textarea", { class: "zh", placeholder: "Bản đã sửa" }, last ? last.corrected || "" : s.content);
+  const { it } = exerciseOf(s);
+  const fixed = h("textarea", { class: "zh", placeholder: "Sửa trực tiếp vào bài của học viên ở đây" }, last ? last.corrected || "" : s.content);
   const note = h("textarea", { placeholder: "Nhận xét, giải thích lỗi", style: "min-height:60px" }, last ? last.comment || "" : "");
   const score = h("select", {}, h("option", { value: "" }, "Không cho điểm"), Array.from({ length: 11 }, (_, n) => h("option", { value: n, selected: last && last.score === n }, n)));
-  const out = h("span", { class: "sub" }, last ? `Đã chấm lúc ${fmtTime(new Date(last.created_at).getTime())}` : "");
+  const out = h("span", { class: "sub" }, last ? `Đã chữa lúc ${when(last.created_at)}` : "");
+  const preview = h("div", { class: "sub" });
+  const showDiff = () => preview.replaceChildren(...(fixed.value.trim() && fixed.value.trim() !== s.content ? ["Học viên sẽ thấy: ", diffView(s.content, fixed.value.trim())] : []));
+  fixed.addEventListener("input", showDiff);
+  showDiff();
   return h("div", { class: "card ex" },
-    h("div", { class: "sub" }, `${who(s.profiles)} · bài ${s.lesson_id} · ${fmtTime(new Date(s.created_at).getTime())}`),
+    h("div", {}, h("b", {}, who(s.profiles)), h("span", { class: "sub" }, ` · ${exerciseLabel(s)} · ${when(s.created_at)}`)),
     s.prompt ? h("div", { class: "sub" }, "Đề: ", s.prompt) : null,
-    h("div", { class: "zh", style: "margin:6px 0" }, s.content),
-    fixed, note,
+    it && it.a ? h("div", { class: "sub" }, "Đáp án mẫu: ", h("span", { class: "zh" }, it.a)) : null,
+    it && it.keywords ? h("div", { class: "sub" }, "Từ gợi ý: ", it.keywords.map((w) => h("span", { class: "kw" + (s.content.includes(w) ? " used" : "") }, w))) : null,
+    h("div", { style: "margin:8px 0" }, h("span", { class: "sub" }, "Bài của học viên: "), h("span", { class: "zh" }, s.content)),
+    s.older && s.older.length ? h("details", {}, h("summary", { class: "sub" }, `Các bản học viên viết trước (${s.older.length})`),
+      s.older.map((o) => h("div", { class: "fb" }, h("span", { class: "sub" }, when(o.created_at) + " · "), h("span", { class: "zh" }, o.content)))) : null,
+    fixed, preview, note,
     h("div", { class: "row", style: "margin-top:6px" }, h("label", {}, "Điểm ", score),
       h("button", { class: "btn pri", onclick: async (e) => {
         e.target.disabled = true;
         const row = { corrected: fixed.value.trim() || null, comment: note.value.trim() || null, score: score.value === "" ? null : Number(score.value) };
-        const res = last ? await sb.from("reviews").update(row).eq("id", last.id) : await sb.from("reviews").insert({ submission_id: s.id, ...row });
+        const res = last ? await sb.from("reviews").update(row).eq("id", last.id) : await sb.from("reviews").insert({ submission_id: s.id, ...row }).select("id,created_at").single();
         e.target.disabled = false;
         if (res.error) return alert("Chưa lưu được: " + res.error.message);
-        out.textContent = "Đã lưu phần chấm";
-      } }, last ? "Cập nhật phần chấm" : "Lưu phần chấm"), out));
+        if (!last && res.data) s.reviews.push({ ...row, ...res.data });
+        out.textContent = "Đã lưu phần chữa bài";
+      } }, last ? "Cập nhật phần chữa" : "Lưu phần chữa"), out));
 }
 
 // ---------- Quản trị ----------

@@ -288,6 +288,7 @@ route(/^$/, () => {
           h("select", { onchange: (e) => { P.settings.newPerDay = Number(e.target.value); save(); render(); } },
             [5, 10, 15, 20, 30].map((n) => h("option", { value: n, selected: n === P.settings.newPerDay }, n)))))),
     typeof importCard === "function" ? importCard() : null,
+    typeof reviewNotice === "function" ? reviewNotice() : null,
     typeof homeExtras === "function" ? homeExtras() : null,
     h("h2", {}, "Bài học"),
     LESSONS.length ? null : h("div", { class: "card sub" }, "Chưa có bài học nào. Quản trị cần nạp nội dung trước."),
@@ -551,6 +552,7 @@ const EX = {
         h("button", { class: "btn pri", onclick: () => {
           if (!ta.value.trim()) return ta.focus();
           P.answers[k] = { ...a, v: ta.value.trim(), done: true, t: Date.now() }; save(); draw();
+          if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, ta.value.trim(), draw);
         } }, "Lưu và xem đáp án mẫu")));
     } else {
       out.push(h("div", { class: "fb model" }, "Đáp án mẫu: ", h("span", { class: toZh ? "zh" : "" }, it.a)),
@@ -588,6 +590,7 @@ const EX = {
           P.answers[k] = { ...a, v, done: true, t: Date.now(), hist: a.done ? keepHist(a) : a.hist };
           logEvent({ k: "write", l: null, r: k });
           save(); draw();
+          if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
         } }, a.done ? "Lưu bản mới" : "Lưu bài viết"), count),
       teacherBox(x, it, i, a, draw), history(a)];
   },
