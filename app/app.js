@@ -358,6 +358,8 @@ function openWord(info, l, el, repaint) {
         } }, saved ? "Bỏ khỏi sổ từ" : "Lưu vào sổ từ để ôn"),
         h("button", { class: "btn", onclick: closeSheet }, "Đóng")))));
   sheet.hidden = false;
+  // Từ mới của bài: vừa hiện nghĩa vừa đọc luôn. Từ khác thì chờ bấm nút loa.
+  if (info.item) pronounce(info.item);
 }
 
 // ---------- Cấu trúc ----------
