@@ -1,0 +1,162 @@
+{
+ "5.41": {
+  "hanzi": "为",
+  "pinyin": "wéi",
+  "vi": "trở thành, là",
+  "pos": "động từ"
+ },
+ "6.5": {
+  "hanzi": "怪物",
+  "pinyin": "guàiwu"
+ },
+ "8.17": {
+  "hanzi": "行为",
+  "pinyin": "xíngwéi"
+ },
+ "9.25": {
+  "pinyin": "hūpéng huànyǒu",
+  "vi": "gọi bạn gọi bè",
+  "pos": "thành ngữ"
+ },
+ "2.16": {
+  "pos": "tính từ"
+ },
+ "3.12": {
+  "hanzi": "二手",
+  "pinyin": "èrshǒu",
+  "pos": "tính từ",
+  "vi": "đã qua sử dụng",
+  "outOfSyllabus": true
+ },
+ "5.42": {
+  "hanzi": "火成岩",
+  "pinyin": "huǒchéngyán",
+  "pos": "danh từ",
+  "vi": "đá phun trào, đá mác-ma",
+  "outOfSyllabus": true
+ },
+ "7.3": {
+  "hanzi": "盲人",
+  "pinyin": "mángrén",
+  "pos": "danh từ",
+  "vi": "người mù",
+  "outOfSyllabus": true
+ },
+ "7.32": {
+  "hanzi": "全神贯注",
+  "pinyin": "quánshén guànzhù",
+  "pos": "thành ngữ",
+  "vi": "tập trung tinh thần",
+  "outOfSyllabus": true
+ },
+ "7.38": {
+  "hanzi": "根",
+  "pinyin": "gēn",
+  "pos": "danh từ / lượng từ",
+  "vi": "rễ cây, chân; (lượng từ cho vật dài và mảnh) chiếc, cái",
+  "outOfSyllabus": false
+ },
+ "11.34": {
+  "hanzi": "柔和",
+  "pinyin": "róuhé",
+  "pos": "tính từ",
+  "vi": "êm dịu",
+  "outOfSyllabus": true
+ },
+ "11.35": {
+  "hanzi": "愿望",
+  "pinyin": "yuànwàng",
+  "pos": "danh từ",
+  "vi": "ước muốn, điều mong muốn",
+  "outOfSyllabus": false
+ },
+ "12.2": {
+  "hanzi": "颠球",
+  "pinyin": "diān qiú",
+  "pos": "động từ",
+  "vi": "tung hứng (bóng)",
+  "outOfSyllabus": true
+ },
+ "12.8": {
+  "hanzi": "手笔",
+  "pinyin": "shǒubǐ",
+  "pos": "danh từ",
+  "vi": "sự mạnh tay, sự phô trương",
+  "outOfSyllabus": true
+ },
+ "12.34": {
+  "hanzi": "创新",
+  "pinyin": "chuàngxīn",
+  "pos": "động từ",
+  "vi": "sáng tạo cái mới, đổi mới",
+  "outOfSyllabus": true
+ },
+ "14.21": {
+  "hanzi": "走廊",
+  "pinyin": "zǒuláng",
+  "pos": "danh từ",
+  "vi": "hành lang, hàng hiên",
+  "outOfSyllabus": true
+ },
+ "14.23": {
+  "hanzi": "种",
+  "pinyin": "zhòng",
+  "pos": "động từ",
+  "vi": "trồng",
+  "outOfSyllabus": true
+ },
+ "15.9": {
+  "hanzi": "军队",
+  "pinyin": "jūnduì",
+  "pos": "danh từ",
+  "vi": "quân đội",
+  "outOfSyllabus": true
+ },
+ "15.22": {
+  "hanzi": "调动",
+  "pinyin": "diàodòng",
+  "pos": "động từ",
+  "vi": "điều động, thuyên chuyển",
+  "outOfSyllabus": true
+ },
+ "15.36": {
+  "hanzi": "进攻",
+  "pinyin": "jìngōng",
+  "pos": "động từ",
+  "vi": "tấn công, công kích",
+  "outOfSyllabus": true
+ },
+ "16.36": {
+  "hanzi": "就餐",
+  "pinyin": "jiùcān",
+  "pos": "động từ",
+  "vi": "đi ăn",
+  "outOfSyllabus": true
+ },
+ "16.39": {
+  "hanzi": "借口",
+  "pinyin": "jièkǒu",
+  "pos": "danh từ / động từ",
+  "vi": "cớ; lấy cớ",
+  "outOfSyllabus": false
+ },
+ "8.39": {
+  "hanzi": "要不",
+  "pinyin": "yàobù",
+  "pos": "liên từ",
+  "vi": "nếu không thì; hay là",
+  "outOfSyllabus": false
+ },
+ "8.40": {
+  "hanzi": "显得",
+  "pinyin": "xiǎnde",
+  "pos": "động từ",
+  "vi": "tỏ ra, có vẻ",
+  "outOfSyllabus": false
+ },
+ "3.24": {
+  "pinyin": "gàn huór",
+  "pos": "động từ",
+  "vi": "làm việc (chân tay)"
+ }
+}

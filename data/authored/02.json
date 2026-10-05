@@ -1,0 +1,413 @@
+{
+ "title": {
+  "zh": "留串钥匙给父母",
+  "vi": "Để chìa khóa cho ba mẹ"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/02-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/02-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/02-1.mp3",
+   "audio/bai-tap-1/02-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   11,
+   12,
+   13
+  ],
+  "text": [
+   {
+    "page": 11,
+    "top": 0.622,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 12,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 13,
+    "top": 0.07,
+    "bottom": 0.297,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "以来",
+   "kind": "cách dùng",
+   "summary": "Chỉ khoảng thời gian từ một mốc trong quá khứ kéo dài đến hiện tại.",
+   "points": [
+    {
+     "pattern": "mốc thời gian / sự việc + 以来",
+     "explain": "Đứng sau mốc bắt đầu; thường đi với 自、从、自从 ở phía trước.",
+     "examples": [
+      {
+       "zh": "毕业以来，我们一直没有见过面。",
+       "vi": "Từ khi tốt nghiệp đến nay, chúng tôi chưa gặp lại nhau."
+      },
+      {
+       "zh": "自从搬到农村以来，他的身体好多了。",
+       "vi": "Từ khi chuyển về nông thôn, sức khỏe ông ấy tốt lên nhiều."
+      }
+     ]
+    },
+    {
+     "pattern": "khoảng thời gian + 以来",
+     "explain": "Chỉ suốt quãng thời gian vừa qua tính đến hiện tại.",
+     "examples": [
+      {
+       "zh": "三年以来，她每天坚持跑步。",
+       "vi": "Suốt ba năm nay, ngày nào cô ấy cũng kiên trì chạy bộ."
+      },
+      {
+       "zh": "长期以来，父母一直支持我的决定。",
+       "vi": "Lâu nay bố mẹ luôn ủng hộ quyết định của tôi."
+      }
+     ]
+    }
+   ],
+   "id": "02-g1"
+  },
+  {
+   "title": "临",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"sắp, ngay trước khi\" làm một việc; cũng là động từ nghĩa là \"kề, sát\".",
+   "points": [
+    {
+     "pattern": "临 + động từ (+ 前 / 时)",
+     "explain": "Chỉ thời điểm ngay trước khi hành động xảy ra.",
+     "examples": [
+      {
+       "zh": "临走前，妈妈又检查了一遍我的行李。",
+       "vi": "Ngay trước khi đi, mẹ lại kiểm tra hành lý của tôi một lượt."
+      },
+      {
+       "zh": "他临睡时总要喝一杯牛奶。",
+       "vi": "Trước khi ngủ anh ấy luôn uống một cốc sữa."
+      }
+     ]
+    },
+    {
+     "pattern": "临 + nơi chốn",
+     "explain": "Ở sát, kề bên, hướng ra.",
+     "examples": [
+      {
+       "zh": "我想租一套临街的房子。",
+       "vi": "Tôi muốn thuê một căn nhà sát mặt đường."
+      },
+      {
+       "zh": "这个小镇临海，风景很美。",
+       "vi": "Thị trấn này giáp biển, phong cảnh rất đẹp."
+      }
+     ]
+    }
+   ],
+   "id": "02-g2"
+  },
+  {
+   "title": "立刻",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"lập tức, ngay\", chỉ hành động xảy ra liền sau đó.",
+   "points": [
+    {
+     "pattern": "chủ ngữ + 立刻 + động từ",
+     "explain": "Đứng trước động từ; khoảng thời gian ngắn hơn và trang trọng hơn 马上 một chút.",
+     "examples": [
+      {
+       "zh": "听到这个消息，他立刻给家里打了电话。",
+       "vi": "Nghe tin ấy, anh lập tức gọi điện về nhà."
+      },
+      {
+       "zh": "请大家立刻回到自己的座位上。",
+       "vi": "Mời mọi người về chỗ của mình ngay."
+      }
+     ]
+    }
+   ],
+   "id": "02-g3"
+  },
+  {
+   "title": "悄悄 và 偷偷",
+   "kind": "phân biệt",
+   "summary": "Cả hai là phó từ, đều chỉ làm việc gì đó không để người khác phát hiện.",
+   "compare": {
+    "same": "Thay được cho nhau khi vừa lặng lẽ vừa giấu người khác: 他悄悄 / 偷偷地走了。",
+    "rows": [
+     {
+      "aspect": "Trọng tâm",
+      "a": "Nhấn vào tiếng động nhỏ, nhẹ nhàng, không làm phiền ai.",
+      "b": "Nhấn vào việc giấu giếm, sợ người khác biết."
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Trung tính, thường mang ý tốt: 悄悄地关上门。",
+      "b": "Thường là việc không muốn hoặc không nên để người khác biết: 偷偷地玩手机。"
+     },
+     {
+      "aspect": "Dùng cho lời nói",
+      "a": "Dùng được: 悄悄地说 (nói khẽ).",
+      "b": "Không dùng với nghĩa nói khẽ."
+     }
+    ]
+   },
+   "id": "02-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "02-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "断",
+    "晒",
+    "套",
+    "锁",
+    "醉",
+    "飘",
+    "挣",
+    "铺"
+   ],
+   "items": [
+    {
+     "q": "出门的时候别忘了把门___好。",
+     "a": "锁"
+    },
+    {
+     "q": "今天太阳很好，我把被子拿出去___一下。",
+     "a": "晒"
+    },
+    {
+     "q": "昨天晚上突然___电了，屋里什么也看不见。",
+     "a": "断"
+    },
+    {
+     "q": "他喝得太多，已经___了。",
+     "a": "醉"
+    },
+    {
+     "q": "他们在城里买了一___新房子。",
+     "a": "套"
+    },
+    {
+     "q": "一阵花香从窗外___了进来。",
+     "a": "飘"
+    },
+    {
+     "q": "他每个月___的钱有一半寄给父母。",
+     "a": "挣"
+    },
+    {
+     "q": "妈妈早就为我___好了床。",
+     "a": "铺"
+    }
+   ]
+  },
+  {
+   "id": "02-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "来中国___，我的汉语进步了很多。",
+     "options": [
+      "以来",
+      "以后"
+     ],
+     "a": 0,
+     "why": "Chỉ quãng thời gian từ mốc đó kéo dài tới bây giờ thì dùng 以来."
+    },
+    {
+     "q": "他怕吵醒孩子，___地走出了房间。",
+     "options": [
+      "悄悄",
+      "偷偷"
+     ],
+     "a": 0,
+     "why": "Ý là đi nhẹ nhàng không gây tiếng động, không phải lén lút."
+    },
+    {
+     "q": "弟弟趁妈妈不在，___吃了一块巧克力。",
+     "options": [
+      "悄悄",
+      "偷偷"
+     ],
+     "a": 1,
+     "why": "Giấu vì sợ bị phát hiện thì dùng 偷偷."
+    },
+    {
+     "q": "___出发前，他才发现护照不见了。",
+     "options": [
+      "临",
+      "立刻"
+     ],
+     "a": 0,
+     "why": "临 + động từ: ngay trước khi."
+    },
+    {
+     "q": "他的态度很___，谁劝都没用。",
+     "options": [
+      "坚决",
+      "强烈"
+     ],
+     "a": 0,
+     "why": "坚决 tả thái độ kiên quyết; 强烈 tả mức độ mạnh của cảm giác, yêu cầu."
+    }
+   ]
+  },
+  {
+   "id": "02-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A接到电话B，他C放下手里的工作D赶了过去。",
+     "word": "立刻",
+     "a": "C"
+    },
+    {
+     "q": "A毕业B，C我们D只见过两次面。",
+     "word": "以来",
+     "a": "B"
+    },
+    {
+     "q": "他A睡前B总要C看一会儿D书。",
+     "word": "临",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "02-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "长期以来",
+      "奶奶",
+      "一直",
+      "照顾",
+      "我"
+     ],
+     "a": "长期以来奶奶一直照顾我。",
+     "vi": "Lâu nay bà luôn chăm sóc tôi."
+    },
+    {
+     "words": [
+      "他",
+      "临走前",
+      "给我",
+      "留了",
+      "一串钥匙"
+     ],
+     "a": "他临走前给我留了一串钥匙。",
+     "vi": "Trước khi đi anh ấy để lại cho tôi một chùm chìa khóa."
+    },
+    {
+     "words": [
+      "她",
+      "听到消息",
+      "立刻",
+      "哭了起来"
+     ],
+     "a": "她听到消息立刻哭了起来。",
+     "vi": "Nghe tin, cô ấy bật khóc ngay."
+    }
+   ]
+  },
+  {
+   "id": "02-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Khi con cái trưởng thành, bố mẹ thường vẫn lo lắng cho chúng như trước.",
+     "a": "孩子长大以后，父母往往还像以前一样为他们担心。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Tôi để lại một chùm chìa khóa cho bố mẹ để họ có thể đến nhà tôi bất cứ lúc nào.",
+     "a": "我给父母留了一串钥匙，这样他们随时都可以来我家。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Tôi hy vọng dù mình đi đâu thì bố mẹ vẫn có thể cảm nhận được sự quan tâm của tôi.",
+     "a": "我希望不管我走到哪儿，父母都能感受到我的关心。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Đừng đợi đến khi mất đi rồi mới nhận ra người thân quan trọng như thế nào.",
+     "a": "不要等到失去了，才发现亲人有多么重要。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Khi còn trẻ, chúng ta thường cho rằng bố mẹ sẽ luôn ở bên mình.",
+     "a": "年轻的时候，我们总以为父母会一直陪在自己身边。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Chỉ khi sống xa nhà, tôi mới hiểu cảm giác nhớ gia đình là như thế nào.",
+     "a": "只有离开家生活，我才明白想家是什么感觉。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "我把家里的钥匙留了一串给父母。",
+     "a": "Tôi để lại cho bố mẹ một chùm chìa khóa nhà."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "不管孩子多大，在父母眼里，他永远是孩子。",
+     "a": "Dù con cái lớn đến đâu, trong mắt cha mẹ, con mãi mãi vẫn là đứa trẻ."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "很多年轻人因为工作忙，很少有时间陪父母。",
+     "a": "Nhiều người trẻ vì công việc bận rộn nên rất ít có thời gian ở bên bố mẹ."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "我们应该珍惜和父母在一起的每一天。",
+     "a": "Chúng ta nên trân trọng từng ngày được ở bên bố mẹ."
+    }
+   ]
+  },
+  {
+   "id": "02-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "一辈子",
+      "以来",
+      "坚决",
+      "打工",
+      "装修",
+      "临",
+      "悄悄",
+      "长途",
+      "想象",
+      "温暖",
+      "立刻",
+      "流泪"
+     ]
+    }
+   ]
+  }
+ ]
+}

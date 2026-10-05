@@ -1,0 +1,395 @@
+{
+ "title": {
+  "zh": "“朝三暮四”的古今义",
+  "vi": "Thành ngữ \"Sáng ba chiều bốn\""
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/08-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/08-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/08-1.mp3",
+   "audio/bai-tap-1/08-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   65,
+   66,
+   67
+  ],
+  "text": [
+   {
+    "page": 65,
+    "top": 0.569,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 66,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 67,
+    "top": 0.07,
+    "bottom": 0.701,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "倒",
+   "kind": "cách dùng",
+   "summary": "Phó từ (đọc dào), diễn tả điều trái với dự đoán; cũng dùng để nhượng bộ trước khi nêu ý chính.",
+   "points": [
+    {
+     "pattern": "… 倒 + vị ngữ (trái dự đoán)",
+     "explain": "Thực tế ngược với điều thường nghĩ.",
+     "examples": [
+      {
+       "zh": "弟弟倒比哥哥高。",
+       "vi": "Em trai lại cao hơn anh."
+      },
+      {
+       "zh": "没吃药，病倒好了。",
+       "vi": "Không uống thuốc mà bệnh lại khỏi."
+      }
+     ]
+    },
+    {
+     "pattern": "… 倒是 …，就是 / 不过 …",
+     "explain": "Thừa nhận một mặt trước rồi mới nêu mặt chưa ổn.",
+     "examples": [
+      {
+       "zh": "这件衣服质量倒是不错，就是太贵了。",
+       "vi": "Chất lượng cái áo này thì được đấy, chỉ là đắt quá."
+      }
+     ]
+    }
+   ],
+   "id": "08-g1"
+  },
+  {
+   "title": "……来……去",
+   "kind": "cách dùng",
+   "summary": "Kết cấu lặp động từ, chỉ hành động lặp đi lặp lại nhiều lần.",
+   "points": [
+    {
+     "pattern": "động từ + 来 + động từ + 去",
+     "explain": "Hai động từ giống nhau hoặc gần nghĩa; thường theo sau là kết quả.",
+     "examples": [
+      {
+       "zh": "他在房间里走来走去，不知道该怎么办。",
+       "vi": "Anh ấy đi đi lại lại trong phòng, không biết nên làm thế nào."
+      },
+      {
+       "zh": "我想来想去，还是决定不去了。",
+       "vi": "Tôi nghĩ tới nghĩ lui, cuối cùng vẫn quyết định không đi."
+      }
+     ]
+    }
+   ],
+   "id": "08-g2"
+  },
+  {
+   "title": "要不",
+   "kind": "cách dùng",
+   "summary": "Liên từ khẩu ngữ, có hai nghĩa: \"nếu không thì\" và \"hay là\".",
+   "points": [
+    {
+     "pattern": "…，要不 + hậu quả",
+     "explain": "Nghĩa như 否则、不然.",
+     "examples": [
+      {
+       "zh": "快点儿走吧，要不就赶不上火车了。",
+       "vi": "Đi nhanh lên, không thì lỡ tàu mất."
+      }
+     ]
+    },
+    {
+     "pattern": "要不 + gợi ý",
+     "explain": "Đưa ra một lựa chọn khác để người nghe cân nhắc.",
+     "examples": [
+      {
+       "zh": "今天太晚了，要不我们明天再去吧。",
+       "vi": "Hôm nay muộn quá rồi, hay là mai mình hẵng đi."
+      }
+     ]
+    }
+   ],
+   "id": "08-g3"
+  },
+  {
+   "title": "彼此 và 互相",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ quan hệ qua lại giữa hai bên.",
+   "compare": {
+    "same": "Trước động từ hai âm tiết thì thường thay được: 彼此 / 互相了解。",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Đại từ.",
+      "b": "Phó từ."
+     },
+     {
+      "aspect": "Chức năng",
+      "a": "Làm được chủ ngữ, tân ngữ, định ngữ: 彼此的想法、不分彼此。",
+      "b": "Chỉ làm trạng ngữ đứng trước động từ: 互相帮助。"
+     },
+     {
+      "aspect": "Dùng một mình",
+      "a": "Lặp lại để đáp lời khách sáo: 彼此彼此。",
+      "b": "Không dùng một mình."
+     }
+    ]
+   },
+   "id": "08-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "08-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "限制",
+    "节省",
+    "安慰",
+    "相处",
+    "喂养",
+    "吃亏",
+    "调皮",
+    "固定"
+   ],
+   "items": [
+    {
+     "q": "为了___时间，我们决定坐飞机去。",
+     "a": "节省"
+    },
+    {
+     "q": "朋友考试没考好，我们都去___他。",
+     "a": "安慰"
+    },
+    {
+     "q": "这个孩子很___，一刻也安静不下来。",
+     "a": "调皮"
+    },
+    {
+     "q": "他们俩性格不同，但是___得很好。",
+     "a": "相处"
+    },
+    {
+     "q": "这家饭馆每天的客人数量有___，要提前预订。",
+     "a": "限制"
+    },
+    {
+     "q": "他没有___的工作，收入也不稳定。",
+     "a": "固定"
+    },
+    {
+     "q": "做生意要诚实，不能让顾客___。",
+     "a": "吃亏"
+    },
+    {
+     "q": "这些小猫都是奶奶一个人___大的。",
+     "a": "喂养"
+    }
+   ]
+  },
+  {
+   "id": "08-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我们是多年的朋友，非常了解___的性格。",
+     "options": [
+      "彼此",
+      "互相"
+     ],
+     "a": 0,
+     "why": "Làm định ngữ (彼此的…) chỉ dùng được 彼此."
+    },
+    {
+     "q": "同学之间应该___帮助。",
+     "options": [
+      "彼此的",
+      "互相"
+     ],
+     "a": 1,
+     "why": "Trạng ngữ trước động từ; 彼此的 không đứng trước động từ."
+    },
+    {
+     "q": "你先休息一下吧，___我来开车。",
+     "options": [
+      "要不",
+      "倒"
+     ],
+     "a": 0,
+     "why": "Đưa ra gợi ý dùng 要不."
+    },
+    {
+     "q": "大家都觉得难，他___觉得很容易。",
+     "options": [
+      "倒",
+      "要不"
+     ],
+     "a": 0,
+     "why": "Trái với điều mọi người nghĩ: 倒."
+    }
+   ]
+  },
+  {
+   "id": "08-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A多穿点儿衣服，B出门C会D感冒的。",
+     "word": "要不",
+     "a": "B"
+    },
+    {
+     "q": "A这个办法B是C可以试一试D。",
+     "word": "倒",
+     "a": "B"
+    },
+    {
+     "q": "我们A认识很多年了，B一直C不分D。",
+     "word": "彼此",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "08-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "找来找去",
+      "也",
+      "没找到",
+      "那本书"
+     ],
+     "a": "我找来找去也没找到那本书。",
+     "vi": "Tôi tìm tới tìm lui cũng không thấy cuốn sách đó."
+    },
+    {
+     "words": [
+      "太远了",
+      "要不",
+      "我们",
+      "打车去",
+      "吧"
+     ],
+     "a": "太远了，要不我们打车去吧。",
+     "vi": "Xa quá, hay là mình đi taxi nhé."
+    },
+    {
+     "words": [
+      "这个主意",
+      "倒",
+      "是",
+      "不错"
+     ],
+     "a": "这个主意倒是不错。",
+     "vi": "Ý này thì cũng được đấy."
+    }
+   ]
+  },
+  {
+   "id": "08-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Một số thành ngữ ngày nay có nghĩa khác với nghĩa ban đầu.",
+     "a": "有些成语现在的意思跟原来的意思不一样。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nếu chỉ dựa vào nghĩa hiện đại để hiểu một thành ngữ cổ, chúng ta có thể hiểu sai.",
+     "a": "如果只靠现代的意思去理解古代的成语，我们可能会理解错。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "“朝三暮四” ban đầu không có nghĩa giống như cách người hiện đại sử dụng ngày nay.",
+     "a": "“朝三暮四”原来的意思跟现代人的用法并不一样。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cùng một từ ngữ, trong những hoàn cảnh khác nhau có thể có ý nghĩa khác nhau.",
+     "a": "同一个词语，在不同的情况下可能有不同的意思。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Khi học thành ngữ, chúng ta không chỉ cần nhớ nghĩa mà còn phải biết cách sử dụng.",
+     "a": "学习成语的时候，我们不仅要记住意思，还要知道怎么用。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "有些成语的古今意思并不完全相同。",
+     "a": "Nghĩa xưa và nay của một số thành ngữ không hoàn toàn giống nhau."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "“朝三暮四”这个成语在古代和现代有不同的意思。",
+     "a": "Thành ngữ “朝三暮四” ở thời cổ và thời nay có nghĩa khác nhau."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "学习成语时，我们应该注意它在不同语境中的用法。",
+     "a": "Khi học thành ngữ, chúng ta nên chú ý cách dùng của nó trong những ngữ cảnh khác nhau."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "如果不了解成语的历史背景，就很容易产生误解。",
+     "a": "Nếu không hiểu bối cảnh lịch sử của thành ngữ thì rất dễ hiểu lầm."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "语言会随着社会的发展而不断发生变化。",
+     "a": "Ngôn ngữ không ngừng thay đổi theo sự phát triển của xã hội."
+    }
+   ]
+  },
+  {
+   "id": "08-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "成语",
+      "固定",
+      "完整",
+      "喂养",
+      "猴子",
+      "相处",
+      "彼此",
+      "消费",
+      "限制",
+      "调皮",
+      "不足",
+      "倒",
+      "要不",
+      "吃亏",
+      "安慰"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,161 @@
+#L 15
+G|过|Ngoài làm trợ từ "đã từng", 过 còn là phó từ đứng trước tính từ, nghĩa là "quá, vượt mức".
+P|过 + tính từ một âm tiết|Vượt mức cần thiết: 过高、过早、过多、过快.
+E|你对孩子的要求过高了。|Bạn yêu cầu quá cao ở con.
+E|现在下结论还为时过早。|Bây giờ kết luận thì còn quá sớm.
+P|过于 + tính từ / động từ hai âm tiết|Trước từ hai âm tiết thì dùng 过于.
+E|他过于相信自己的判断。|Anh ấy quá tin vào phán đoán của mình.
+G|迟早|Phó từ nghĩa là "sớm muộn gì cũng", khẳng định việc chắc chắn sẽ xảy ra.
+P|迟早 + (会 / 要) + động từ|Hay đi với 会、要、得.
+E|你这样骗人，迟早会被发现的。|Bạn lừa người như vậy, sớm muộn cũng bị phát hiện.
+E|这个问题迟早要解决。|Vấn đề này sớm muộn gì cũng phải giải quyết.
+G|再三|Phó từ nghĩa là "nhiều lần, hết lần này đến lần khác".
+P|再三 + động từ|Đi với động từ nói năng, suy nghĩ: 再三强调、再三考虑、再三提醒.
+E|妈妈再三提醒我出门要带钥匙。|Mẹ nhắc đi nhắc lại tôi ra ngoài phải mang chìa khóa.
+P|động từ + 再三|Đứng sau một số động từ hai âm tiết: 考虑再三、犹豫再三.
+E|他考虑再三，最后还是决定留下。|Anh ấy cân nhắc mãi, cuối cùng vẫn quyết định ở lại.
+C|胜利 và 成功|Đều chỉ việc đạt được mục đích, kết quả tốt.|Đều dùng được với 取得: 取得胜利 / 取得成功。
+R|Phạm vi|Thắng đối thủ trong chiến tranh, thi đấu; hoặc hoàn thành một nhiệm vụ lớn.|Đạt kết quả như mong muốn trong mọi việc.
+R|Làm vị ngữ với 很|Không nói 很胜利.|Nói được: 很成功、非常成功。
+R|Kết hợp|胜利的消息、比赛的胜利。|成功的经验、试验成功了。
+F|派 守 骂 上当 阻止 挑战 轻视 讽刺
+I|公司___他去上海参加会议。|派
+I|士兵们日夜___着这座城市。|守
+I|孩子做错了事，你不应该___他，应该跟他讲道理。|骂
+I|这个价格便宜得不正常，小心___。|上当
+I|他想辞职，谁也___不了他。|阻止
+I|他喜欢___自己，总是选最难的任务。|挑战
+I|不要___任何一个对手。|轻视
+I|这幅画___了那些只爱钱的人。|讽刺
+Q|我们的球队最后取得了比赛的___。|胜利/成功|0|Thắng đối thủ trong thi đấu: 胜利.
+Q|这次手术非常___。|胜利/成功|1|Làm vị ngữ sau 非常 chỉ dùng được 成功.
+Q|只要坚持下去，你___会成功的。|迟早/再三|0|"Sớm muộn gì cũng": 迟早.
+Q|这双鞋___大，穿着不舒服。|过/再|0|过 + tính từ một âm tiết: quá mức.
+S|A老师B强调C考试时D不能看手机。|再三|B
+S|A不好好复习，B你C要D后悔的。|迟早|C
+S|A他把这件事B想得C简单D了。|过于|C
+O|他/迟早/会/明白/我的意思|他迟早会明白我的意思。|Sớm muộn gì anh ấy cũng hiểu ý tôi.
+O|我/再三/向他/表示/感谢|我再三向他表示感谢。|Tôi cảm ơn anh ấy hết lần này đến lần khác.
+O|你/不要/过于/紧张|你不要过于紧张。|Bạn đừng căng thẳng quá.
+T|Kể lại bài khóa bằng lời của bạn|纸上谈兵 军事 理论 作战 迟早 派 形势 命令 守 挑战 胜利 上当 再三 阻止 糊涂 盲目 轻视 讽刺
+#L 16
+G|即|Động từ văn viết nghĩa là "tức là, chính là"; cũng là phó từ nghĩa là "liền, ngay".
+P|A，即 B|B giải thích hoặc nói rõ A.
+E|春节，即农历新年，是中国最重要的节日。|Xuân tiết, tức Tết âm lịch, là ngày lễ quan trọng nhất của Trung Quốc.
+P|一 + động từ + 即 + động từ|Nghĩa như 就: hễ… là… ngay.
+E|这个道理一听即懂。|Đạo lý này nghe một lần là hiểu ngay.
+G|个别|Tính từ nghĩa là "cá biệt, riêng lẻ", chỉ số rất ít; cũng làm trạng ngữ nghĩa là "riêng từng người".
+P|个别 + danh từ|Rất ít, một vài.
+E|只有个别学生没有交作业。|Chỉ có vài học sinh cá biệt chưa nộp bài.
+P|个别 + động từ|Làm riêng với từng người.
+E|老师找他个别谈了话。|Thầy giáo gọi cậu ấy ra nói chuyện riêng.
+G|非|Phó từ phủ định văn viết nghĩa là "không phải"; cũng là tiền tố nghĩa là "phi, không".
+P|非 … 不可 / 非要 …|Nhất định phải; khăng khăng đòi.
+E|这件事非你去不可。|Việc này nhất định phải là bạn đi.
+E|我劝他休息，他非要继续干。|Tôi khuyên anh ấy nghỉ, anh ấy cứ nhất định làm tiếp.
+P|非 + danh từ / tính từ|Tiền tố: 非正式、非工作时间、非卖品.
+E|这是一次非正式的见面。|Đây là một buổi gặp không chính thức.
+C|临时 và 暂时|Đều chỉ thời gian ngắn, không lâu dài.|Đôi khi thay được: 临时 / 暂时住在朋友家。
+R|Nghĩa|Tạm, không chính thức; hoặc "sát giờ mới".|Trong một thời gian ngắn trước mắt.
+R|Làm định ngữ|临时工、临时会议 (không cần 的).|暂时的困难 (thường cần 的).
+R|Làm trạng ngữ|临时决定、临时改变: quyết định sát giờ.|暂时休息、暂时不去: lúc này tạm chưa.
+F|升 达到 存在 分析 表明 参与 采取 报道
+I|明天气温会___到三十五度。|升
+I|他的汉语水平已经___了五级。|达到
+I|这个计划还___一些问题。|存在
+I|我们应该认真___失败的原因。|分析
+I|调查结果___，多数人支持这个决定。|表明
+I|有两百多名志愿者___了这次活动。|参与
+I|政府已经___措施来解决交通问题。|采取
+I|今天的新闻___了这场比赛。|报道
+Q|飞机晚点了，我们___改变了计划。|临时/暂时|0|Thay đổi sát giờ, ngoài dự định: 临时.
+Q|这个问题我们___不讨论，以后再说。|临时/暂时|1|"Lúc này tạm chưa": 暂时.
+Q|这只是___现象，大部分人不是这样的。|个别/各自|0|"Cá biệt, số rất ít": 个别.
+Q|他___要一个人去，谁劝都不听。|非/别|0|非要: khăng khăng đòi.
+S|A北京大学，B北大，C是中国最著名的大学D之一。|即|B
+S|A这次考试B同学C没有通过D。|个别|B
+S|A今天的会议很重要，B你C参加D不可。|非|C
+O|只有/个别/人/不同意/这个意见|只有个别人不同意这个意见。|Chỉ có vài người cá biệt không đồng ý với ý kiến này.
+O|这个工作/非/他/不可|这个工作非他不可。|Công việc này nhất định phải là anh ấy.
+O|我们/临时/决定/去/爬山|我们临时决定去爬山。|Chúng tôi quyết định đi leo núi vào phút chót.
+T|Kể lại bài khóa bằng lời của bạn|节食 报道 营养 模式 波动 参与 分析 跟踪 成果 即 达到 明显 补偿 趋势 差异 个别 表明 临时 借口 采取 措施
+#L 17
+G|以|Giới từ và liên từ văn viết, có ba cách dùng thường gặp.
+P|以 + danh từ + động từ|Nghĩa như 用、凭、按照: bằng, dựa vào, theo.
+E|他以优秀的成绩考上了大学。|Anh ấy đỗ đại học với thành tích xuất sắc.
+E|我们应该以积极的态度面对困难。|Chúng ta nên đối mặt khó khăn bằng thái độ tích cực.
+P|…，以 + mục đích|Nghĩa là "để, nhằm".
+E|公司增加了员工，以提高服务质量。|Công ty tăng thêm nhân viên để nâng cao chất lượng phục vụ.
+P|以 … 为 …|Lấy… làm…, coi… là….
+E|这次活动以学生为主。|Hoạt động lần này lấy học sinh làm chính.
+G|平常|Tính từ nghĩa là "bình thường, không có gì đặc biệt"; cũng là danh từ chỉ thời gian nghĩa là "mọi khi, ngày thường".
+P|很平常 / 平常的 + danh từ|Không có gì đặc biệt.
+E|这只是一件很平常的小事。|Đây chỉ là một việc nhỏ rất bình thường.
+P|平常 + mệnh đề|Lúc bình thường, mọi khi.
+E|他平常很少说话，今天却说了很多。|Mọi khi anh ấy ít nói, hôm nay lại nói rất nhiều.
+G|宁可|Phó từ nghĩa là "thà", chọn một điều sau khi cân nhắc thiệt hơn.
+P|宁可 A，也不 B|Thà chịu A chứ không chịu B.
+E|我宁可走路，也不坐他的车。|Tôi thà đi bộ chứ không ngồi xe của anh ta.
+P|宁可 A，也要 B|Thà chịu A để đạt được B.
+E|他宁可少睡一会儿，也要把工作做完。|Anh ấy thà ngủ ít đi một chút cũng phải làm xong việc.
+C|忽视 và 轻视|Đều là động từ chỉ việc không coi trọng.|Hai từ khác nhau về lý do không coi trọng, ít khi thay được.
+R|Nghĩa|Không để ý, bỏ sót, thường là vô ý.|Coi thường, đánh giá thấp, có chủ ý.
+R|Đối tượng|Sự việc, vấn đề: 忽视健康、忽视细节。|Người hoặc việc: 轻视对手、轻视体力劳动。
+R|Nguyên nhân|Do sơ suất.|Do thái độ kiêu ngạo, xem nhẹ.
+F|投入 争取 度过 告别 推荐 主持 运用 集中
+I|他把全部精力都___到了工作中。|投入
+I|我们要___在月底以前完成任务。|争取
+I|我在农村___了快乐的童年。|度过
+I|他挥着手跟朋友们___。|告别
+I|你能给我___一本好看的小说吗？|推荐
+I|今晚的晚会由王老师___。|主持
+I|学过的知识要学会在生活中___。|运用
+I|上课的时候要___注意力。|集中
+Q|我们不能___任何一个对手。|忽视/轻视|1|Coi thường người khác: 轻视.
+Q|很多人只顾工作，___了自己的健康。|忽视/轻视|0|Vô ý không để tâm tới: 忽视.
+Q|我___多花点儿钱，也要买质量好的。|宁可/可能|0|宁可…也要…: thà… cũng phải….
+Q|他___不喝酒，只有过节的时候才喝一点儿。|平常/平均|0|"Mọi khi, ngày thường": 平常.
+S|A他B全班第一名的成绩C通过了D考试。|以|B
+S|A我B自己多做一点儿，C也不想D麻烦别人。|宁可|B
+S|A这家饭馆B人不多，C周末D要排队。|平常|B
+O|我/宁可/不睡觉/也要/看完/这本书|我宁可不睡觉，也要看完这本书。|Tôi thà không ngủ cũng phải đọc xong cuốn sách này.
+O|这次比赛/以/年轻人/为主|这次比赛以年轻人为主。|Cuộc thi lần này chủ yếu là người trẻ.
+O|他/平常/不太/爱/说话|他平常不太爱说话。|Mọi khi anh ấy không thích nói nhiều.
+T|Kể lại bài khóa bằng lời của bạn|事物 高峰 终点 深刻 戏剧 投入 以 争取 忽视 魅力 度过 告别 平常 依然 评价 运用 宁可 体会
+#L 18
+G|极其|Phó từ chỉ mức độ cao nhất, nghĩa là "cực kỳ, vô cùng", dùng trong văn viết.
+P|极其 + tính từ / động từ tâm lý hai âm tiết|Chỉ bổ nghĩa cho từ nhiều âm tiết; trước từ một âm tiết dùng 极.
+E|这是一个极其重要的决定。|Đây là một quyết định cực kỳ quan trọng.
+E|他对工作极其认真。|Anh ấy cực kỳ nghiêm túc với công việc.
+G|其余|Đại từ nghĩa là "phần còn lại, những cái còn lại".
+P|其余 (的) + danh từ / 其余的 + 都 …|Chỉ phần còn lại sau khi đã nêu một phần.
+E|我只认识其中两个人，其余的都不认识。|Tôi chỉ quen hai người trong đó, số còn lại đều không quen.
+E|你留下，其余的人可以走了。|Bạn ở lại, những người còn lại có thể về.
+G|可见|Liên từ nghĩa là "có thể thấy, đủ thấy", rút ra kết luận từ điều vừa nói.
+P|…，可见 + kết luận|Đứng đầu vế sau; cũng nói 由此可见.
+E|他连这个字都不认识，可见没有认真复习。|Đến chữ này cậu ấy cũng không biết, đủ thấy đã không ôn bài nghiêm túc.
+E|这么多人排队，可见这家店很受欢迎。|Đông người xếp hàng thế này, đủ thấy quán này rất được ưa chuộng.
+C|目前 và 现在|Đều chỉ thời điểm hiện tại.|Khi nói về tình hình hiện nay thì thay được: 目前 / 现在的情况。
+R|Phạm vi thời gian|Giai đoạn trước mắt, tính đến lúc này.|Rộng: từ khoảnh khắc đang nói cho tới cả thời nay.
+R|Văn phong|Văn viết, trang trọng.|Dùng cả khi nói và viết.
+R|Chỉ đúng khoảnh khắc đang nói|Không dùng: không nói 目前几点。|Dùng được: 现在几点？
+F|欣赏 设计 签 确认 分辨 挥 调整 出自
+I|周末我喜欢一边喝茶一边___音乐。|欣赏
+I|这座大楼是一位年轻的工程师___的。|设计
+I|请在这份合同上___上您的名字。|签
+I|出发前请再___一下航班的时间。|确认
+I|这对双胞胎长得太像了，很难___。|分辨
+I|他站在门口向我们___手。|挥
+I|这句话___一本古代的书。|出自
+I|根据大家的意见，我们___了计划。|调整
+Q|___我们还没有收到任何消息。|目前/目的|0|"Tính đến lúc này": 目前.
+Q|请问，___几点了？|目前/现在|1|Hỏi đúng khoảnh khắc đang nói chỉ dùng được 现在.
+Q|这次任务___困难，大家要有准备。|极其/极了|0|Đứng trước tính từ hai âm tiết: 极其.
+Q|他每天都最早到公司，___他工作很努力。|可见/可是|0|Rút ra kết luận từ điều vừa nêu: 可见.
+S|A五个苹果我吃了两个，B三个C放在D冰箱里了。|其余|B
+S|A这部电影B感人，C很多观众都D哭了。|极其|B
+S|A他一次也没迟到过，B他C是个D很守时的人。|可见|B
+O|其余的/问题/我们/明天/再讨论|其余的问题我们明天再讨论。|Những vấn đề còn lại mai chúng ta bàn tiếp.
+O|目前/情况/还/不太/清楚|目前情况还不太清楚。|Hiện tình hình vẫn chưa rõ lắm.
+O|这里的/风景/极其/美丽|这里的风景极其美丽。|Phong cảnh ở đây cực kỳ đẹp.
+T|Kể lại bài khóa bằng lời của bạn|抽象 古典 欣赏 规则 作品 极其 神秘 自由 设计 幅 业余 其余 身份 确认 分辨 可见 调整 布局 事实 证据

@@ -1,0 +1,323 @@
+{
+ "title": {
+  "zh": "锯掉生活的“筐底”",
+  "vi": "Cưa bỏ \"Đáy giỏ\" cuộc sống"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/13-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/13-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/13-1.mp3",
+   "audio/bai-tap-1/13-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   108,
+   109,
+   110
+  ],
+  "text": [
+   {
+    "page": 108,
+    "top": 0.588,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 109,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 110,
+    "top": 0.07,
+    "bottom": 0.547,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "何况",
+   "kind": "cách dùng",
+   "summary": "Liên từ dùng trong câu hỏi tu từ, nghĩa là \"huống chi, huống hồ\".",
+   "points": [
+    {
+     "pattern": "(连) A 都 / 也 …，何况 B (呢)？",
+     "explain": "A còn như thế thì B càng không cần nói.",
+     "examples": [
+      {
+       "zh": "这个问题连老师都回答不了，何况学生呢？",
+       "vi": "Câu này đến thầy còn không trả lời được, huống chi học sinh?"
+      },
+      {
+       "zh": "平时这里都很堵，何况是节假日。",
+       "vi": "Ngày thường ở đây đã tắc, huống hồ là ngày lễ."
+      }
+     ]
+    }
+   ],
+   "id": "13-g1"
+  },
+  {
+   "title": "何必",
+   "kind": "cách dùng",
+   "summary": "Phó từ dùng trong câu hỏi tu từ, nghĩa là \"hà tất, việc gì phải\", ý là không cần thiết.",
+   "points": [
+    {
+     "pattern": "何必 + động từ (呢)？",
+     "explain": "Khuyên ai đó không cần làm như vậy.",
+     "examples": [
+      {
+       "zh": "都是小事，何必生气呢？",
+       "vi": "Toàn chuyện nhỏ, việc gì phải giận?"
+      },
+      {
+       "zh": "离得这么近，何必开车去？",
+       "vi": "Gần thế này, cần gì phải lái xe đi?"
+      }
+     ]
+    }
+   ],
+   "id": "13-g2"
+  },
+  {
+   "title": "多亏",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"may nhờ, may mà có\", chỉ việc nhờ ai hoặc điều gì mà tránh được chuyện xấu.",
+   "points": [
+    {
+     "pattern": "多亏 (了) + người / sự việc，(才 / 要不然) …",
+     "explain": "Vế sau nêu kết quả tốt, hoặc hậu quả đã tránh được.",
+     "examples": [
+      {
+       "zh": "多亏你提醒我，要不然我就忘了。",
+       "vi": "May mà bạn nhắc, không thì tôi quên mất."
+      },
+      {
+       "zh": "多亏了医生，他才活了下来。",
+       "vi": "May nhờ bác sĩ, anh ấy mới sống sót."
+      }
+     ]
+    }
+   ],
+   "id": "13-g3"
+  },
+  {
+   "title": "激烈 và 强烈",
+   "kind": "phân biệt",
+   "summary": "Đều là tính từ chỉ mức độ mạnh.",
+   "compare": {
+    "same": "Hai từ đi với những danh từ khác nhau, hiếm khi thay được cho nhau.",
+    "rows": [
+     {
+      "aspect": "Đối tượng",
+      "a": "Hành động, cuộc đối đầu: 比赛、竞争、争论、战斗。",
+      "b": "Cảm giác, mong muốn, ánh sáng, phản ứng: 愿望、要求、阳光、反应。"
+     },
+     {
+      "aspect": "Làm trạng ngữ",
+      "a": "Ít dùng.",
+      "b": "Dùng được: 强烈要求、强烈反对。"
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "竞争很激烈。",
+      "b": "他有强烈的好奇心。"
+     }
+    ]
+   },
+   "id": "13-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "13-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "踩",
+    "装",
+    "训练",
+    "缺乏",
+    "重复",
+    "启发",
+    "安装",
+    "造成"
+   ],
+   "items": [
+    {
+     "q": "对不起，我不小心___了你的脚。",
+     "a": "踩"
+    },
+    {
+     "q": "箱子太小了，___不下这么多衣服。",
+     "a": "装"
+    },
+    {
+     "q": "运动员们每天都要___六个小时。",
+     "a": "训练"
+    },
+    {
+     "q": "他学习很努力，就是___自信。",
+     "a": "缺乏"
+    },
+    {
+     "q": "请你把刚才的话再___一遍。",
+     "a": "重复"
+    },
+    {
+     "q": "老师的话给了我很大的___。",
+     "a": "启发"
+    },
+    {
+     "q": "工人正在给我们家___空调。",
+     "a": "安装"
+    },
+    {
+     "q": "这次事故是司机太累___的。",
+     "a": "造成"
+    }
+   ]
+  },
+  {
+   "id": "13-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这场比赛非常___，两个队都想赢。",
+     "options": [
+      "激烈",
+      "强烈"
+     ],
+     "a": 0,
+     "why": "Tả cuộc thi đấu, cạnh tranh dùng 激烈."
+    },
+    {
+     "q": "大家___要求改变这个规定。",
+     "options": [
+      "激烈",
+      "强烈"
+     ],
+     "a": 1,
+     "why": "Làm trạng ngữ trước 要求 dùng 强烈."
+    },
+    {
+     "q": "他已经道歉了，你___还生气呢？",
+     "options": [
+      "何必",
+      "何况"
+     ],
+     "a": 0,
+     "why": "\"Việc gì phải\": 何必."
+    },
+    {
+     "q": "___你帮忙，我才按时完成了任务。",
+     "options": [
+      "多亏",
+      "何必"
+     ],
+     "a": 0,
+     "why": "Nhờ ai mà có kết quả tốt: 多亏."
+    }
+   ]
+  },
+  {
+   "id": "13-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A大人B都搬不动，C一个孩子D呢？",
+     "word": "何况",
+     "a": "C"
+    },
+    {
+     "q": "A你B为这点儿小事C跟他D吵架呢？",
+     "word": "何必",
+     "a": "B"
+    },
+    {
+     "q": "A他B带了伞，C我们才没被D雨淋湿。",
+     "word": "多亏",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "13-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "多亏",
+      "你",
+      "来得",
+      "及时"
+     ],
+     "a": "多亏你来得及时。",
+     "vi": "May mà bạn đến kịp."
+    },
+    {
+     "words": [
+      "你",
+      "何必",
+      "这么",
+      "着急",
+      "呢"
+     ],
+     "a": "你何必这么着急呢？",
+     "vi": "Bạn việc gì phải sốt ruột thế?"
+    },
+    {
+     "words": [
+      "这次",
+      "竞争",
+      "相当",
+      "激烈"
+     ],
+     "a": "这次竞争相当激烈。",
+     "vi": "Cuộc cạnh tranh lần này khá gay gắt."
+    }
+   ]
+  },
+  {
+   "id": "13-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "锯",
+      "筐",
+      "训练",
+      "缺乏",
+      "启发",
+      "安装",
+      "栏杆",
+      "投篮",
+      "重复",
+      "激烈",
+      "何况",
+      "好奇",
+      "何必",
+      "多亏",
+      "困扰",
+      "思维",
+      "阻碍"
+     ]
+    }
+   ]
+  }
+ ]
+}

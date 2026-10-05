@@ -1,0 +1,410 @@
+{
+ "title": {
+  "zh": "济南的泉水",
+  "vi": "Nước suối Tế Nam"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/05-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/05-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/05-1.mp3",
+   "audio/bai-tap-1/05-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   36,
+   37,
+   38
+  ],
+  "text": [
+   {
+    "page": 36,
+    "top": 0.597,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 37,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 38,
+    "top": 0.07,
+    "bottom": 0.791,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "起来",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ xu hướng; ngoài nghĩa \"lên, dậy\" còn có ba nghĩa mở rộng thường gặp.",
+   "points": [
+    {
+     "pattern": "động từ / tính từ + 起来 (bắt đầu và tiếp diễn)",
+     "explain": "Hành động, trạng thái bắt đầu rồi tiếp tục.",
+     "examples": [
+      {
+       "zh": "听了这个笑话，大家都笑了起来。",
+       "vi": "Nghe chuyện cười ấy, mọi người đều bật cười."
+      },
+      {
+       "zh": "天气慢慢暖和起来了。",
+       "vi": "Thời tiết đang dần ấm lên."
+      }
+     ]
+    },
+    {
+     "pattern": "看 / 听 / 说 / 做 + 起来 (đánh giá)",
+     "explain": "Nêu nhận xét, ấn tượng khi xét từ một mặt nào đó.",
+     "examples": [
+      {
+       "zh": "这个办法听起来不错。",
+       "vi": "Cách này nghe có vẻ ổn."
+      },
+      {
+       "zh": "这件事说起来容易，做起来难。",
+       "vi": "Việc này nói thì dễ, làm mới khó."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 起来 (gom lại, cất đi)",
+     "explain": "Chỉ sự tập trung, thu lại: 收起来、藏起来、加起来.",
+     "examples": [
+      {
+       "zh": "他把信藏了起来。",
+       "vi": "Anh ấy giấu lá thư đi."
+      }
+     ]
+    }
+   ],
+   "id": "05-g1"
+  },
+  {
+   "title": "于",
+   "kind": "cách dùng",
+   "summary": "Giới từ văn viết, đứng sau động từ hoặc tính từ để dẫn ra thời gian, nơi chốn, đối tượng.",
+   "points": [
+    {
+     "pattern": "động từ + 于 + thời gian / nơi chốn",
+     "explain": "Tương đương 在.",
+     "examples": [
+      {
+       "zh": "他出生于1990年。",
+       "vi": "Anh ấy sinh năm 1990."
+      },
+      {
+       "zh": "这座城市位于中国的东部。",
+       "vi": "Thành phố này nằm ở miền đông Trung Quốc."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ / tính từ + 于 + đối tượng",
+     "explain": "Tương đương 对、向、从: 有利于、善于、来源于.",
+     "examples": [
+      {
+       "zh": "多运动有利于健康。",
+       "vi": "Vận động nhiều có lợi cho sức khỏe."
+      }
+     ]
+    }
+   ],
+   "id": "05-g2"
+  },
+  {
+   "title": "从而",
+   "kind": "cách dùng",
+   "summary": "Liên từ văn viết: vế trước là cách làm hoặc nguyên nhân, vế sau là kết quả đạt được nhờ đó.",
+   "points": [
+    {
+     "pattern": "…，从而 + kết quả",
+     "explain": "Hai vế thường chung chủ ngữ; 从而 đứng đầu vế sau.",
+     "examples": [
+      {
+       "zh": "他每天坚持练习，从而提高了口语水平。",
+       "vi": "Ngày nào anh ấy cũng kiên trì luyện tập, nhờ đó nâng cao được khả năng nói."
+      },
+      {
+       "zh": "公司改进了服务，从而赢得了更多顾客。",
+       "vi": "Công ty cải tiến dịch vụ, nhờ vậy giành được nhiều khách hàng hơn."
+      }
+     ]
+    }
+   ],
+   "id": "05-g3"
+  },
+  {
+   "title": "美丽 và 优美",
+   "kind": "phân biệt",
+   "summary": "Đều là tính từ nghĩa là \"đẹp\".",
+   "compare": {
+    "same": "Đều tả được phong cảnh: 美丽 / 优美的风景。",
+    "rows": [
+     {
+      "aspect": "Đối tượng",
+      "a": "Rộng: người, cảnh vật, đồ vật, điều trừu tượng.",
+      "b": "Cảnh vật, tư thế, động tác, âm nhạc, lời văn."
+     },
+     {
+      "aspect": "Tả người",
+      "a": "Dùng được: 美丽的姑娘。",
+      "b": "Không tả dung mạo; chỉ tả dáng, động tác: 优美的舞姿。"
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Đẹp nói chung.",
+      "b": "Đẹp và tao nhã, hài hòa."
+     }
+    ]
+   },
+   "id": "05-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "05-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "救",
+    "晕",
+    "抢",
+    "埋",
+    "碰",
+    "挡",
+    "冲",
+    "充满"
+   ],
+   "items": [
+    {
+     "q": "医生及时赶到，___了他一命。",
+     "a": "救"
+    },
+    {
+     "q": "她坐船的时候常常会头___。",
+     "a": "晕"
+    },
+    {
+     "q": "孩子们的眼睛里___了好奇。",
+     "a": "充满"
+    },
+    {
+     "q": "你站在这儿___住了我，我什么也看不见。",
+     "a": "挡"
+    },
+    {
+     "q": "小狗把骨头___在了院子里的树下。",
+     "a": "埋"
+    },
+    {
+     "q": "他不小心___倒了桌上的杯子。",
+     "a": "碰"
+    },
+    {
+     "q": "大雨把路上的土都___走了。",
+     "a": "冲"
+    },
+    {
+     "q": "别跟弟弟___玩具，你是哥哥。",
+     "a": "抢"
+    }
+   ]
+  },
+  {
+   "id": "05-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这件衣服看___很贵，其实很便宜。",
+     "options": [
+      "起来",
+      "出来"
+     ],
+     "a": 0,
+     "why": "Nêu ấn tượng, đánh giá dùng 看起来."
+    },
+    {
+     "q": "她跳舞的动作非常___。",
+     "options": [
+      "美丽",
+      "优美"
+     ],
+     "a": 1,
+     "why": "Tả động tác, tư thế dùng 优美."
+    },
+    {
+     "q": "经常开窗有利___室内空气流通。",
+     "options": [
+      "于",
+      "从"
+     ],
+     "a": 0,
+     "why": "有利于 là kết cấu cố định."
+    },
+    {
+     "q": "他认真听取了大家的意见，___改进了自己的计划。",
+     "options": [
+      "从而",
+      "反而"
+     ],
+     "a": 0,
+     "why": "Vế sau là kết quả đạt được nhờ vế trước: 从而."
+    }
+   ]
+  },
+  {
+   "id": "05-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A一想到明天的面试，他B就C紧张D了。",
+     "word": "起来",
+     "a": "D"
+    },
+    {
+     "q": "A这位作家B毕业C北京大学D。",
+     "word": "于",
+     "a": "C"
+    },
+    {
+     "q": "A他们修了一条新路，B改善了C当地的D交通。",
+     "word": "从而",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "05-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "孩子们",
+      "高兴得",
+      "跳了",
+      "起来"
+     ],
+     "a": "孩子们高兴得跳了起来。",
+     "vi": "Bọn trẻ vui đến mức nhảy cẫng lên."
+    },
+    {
+     "words": [
+      "我的家乡",
+      "位于",
+      "中国",
+      "南部"
+     ],
+     "a": "我的家乡位于中国南部。",
+     "vi": "Quê tôi nằm ở miền nam Trung Quốc."
+    },
+    {
+     "words": [
+      "他",
+      "仔细检查",
+      "从而",
+      "减少了",
+      "错误"
+     ],
+     "a": "他仔细检查，从而减少了错误。",
+     "vi": "Anh ấy kiểm tra kỹ, nhờ đó giảm được lỗi."
+    }
+   ]
+  },
+  {
+   "id": "05-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Tế Nam nổi tiếng với rất nhiều con suối đẹp.",
+     "a": "济南以众多美丽的泉水而闻名。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nước suối ở đây trong đến mức có thể nhìn thấy những viên đá dưới đáy.",
+     "a": "这里的泉水清得能看见水底的石头。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Vào mùa xuân, rất nhiều du khách đến Tế Nam để ngắm cảnh.",
+     "a": "春天，很多游客到济南来欣赏风景。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Những con suối không chỉ mang lại vẻ đẹp cho thành phố mà còn trở thành một phần văn hóa của nơi đây.",
+     "a": "泉水不仅给城市带来了美景，而且成了当地文化的一部分。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nếu có cơ hội đến Sơn Đông, tôi nhất định muốn đến Tế Nam một lần.",
+     "a": "如果有机会去山东，我一定要去一次济南。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "济南是一座非常有名的泉城。",
+     "a": "Tế Nam là một \"thành phố suối\" rất nổi tiếng."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "济南的泉水清澈而美丽。",
+     "a": "Nước suối ở Tế Nam trong vắt và đẹp."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "很多游客来到这里，就是为了看看著名的泉水。",
+     "a": "Rất nhiều du khách đến đây chính là để ngắm những con suối nổi tiếng."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "泉水给这座城市带来了独特的魅力。",
+     "a": "Nước suối mang lại cho thành phố này một sức hấp dẫn độc đáo."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "如果有机会，我一定要去济南看看。",
+     "a": "Nếu có cơ hội, tôi nhất định phải đến Tế Nam xem một chuyến."
+    }
+   ]
+  },
+  {
+   "id": "05-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "悠久",
+      "记载",
+      "描写",
+      "赞美",
+      "传说",
+      "善良",
+      "救",
+      "抢",
+      "如今",
+      "分布",
+      "独特",
+      "形成",
+      "从而"
+     ]
+    }
+   ]
+  }
+ ]
+}

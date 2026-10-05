@@ -1,0 +1,467 @@
+{
+ "title": {
+  "zh": "别样鲁迅",
+  "vi": "Một Lỗ Tấn khác"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/09-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/09-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/09-1.mp3",
+   "audio/bai-tap-1/09-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   73,
+   74,
+   75,
+   76
+  ],
+  "text": [
+   {
+    "page": 73,
+    "top": 0.656,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 74,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 75,
+    "top": 0.07,
+    "bottom": 0.488,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "算",
+   "kind": "cách dùng",
+   "summary": "Ngoài nghĩa \"tính toán\", còn có nghĩa \"được coi là\" và \"thôi, bỏ qua\".",
+   "points": [
+    {
+     "pattern": "算 (是) + danh từ / tính từ",
+     "explain": "Coi là, có thể xếp vào loại.",
+     "examples": [
+      {
+       "zh": "他算是我们班汉语最好的学生。",
+       "vi": "Cậu ấy được coi là học sinh giỏi tiếng Trung nhất lớp tôi."
+      },
+      {
+       "zh": "今天不算冷。",
+       "vi": "Hôm nay chưa kể là lạnh."
+      }
+     ]
+    },
+    {
+     "pattern": "算了",
+     "explain": "Thôi, bỏ đi, không tính toán nữa.",
+     "examples": [
+      {
+       "zh": "算了，别跟他生气了。",
+       "vi": "Thôi, đừng giận anh ấy nữa."
+      }
+     ]
+    },
+    {
+     "pattern": "说了算 / 说话算数",
+     "explain": "Là người quyết định; giữ lời.",
+     "examples": [
+      {
+       "zh": "这件事谁说了算？",
+       "vi": "Việc này ai là người quyết định?"
+      }
+     ]
+    }
+   ],
+   "id": "09-g1"
+  },
+  {
+   "title": "作为",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"với tư cách là\"; cũng là động từ nghĩa là \"coi là, lấy làm\".",
+   "points": [
+    {
+     "pattern": "作为 + thân phận，…",
+     "explain": "Đứng đầu câu, nêu thân phận, vai trò của chủ ngữ.",
+     "examples": [
+      {
+       "zh": "作为老师，他对每个学生都很负责。",
+       "vi": "Là giáo viên, ông ấy rất có trách nhiệm với từng học sinh."
+      },
+      {
+       "zh": "作为朋友，我应该告诉你真相。",
+       "vi": "Với tư cách bạn bè, tôi nên nói cho bạn biết sự thật."
+      }
+     ]
+    },
+    {
+     "pattern": "把 + A + 作为 + B",
+     "explain": "Coi A là B, lấy A làm B.",
+     "examples": [
+      {
+       "zh": "他把跑步作为每天的习惯。",
+       "vi": "Anh ấy lấy chạy bộ làm thói quen hằng ngày."
+      }
+     ]
+    }
+   ],
+   "id": "09-g2"
+  },
+  {
+   "title": "曾经",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ một việc hoặc tình trạng từng có trong quá khứ, nay đã kết thúc.",
+   "points": [
+    {
+     "pattern": "曾经 + động từ + 过",
+     "explain": "Thường đi với 过. Phủ định dùng 不曾、未曾 hoặc 没有…过, không nói 不曾经.",
+     "examples": [
+      {
+       "zh": "我曾经在上海工作过两年。",
+       "vi": "Tôi từng làm việc ở Thượng Hải hai năm."
+      },
+      {
+       "zh": "他们曾经是很好的朋友。",
+       "vi": "Họ đã từng là bạn rất thân."
+      }
+     ]
+    }
+   ],
+   "id": "09-g3"
+  },
+  {
+   "title": "亲自 và 自己",
+   "kind": "phân biệt",
+   "summary": "Đều nhấn mạnh việc do chính người đó làm.",
+   "compare": {
+    "same": "Trước động từ đôi khi thay được: 他亲自 / 自己做了这道菜。",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Phó từ.",
+      "b": "Đại từ."
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Nhấn mạnh vì coi trọng nên trực tiếp làm, không nhờ người khác; hay dùng cho người có địa vị.",
+      "b": "Chỉ bản thân nói chung, không có sắc thái coi trọng."
+     },
+     {
+      "aspect": "Chức năng",
+      "a": "Chỉ làm trạng ngữ: 亲自去、亲自检查。",
+      "b": "Làm chủ ngữ, tân ngữ, định ngữ: 相信自己、自己的事。"
+     }
+    ]
+   },
+   "id": "09-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "09-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "戒",
+    "保存",
+    "招待",
+    "形容",
+    "位于",
+    "讲究",
+    "光临",
+    "突出"
+   ],
+   "items": [
+    {
+     "q": "医生劝他把烟___了。",
+     "a": "戒"
+    },
+    {
+     "q": "这些老照片他一直___得很好。",
+     "a": "保存"
+    },
+    {
+     "q": "朋友来家里做客，她做了一桌子菜___他们。",
+     "a": "招待"
+    },
+    {
+     "q": "那里的风景美得无法用语言___。",
+     "a": "形容"
+    },
+    {
+     "q": "我们学校___城市的北边。",
+     "a": "位于"
+    },
+    {
+     "q": "他穿衣服很___，每件都要搭配好。",
+     "a": "讲究"
+    },
+    {
+     "q": "欢迎各位___本店！",
+     "a": "光临"
+    },
+    {
+     "q": "他在这次比赛中的表现非常___。",
+     "a": "突出"
+    }
+   ]
+  },
+  {
+   "id": "09-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这么重要的事，经理决定___去一趟。",
+     "options": [
+      "亲自",
+      "自己的"
+     ],
+     "a": 0,
+     "why": "Nhấn mạnh coi trọng nên trực tiếp làm: 亲自."
+    },
+    {
+     "q": "你要相信___，一定能成功。",
+     "options": [
+      "亲自",
+      "自己"
+     ],
+     "a": 1,
+     "why": "Làm tân ngữ chỉ dùng được 自己."
+    },
+    {
+     "q": "我___学过一年法语，可是现在都忘了。",
+     "options": [
+      "曾经",
+      "已经"
+     ],
+     "a": 0,
+     "why": "Việc từng có trong quá khứ, nay không còn: 曾经."
+    },
+    {
+     "q": "___班长，他总是第一个到教室。",
+     "options": [
+      "作为",
+      "因为"
+     ],
+     "a": 0,
+     "why": "Nêu thân phận ở đầu câu: 作为."
+    }
+   ]
+  },
+  {
+   "id": "09-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A在我们公司，B他C是D最年轻的经理了。",
+     "word": "算",
+     "a": "C"
+    },
+    {
+     "q": "A他B来过C这个城市D。",
+     "word": "曾经",
+     "a": "B"
+    },
+    {
+     "q": "A一名医生，B他C把病人的健康D放在第一位。",
+     "word": "作为",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "09-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "这里",
+      "曾经",
+      "是",
+      "一所学校"
+     ],
+     "a": "这里曾经是一所学校。",
+     "vi": "Nơi này từng là một ngôi trường."
+    },
+    {
+     "words": [
+      "作为",
+      "学生",
+      "我们",
+      "应该",
+      "保护",
+      "环境"
+     ],
+     "a": "作为学生，我们应该保护环境。",
+     "vi": "Là học sinh, chúng ta nên bảo vệ môi trường."
+    },
+    {
+     "words": [
+      "校长",
+      "亲自",
+      "给获奖的学生",
+      "发了",
+      "奖"
+     ],
+     "a": "校长亲自给获奖的学生发了奖。",
+     "vi": "Hiệu trưởng đích thân trao giải cho học sinh đoạt giải."
+    }
+   ]
+  },
+  {
+   "id": "09-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Khi nhắc đến Lỗ Tấn, nhiều người thường nghĩ đến một nhà văn nghiêm túc.",
+     "a": "提到鲁迅，很多人往往会想到一位严肃的作家。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nhưng trong cuộc sống, Lỗ Tấn cũng có một khía cạnh rất gần gũi và thú vị.",
+     "a": "可是在生活中，鲁迅也有很亲切、很有趣的一面。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Qua những câu chuyện nhỏ trong cuộc sống, chúng ta có thể hiểu ông từ một góc độ khác.",
+     "a": "通过生活中的一些小故事，我们可以从另一个角度了解他。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Những chi tiết này khiến hình ảnh Lỗ Tấn trở nên sinh động hơn.",
+     "a": "这些细节让鲁迅的形象变得更加生动。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Một người nổi tiếng cũng có cuộc sống bình thường giống như những người khác.",
+     "a": "名人也跟其他人一样，过着普通的生活。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "提到鲁迅，很多人首先想到的是一位著名的文学家。",
+     "a": "Nhắc đến Lỗ Tấn, điều đầu tiên nhiều người nghĩ tới là một nhà văn nổi tiếng."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "但是生活中的鲁迅也有非常有趣的一面。",
+     "a": "Nhưng Lỗ Tấn trong đời thường cũng có một mặt rất thú vị."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "从一些生活中的小事，我们可以看到一个不一样的鲁迅。",
+     "a": "Từ vài chuyện nhỏ trong cuộc sống, chúng ta có thể thấy một Lỗ Tấn khác."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "这些细节让我们更加了解鲁迅。",
+     "a": "Những chi tiết này giúp chúng ta hiểu Lỗ Tấn hơn."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "一个伟大的人也有普通人的生活。",
+     "a": "Một con người vĩ đại cũng có cuộc sống của người bình thường."
+    }
+   ]
+  },
+  {
+   "id": "09-review",
+   "type": "translate",
+   "title": "Dịch câu tổng hợp bài 1–9 (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Chỉ khi trưởng thành, chúng ta mới thực sự hiểu được tình yêu của bố mẹ.",
+     "a": "只有长大以后，我们才能真正理解父母的爱。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cho dù cuộc sống có thay đổi như thế nào, gia đình vẫn luôn là nơi chúng ta có thể trở về.",
+     "a": "不管生活怎么变化，家永远是我们可以回去的地方。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nếu không hài lòng với lựa chọn hiện tại, bạn vẫn có thể lựa chọn lại.",
+     "a": "如果对现在的选择不满意，你还可以重新选择。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Những câu chuyện xưa không chỉ giúp chúng ta hiểu lịch sử mà còn chứa đựng nhiều bài học về cuộc sống.",
+     "a": "古老的故事不仅能帮助我们了解历史，还包含着很多生活的道理。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cùng một thành ngữ, nếu đặt trong những hoàn cảnh khác nhau thì ý nghĩa có thể hoàn toàn khác nhau.",
+     "a": "同一个成语，放在不同的情况下，意思可能完全不同。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Qua những chi tiết nhỏ, chúng ta có thể hiểu một người sâu sắc hơn.",
+     "a": "通过细节，我们可以更深入地了解一个人。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mặc dù xã hội không ngừng thay đổi, nhưng một số giá trị truyền thống vẫn đáng để chúng ta gìn giữ.",
+     "a": "虽然社会在不断变化，但是有些传统的价值仍然值得我们保留。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Học một ngôn ngữ không chỉ là học từ vựng và ngữ pháp mà còn là tìm hiểu văn hóa của đất nước đó.",
+     "a": "学习一种语言不只是学习词汇和语法，也是了解那个国家的文化。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Có những điều chúng ta chỉ nhận ra sau khi đã trải qua một thời gian dài.",
+     "a": "有些事情，我们要经过很长时间以后才会明白。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cuộc sống có rất nhiều lựa chọn, điều quan trọng là chúng ta có đủ dũng khí chịu trách nhiệm với lựa chọn của mình hay không.",
+     "a": "人生有很多选择，重要的是我们有没有勇气为自己的选择负责。"
+    }
+   ]
+  },
+  {
+   "id": "09-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "文学家",
+      "地道",
+      "行家",
+      "亲自",
+      "见解",
+      "写作",
+      "讲究",
+      "好客",
+      "招待",
+      "胃口",
+      "戒",
+      "保存",
+      "曾经",
+      "形象"
+     ]
+    }
+   ]
+  }
+ ]
+}

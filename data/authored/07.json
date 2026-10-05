@@ -1,0 +1,420 @@
+{
+ "title": {
+  "zh": "成语故事两则",
+  "vi": "Hai câu chuyện thành ngữ"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/07-1.mp3",
+   "audio/giao-trinh-1/07-3.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/07-2.mp3",
+   "audio/giao-trinh-1/07-4.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/07-1.mp3",
+   "audio/bai-tap-1/07-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   56,
+   57,
+   58
+  ],
+  "text": [
+   {
+    "page": 56,
+    "top": 0.552,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 57,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 58,
+    "top": 0.07,
+    "bottom": 0.786,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "瞎",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"mù\"; còn làm phó từ khẩu ngữ, nghĩa là làm bừa, vô căn cứ, vô ích.",
+   "points": [
+    {
+     "pattern": "眼睛 + 瞎了",
+     "explain": "Mất thị lực.",
+     "examples": [
+      {
+       "zh": "这位老人的一只眼睛瞎了。",
+       "vi": "Một bên mắt của cụ già này bị mù."
+      }
+     ]
+    },
+    {
+     "pattern": "瞎 + động từ",
+     "explain": "Làm mà không có căn cứ hoặc không có kết quả: 瞎说、瞎猜、瞎忙、瞎操心.",
+     "examples": [
+      {
+       "zh": "你别瞎说，事情不是那样的。",
+       "vi": "Đừng nói bừa, sự việc không phải như thế."
+      },
+      {
+       "zh": "不用为我瞎操心，我能照顾好自己。",
+       "vi": "Đừng lo vớ vẩn cho tôi, tôi tự lo được."
+      }
+     ]
+    }
+   ],
+   "id": "07-g1"
+  },
+  {
+   "title": "分别",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"lần lượt, riêng từng người\"; còn là động từ nghĩa là \"chia tay\".",
+   "points": [
+    {
+     "pattern": "chủ ngữ số nhiều + 分别 + động từ",
+     "explain": "Mỗi người, mỗi cái làm riêng; hoặc làm với từng đối tượng một.",
+     "examples": [
+      {
+       "zh": "老师分别找他们两个人谈了话。",
+       "vi": "Thầy giáo nói chuyện riêng với từng người trong hai bạn ấy."
+      },
+      {
+       "zh": "他们三个人分别来自三个国家。",
+       "vi": "Ba người họ lần lượt đến từ ba nước khác nhau."
+      }
+     ]
+    },
+    {
+     "pattern": "(跟 + người) + 分别",
+     "explain": "Chia tay, xa cách.",
+     "examples": [
+      {
+       "zh": "我们分别已经十年了。",
+       "vi": "Chúng tôi xa nhau đã mười năm."
+      }
+     ]
+    }
+   ],
+   "id": "07-g2"
+  },
+  {
+   "title": "根",
+   "kind": "cách dùng",
+   "summary": "Danh từ nghĩa là \"rễ\"; làm lượng từ cho vật dài và mảnh.",
+   "points": [
+    {
+     "pattern": "一根 + vật dài, mảnh",
+     "explain": "Dùng cho dây, tóc, que, cành cây, chuối…",
+     "examples": [
+      {
+       "zh": "我的头上长出了一根白头发。",
+       "vi": "Trên đầu tôi mọc một sợi tóc bạc."
+      },
+      {
+       "zh": "他用一根绳子把箱子捆好了。",
+       "vi": "Anh ấy dùng một sợi dây buộc chặt cái hòm."
+      }
+     ]
+    }
+   ],
+   "id": "07-g3"
+  },
+  {
+   "title": "便",
+   "kind": "cách dùng",
+   "summary": "Phó từ văn viết, nghĩa và cách dùng giống 就.",
+   "points": [
+    {
+     "pattern": "… 便 + động từ",
+     "explain": "Việc sau xảy ra liền sau việc trước, hoặc là kết quả tự nhiên của việc trước.",
+     "examples": [
+      {
+       "zh": "他吃完饭便回房间休息了。",
+       "vi": "Anh ấy ăn cơm xong liền về phòng nghỉ."
+      },
+      {
+       "zh": "只要努力，便会有收获。",
+       "vi": "Chỉ cần cố gắng thì sẽ có thành quả."
+      }
+     ]
+    }
+   ],
+   "id": "07-g4"
+  },
+  {
+   "title": "忽然 và 突然",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ sự việc xảy ra nhanh và bất ngờ.",
+   "compare": {
+    "same": "Làm trạng ngữ thì thay được cho nhau: 天忽然 / 突然黑了。",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Chỉ là phó từ.",
+      "b": "Vừa là phó từ vừa là tính từ."
+     },
+     {
+      "aspect": "Làm vị ngữ, định ngữ, bổ ngữ",
+      "a": "Không được.",
+      "b": "Được: 事情很突然、突然的变化、来得太突然。"
+     },
+     {
+      "aspect": "Mức độ",
+      "a": "Nhẹ hơn.",
+      "b": "Nhấn mạnh sự bất ngờ hơn."
+     }
+    ]
+   },
+   "id": "07-g5"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "07-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "摸",
+    "蹲",
+    "摇",
+    "摆",
+    "碎",
+    "硬",
+    "寻找",
+    "善于"
+   ],
+   "items": [
+    {
+     "q": "妈妈___了一下孩子的头，发现他发烧了。",
+     "a": "摸"
+    },
+    {
+     "q": "他___在地上系鞋带。",
+     "a": "蹲"
+    },
+    {
+     "q": "问他去不去，他只是___头。",
+     "a": "摇"
+    },
+    {
+     "q": "杯子掉在地上，摔___了。",
+     "a": "碎"
+    },
+    {
+     "q": "这种面包放了几天，已经变___了。",
+     "a": "硬"
+    },
+    {
+     "q": "警察正在___那个走失的孩子。",
+     "a": "寻找"
+    },
+    {
+     "q": "她很___跟不同的人打交道。",
+     "a": "善于"
+    },
+    {
+     "q": "桌子上___着一瓶鲜花。",
+     "a": "摆"
+    }
+   ]
+  },
+  {
+   "id": "07-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这个消息来得太___了，大家都没有准备。",
+     "options": [
+      "忽然",
+      "突然"
+     ],
+     "a": 1,
+     "why": "Làm bổ ngữ sau 得 chỉ dùng được 突然."
+    },
+    {
+     "q": "他从地上捡起一___树枝。",
+     "options": [
+      "根",
+      "支"
+     ],
+     "a": 0,
+     "why": "树枝 dài và mảnh dùng lượng từ 根."
+    },
+    {
+     "q": "你不了解情况就别___猜。",
+     "options": [
+      "瞎",
+      "假"
+     ],
+     "a": 0,
+     "why": "瞎 + động từ: làm bừa, không căn cứ."
+    },
+    {
+     "q": "校长___跟每个毕业生握了手。",
+     "options": [
+      "分别",
+      "分开"
+     ],
+     "a": 0,
+     "why": "Làm lần lượt với từng người: 分别."
+    }
+   ]
+  },
+  {
+   "id": "07-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "他A放下B电话C出门D了。",
+     "word": "便",
+     "a": "C"
+    },
+    {
+     "q": "A两个孩子B住在C爷爷家和D姥姥家。",
+     "word": "分别",
+     "a": "B"
+    },
+    {
+     "q": "A我正要出门，B天C下起了D大雨。",
+     "word": "忽然",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "07-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "一说完",
+      "便",
+      "离开了"
+     ],
+     "a": "他一说完便离开了。",
+     "vi": "Anh ấy vừa nói xong liền rời đi."
+    },
+    {
+     "words": [
+      "我们",
+      "分别",
+      "回答了",
+      "两个问题"
+     ],
+     "a": "我们分别回答了两个问题。",
+     "vi": "Chúng tôi lần lượt trả lời hai câu hỏi."
+    },
+    {
+     "words": [
+      "你",
+      "别",
+      "瞎",
+      "担心",
+      "了"
+     ],
+     "a": "你别瞎担心了。",
+     "vi": "Bạn đừng lo vớ vẩn nữa."
+    }
+   ]
+  },
+  {
+   "id": "07-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Thành ngữ thường được hình thành từ những câu chuyện lịch sử.",
+     "a": "成语往往来自历史故事。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mỗi câu chuyện thành ngữ đều chứa đựng một bài học nhất định.",
+     "a": "每个成语故事都包含着一定的道理。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nếu hiểu được nguồn gốc của thành ngữ, chúng ta sẽ dễ nhớ cách sử dụng hơn.",
+     "a": "如果了解成语的来源，我们就更容易记住它的用法。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Người Trung Quốc thường sử dụng thành ngữ trong giao tiếp và viết văn.",
+     "a": "中国人在交际和写作中常常使用成语。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Học thành ngữ không chỉ giúp chúng ta mở rộng vốn từ mà còn giúp chúng ta hiểu thêm về văn hóa Trung Quốc.",
+     "a": "学习成语不仅能扩大词汇量，还能帮助我们进一步了解中国文化。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "很多成语都有自己的故事和来源。",
+     "a": "Rất nhiều thành ngữ có câu chuyện và nguồn gốc riêng."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "了解成语背后的故事，可以帮助我们更好地理解它的意思。",
+     "a": "Hiểu câu chuyện đằng sau thành ngữ có thể giúp chúng ta hiểu nghĩa của nó tốt hơn."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "成语虽然只有几个字，但是往往包含着丰富的意义。",
+     "a": "Thành ngữ tuy chỉ có vài chữ nhưng thường hàm chứa ý nghĩa phong phú."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "学习成语是学习汉语的重要部分。",
+     "a": "Học thành ngữ là một phần quan trọng của việc học tiếng Trung."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "这些故事给我们留下了深刻的印象。",
+     "a": "Những câu chuyện này để lại cho chúng ta ấn tượng sâu sắc."
+    }
+   ]
+  },
+  {
+   "id": "07-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại hai câu chuyện thành ngữ bằng lời của bạn",
+     "keywords": [
+      "摸",
+      "大象",
+      "瞎",
+      "分别",
+      "片面",
+      "结论",
+      "将军",
+      "打猎",
+      "忽然",
+      "姿势",
+      "石头",
+      "连续",
+      "便"
+     ]
+    }
+   ]
+  }
+ ]
+}

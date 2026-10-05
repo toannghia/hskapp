@@ -1,0 +1,341 @@
+{
+ "title": {
+  "zh": "闹钟的危害",
+  "vi": "Tác hại của đồng hồ báo thức"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/11-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/11-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/11-1.mp3",
+   "audio/bai-tap-1/11-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   90,
+   91,
+   92
+  ],
+  "text": [
+   {
+    "page": 90,
+    "top": 0.587,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 91,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 92,
+    "top": 0.07,
+    "bottom": 0.595,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "所",
+   "kind": "cách dùng",
+   "summary": "Trợ từ văn viết đứng trước động từ, tạo thành cụm danh từ hoặc dùng trong câu bị động.",
+   "points": [
+    {
+     "pattern": "(chủ ngữ +) 所 + động từ + 的 (+ danh từ)",
+     "explain": "Chỉ đối tượng của động từ: \"điều mà…\".",
+     "examples": [
+      {
+       "zh": "这就是我所知道的全部情况。",
+       "vi": "Đây là toàn bộ tình hình mà tôi biết."
+      },
+      {
+       "zh": "他所说的话，我都记下来了。",
+       "vi": "Những lời anh ấy nói, tôi đều ghi lại cả."
+      }
+     ]
+    },
+    {
+     "pattern": "为 / 被 + người + 所 + động từ",
+     "explain": "Câu bị động trong văn viết.",
+     "examples": [
+      {
+       "zh": "这首歌为很多年轻人所喜爱。",
+       "vi": "Bài hát này được nhiều bạn trẻ yêu thích."
+      }
+     ]
+    }
+   ],
+   "id": "11-g1"
+  },
+  {
+   "title": "相当",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ mức độ khá cao, nghĩa là \"khá, tương đối\"; cũng là động từ nghĩa là \"tương đương\".",
+   "points": [
+    {
+     "pattern": "相当 + tính từ / động từ tâm lý",
+     "explain": "Mức độ cao nhưng chưa tới 非常.",
+     "examples": [
+      {
+       "zh": "这次考试相当难。",
+       "vi": "Kỳ thi lần này khá khó."
+      }
+     ]
+    },
+    {
+     "pattern": "A 相当于 B",
+     "explain": "A ngang bằng với B.",
+     "examples": [
+      {
+       "zh": "这里一个月的房租相当于我半个月的工资。",
+       "vi": "Tiền thuê nhà một tháng ở đây bằng nửa tháng lương của tôi."
+      }
+     ]
+    }
+   ],
+   "id": "11-g2"
+  },
+  {
+   "title": "数",
+   "kind": "cách dùng",
+   "summary": "Số từ (đọc shù) nghĩa là \"vài, mấy\", dùng trong văn viết.",
+   "points": [
+    {
+     "pattern": "数 + lượng từ / 十、百、千 + danh từ",
+     "explain": "Chỉ số lượng không xác định: 数次、数年、数十人、数百年.",
+     "examples": [
+      {
+       "zh": "他在这家公司工作了数年。",
+       "vi": "Anh ấy đã làm ở công ty này vài năm."
+      },
+      {
+       "zh": "数百名观众参加了这次活动。",
+       "vi": "Vài trăm khán giả đã tham gia hoạt động này."
+      }
+     ]
+    }
+   ],
+   "id": "11-g3"
+  },
+  {
+   "title": "持续 và 继续",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ sự việc tiếp diễn.",
+   "compare": {
+    "same": "Đều đứng được trước động từ: 持续 / 继续上升。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Kéo dài liên tục, không gián đoạn trong một khoảng thời gian.",
+      "b": "Làm tiếp, có thể là sau khi tạm ngừng."
+     },
+     {
+      "aspect": "Kết hợp",
+      "a": "Hay đi với khoảng thời gian: 持续了三天、持续高温。",
+      "b": "Hay đi với động từ chỉ hành động: 继续学习、继续说。"
+     },
+     {
+      "aspect": "Sau khi nghỉ",
+      "a": "Không dùng.",
+      "b": "Dùng được: 休息一下再继续。"
+     }
+    ]
+   },
+   "id": "11-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "11-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "慌",
+    "享受",
+    "模仿",
+    "避免",
+    "导致",
+    "采用",
+    "计算",
+    "清醒"
+   ],
+   "items": [
+    {
+     "q": "别___，慢慢说，到底发生了什么事？",
+     "a": "慌"
+    },
+    {
+     "q": "退休以后，他开始___轻松的生活。",
+     "a": "享受"
+    },
+    {
+     "q": "小孩子喜欢___大人说话。",
+     "a": "模仿"
+    },
+    {
+     "q": "开车的时候不要看手机，以___发生事故。",
+     "a": "避免"
+    },
+    {
+     "q": "长期熬夜会___身体出现各种问题。",
+     "a": "导致"
+    },
+    {
+     "q": "我们公司___了一种新的管理方法。",
+     "a": "采用"
+    },
+    {
+     "q": "请帮我___一下这次旅行一共要花多少钱。",
+     "a": "计算"
+    },
+    {
+     "q": "喝了一杯咖啡以后，他终于___了。",
+     "a": "清醒"
+    }
+   ]
+  },
+  {
+   "id": "11-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这场雨已经___下了三天了。",
+     "options": [
+      "持续",
+      "继续"
+     ],
+     "a": 0,
+     "why": "Kéo dài liên tục suốt một khoảng thời gian: 持续."
+    },
+    {
+     "q": "休息十分钟以后，我们___开会。",
+     "options": [
+      "持续",
+      "继续"
+     ],
+     "a": 1,
+     "why": "Làm tiếp sau khi tạm ngừng: 继续."
+    },
+    {
+     "q": "他对自己的要求___严格。",
+     "options": [
+      "相当",
+      "相当于"
+     ],
+     "a": 0,
+     "why": "Trước tính từ dùng phó từ 相当."
+    },
+    {
+     "q": "我___了解的情况并不多。",
+     "options": [
+      "所",
+      "被"
+     ],
+     "a": 0,
+     "why": "所 + động từ + 的: điều mà…."
+    }
+   ]
+  },
+  {
+   "id": "11-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A这部电影B为C观众D喜爱。",
+     "word": "所",
+     "a": "D"
+    },
+    {
+     "q": "A他的汉语B说得C流利D。",
+     "word": "相当",
+     "a": "C"
+    },
+    {
+     "q": "A经过B年的努力，C他终于成功了D。",
+     "word": "数",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "11-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "这",
+      "就是",
+      "我",
+      "所",
+      "希望的",
+      "结果"
+     ],
+     "a": "这就是我所希望的结果。",
+     "vi": "Đây chính là kết quả mà tôi mong muốn."
+    },
+    {
+     "words": [
+      "高温天气",
+      "已经",
+      "持续了",
+      "一个星期"
+     ],
+     "a": "高温天气已经持续了一个星期。",
+     "vi": "Nắng nóng đã kéo dài một tuần."
+    },
+    {
+     "words": [
+      "他",
+      "在国外",
+      "生活了",
+      "数",
+      "十年"
+     ],
+     "a": "他在国外生活了数十年。",
+     "vi": "Ông ấy sống ở nước ngoài mấy chục năm."
+    }
+   ]
+  },
+  {
+   "id": "11-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "闹钟",
+      "危害",
+      "规律",
+      "光线",
+      "过渡",
+      "实验",
+      "状态",
+      "清醒",
+      "慌",
+      "情绪",
+      "记忆",
+      "相当",
+      "持续",
+      "导致",
+      "失眠",
+      "专家",
+      "避免"
+     ]
+    }
+   ]
+  }
+ ]
+}

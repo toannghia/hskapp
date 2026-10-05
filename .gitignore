@@ -1,0 +1,33 @@
+# Tài liệu gốc, âm thanh và nội dung trích từ sách: không đưa lên kho mã nguồn.
+# Bản online nạp các nội dung này vào cơ sở dữ liệu riêng bằng tài khoản quản trị.
+sources/
+audio/
+review/
+data/ocr/
+data/lessons/
+data/images/
+*.pdf
+*.pptx
+*.docx
+*.mp3
+
+# Dữ liệu học của người dùng và khóa bí mật
+data/user/
+.env
+.env.*
+
+# Tệp sinh ra khi chạy
+tools/ocr
+node_modules/
+.vercel/
+.DS_Store
+
+# Từ điển tải về (CVDICT, CC BY-SA 4.0); tải lại bằng lệnh trong tools/build_lesson.py
+data/dict/
+
+# Tệp văn bản rời ở thư mục gốc và tệp tạm của Python không thuộc mã nguồn
+/*.txt
+__pycache__/
+
+# Tệp khóa bí mật tải từ Google Cloud: không bao giờ đưa lên kho
+client_secret*.json

@@ -1,0 +1,169 @@
+#L 2
+G|以来|Chỉ khoảng thời gian từ một mốc trong quá khứ kéo dài đến hiện tại.
+P|mốc thời gian / sự việc + 以来|Đứng sau mốc bắt đầu; thường đi với 自、从、自从 ở phía trước.
+E|毕业以来，我们一直没有见过面。|Từ khi tốt nghiệp đến nay, chúng tôi chưa gặp lại nhau.
+E|自从搬到农村以来，他的身体好多了。|Từ khi chuyển về nông thôn, sức khỏe ông ấy tốt lên nhiều.
+P|khoảng thời gian + 以来|Chỉ suốt quãng thời gian vừa qua tính đến hiện tại.
+E|三年以来，她每天坚持跑步。|Suốt ba năm nay, ngày nào cô ấy cũng kiên trì chạy bộ.
+E|长期以来，父母一直支持我的决定。|Lâu nay bố mẹ luôn ủng hộ quyết định của tôi.
+G|临|Giới từ nghĩa là "sắp, ngay trước khi" làm một việc; cũng là động từ nghĩa là "kề, sát".
+P|临 + động từ (+ 前 / 时)|Chỉ thời điểm ngay trước khi hành động xảy ra.
+E|临走前，妈妈又检查了一遍我的行李。|Ngay trước khi đi, mẹ lại kiểm tra hành lý của tôi một lượt.
+E|他临睡时总要喝一杯牛奶。|Trước khi ngủ anh ấy luôn uống một cốc sữa.
+P|临 + nơi chốn|Ở sát, kề bên, hướng ra.
+E|我想租一套临街的房子。|Tôi muốn thuê một căn nhà sát mặt đường.
+E|这个小镇临海，风景很美。|Thị trấn này giáp biển, phong cảnh rất đẹp.
+G|立刻|Phó từ nghĩa là "lập tức, ngay", chỉ hành động xảy ra liền sau đó.
+P|chủ ngữ + 立刻 + động từ|Đứng trước động từ; khoảng thời gian ngắn hơn và trang trọng hơn 马上 một chút.
+E|听到这个消息，他立刻给家里打了电话。|Nghe tin ấy, anh lập tức gọi điện về nhà.
+E|请大家立刻回到自己的座位上。|Mời mọi người về chỗ của mình ngay.
+C|悄悄 và 偷偷|Cả hai là phó từ, đều chỉ làm việc gì đó không để người khác phát hiện.|Thay được cho nhau khi vừa lặng lẽ vừa giấu người khác: 他悄悄 / 偷偷地走了。
+R|Trọng tâm|Nhấn vào tiếng động nhỏ, nhẹ nhàng, không làm phiền ai.|Nhấn vào việc giấu giếm, sợ người khác biết.
+R|Sắc thái|Trung tính, thường mang ý tốt: 悄悄地关上门。|Thường là việc không muốn hoặc không nên để người khác biết: 偷偷地玩手机。
+R|Dùng cho lời nói|Dùng được: 悄悄地说 (nói khẽ).|Không dùng với nghĩa nói khẽ.
+F|断 晒 套 锁 醉 飘 挣 铺
+I|出门的时候别忘了把门___好。|锁
+I|今天太阳很好，我把被子拿出去___一下。|晒
+I|昨天晚上突然___电了，屋里什么也看不见。|断
+I|他喝得太多，已经___了。|醉
+I|他们在城里买了一___新房子。|套
+I|一阵花香从窗外___了进来。|飘
+I|他每个月___的钱有一半寄给父母。|挣
+I|妈妈早就为我___好了床。|铺
+Q|来中国___，我的汉语进步了很多。|以来/以后|0|Chỉ quãng thời gian từ mốc đó kéo dài tới bây giờ thì dùng 以来.
+Q|他怕吵醒孩子，___地走出了房间。|悄悄/偷偷|0|Ý là đi nhẹ nhàng không gây tiếng động, không phải lén lút.
+Q|弟弟趁妈妈不在，___吃了一块巧克力。|悄悄/偷偷|1|Giấu vì sợ bị phát hiện thì dùng 偷偷.
+Q|___出发前，他才发现护照不见了。|临/立刻|0|临 + động từ: ngay trước khi.
+Q|他的态度很___，谁劝都没用。|坚决/强烈|0|坚决 tả thái độ kiên quyết; 强烈 tả mức độ mạnh của cảm giác, yêu cầu.
+S|A接到电话B，他C放下手里的工作D赶了过去。|立刻|C
+S|A毕业B，C我们D只见过两次面。|以来|B
+S|他A睡前B总要C看一会儿D书。|临|A
+O|长期以来/奶奶/一直/照顾/我|长期以来奶奶一直照顾我。|Lâu nay bà luôn chăm sóc tôi.
+O|他/临走前/给我/留了/一串钥匙|他临走前给我留了一串钥匙。|Trước khi đi anh ấy để lại cho tôi một chùm chìa khóa.
+O|她/听到消息/立刻/哭了起来|她听到消息立刻哭了起来。|Nghe tin, cô ấy bật khóc ngay.
+T|Kể lại bài khóa bằng lời của bạn|一辈子 以来 坚决 打工 装修 临 悄悄 长途 想象 温暖 立刻 流泪
+#L 3
+G|各自|Đại từ, chỉ mỗi người hoặc mỗi bên trong số những người, những bên được nhắc tới.
+P|chủ ngữ số nhiều + 各自 + động từ / 各自 + 的 + danh từ|Đứng ngay sau chủ ngữ số nhiều, hoặc làm định ngữ.
+E|下课以后，同学们各自回家了。|Tan học, các bạn ai về nhà nấy.
+E|每个人都有各自的想法。|Mỗi người đều có suy nghĩ riêng của mình.
+G|勿|Phó từ dùng trong văn viết, nghĩa là "chớ, đừng", tương đương 不要、别.
+P|请勿 + động từ|Hay gặp trên biển báo, thông báo, lời nhắc trang trọng.
+E|请勿在此停车。|Xin đừng đỗ xe ở đây.
+E|非工作人员请勿入内。|Không phận sự miễn vào.
+G|包括|Động từ nghĩa là "bao gồm", dùng để liệt kê hoặc nêu rõ một phần nằm trong tổng thể.
+P|A 包括 B (+ 在内)|Sau 包括 là các thành phần; thường kết hợp 在内 ở cuối.
+E|房租包括水费和电费。|Tiền thuê nhà bao gồm tiền nước và tiền điện.
+E|包括我在内，一共有八个人参加。|Tính cả tôi, tổng cộng có tám người tham gia.
+G|时刻|Vừa là danh từ "thời khắc, giây phút", vừa là phó từ "luôn luôn, lúc nào cũng".
+P|… 的 + 时刻 (danh từ)|Chỉ một thời điểm đặc biệt, quan trọng.
+E|这是我人生中最幸福的时刻。|Đây là giây phút hạnh phúc nhất đời tôi.
+P|时刻 / 时时刻刻 + động từ (phó từ)|Chỉ việc diễn ra liên tục, không lúc nào ngừng.
+E|开车的时候要时刻注意安全。|Khi lái xe phải luôn luôn chú ý an toàn.
+C|舒适 và 舒服|Cả hai là tính từ, đều tả cảm giác dễ chịu, thoải mái.|Thay được cho nhau khi tả nơi ở, chỗ ngồi: 这张沙发很舒适 / 舒服。
+R|Văn phong|Thiên về văn viết.|Dùng nhiều trong khẩu ngữ.
+R|Đối tượng|Chủ yếu tả môi trường, điều kiện sống: 舒适的生活。|Tả cả cảm giác cơ thể và tâm trạng: 身体不舒服、心里不舒服。
+R|Lặp lại|Không lặp.|Lặp được: 舒舒服服地睡一觉。
+F|撞 钓 漏 辞职 拥抱 盼望 驾驶 发愁
+I|他为了照顾生病的母亲，决定___回老家。|辞职
+I|周末爷爷喜欢去河边___鱼。|钓
+I|下雨的时候，这间屋子的屋顶会___水。|漏
+I|孩子们都___着春节快点儿到来。|盼望
+I|两个老朋友见面后紧紧地___在一起。|拥抱
+I|他骑车太快，不小心___到了一棵树上。|撞
+I|别为这点儿小事___，总会有办法的。|发愁
+I|他已经有十年的___经验了，开车很稳。|驾驶
+Q|长途旅行后，能洗个热水澡真___。|舒适/舒服|1|Tả cảm giác của cơ thể trong khẩu ngữ thì dùng 舒服.
+Q|比赛结束后，两支球队___回到了自己的休息室。|各自/自己|0|Mỗi bên trong hai đội: 各自.
+Q|图书馆内请___大声说话。|勿/没|0|Lời nhắc trang trọng đi với 请 dùng 勿.
+Q|作为医生，他___准备着去抢救病人。|时刻/时候|0|Phó từ "lúc nào cũng" là 时刻.
+S|A我们B有C的工作D，平时很少见面。|各自|C
+S|A全家人B我C在内D都喜欢吃海鲜。|包括|B
+S|A父母B牵挂C着在外地工作的D孩子。|时刻|B
+O|吃完饭/大家/各自/回/房间了|吃完饭大家各自回房间了。|Ăn xong mọi người ai về phòng nấy.
+O|这些钱/包括/三个月的/房租/在内|这些钱包括三个月的房租在内。|Số tiền này bao gồm cả ba tháng tiền thuê nhà.
+O|我们/时刻/都/准备着/迎接/新的挑战|我们时刻都准备着迎接新的挑战。|Chúng tôi lúc nào cũng sẵn sàng đón thử thách mới.
+T|Kể lại bài khóa bằng lời của bạn|稳定 待遇 发愁 帆船 积蓄 辞职 航行 轮流 各自 随时 拥抱 未来
+#L 4
+G|至今|Phó từ nghĩa là "cho đến nay", chỉ tình trạng kéo dài từ quá khứ tới hiện tại.
+P|至今 + (还 / 仍然 / 都) + động từ|Hay đi với 还、仍然、没有.
+E|他离开家乡已经二十年了，至今没有回去过。|Ông ấy rời quê đã hai mươi năm, đến nay chưa từng trở về.
+E|这个故事流传至今。|Câu chuyện này lưu truyền đến tận ngày nay.
+G|顶|Động từ nghĩa là "đội trên đầu", "đội, bất chấp" (mưa gió); cũng là lượng từ cho vật có chóp.
+P|顶着 + mưa / gió / nắng / áp lực|Bất chấp điều kiện bất lợi mà vẫn làm.
+E|他顶着大雨把孩子送到了学校。|Anh ấy đội mưa to đưa con đến trường.
+E|她顶着很大的压力完成了这项工作。|Cô ấy chịu áp lực rất lớn để hoàn thành công việc này.
+P|一顶 + mũ / màn|Lượng từ cho mũ, màn, kiệu.
+E|妈妈给我买了一顶帽子。|Mẹ mua cho tôi một chiếc mũ.
+G|反而|Phó từ chỉ kết quả trái ngược với điều thường nghĩ hoặc mong đợi.
+P|不但不 / 不但没有 …，反而 …|Vế trước nêu điều đáng lẽ xảy ra, vế sau nêu kết quả ngược lại.
+E|吃了药，他的病不但没好，反而更重了。|Uống thuốc rồi, bệnh anh ấy chẳng những không khỏi mà còn nặng hơn.
+E|雨不但没停，反而越下越大。|Mưa chẳng những không tạnh mà càng lúc càng to.
+C|满足 và 满意|Đều diễn tả cảm giác hài lòng, nhưng cách dùng khác nhau.|Đều dùng được với 感到: 感到满足 / 感到满意。
+R|Nghĩa chính|Cảm thấy đã đủ, không đòi hỏi thêm.|Thấy hợp ý, vừa lòng với người hoặc việc.
+R|Mang tân ngữ|Dùng như động từ "đáp ứng": 满足要求、满足需要。|Không mang tân ngữ kiểu đó.
+R|Kết cấu|满足于 + hiện trạng: 不满足于现在的成绩。|对 + đối tượng + 满意: 对服务很满意。
+F|滑 扶 甩 占 孝敬 打听 委屈 流传
+I|下雪以后路很___，走路要小心。|滑
+I|看到老人上车，他赶紧过去___了一把。|扶
+I|我想向您___一下，去火车站怎么走？|打听
+I|他挣了钱，首先想到的是___父母。|孝敬
+I|这个传说在当地已经___了几百年。|流传
+I|明明不是她的错却被批评，她觉得很___。|委屈
+I|他把手上的水___干，然后接过了毛巾。|甩
+I|这张桌子太大了，___了半个房间。|占
+Q|我对这次考试的成绩很___。|满足/满意|1|对…很满意 là kết cấu cố định của 满意.
+Q|公司会尽量___每一位顾客的要求。|满足/满意|0|Mang tân ngữ 要求 với nghĩa "đáp ứng" chỉ dùng 满足.
+Q|我劝他别生气，他___更生气了。|反而/然而|0|Kết quả ngược với mong đợi: 反而.
+Q|他十年前借了我一本书，___还没还。|至今/从前|0|"Đến nay vẫn chưa" dùng 至今.
+S|A他B感冒了，C还D着大雪去上班。|顶|D
+S|A休息了一天，B他C觉得D更累了。|反而|C
+S|A这个问题B还C没有D找到答案。|至今|B
+O|老师/不但/没有批评他/反而/表扬了他|老师不但没有批评他，反而表扬了他。|Thầy giáo chẳng những không phê bình mà còn khen cậu ấy.
+O|我/至今/还/记得/那一天|我至今还记得那一天。|Đến giờ tôi vẫn nhớ ngày hôm đó.
+O|他们/顶着/太阳/在田里/干活儿|他们顶着太阳在田里干活儿。|Họ đội nắng làm việc ngoài đồng.
+T|Kể lại bài khóa bằng lời của bạn|从前 孝敬 满足 决心 委屈 打听 结实 顶 扶 团圆 本领 反而 孝顺
+#L 5
+G|起来|Bổ ngữ xu hướng; ngoài nghĩa "lên, dậy" còn có ba nghĩa mở rộng thường gặp.
+P|động từ / tính từ + 起来 (bắt đầu và tiếp diễn)|Hành động, trạng thái bắt đầu rồi tiếp tục.
+E|听了这个笑话，大家都笑了起来。|Nghe chuyện cười ấy, mọi người đều bật cười.
+E|天气慢慢暖和起来了。|Thời tiết đang dần ấm lên.
+P|看 / 听 / 说 / 做 + 起来 (đánh giá)|Nêu nhận xét, ấn tượng khi xét từ một mặt nào đó.
+E|这个办法听起来不错。|Cách này nghe có vẻ ổn.
+E|这件事说起来容易，做起来难。|Việc này nói thì dễ, làm mới khó.
+P|động từ + 起来 (gom lại, cất đi)|Chỉ sự tập trung, thu lại: 收起来、藏起来、加起来.
+E|他把信藏了起来。|Anh ấy giấu lá thư đi.
+G|于|Giới từ văn viết, đứng sau động từ hoặc tính từ để dẫn ra thời gian, nơi chốn, đối tượng.
+P|động từ + 于 + thời gian / nơi chốn|Tương đương 在.
+E|他出生于1990年。|Anh ấy sinh năm 1990.
+E|这座城市位于中国的东部。|Thành phố này nằm ở miền đông Trung Quốc.
+P|động từ / tính từ + 于 + đối tượng|Tương đương 对、向、从: 有利于、善于、来源于.
+E|多运动有利于健康。|Vận động nhiều có lợi cho sức khỏe.
+G|从而|Liên từ văn viết: vế trước là cách làm hoặc nguyên nhân, vế sau là kết quả đạt được nhờ đó.
+P|…，从而 + kết quả|Hai vế thường chung chủ ngữ; 从而 đứng đầu vế sau.
+E|他每天坚持练习，从而提高了口语水平。|Ngày nào anh ấy cũng kiên trì luyện tập, nhờ đó nâng cao được khả năng nói.
+E|公司改进了服务，从而赢得了更多顾客。|Công ty cải tiến dịch vụ, nhờ vậy giành được nhiều khách hàng hơn.
+C|美丽 và 优美|Đều là tính từ nghĩa là "đẹp".|Đều tả được phong cảnh: 美丽 / 优美的风景。
+R|Đối tượng|Rộng: người, cảnh vật, đồ vật, điều trừu tượng.|Cảnh vật, tư thế, động tác, âm nhạc, lời văn.
+R|Tả người|Dùng được: 美丽的姑娘。|Không tả dung mạo; chỉ tả dáng, động tác: 优美的舞姿。
+R|Sắc thái|Đẹp nói chung.|Đẹp và tao nhã, hài hòa.
+F|救 晕 抢 埋 碰 挡 冲 充满
+I|医生及时赶到，___了他一命。|救
+I|她坐船的时候常常会头___。|晕
+I|孩子们的眼睛里___了好奇。|充满
+I|你站在这儿___住了我，我什么也看不见。|挡
+I|小狗把骨头___在了院子里的树下。|埋
+I|他不小心___倒了桌上的杯子。|碰
+I|大雨把路上的土都___走了。|冲
+I|别跟弟弟___玩具，你是哥哥。|抢
+Q|这件衣服看___很贵，其实很便宜。|起来/出来|0|Nêu ấn tượng, đánh giá dùng 看起来.
+Q|她跳舞的动作非常___。|美丽/优美|1|Tả động tác, tư thế dùng 优美.
+Q|经常开窗有利___室内空气流通。|于/从|0|有利于 là kết cấu cố định.
+Q|他认真听取了大家的意见，___改进了自己的计划。|从而/反而|0|Vế sau là kết quả đạt được nhờ vế trước: 从而.
+S|A一想到明天的面试，他B就C紧张D了。|起来|D
+S|A这位作家B毕业C北京大学D。|于|C
+S|A他们修了一条新路，B改善了C当地的D交通。|从而|B
+O|孩子们/高兴得/跳了/起来|孩子们高兴得跳了起来。|Bọn trẻ vui đến mức nhảy cẫng lên.
+O|我的家乡/位于/中国/南部|我的家乡位于中国南部。|Quê tôi nằm ở miền nam Trung Quốc.
+O|他/仔细检查/从而/减少了/错误|他仔细检查，从而减少了错误。|Anh ấy kiểm tra kỹ, nhờ đó giảm được lỗi.
+T|Kể lại bài khóa bằng lời của bạn|悠久 记载 描写 赞美 传说 善良 救 抢 如今 分布 独特 形成 从而

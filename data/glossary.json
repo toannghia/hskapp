@@ -1,0 +1,767 @@
+{
+"要": {
+"p": "yào",
+"vi": "muốn; phải; sắp"
+},
+"选出": {
+"p": "xuǎnchū",
+"vi": "chọn ra"
+},
+"一对": {
+"p": "yí duì",
+"vi": "một cặp, một đôi"
+},
+"最": {
+"p": "zuì",
+"vi": "nhất"
+},
+"的": {
+"p": "de",
+"vi": "(trợ từ) của; nối định ngữ với danh từ"
+},
+"夫妻": {
+"p": "fūqī",
+"vi": "vợ chồng"
+},
+"后": {
+"p": "hòu",
+"vi": "sau, sau khi"
+},
+"有": {
+"p": "yǒu",
+"vi": "có"
+},
+"三": {
+"p": "sān",
+"vi": "ba"
+},
+"对": {
+"p": "duì",
+"vi": "cặp, đôi (lượng từ); đối với; đúng"
+},
+"叫": {
+"p": "jiào",
+"vi": "gọi; bảo, yêu cầu"
+},
+"第一": {
+"p": "dì-yī",
+"vi": "thứ nhất"
+},
+"说说": {
+"p": "shuōshuo",
+"vi": "nói thử, kể xem"
+},
+"他俩": {
+"p": "tā liǎ",
+"vi": "hai người họ"
+},
+"是": {
+"p": "shì",
+"vi": "là"
+},
+"妻子": {
+"p": "qīzi",
+"vi": "vợ"
+},
+"说": {
+"p": "shuō",
+"vi": "nói"
+},
+"前几年": {
+"p": "qián jǐ nián",
+"vi": "mấy năm trước"
+},
+"她": {
+"p": "tā",
+"vi": "cô ấy, bà ấy"
+},
+"全身": {
+"p": "quánshēn",
+"vi": "toàn thân"
+},
+"了": {
+"p": "le",
+"vi": "(trợ từ) chỉ việc đã xảy ra hoặc thay đổi"
+},
+"医生": {
+"p": "yīshēng",
+"vi": "bác sĩ"
+},
+"站起来": {
+"p": "zhàn qǐlai",
+"vi": "đứng dậy"
+},
+"可能性": {
+"p": "kěnéngxìng",
+"vi": "khả năng"
+},
+"很": {
+"p": "hěn",
+"vi": "rất"
+},
+"小": {
+"p": "xiǎo",
+"vi": "nhỏ"
+},
+"别人": {
+"p": "biérén",
+"vi": "người khác"
+},
+"都": {
+"p": "dōu",
+"vi": "đều"
+},
+"觉得": {
+"p": "juéde",
+"vi": "cảm thấy, cho rằng"
+},
+"丈夫": {
+"p": "zhàngfu",
+"vi": "chồng"
+},
+"会": {
+"p": "huì",
+"vi": "sẽ; biết"
+},
+"跟": {
+"p": "gēn",
+"vi": "với, cùng"
+},
+"也": {
+"p": "yě",
+"vi": "cũng"
+},
+"想": {
+"p": "xiǎng",
+"vi": "nghĩ; muốn"
+},
+"过": {
+"p": "guo / guò",
+"vi": "(trợ từ) đã từng; qua, trải qua"
+},
+"但": {
+"p": "dàn",
+"vi": "nhưng"
+},
+"一直": {
+"p": "yìzhí",
+"vi": "luôn luôn, suốt"
+},
+"鼓励": {
+"p": "gǔlì",
+"vi": "khích lệ, động viên"
+},
+"为": {
+"p": "wèi",
+"vi": "vì, cho"
+},
+"不知": {
+"p": "bùzhī",
+"vi": "không biết"
+},
+"找": {
+"p": "zhǎo",
+"vi": "tìm"
+},
+"多少": {
+"p": "duōshao",
+"vi": "bao nhiêu"
+},
+"家": {
+"p": "jiā",
+"vi": "nhà; (lượng từ cho bệnh viện, công ty…)"
+},
+"医院": {
+"p": "yīyuàn",
+"vi": "bệnh viện"
+},
+"并且": {
+"p": "bìngqiě",
+"vi": "hơn nữa, đồng thời"
+},
+"几年如一日": {
+"p": "jǐ nián rú yí rì",
+"vi": "mấy năm như một ngày (bền bỉ không đổi)"
+},
+"地": {
+"p": "de",
+"vi": "(trợ từ) nối trạng ngữ với động từ"
+},
+"照顾": {
+"p": "zhàogù",
+"vi": "chăm sóc"
+},
+"从不": {
+"p": "cóng bù",
+"vi": "không bao giờ"
+},
+"在": {
+"p": "zài",
+"vi": "ở, tại; đang"
+},
+"和": {
+"p": "hé",
+"vi": "và"
+},
+"努力": {
+"p": "nǔlì",
+"vi": "nỗ lực, cố gắng"
+},
+"下": {
+"p": "xià",
+"vi": "dưới"
+},
+"终于": {
+"p": "zhōngyú",
+"vi": "cuối cùng"
+},
+"又": {
+"p": "yòu",
+"vi": "lại"
+},
+"站": {
+"p": "zhàn",
+"vi": "đứng"
+},
+"起来": {
+"p": "qǐlai",
+"vi": "lên, dậy (bổ ngữ xu hướng)"
+},
+"故事": {
+"p": "gùshi",
+"vi": "câu chuyện"
+},
+"十分": {
+"p": "shífēn",
+"vi": "vô cùng, hết sức"
+},
+"感人": {
+"p": "gǎnrén",
+"vi": "làm xúc động lòng người"
+},
+"们": {
+"p": "men",
+"vi": "(hậu tố) chỉ số nhiều"
+},
+"听": {
+"p": "tīng",
+"vi": "nghe"
+},
+"感动": {
+"p": "gǎndòng",
+"vi": "cảm động"
+},
+"随后": {
+"p": "suíhòu",
+"vi": "sau đó, tiếp theo"
+},
+"进来": {
+"p": "jìnlai",
+"vi": "đi vào"
+},
+"第二": {
+"p": "dì-èr",
+"vi": "thứ hai"
+},
+"十几年": {
+"p": "shí jǐ nián",
+"vi": "mười mấy năm"
+},
+"生活": {
+"p": "shēnghuó",
+"vi": "cuộc sống"
+},
+"中": {
+"p": "zhōng",
+"vi": "trong"
+},
+"他们": {
+"p": "tāmen",
+"vi": "họ"
+},
+"从来": {
+"p": "cónglái",
+"vi": "từ trước tới nay"
+},
+"没": {
+"p": "méi",
+"vi": "không, chưa"
+},
+"任何": {
+"p": "rènhé",
+"vi": "bất kỳ"
+},
+"事": {
+"p": "shì",
+"vi": "việc, chuyện"
+},
+"红过脸": {
+"p": "hóngguo liǎn",
+"vi": "từng đỏ mặt (to tiếng, giận nhau)"
+},
+"吵过架": {
+"p": "chǎoguo jià",
+"vi": "từng cãi nhau (吵架 tách ra, chen 过 vào giữa)",
+"ref": 14
+},
+"相亲相爱": {
+"p": "xiāngqīn xiāng'ài",
+"vi": "thương yêu gắn bó với nhau"
+},
+"点头": {
+"p": "diǎn tóu",
+"vi": "gật đầu"
+},
+"到": {
+"p": "dào",
+"vi": "đến"
+},
+"第三": {
+"p": "dì-sān",
+"vi": "thứ ba"
+},
+"却": {
+"p": "què",
+"vi": "nhưng, lại (chỉ sự chuyển ý)"
+},
+"长": {
+"p": "cháng",
+"vi": "dài, lâu"
+},
+"时间": {
+"p": "shíjiān",
+"vi": "thời gian"
+},
+"不见": {
+"p": "bújiàn",
+"vi": "không thấy"
+},
+"人": {
+"p": "rén",
+"vi": "người"
+},
+"等": {
+"p": "děng",
+"vi": "đợi"
+},
+"得": {
+"p": "de / děi",
+"vi": "(trợ từ) nối bổ ngữ; phải, cần phải"
+},
+"有些": {
+"p": "yǒuxiē",
+"vi": "có phần, hơi"
+},
+"就": {
+"p": "jiù",
+"vi": "liền, thì"
+},
+"走出来": {
+"p": "zǒu chūlai",
+"vi": "đi ra"
+},
+"看": {
+"p": "kàn",
+"vi": "xem, nhìn"
+},
+"个": {
+"p": "gè",
+"vi": "cái (lượng từ)"
+},
+"究竟": {
+"p": "jiūjìng",
+"vi": "ngọn ngành, đầu đuôi; rốt cuộc"
+},
+"只见": {
+"p": "zhǐjiàn",
+"vi": "chỉ thấy"
+},
+"仍然": {
+"p": "réngrán",
+"vi": "vẫn"
+},
+"坐": {
+"p": "zuò",
+"vi": "ngồi"
+},
+"门口": {
+"p": "ménkǒu",
+"vi": "cửa, lối vào"
+},
+"男人": {
+"p": "nánrén",
+"vi": "đàn ông"
+},
+"头": {
+"p": "tóu",
+"vi": "đầu"
+},
+"女人": {
+"p": "nǚrén",
+"vi": "phụ nữ"
+},
+"上": {
+"p": "shàng",
+"vi": "trên"
+},
+"睡着": {
+"p": "shuìzháo",
+"vi": "ngủ thiếp đi"
+},
+"一个": {
+"p": "yí gè",
+"vi": "một (người, cái)"
+},
+"上前": {
+"p": "shàngqián",
+"vi": "bước lên trước"
+},
+"醒": {
+"p": "xǐng",
+"vi": "tỉnh"
+},
+"那个": {
+"p": "nàge",
+"vi": "cái đó, người đó"
+},
+"男的": {
+"p": "nánde",
+"vi": "người nam"
+},
+"女的": {
+"p": "nǚde",
+"vi": "người nữ"
+},
+"出": {
+"p": "chū",
+"vi": "ra"
+},
+"做": {
+"p": "zuò",
+"vi": "làm"
+},
+"小声": {
+"p": "xiǎoshēng",
+"vi": "nói khẽ, nhỏ tiếng"
+},
+"动作": {
+"p": "dòngzuò",
+"vi": "động tác"
+},
+"然后": {
+"p": "ránhòu",
+"vi": "sau đó"
+},
+"小心": {
+"p": "xiǎoxīn",
+"vi": "cẩn thận"
+},
+"从": {
+"p": "cóng",
+"vi": "từ"
+},
+"包": {
+"p": "bāo",
+"vi": "túi"
+},
+"里": {
+"p": "lǐ",
+"vi": "trong"
+},
+"拿出": {
+"p": "náchū",
+"vi": "lấy ra"
+},
+"纸": {
+"p": "zhǐ",
+"vi": "giấy"
+},
+"笔": {
+"p": "bǐ",
+"vi": "bút"
+},
+"用": {
+"p": "yòng",
+"vi": "dùng"
+},
+"左手": {
+"p": "zuǒshǒu",
+"vi": "tay trái"
+},
+"写下": {
+"p": "xiěxià",
+"vi": "viết xuống"
+},
+"写": {
+"p": "xiě",
+"vi": "viết"
+},
+"一行": {
+"p": "yì háng",
+"vi": "một dòng"
+},
+"字": {
+"p": "zì",
+"vi": "chữ"
+},
+"给": {
+"p": "gěi",
+"vi": "cho, đưa cho"
+},
+"而": {
+"p": "ér",
+"vi": "mà, còn"
+},
+"右肩": {
+"p": "yòujiān",
+"vi": "vai phải"
+},
+"让": {
+"p": "ràng",
+"vi": "để cho, khiến"
+},
+"着": {
+"p": "zhe",
+"vi": "(trợ từ) chỉ trạng thái đang tiếp diễn"
+},
+"那": {
+"p": "nà",
+"vi": "đó, kia; vậy thì"
+},
+"纸条": {
+"p": "zhǐtiáo",
+"vi": "mảnh giấy"
+},
+"上面": {
+"p": "shàngmiàn",
+"vi": "bên trên"
+},
+"别": {
+"p": "bié",
+"vi": "đừng"
+},
+"出声": {
+"p": "chū shēng",
+"vi": "lên tiếng"
+},
+"他": {
+"p": "tā",
+"vi": "anh ấy, ông ấy"
+},
+"昨晚": {
+"p": "zuówǎn",
+"vi": "tối qua"
+},
+"睡": {
+"p": "shuì",
+"vi": "ngủ"
+},
+"好": {
+"p": "hǎo",
+"vi": "tốt; (bổ ngữ) xong, đạt"
+},
+"提起": {
+"p": "tíqǐ",
+"vi": "nhấc lên"
+},
+"后面": {
+"p": "hòumiàn",
+"vi": "phía sau"
+},
+"续写": {
+"p": "xùxiě",
+"vi": "viết tiếp"
+},
+"一句": {
+"p": "yí jù",
+"vi": "một câu"
+},
+"话": {
+"p": "huà",
+"vi": "lời nói"
+},
+"但是": {
+"p": "dànshì",
+"vi": "nhưng"
+},
+"我们": {
+"p": "wǒmen",
+"vi": "chúng tôi, chúng ta"
+},
+"你们": {
+"p": "nǐmen",
+"vi": "các bạn"
+},
+"俩": {
+"p": "liǎ",
+"vi": "hai người"
+},
+"啊": {
+"p": "a",
+"vi": "(trợ từ ngữ khí)"
+},
+"不": {
+"p": "bù",
+"vi": "không"
+},
+"参加": {
+"p": "cānjiā",
+"vi": "tham gia"
+},
+"大家": {
+"p": "dàjiā",
+"vi": "mọi người"
+},
+"吃惊": {
+"p": "chī jīng",
+"vi": "kinh ngạc"
+},
+"这个": {
+"p": "zhège",
+"vi": "cái này, người này"
+},
+"为了": {
+"p": "wèile",
+"vi": "để, vì"
+},
+"影响": {
+"p": "yǐngxiǎng",
+"vi": "ảnh hưởng"
+},
+"睡觉": {
+"p": "shuì jiào",
+"vi": "ngủ"
+},
+"放弃": {
+"p": "fàngqì",
+"vi": "từ bỏ"
+},
+"这次": {
+"p": "zhè cì",
+"vi": "lần này"
+},
+"机会": {
+"p": "jīhuì",
+"vi": "cơ hội"
+},
+"还是": {
+"p": "háishi",
+"vi": "vẫn"
+},
+"决定": {
+"p": "juédìng",
+"vi": "quyết định"
+},
+"先": {
+"p": "xiān",
+"vi": "trước, tạm thời"
+},
+"而是": {
+"p": "ér shì",
+"vi": "mà là"
+},
+"再": {
+"p": "zài",
+"vi": "lại, nữa"
+},
+"一段": {
+"p": "yí duàn",
+"vi": "một quãng, một đoạn"
+},
+"一会儿": {
+"p": "yíhuìr",
+"vi": "một lát"
+},
+"问": {
+"p": "wèn",
+"vi": "hỏi"
+},
+"怎么": {
+"p": "zěnme",
+"vi": "sao, thế nào"
+},
+"那么": {
+"p": "nàme",
+"vi": "như thế"
+},
+"累": {
+"p": "lèi",
+"vi": "mệt"
+},
+"不好意思": {
+"p": "bù hǎoyìsi",
+"vi": "ngại ngùng"
+},
+"笑笑": {
+"p": "xiàoxiao",
+"vi": "cười cười"
+},
+"我": {
+"p": "wǒ",
+"vi": "tôi"
+},
+"住": {
+"p": "zhù",
+"vi": "ở, sống"
+},
+"一楼": {
+"p": "yī lóu",
+"vi": "tầng một"
+},
+"多": {
+"p": "duō",
+"vi": "nhiều"
+},
+"被": {
+"p": "bèi",
+"vi": "bị (câu bị động)"
+},
+"怕": {
+"p": "pà",
+"vi": "sợ"
+},
+"所以": {
+"p": "suǒyǐ",
+"vi": "cho nên"
+},
+"赶": {
+"p": "gǎn",
+"vi": "đuổi"
+},
+"最后": {
+"p": "zuìhòu",
+"vi": "cuối cùng"
+},
+"结果": {
+"p": "jiéguǒ",
+"vi": "kết quả"
+},
+"增加": {
+"p": "zēngjiā",
+"vi": "tăng thêm"
+},
+"两": {
+"p": "liǎng",
+"vi": "hai"
+},
+"奖项": {
+"p": "jiǎngxiàng",
+"vi": "hạng mục giải thưởng"
+},
+"将": {
+"p": "jiāng",
+"vi": "(văn viết) đem, lấy; tương đương 把"
+},
+"评为": {
+"p": "píngwéi",
+"vi": "bình chọn là"
+},
+"真正": {
+"p": "zhēnzhèng",
+"vi": "thực sự"
+},
+"奖": {
+"p": "jiǎng",
+"vi": "giải thưởng"
+}
+}

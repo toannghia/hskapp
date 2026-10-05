@@ -1,0 +1,341 @@
+{
+ "title": {
+  "zh": "纸上谈兵",
+  "vi": "Đánh trận trên giấy"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/15-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/15-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/15-1.mp3",
+   "audio/bai-tap-1/15-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   125,
+   126,
+   127
+  ],
+  "text": [
+   {
+    "page": 125,
+    "top": 0.609,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 126,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 127,
+    "top": 0.07,
+    "bottom": 0.688,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "过",
+   "kind": "cách dùng",
+   "summary": "Ngoài làm trợ từ \"đã từng\", 过 còn là phó từ đứng trước tính từ, nghĩa là \"quá, vượt mức\".",
+   "points": [
+    {
+     "pattern": "过 + tính từ một âm tiết",
+     "explain": "Vượt mức cần thiết: 过高、过早、过多、过快.",
+     "examples": [
+      {
+       "zh": "你对孩子的要求过高了。",
+       "vi": "Bạn yêu cầu quá cao ở con."
+      },
+      {
+       "zh": "现在下结论还为时过早。",
+       "vi": "Bây giờ kết luận thì còn quá sớm."
+      }
+     ]
+    },
+    {
+     "pattern": "过于 + tính từ / động từ hai âm tiết",
+     "explain": "Trước từ hai âm tiết thì dùng 过于.",
+     "examples": [
+      {
+       "zh": "他过于相信自己的判断。",
+       "vi": "Anh ấy quá tin vào phán đoán của mình."
+      }
+     ]
+    }
+   ],
+   "id": "15-g1"
+  },
+  {
+   "title": "迟早",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"sớm muộn gì cũng\", khẳng định việc chắc chắn sẽ xảy ra.",
+   "points": [
+    {
+     "pattern": "迟早 + (会 / 要) + động từ",
+     "explain": "Hay đi với 会、要、得.",
+     "examples": [
+      {
+       "zh": "你这样骗人，迟早会被发现的。",
+       "vi": "Bạn lừa người như vậy, sớm muộn cũng bị phát hiện."
+      },
+      {
+       "zh": "这个问题迟早要解决。",
+       "vi": "Vấn đề này sớm muộn gì cũng phải giải quyết."
+      }
+     ]
+    }
+   ],
+   "id": "15-g2"
+  },
+  {
+   "title": "再三",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"nhiều lần, hết lần này đến lần khác\".",
+   "points": [
+    {
+     "pattern": "再三 + động từ",
+     "explain": "Đi với động từ nói năng, suy nghĩ: 再三强调、再三考虑、再三提醒.",
+     "examples": [
+      {
+       "zh": "妈妈再三提醒我出门要带钥匙。",
+       "vi": "Mẹ nhắc đi nhắc lại tôi ra ngoài phải mang chìa khóa."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 再三",
+     "explain": "Đứng sau một số động từ hai âm tiết: 考虑再三、犹豫再三.",
+     "examples": [
+      {
+       "zh": "他考虑再三，最后还是决定留下。",
+       "vi": "Anh ấy cân nhắc mãi, cuối cùng vẫn quyết định ở lại."
+      }
+     ]
+    }
+   ],
+   "id": "15-g3"
+  },
+  {
+   "title": "胜利 và 成功",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc đạt được mục đích, kết quả tốt.",
+   "compare": {
+    "same": "Đều dùng được với 取得: 取得胜利 / 取得成功。",
+    "rows": [
+     {
+      "aspect": "Phạm vi",
+      "a": "Thắng đối thủ trong chiến tranh, thi đấu; hoặc hoàn thành một nhiệm vụ lớn.",
+      "b": "Đạt kết quả như mong muốn trong mọi việc."
+     },
+     {
+      "aspect": "Làm vị ngữ với 很",
+      "a": "Không nói 很胜利.",
+      "b": "Nói được: 很成功、非常成功。"
+     },
+     {
+      "aspect": "Kết hợp",
+      "a": "胜利的消息、比赛的胜利。",
+      "b": "成功的经验、试验成功了。"
+     }
+    ]
+   },
+   "id": "15-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "15-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "派",
+    "守",
+    "骂",
+    "上当",
+    "阻止",
+    "挑战",
+    "轻视",
+    "讽刺"
+   ],
+   "items": [
+    {
+     "q": "公司___他去上海参加会议。",
+     "a": "派"
+    },
+    {
+     "q": "士兵们日夜___着这座城市。",
+     "a": "守"
+    },
+    {
+     "q": "孩子做错了事，你不应该___他，应该跟他讲道理。",
+     "a": "骂"
+    },
+    {
+     "q": "这个价格便宜得不正常，小心___。",
+     "a": "上当"
+    },
+    {
+     "q": "他想辞职，谁也___不了他。",
+     "a": "阻止"
+    },
+    {
+     "q": "他喜欢___自己，总是选最难的任务。",
+     "a": "挑战"
+    },
+    {
+     "q": "不要___任何一个对手。",
+     "a": "轻视"
+    },
+    {
+     "q": "这幅画___了那些只爱钱的人。",
+     "a": "讽刺"
+    }
+   ]
+  },
+  {
+   "id": "15-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我们的球队最后取得了比赛的___。",
+     "options": [
+      "胜利",
+      "成功"
+     ],
+     "a": 0,
+     "why": "Thắng đối thủ trong thi đấu: 胜利."
+    },
+    {
+     "q": "这次手术非常___。",
+     "options": [
+      "胜利",
+      "成功"
+     ],
+     "a": 1,
+     "why": "Làm vị ngữ sau 非常 chỉ dùng được 成功."
+    },
+    {
+     "q": "只要坚持下去，你___会成功的。",
+     "options": [
+      "迟早",
+      "再三"
+     ],
+     "a": 0,
+     "why": "\"Sớm muộn gì cũng\": 迟早."
+    },
+    {
+     "q": "这双鞋___大，穿着不舒服。",
+     "options": [
+      "过",
+      "再"
+     ],
+     "a": 0,
+     "why": "过 + tính từ một âm tiết: quá mức."
+    }
+   ]
+  },
+  {
+   "id": "15-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A老师B强调C考试时D不能看手机。",
+     "word": "再三",
+     "a": "B"
+    },
+    {
+     "q": "A不好好复习，B你C要D后悔的。",
+     "word": "迟早",
+     "a": "C"
+    },
+    {
+     "q": "A他把这件事B想得C简单D了。",
+     "word": "过于",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "15-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "迟早",
+      "会",
+      "明白",
+      "我的意思"
+     ],
+     "a": "他迟早会明白我的意思。",
+     "vi": "Sớm muộn gì anh ấy cũng hiểu ý tôi."
+    },
+    {
+     "words": [
+      "我",
+      "再三",
+      "向他",
+      "表示",
+      "感谢"
+     ],
+     "a": "我再三向他表示感谢。",
+     "vi": "Tôi cảm ơn anh ấy hết lần này đến lần khác."
+    },
+    {
+     "words": [
+      "你",
+      "不要",
+      "过于",
+      "紧张"
+     ],
+     "a": "你不要过于紧张。",
+     "vi": "Bạn đừng căng thẳng quá."
+    }
+   ]
+  },
+  {
+   "id": "15-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "纸上谈兵",
+      "军事",
+      "理论",
+      "作战",
+      "迟早",
+      "派",
+      "形势",
+      "命令",
+      "守",
+      "挑战",
+      "胜利",
+      "上当",
+      "再三",
+      "阻止",
+      "糊涂",
+      "盲目",
+      "轻视",
+      "讽刺"
+     ]
+    }
+   ]
+  }
+ ]
+}

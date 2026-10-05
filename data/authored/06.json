@@ -1,0 +1,419 @@
+{
+ "title": {
+  "zh": "除夕的由来",
+  "vi": "Nguồn gốc đêm giao thừa"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/06-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/06-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/06-1.mp3",
+   "audio/bai-tap-1/06-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   45,
+   46,
+   47
+  ],
+  "text": [
+   {
+    "page": 45,
+    "top": 0.548,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 46,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 47,
+    "top": 0.07,
+    "bottom": 0.492,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "替",
+   "kind": "cách dùng",
+   "summary": "Vừa là động từ \"thay thế\", vừa là giới từ \"thay cho, giúp cho, vì\".",
+   "points": [
+    {
+     "pattern": "替 + người + động từ (giới từ)",
+     "explain": "Làm việc gì thay cho ai, hoặc vì ai mà có cảm xúc.",
+     "examples": [
+      {
+       "zh": "我今天有事，你能替我去开会吗？",
+       "vi": "Hôm nay tôi có việc, bạn đi họp thay tôi được không?"
+      },
+      {
+       "zh": "你找到了好工作，我真替你高兴。",
+       "vi": "Bạn tìm được việc tốt, tôi thật mừng cho bạn."
+      }
+     ]
+    },
+    {
+     "pattern": "替 + người (động từ)",
+     "explain": "Thay vào vị trí của ai.",
+     "examples": [
+      {
+       "zh": "他受伤了，教练让小李替他。",
+       "vi": "Anh ấy bị thương, huấn luyện viên cho Tiểu Lý vào thay."
+      }
+     ]
+    }
+   ],
+   "id": "06-g1"
+  },
+  {
+   "title": "说不定",
+   "kind": "cách dùng",
+   "summary": "Diễn tả phỏng đoán \"biết đâu, có lẽ\"; cũng có nghĩa \"chưa chắc, chưa nói trước được\".",
+   "points": [
+    {
+     "pattern": "说不定 + mệnh đề",
+     "explain": "Đứng đầu câu hoặc trước vị ngữ, nêu một khả năng.",
+     "examples": [
+      {
+       "zh": "带把伞吧，说不定下午会下雨。",
+       "vi": "Mang ô đi, biết đâu chiều lại mưa."
+      },
+      {
+       "zh": "他说不定已经到家了。",
+       "vi": "Có lẽ anh ấy đã về đến nhà rồi."
+      }
+     ]
+    },
+    {
+     "pattern": "… 还说不定",
+     "explain": "Làm vị ngữ, nghĩa là chưa chắc chắn.",
+     "examples": [
+      {
+       "zh": "明天去不去还说不定。",
+       "vi": "Mai có đi hay không còn chưa chắc."
+      }
+     ]
+    }
+   ],
+   "id": "06-g2"
+  },
+  {
+   "title": "似的",
+   "kind": "cách dùng",
+   "summary": "Trợ từ đứng sau từ hoặc cụm từ để so sánh, nghĩa là \"giống như, như thể\".",
+   "points": [
+    {
+     "pattern": "像 / 好像 / 跟 + … + 似的",
+     "explain": "Thường phối hợp với 像、好像 ở phía trước.",
+     "examples": [
+      {
+       "zh": "她高兴得像个孩子似的。",
+       "vi": "Cô ấy vui như một đứa trẻ."
+      },
+      {
+       "zh": "他好像没听见似的，继续往前走。",
+       "vi": "Anh ấy như thể không nghe thấy, cứ tiếp tục đi."
+      }
+     ]
+    }
+   ],
+   "id": "06-g3"
+  },
+  {
+   "title": "纷纷",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ nhiều người, nhiều vật nối nhau làm cùng một việc.",
+   "points": [
+    {
+     "pattern": "chủ ngữ số nhiều + 纷纷 + động từ",
+     "explain": "Chủ ngữ phải là số nhiều.",
+     "examples": [
+      {
+       "zh": "下课了，学生们纷纷走出教室。",
+       "vi": "Tan học, học sinh lần lượt ra khỏi lớp."
+      },
+      {
+       "zh": "听到这个消息，朋友们纷纷打来电话。",
+       "vi": "Nghe tin, bạn bè tới tấp gọi điện."
+      }
+     ]
+    }
+   ],
+   "id": "06-g4"
+  },
+  {
+   "title": "打听 và 询问",
+   "kind": "phân biệt",
+   "summary": "Cả hai là động từ nghĩa là \"hỏi\" để biết thông tin.",
+   "compare": {
+    "same": "Đều mang được tân ngữ là điều cần biết: 打听 / 询问情况。",
+    "rows": [
+     {
+      "aspect": "Văn phong",
+      "a": "Khẩu ngữ.",
+      "b": "Văn viết, trang trọng."
+     },
+     {
+      "aspect": "Nội dung",
+      "a": "Hỏi thăm tin tức, đường đi, tình hình của ai đó, thường hỏi người ngoài cuộc.",
+      "b": "Hỏi ý kiến, tình hình một cách chính thức, thường hỏi trực tiếp người liên quan."
+     },
+     {
+      "aspect": "Kết cấu",
+      "a": "向 / 跟 + người + 打听 + việc.",
+      "b": "询问 + người / việc: 医生询问了病人的情况。"
+     }
+    ]
+   },
+   "id": "06-g5"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "06-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "咬",
+    "逃",
+    "杀",
+    "射",
+    "吓",
+    "追",
+    "恨",
+    "熬夜"
+   ],
+   "items": [
+    {
+     "q": "那只狗很凶，小心别被它___了。",
+     "a": "咬"
+    },
+    {
+     "q": "你突然从门后跳出来，___了我一跳。",
+     "a": "吓"
+    },
+    {
+     "q": "小偷看见警察，转身就___。",
+     "a": "逃"
+    },
+    {
+     "q": "为了准备考试，他连续___了三天。",
+     "a": "熬夜"
+    },
+    {
+     "q": "他跑得太快了，我怎么也___不上。",
+     "a": "追"
+    },
+    {
+     "q": "他一箭就___中了远处的目标。",
+     "a": "射"
+    },
+    {
+     "q": "她___自己当时没有说出真话。",
+     "a": "恨"
+    },
+    {
+     "q": "过年的时候，村里家家都要___鸡做菜。",
+     "a": "杀"
+    }
+   ]
+  },
+  {
+   "id": "06-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我今天不舒服，你能___我请个假吗？",
+     "options": [
+      "替",
+      "被"
+     ],
+     "a": 0,
+     "why": "替 + người + động từ: làm thay cho ai."
+    },
+    {
+     "q": "别着急，他___正在路上呢。",
+     "options": [
+      "说不定",
+      "不一定"
+     ],
+     "a": 0,
+     "why": "Phỏng đoán \"biết đâu, có lẽ\" dùng 说不定."
+    },
+    {
+     "q": "我想向您___一下，附近有没有银行？",
+     "options": [
+      "打听",
+      "询问"
+     ],
+     "a": 0,
+     "why": "Hỏi đường trong khẩu ngữ, kết cấu 向…打听."
+    },
+    {
+     "q": "演出结束后，观众___站起来鼓掌。",
+     "options": [
+      "纷纷",
+      "各自"
+     ],
+     "a": 0,
+     "why": "Nhiều người nối nhau làm cùng một việc: 纷纷."
+    }
+   ]
+  },
+  {
+   "id": "06-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "他A跑得B飞快，C像一阵风D。",
+     "word": "似的",
+     "a": "D"
+    },
+    {
+     "q": "A春天到了，B各种花儿C开放了D。",
+     "word": "纷纷",
+     "a": "C"
+    },
+    {
+     "q": "A这件事B你C我D谢谢他吧。",
+     "word": "替",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "06-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "好像",
+      "一点儿也不",
+      "累",
+      "似的"
+     ],
+     "a": "他好像一点儿也不累似的。",
+     "vi": "Anh ấy trông như chẳng mệt chút nào."
+    },
+    {
+     "words": [
+      "这个办法",
+      "说不定",
+      "能",
+      "解决问题"
+     ],
+     "a": "这个办法说不定能解决问题。",
+     "vi": "Cách này biết đâu giải quyết được vấn đề."
+    },
+    {
+     "words": [
+      "大家",
+      "纷纷",
+      "表达了",
+      "自己的看法"
+     ],
+     "a": "大家纷纷表达了自己的看法。",
+     "vi": "Mọi người lần lượt nêu ý kiến của mình."
+    }
+   ]
+  },
+  {
+   "id": "06-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Đêm giao thừa là một ngày rất quan trọng đối với người Trung Quốc.",
+     "a": "对中国人来说，除夕是非常重要的一天。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Vào ngày này, các thành viên trong gia đình thường trở về nhà để cùng nhau ăn cơm tất niên.",
+     "a": "这一天，家里人通常都会回家一起吃年夜饭。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mọi người thường chuẩn bị rất nhiều món ăn và cùng nhau đón năm mới.",
+     "a": "大家往往准备很多菜，一起迎接新年。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Theo truyền thuyết, phong tục đón giao thừa có liên quan đến một câu chuyện từ thời xa xưa.",
+     "a": "传说守岁的风俗跟一个很久以前的故事有关。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Ngày nay, mặc dù cách đón Tết đã thay đổi rất nhiều, nhưng ý nghĩa đoàn tụ gia đình vẫn không thay đổi.",
+     "a": "如今，虽然过年的方式有了很大变化，但是全家团圆的意义没有变。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "除夕是中国人非常重视的一个节日。",
+     "a": "Đêm giao thừa là một ngày lễ mà người Trung Quốc rất coi trọng."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "每到除夕，很多人都会回家和家人一起吃年夜饭。",
+     "a": "Cứ đến giao thừa, rất nhiều người về nhà ăn bữa cơm tất niên cùng gia đình."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "一家人团聚在一起，共同迎接新年的到来。",
+     "a": "Cả nhà đoàn tụ bên nhau, cùng đón năm mới đến."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "关于除夕的由来，有一个流传很久的故事。",
+     "a": "Về nguồn gốc của đêm giao thừa, có một câu chuyện lưu truyền từ rất lâu."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "虽然时代发生了变化，但是人们对团圆的重视一直没有改变。",
+     "a": "Tuy thời đại đã thay đổi, nhưng sự coi trọng đoàn viên của mọi người thì chưa hề thay đổi."
+    }
+   ]
+  },
+  {
+   "id": "06-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "除夕",
+      "由来",
+      "怪物",
+      "伤害",
+      "无奈",
+      "英雄",
+      "代替",
+      "说不定",
+      "赶紧",
+      "果然",
+      "吓",
+      "似的",
+      "纷纷",
+      "风俗"
+     ]
+    }
+   ]
+  }
+ ]
+}

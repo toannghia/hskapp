@@ -1,0 +1,350 @@
+{
+ "title": {
+  "zh": "体重与节食",
+  "vi": "Cân nặng và ăn kiêng"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/16-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/16-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/16-1.mp3",
+   "audio/bai-tap-1/16-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   136,
+   137,
+   138
+  ],
+  "text": [
+   {
+    "page": 136,
+    "top": 0.568,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 137,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 138,
+    "top": 0.07,
+    "bottom": 0.345,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "即",
+   "kind": "cách dùng",
+   "summary": "Động từ văn viết nghĩa là \"tức là, chính là\"; cũng là phó từ nghĩa là \"liền, ngay\".",
+   "points": [
+    {
+     "pattern": "A，即 B",
+     "explain": "B giải thích hoặc nói rõ A.",
+     "examples": [
+      {
+       "zh": "春节，即农历新年，是中国最重要的节日。",
+       "vi": "Xuân tiết, tức Tết âm lịch, là ngày lễ quan trọng nhất của Trung Quốc."
+      }
+     ]
+    },
+    {
+     "pattern": "一 + động từ + 即 + động từ",
+     "explain": "Nghĩa như 就: hễ… là… ngay.",
+     "examples": [
+      {
+       "zh": "这个道理一听即懂。",
+       "vi": "Đạo lý này nghe một lần là hiểu ngay."
+      }
+     ]
+    }
+   ],
+   "id": "16-g1"
+  },
+  {
+   "title": "个别",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"cá biệt, riêng lẻ\", chỉ số rất ít; cũng làm trạng ngữ nghĩa là \"riêng từng người\".",
+   "points": [
+    {
+     "pattern": "个别 + danh từ",
+     "explain": "Rất ít, một vài.",
+     "examples": [
+      {
+       "zh": "只有个别学生没有交作业。",
+       "vi": "Chỉ có vài học sinh cá biệt chưa nộp bài."
+      }
+     ]
+    },
+    {
+     "pattern": "个别 + động từ",
+     "explain": "Làm riêng với từng người.",
+     "examples": [
+      {
+       "zh": "老师找他个别谈了话。",
+       "vi": "Thầy giáo gọi cậu ấy ra nói chuyện riêng."
+      }
+     ]
+    }
+   ],
+   "id": "16-g2"
+  },
+  {
+   "title": "非",
+   "kind": "cách dùng",
+   "summary": "Phó từ phủ định văn viết nghĩa là \"không phải\"; cũng là tiền tố nghĩa là \"phi, không\".",
+   "points": [
+    {
+     "pattern": "非 … 不可 / 非要 …",
+     "explain": "Nhất định phải; khăng khăng đòi.",
+     "examples": [
+      {
+       "zh": "这件事非你去不可。",
+       "vi": "Việc này nhất định phải là bạn đi."
+      },
+      {
+       "zh": "我劝他休息，他非要继续干。",
+       "vi": "Tôi khuyên anh ấy nghỉ, anh ấy cứ nhất định làm tiếp."
+      }
+     ]
+    },
+    {
+     "pattern": "非 + danh từ / tính từ",
+     "explain": "Tiền tố: 非正式、非工作时间、非卖品.",
+     "examples": [
+      {
+       "zh": "这是一次非正式的见面。",
+       "vi": "Đây là một buổi gặp không chính thức."
+      }
+     ]
+    }
+   ],
+   "id": "16-g3"
+  },
+  {
+   "title": "临时 và 暂时",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ thời gian ngắn, không lâu dài.",
+   "compare": {
+    "same": "Đôi khi thay được: 临时 / 暂时住在朋友家。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Tạm, không chính thức; hoặc \"sát giờ mới\".",
+      "b": "Trong một thời gian ngắn trước mắt."
+     },
+     {
+      "aspect": "Làm định ngữ",
+      "a": "临时工、临时会议 (không cần 的).",
+      "b": "暂时的困难 (thường cần 的)."
+     },
+     {
+      "aspect": "Làm trạng ngữ",
+      "a": "临时决定、临时改变: quyết định sát giờ.",
+      "b": "暂时休息、暂时不去: lúc này tạm chưa."
+     }
+    ]
+   },
+   "id": "16-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "16-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "升",
+    "达到",
+    "存在",
+    "分析",
+    "表明",
+    "参与",
+    "采取",
+    "报道"
+   ],
+   "items": [
+    {
+     "q": "明天气温会___到三十五度。",
+     "a": "升"
+    },
+    {
+     "q": "他的汉语水平已经___了五级。",
+     "a": "达到"
+    },
+    {
+     "q": "这个计划还___一些问题。",
+     "a": "存在"
+    },
+    {
+     "q": "我们应该认真___失败的原因。",
+     "a": "分析"
+    },
+    {
+     "q": "调查结果___，多数人支持这个决定。",
+     "a": "表明"
+    },
+    {
+     "q": "有两百多名志愿者___了这次活动。",
+     "a": "参与"
+    },
+    {
+     "q": "政府已经___措施来解决交通问题。",
+     "a": "采取"
+    },
+    {
+     "q": "今天的新闻___了这场比赛。",
+     "a": "报道"
+    }
+   ]
+  },
+  {
+   "id": "16-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "飞机晚点了，我们___改变了计划。",
+     "options": [
+      "临时",
+      "暂时"
+     ],
+     "a": 0,
+     "why": "Thay đổi sát giờ, ngoài dự định: 临时."
+    },
+    {
+     "q": "这个问题我们___不讨论，以后再说。",
+     "options": [
+      "临时",
+      "暂时"
+     ],
+     "a": 1,
+     "why": "\"Lúc này tạm chưa\": 暂时."
+    },
+    {
+     "q": "这只是___现象，大部分人不是这样的。",
+     "options": [
+      "个别",
+      "各自"
+     ],
+     "a": 0,
+     "why": "\"Cá biệt, số rất ít\": 个别."
+    },
+    {
+     "q": "他___要一个人去，谁劝都不听。",
+     "options": [
+      "非",
+      "别"
+     ],
+     "a": 0,
+     "why": "非要: khăng khăng đòi."
+    }
+   ]
+  },
+  {
+   "id": "16-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A北京大学，B北大，C是中国最著名的大学D之一。",
+     "word": "即",
+     "a": "B"
+    },
+    {
+     "q": "A这次考试B同学C没有通过D。",
+     "word": "个别",
+     "a": "B"
+    },
+    {
+     "q": "A今天的会议很重要，B你C参加D不可。",
+     "word": "非",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "16-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "只有",
+      "个别",
+      "人",
+      "不同意",
+      "这个意见"
+     ],
+     "a": "只有个别人不同意这个意见。",
+     "vi": "Chỉ có vài người cá biệt không đồng ý với ý kiến này."
+    },
+    {
+     "words": [
+      "这个工作",
+      "非",
+      "他",
+      "不可"
+     ],
+     "a": "这个工作非他不可。",
+     "vi": "Công việc này nhất định phải là anh ấy."
+    },
+    {
+     "words": [
+      "我们",
+      "临时",
+      "决定",
+      "去",
+      "爬山"
+     ],
+     "a": "我们临时决定去爬山。",
+     "vi": "Chúng tôi quyết định đi leo núi vào phút chót."
+    }
+   ]
+  },
+  {
+   "id": "16-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "节食",
+      "报道",
+      "营养",
+      "模式",
+      "波动",
+      "参与",
+      "分析",
+      "跟踪",
+      "成果",
+      "即",
+      "达到",
+      "明显",
+      "补偿",
+      "趋势",
+      "差异",
+      "个别",
+      "表明",
+      "临时",
+      "借口",
+      "采取",
+      "措施"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,327 @@
+{
+ "title": {
+  "zh": "抽象艺术美不美？",
+  "vi": "Nghệ thuật trừu tượng đẹp hay xấu?"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/18-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/18-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/18-1.mp3",
+   "audio/bai-tap-1/18-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   152,
+   153,
+   154
+  ],
+  "text": [
+   {
+    "page": 152,
+    "top": 0.613,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 153,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 154,
+    "top": 0.07,
+    "bottom": 0.435,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "极其",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ mức độ cao nhất, nghĩa là \"cực kỳ, vô cùng\", dùng trong văn viết.",
+   "points": [
+    {
+     "pattern": "极其 + tính từ / động từ tâm lý hai âm tiết",
+     "explain": "Chỉ bổ nghĩa cho từ nhiều âm tiết; trước từ một âm tiết dùng 极.",
+     "examples": [
+      {
+       "zh": "这是一个极其重要的决定。",
+       "vi": "Đây là một quyết định cực kỳ quan trọng."
+      },
+      {
+       "zh": "他对工作极其认真。",
+       "vi": "Anh ấy cực kỳ nghiêm túc với công việc."
+      }
+     ]
+    }
+   ],
+   "id": "18-g1"
+  },
+  {
+   "title": "其余",
+   "kind": "cách dùng",
+   "summary": "Đại từ nghĩa là \"phần còn lại, những cái còn lại\".",
+   "points": [
+    {
+     "pattern": "其余 (的) + danh từ / 其余的 + 都 …",
+     "explain": "Chỉ phần còn lại sau khi đã nêu một phần.",
+     "examples": [
+      {
+       "zh": "我只认识其中两个人，其余的都不认识。",
+       "vi": "Tôi chỉ quen hai người trong đó, số còn lại đều không quen."
+      },
+      {
+       "zh": "你留下，其余的人可以走了。",
+       "vi": "Bạn ở lại, những người còn lại có thể về."
+      }
+     ]
+    }
+   ],
+   "id": "18-g2"
+  },
+  {
+   "title": "可见",
+   "kind": "cách dùng",
+   "summary": "Liên từ nghĩa là \"có thể thấy, đủ thấy\", rút ra kết luận từ điều vừa nói.",
+   "points": [
+    {
+     "pattern": "…，可见 + kết luận",
+     "explain": "Đứng đầu vế sau; cũng nói 由此可见.",
+     "examples": [
+      {
+       "zh": "他连这个字都不认识，可见没有认真复习。",
+       "vi": "Đến chữ này cậu ấy cũng không biết, đủ thấy đã không ôn bài nghiêm túc."
+      },
+      {
+       "zh": "这么多人排队，可见这家店很受欢迎。",
+       "vi": "Đông người xếp hàng thế này, đủ thấy quán này rất được ưa chuộng."
+      }
+     ]
+    }
+   ],
+   "id": "18-g3"
+  },
+  {
+   "title": "目前 và 现在",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ thời điểm hiện tại.",
+   "compare": {
+    "same": "Khi nói về tình hình hiện nay thì thay được: 目前 / 现在的情况。",
+    "rows": [
+     {
+      "aspect": "Phạm vi thời gian",
+      "a": "Giai đoạn trước mắt, tính đến lúc này.",
+      "b": "Rộng: từ khoảnh khắc đang nói cho tới cả thời nay."
+     },
+     {
+      "aspect": "Văn phong",
+      "a": "Văn viết, trang trọng.",
+      "b": "Dùng cả khi nói và viết."
+     },
+     {
+      "aspect": "Chỉ đúng khoảnh khắc đang nói",
+      "a": "Không dùng: không nói 目前几点。",
+      "b": "Dùng được: 现在几点？"
+     }
+    ]
+   },
+   "id": "18-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "18-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "欣赏",
+    "设计",
+    "签",
+    "确认",
+    "分辨",
+    "挥",
+    "调整",
+    "出自"
+   ],
+   "items": [
+    {
+     "q": "周末我喜欢一边喝茶一边___音乐。",
+     "a": "欣赏"
+    },
+    {
+     "q": "这座大楼是一位年轻的工程师___的。",
+     "a": "设计"
+    },
+    {
+     "q": "请在这份合同上___上您的名字。",
+     "a": "签"
+    },
+    {
+     "q": "出发前请再___一下航班的时间。",
+     "a": "确认"
+    },
+    {
+     "q": "这对双胞胎长得太像了，很难___。",
+     "a": "分辨"
+    },
+    {
+     "q": "他站在门口向我们___手。",
+     "a": "挥"
+    },
+    {
+     "q": "这句话___一本古代的书。",
+     "a": "出自"
+    },
+    {
+     "q": "根据大家的意见，我们___了计划。",
+     "a": "调整"
+    }
+   ]
+  },
+  {
+   "id": "18-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "___我们还没有收到任何消息。",
+     "options": [
+      "目前",
+      "目的"
+     ],
+     "a": 0,
+     "why": "\"Tính đến lúc này\": 目前."
+    },
+    {
+     "q": "请问，___几点了？",
+     "options": [
+      "目前",
+      "现在"
+     ],
+     "a": 1,
+     "why": "Hỏi đúng khoảnh khắc đang nói chỉ dùng được 现在."
+    },
+    {
+     "q": "这次任务___困难，大家要有准备。",
+     "options": [
+      "极其",
+      "极了"
+     ],
+     "a": 0,
+     "why": "Đứng trước tính từ hai âm tiết: 极其."
+    },
+    {
+     "q": "他每天都最早到公司，___他工作很努力。",
+     "options": [
+      "可见",
+      "可是"
+     ],
+     "a": 0,
+     "why": "Rút ra kết luận từ điều vừa nêu: 可见."
+    }
+   ]
+  },
+  {
+   "id": "18-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A五个苹果我吃了两个，B三个C放在D冰箱里了。",
+     "word": "其余",
+     "a": "B"
+    },
+    {
+     "q": "A这部电影B感人，C很多观众都D哭了。",
+     "word": "极其",
+     "a": "B"
+    },
+    {
+     "q": "A他一次也没迟到过，B他C是个D很守时的人。",
+     "word": "可见",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "18-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "其余的",
+      "问题",
+      "我们",
+      "明天",
+      "再讨论"
+     ],
+     "a": "其余的问题我们明天再讨论。",
+     "vi": "Những vấn đề còn lại mai chúng ta bàn tiếp."
+    },
+    {
+     "words": [
+      "目前",
+      "情况",
+      "还",
+      "不太",
+      "清楚"
+     ],
+     "a": "目前情况还不太清楚。",
+     "vi": "Hiện tình hình vẫn chưa rõ lắm."
+    },
+    {
+     "words": [
+      "这里的",
+      "风景",
+      "极其",
+      "美丽"
+     ],
+     "a": "这里的风景极其美丽。",
+     "vi": "Phong cảnh ở đây cực kỳ đẹp."
+    }
+   ]
+  },
+  {
+   "id": "18-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "抽象",
+      "古典",
+      "欣赏",
+      "规则",
+      "作品",
+      "极其",
+      "神秘",
+      "自由",
+      "设计",
+      "幅",
+      "业余",
+      "其余",
+      "身份",
+      "确认",
+      "分辨",
+      "可见",
+      "调整",
+      "布局",
+      "事实",
+      "证据"
+     ]
+    }
+   ]
+  }
+ ]
+}

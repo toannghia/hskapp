@@ -1,0 +1,313 @@
+{
+ "title": {
+  "zh": "海外用户玩儿微信",
+  "vi": "Người dùng WeChat ở nước ngoài."
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/12-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/12-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/12-1.mp3",
+   "audio/bai-tap-1/12-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   99,
+   100,
+   101
+  ],
+  "text": [
+   {
+    "page": 99,
+    "top": 0.571,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 100,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 101,
+    "top": 0.07,
+    "bottom": 0.355,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "以及",
+   "kind": "cách dùng",
+   "summary": "Liên từ văn viết, nối các từ, cụm từ hoặc mệnh đề ngang hàng, nghĩa là \"và, cùng với\".",
+   "points": [
+    {
+     "pattern": "A、B 以及 C",
+     "explain": "Thường đứng trước thành phần cuối; phần trước 以及 thường quan trọng hơn. Nối được cả mệnh đề.",
+     "examples": [
+      {
+       "zh": "他去过北京、上海以及广州。",
+       "vi": "Anh ấy đã đến Bắc Kinh, Thượng Hải và Quảng Châu."
+      },
+      {
+       "zh": "请说明事情的经过以及你的看法。",
+       "vi": "Xin trình bày diễn biến sự việc cùng ý kiến của bạn."
+      }
+     ]
+    }
+   ],
+   "id": "12-g1"
+  },
+  {
+   "title": "程度",
+   "kind": "cách dùng",
+   "summary": "Danh từ nghĩa là \"mức độ, trình độ\".",
+   "points": [
+    {
+     "pattern": "… 的程度 / 在 … 程度上",
+     "explain": "Chỉ mức mà sự việc đạt tới.",
+     "examples": [
+      {
+       "zh": "他的汉语已经达到了很高的程度。",
+       "vi": "Tiếng Trung của anh ấy đã đạt tới trình độ rất cao."
+      },
+      {
+       "zh": "在很大程度上，成功取决于坚持。",
+       "vi": "Ở mức độ rất lớn, thành công phụ thuộc vào sự kiên trì."
+      }
+     ]
+    },
+    {
+     "pattern": "文化程度",
+     "explain": "Trình độ học vấn.",
+     "examples": [
+      {
+       "zh": "这份工作对文化程度没有要求。",
+       "vi": "Công việc này không yêu cầu trình độ học vấn."
+      }
+     ]
+    }
+   ],
+   "id": "12-g2"
+  },
+  {
+   "title": "发达 và 发展",
+   "kind": "phân biệt",
+   "summary": "Đều nói về sự phát triển, nhưng từ loại khác nhau.",
+   "compare": {
+    "same": "Hai từ này không thay được cho nhau.",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Tính từ.",
+      "b": "Động từ, danh từ."
+     },
+     {
+      "aspect": "Nghĩa",
+      "a": "Đã ở mức phát triển cao: 交通发达、发达国家。",
+      "b": "Quá trình phát triển, hoặc làm cho phát triển: 发展经济、经济的发展。"
+     },
+     {
+      "aspect": "Kết hợp",
+      "a": "Đi được với 很、非常: 很发达。",
+      "b": "Mang tân ngữ và bổ ngữ: 发展得很快。"
+     }
+    ]
+   },
+   "id": "12-g3"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "12-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "逗",
+    "注册",
+    "召开",
+    "合作",
+    "覆盖",
+    "推广",
+    "销售",
+    "针对"
+   ],
+   "items": [
+    {
+     "q": "他说话很幽默，常常把大家___笑。",
+     "a": "逗"
+    },
+    {
+     "q": "使用这个软件以前，需要先___一个用户名。",
+     "a": "注册"
+    },
+    {
+     "q": "学校明天要___一次家长会。",
+     "a": "召开"
+    },
+    {
+     "q": "两家公司决定___开发新产品。",
+     "a": "合作"
+    },
+    {
+     "q": "大雪___了整个城市。",
+     "a": "覆盖"
+    },
+    {
+     "q": "这种新方法值得在全国___。",
+     "a": "推广"
+    },
+    {
+     "q": "这款手机上个月的___量是第一名。",
+     "a": "销售"
+    },
+    {
+     "q": "这个课程是专门___初学者设计的。",
+     "a": "针对"
+    }
+   ]
+  },
+  {
+   "id": "12-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这个城市的交通非常___。",
+     "options": [
+      "发达",
+      "发展"
+     ],
+     "a": 0,
+     "why": "Tính từ làm vị ngữ sau 非常: 发达."
+    },
+    {
+     "q": "这几年，这里的旅游业___得很快。",
+     "options": [
+      "发达",
+      "发展"
+     ],
+     "a": 1,
+     "why": "Động từ mang bổ ngữ 得很快: 发展."
+    },
+    {
+     "q": "会议讨论了今年的计划___明年的目标。",
+     "options": [
+      "以及",
+      "或者"
+     ],
+     "a": 0,
+     "why": "Nối hai thành phần ngang hàng trong văn viết: 以及."
+    },
+    {
+     "q": "他对这件事的关心___让我很感动。",
+     "options": [
+      "程度",
+      "角度"
+     ],
+     "a": 0,
+     "why": "\"Mức độ\" là 程度."
+    }
+   ]
+  },
+  {
+   "id": "12-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A在一定B上，C这个办法D是有效的。",
+     "word": "程度",
+     "a": "B"
+    },
+    {
+     "q": "A参加会议的有B老师、学生C家长D。",
+     "word": "以及",
+     "a": "C"
+    },
+    {
+     "q": "A这个地区B的经济C还不太D。",
+     "word": "发达",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "12-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "邀请了",
+      "同学",
+      "同事",
+      "以及",
+      "老朋友"
+     ],
+     "a": "他邀请了同学、同事以及老朋友。",
+     "vi": "Anh ấy mời bạn học, đồng nghiệp và bạn cũ."
+    },
+    {
+     "words": [
+      "这里的",
+      "通信",
+      "非常",
+      "发达"
+     ],
+     "a": "这里的通信非常发达。",
+     "vi": "Thông tin liên lạc ở đây rất phát triển."
+    },
+    {
+     "words": [
+      "他的",
+      "紧张",
+      "程度",
+      "超出了",
+      "我的想象"
+     ],
+     "a": "他的紧张程度超出了我的想象。",
+     "vi": "Mức độ căng thẳng của anh ấy vượt quá tưởng tượng của tôi."
+    }
+   ]
+  },
+  {
+   "id": "12-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "用户",
+      "明星",
+      "直播",
+      "宣传",
+      "推广",
+      "注册",
+      "合作",
+      "伙伴",
+      "实现",
+      "覆盖",
+      "应用",
+      "以及",
+      "程度",
+      "发达",
+      "创新",
+      "销售",
+      "针对"
+     ]
+    }
+   ]
+  }
+ ]
+}

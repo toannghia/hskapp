@@ -1,0 +1,406 @@
+{
+ "title": {
+  "zh": "人生有选择，一切可改变",
+  "vi": "Đời người có lựa chọn, mọi thứ có đổi thay."
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/03-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/03-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/03-1.mp3",
+   "audio/bai-tap-1/03-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   18,
+   19,
+   20
+  ],
+  "text": [
+   {
+    "page": 18,
+    "top": 0.655,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 19,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 20,
+    "top": 0.07,
+    "bottom": 0.646,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "各自",
+   "kind": "cách dùng",
+   "summary": "Đại từ, chỉ mỗi người hoặc mỗi bên trong số những người, những bên được nhắc tới.",
+   "points": [
+    {
+     "pattern": "chủ ngữ số nhiều + 各自 + động từ / 各自 + 的 + danh từ",
+     "explain": "Đứng ngay sau chủ ngữ số nhiều, hoặc làm định ngữ.",
+     "examples": [
+      {
+       "zh": "下课以后，同学们各自回家了。",
+       "vi": "Tan học, các bạn ai về nhà nấy."
+      },
+      {
+       "zh": "每个人都有各自的想法。",
+       "vi": "Mỗi người đều có suy nghĩ riêng của mình."
+      }
+     ]
+    }
+   ],
+   "id": "03-g1"
+  },
+  {
+   "title": "勿",
+   "kind": "cách dùng",
+   "summary": "Phó từ dùng trong văn viết, nghĩa là \"chớ, đừng\", tương đương 不要、别.",
+   "points": [
+    {
+     "pattern": "请勿 + động từ",
+     "explain": "Hay gặp trên biển báo, thông báo, lời nhắc trang trọng.",
+     "examples": [
+      {
+       "zh": "请勿在此停车。",
+       "vi": "Xin đừng đỗ xe ở đây."
+      },
+      {
+       "zh": "非工作人员请勿入内。",
+       "vi": "Không phận sự miễn vào."
+      }
+     ]
+    }
+   ],
+   "id": "03-g2"
+  },
+  {
+   "title": "包括",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"bao gồm\", dùng để liệt kê hoặc nêu rõ một phần nằm trong tổng thể.",
+   "points": [
+    {
+     "pattern": "A 包括 B (+ 在内)",
+     "explain": "Sau 包括 là các thành phần; thường kết hợp 在内 ở cuối.",
+     "examples": [
+      {
+       "zh": "房租包括水费和电费。",
+       "vi": "Tiền thuê nhà bao gồm tiền nước và tiền điện."
+      },
+      {
+       "zh": "包括我在内，一共有八个人参加。",
+       "vi": "Tính cả tôi, tổng cộng có tám người tham gia."
+      }
+     ]
+    }
+   ],
+   "id": "03-g3"
+  },
+  {
+   "title": "时刻",
+   "kind": "cách dùng",
+   "summary": "Vừa là danh từ \"thời khắc, giây phút\", vừa là phó từ \"luôn luôn, lúc nào cũng\".",
+   "points": [
+    {
+     "pattern": "… 的 + 时刻 (danh từ)",
+     "explain": "Chỉ một thời điểm đặc biệt, quan trọng.",
+     "examples": [
+      {
+       "zh": "这是我人生中最幸福的时刻。",
+       "vi": "Đây là giây phút hạnh phúc nhất đời tôi."
+      }
+     ]
+    },
+    {
+     "pattern": "时刻 / 时时刻刻 + động từ (phó từ)",
+     "explain": "Chỉ việc diễn ra liên tục, không lúc nào ngừng.",
+     "examples": [
+      {
+       "zh": "开车的时候要时刻注意安全。",
+       "vi": "Khi lái xe phải luôn luôn chú ý an toàn."
+      }
+     ]
+    }
+   ],
+   "id": "03-g4"
+  },
+  {
+   "title": "舒适 và 舒服",
+   "kind": "phân biệt",
+   "summary": "Cả hai là tính từ, đều tả cảm giác dễ chịu, thoải mái.",
+   "compare": {
+    "same": "Thay được cho nhau khi tả nơi ở, chỗ ngồi: 这张沙发很舒适 / 舒服。",
+    "rows": [
+     {
+      "aspect": "Văn phong",
+      "a": "Thiên về văn viết.",
+      "b": "Dùng nhiều trong khẩu ngữ."
+     },
+     {
+      "aspect": "Đối tượng",
+      "a": "Chủ yếu tả môi trường, điều kiện sống: 舒适的生活。",
+      "b": "Tả cả cảm giác cơ thể và tâm trạng: 身体不舒服、心里不舒服。"
+     },
+     {
+      "aspect": "Lặp lại",
+      "a": "Không lặp.",
+      "b": "Lặp được: 舒舒服服地睡一觉。"
+     }
+    ]
+   },
+   "id": "03-g5"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "03-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "撞",
+    "钓",
+    "漏",
+    "辞职",
+    "拥抱",
+    "盼望",
+    "驾驶",
+    "发愁"
+   ],
+   "items": [
+    {
+     "q": "他为了照顾生病的母亲，决定___回老家。",
+     "a": "辞职"
+    },
+    {
+     "q": "周末爷爷喜欢去河边___鱼。",
+     "a": "钓"
+    },
+    {
+     "q": "下雨的时候，这间屋子的屋顶会___水。",
+     "a": "漏"
+    },
+    {
+     "q": "孩子们都___着春节快点儿到来。",
+     "a": "盼望"
+    },
+    {
+     "q": "两个老朋友见面后紧紧地___在一起。",
+     "a": "拥抱"
+    },
+    {
+     "q": "他骑车太快，不小心___到了一棵树上。",
+     "a": "撞"
+    },
+    {
+     "q": "别为这点儿小事___，总会有办法的。",
+     "a": "发愁"
+    },
+    {
+     "q": "他已经有十年的___经验了，开车很稳。",
+     "a": "驾驶"
+    }
+   ]
+  },
+  {
+   "id": "03-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "长途旅行后，能洗个热水澡真___。",
+     "options": [
+      "舒适",
+      "舒服"
+     ],
+     "a": 1,
+     "why": "Tả cảm giác của cơ thể trong khẩu ngữ thì dùng 舒服."
+    },
+    {
+     "q": "比赛结束后，两支球队___回到了自己的休息室。",
+     "options": [
+      "各自",
+      "自己"
+     ],
+     "a": 0,
+     "why": "Mỗi bên trong hai đội: 各自."
+    },
+    {
+     "q": "图书馆内请___大声说话。",
+     "options": [
+      "勿",
+      "没"
+     ],
+     "a": 0,
+     "why": "Lời nhắc trang trọng đi với 请 dùng 勿."
+    },
+    {
+     "q": "作为医生，他___准备着去抢救病人。",
+     "options": [
+      "时刻",
+      "时候"
+     ],
+     "a": 0,
+     "why": "Phó từ \"lúc nào cũng\" là 时刻."
+    }
+   ]
+  },
+  {
+   "id": "03-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A我们B有C的工作D，平时很少见面。",
+     "word": "各自",
+     "a": "C"
+    },
+    {
+     "q": "A全家人B我C在内D都喜欢吃海鲜。",
+     "word": "包括",
+     "a": "B"
+    },
+    {
+     "q": "A父母B牵挂C着在外地工作的D孩子。",
+     "word": "时刻",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "03-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "吃完饭",
+      "大家",
+      "各自",
+      "回",
+      "房间了"
+     ],
+     "a": "吃完饭大家各自回房间了。",
+     "vi": "Ăn xong mọi người ai về phòng nấy."
+    },
+    {
+     "words": [
+      "这些钱",
+      "包括",
+      "三个月的",
+      "房租",
+      "在内"
+     ],
+     "a": "这些钱包括三个月的房租在内。",
+     "vi": "Số tiền này bao gồm cả ba tháng tiền thuê nhà."
+    },
+    {
+     "words": [
+      "我们",
+      "时刻",
+      "都",
+      "准备着",
+      "迎接",
+      "新的挑战"
+     ],
+     "a": "我们时刻都准备着迎接新的挑战。",
+     "vi": "Chúng tôi lúc nào cũng sẵn sàng đón thử thách mới."
+    }
+   ]
+  },
+  {
+   "id": "03-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Cuộc đời có rất nhiều lựa chọn, và mỗi lựa chọn đều có thể thay đổi tương lai của chúng ta.",
+     "a": "人生有很多选择，每一个选择都可能改变我们的未来。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Nếu không hài lòng với cuộc sống hiện tại, chúng ta có thể thử thay đổi cách suy nghĩ của mình.",
+     "a": "如果对现在的生活不满意，我们可以试着改变自己的想法。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cho dù gặp phải thất bại, chúng ta cũng không nên dễ dàng từ bỏ.",
+     "a": "即使遇到失败，我们也不应该轻易放弃。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Điều quan trọng không phải là bạn đã từng thất bại bao nhiêu lần mà là bạn có dũng khí bắt đầu lại hay không.",
+     "a": "重要的不是你失败过多少次，而是你有没有重新开始的勇气。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Chỉ cần bạn sẵn sàng thay đổi thì cuộc sống luôn có những khả năng mới.",
+     "a": "只要你愿意改变，生活就总会有新的可能。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Có những lúc một lựa chọn nhỏ cũng có thể ảnh hưởng đến cả cuộc đời.",
+     "a": "有时候，一个小小的选择也可能影响一辈子。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "人生中有很多选择，不同的选择可能会带来不同的结果。",
+     "a": "Trong đời có rất nhiều lựa chọn, những lựa chọn khác nhau có thể mang lại kết quả khác nhau."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "只要你愿意改变，一切都有可能。",
+     "a": "Chỉ cần bạn sẵn lòng thay đổi, mọi thứ đều có thể."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "遇到困难的时候，我们不能轻易放弃。",
+     "a": "Khi gặp khó khăn, chúng ta không được dễ dàng bỏ cuộc."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "真正重要的不是结果，而是你在这个过程中学到了什么。",
+     "a": "Điều thật sự quan trọng không phải là kết quả, mà là bạn đã học được gì trong quá trình đó."
+    }
+   ]
+  },
+  {
+   "id": "03-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "稳定",
+      "待遇",
+      "发愁",
+      "帆船",
+      "积蓄",
+      "辞职",
+      "航行",
+      "轮流",
+      "各自",
+      "随时",
+      "拥抱",
+      "未来"
+     ]
+    }
+   ]
+  }
+ ]
+}

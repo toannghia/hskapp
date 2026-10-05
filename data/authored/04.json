@@ -1,0 +1,388 @@
+{
+ "title": {
+  "zh": "子路背米",
+  "vi": "Tử Lộ vác gạo."
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/04-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/04-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/04-1.mp3",
+   "audio/bai-tap-1/04-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   28,
+   29,
+   30
+  ],
+  "text": [
+   {
+    "page": 28,
+    "top": 0.598,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 29,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 30,
+    "top": 0.07,
+    "bottom": 0.688,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "至今",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"cho đến nay\", chỉ tình trạng kéo dài từ quá khứ tới hiện tại.",
+   "points": [
+    {
+     "pattern": "至今 + (还 / 仍然 / 都) + động từ",
+     "explain": "Hay đi với 还、仍然、没有.",
+     "examples": [
+      {
+       "zh": "他离开家乡已经二十年了，至今没有回去过。",
+       "vi": "Ông ấy rời quê đã hai mươi năm, đến nay chưa từng trở về."
+      },
+      {
+       "zh": "这个故事流传至今。",
+       "vi": "Câu chuyện này lưu truyền đến tận ngày nay."
+      }
+     ]
+    }
+   ],
+   "id": "04-g1"
+  },
+  {
+   "title": "顶",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"đội trên đầu\", \"đội, bất chấp\" (mưa gió); cũng là lượng từ cho vật có chóp.",
+   "points": [
+    {
+     "pattern": "顶着 + mưa / gió / nắng / áp lực",
+     "explain": "Bất chấp điều kiện bất lợi mà vẫn làm.",
+     "examples": [
+      {
+       "zh": "他顶着大雨把孩子送到了学校。",
+       "vi": "Anh ấy đội mưa to đưa con đến trường."
+      },
+      {
+       "zh": "她顶着很大的压力完成了这项工作。",
+       "vi": "Cô ấy chịu áp lực rất lớn để hoàn thành công việc này."
+      }
+     ]
+    },
+    {
+     "pattern": "一顶 + mũ / màn",
+     "explain": "Lượng từ cho mũ, màn, kiệu.",
+     "examples": [
+      {
+       "zh": "妈妈给我买了一顶帽子。",
+       "vi": "Mẹ mua cho tôi một chiếc mũ."
+      }
+     ]
+    }
+   ],
+   "id": "04-g2"
+  },
+  {
+   "title": "反而",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ kết quả trái ngược với điều thường nghĩ hoặc mong đợi.",
+   "points": [
+    {
+     "pattern": "不但不 / 不但没有 …，反而 …",
+     "explain": "Vế trước nêu điều đáng lẽ xảy ra, vế sau nêu kết quả ngược lại.",
+     "examples": [
+      {
+       "zh": "吃了药，他的病不但没好，反而更重了。",
+       "vi": "Uống thuốc rồi, bệnh anh ấy chẳng những không khỏi mà còn nặng hơn."
+      },
+      {
+       "zh": "雨不但没停，反而越下越大。",
+       "vi": "Mưa chẳng những không tạnh mà càng lúc càng to."
+      }
+     ]
+    }
+   ],
+   "id": "04-g3"
+  },
+  {
+   "title": "满足 và 满意",
+   "kind": "phân biệt",
+   "summary": "Đều diễn tả cảm giác hài lòng, nhưng cách dùng khác nhau.",
+   "compare": {
+    "same": "Đều dùng được với 感到: 感到满足 / 感到满意。",
+    "rows": [
+     {
+      "aspect": "Nghĩa chính",
+      "a": "Cảm thấy đã đủ, không đòi hỏi thêm.",
+      "b": "Thấy hợp ý, vừa lòng với người hoặc việc."
+     },
+     {
+      "aspect": "Mang tân ngữ",
+      "a": "Dùng như động từ \"đáp ứng\": 满足要求、满足需要。",
+      "b": "Không mang tân ngữ kiểu đó."
+     },
+     {
+      "aspect": "Kết cấu",
+      "a": "满足于 + hiện trạng: 不满足于现在的成绩。",
+      "b": "对 + đối tượng + 满意: 对服务很满意。"
+     }
+    ]
+   },
+   "id": "04-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "04-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "滑",
+    "扶",
+    "甩",
+    "占",
+    "孝敬",
+    "打听",
+    "委屈",
+    "流传"
+   ],
+   "items": [
+    {
+     "q": "下雪以后路很___，走路要小心。",
+     "a": "滑"
+    },
+    {
+     "q": "看到老人上车，他赶紧过去___了一把。",
+     "a": "扶"
+    },
+    {
+     "q": "我想向您___一下，去火车站怎么走？",
+     "a": "打听"
+    },
+    {
+     "q": "他挣了钱，首先想到的是___父母。",
+     "a": "孝敬"
+    },
+    {
+     "q": "这个传说在当地已经___了几百年。",
+     "a": "流传"
+    },
+    {
+     "q": "明明不是她的错却被批评，她觉得很___。",
+     "a": "委屈"
+    },
+    {
+     "q": "他把手上的水___干，然后接过了毛巾。",
+     "a": "甩"
+    },
+    {
+     "q": "这张桌子太大了，___了半个房间。",
+     "a": "占"
+    }
+   ]
+  },
+  {
+   "id": "04-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我对这次考试的成绩很___。",
+     "options": [
+      "满足",
+      "满意"
+     ],
+     "a": 1,
+     "why": "对…很满意 là kết cấu cố định của 满意."
+    },
+    {
+     "q": "公司会尽量___每一位顾客的要求。",
+     "options": [
+      "满足",
+      "满意"
+     ],
+     "a": 0,
+     "why": "Mang tân ngữ 要求 với nghĩa \"đáp ứng\" chỉ dùng 满足."
+    },
+    {
+     "q": "我劝他别生气，他___更生气了。",
+     "options": [
+      "反而",
+      "然而"
+     ],
+     "a": 0,
+     "why": "Kết quả ngược với mong đợi: 反而."
+    },
+    {
+     "q": "他十年前借了我一本书，___还没还。",
+     "options": [
+      "至今",
+      "从前"
+     ],
+     "a": 0,
+     "why": "\"Đến nay vẫn chưa\" dùng 至今."
+    }
+   ]
+  },
+  {
+   "id": "04-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他B感冒了，C还D着大雪去上班。",
+     "word": "顶",
+     "a": "D"
+    },
+    {
+     "q": "A休息了一天，B他C觉得D更累了。",
+     "word": "反而",
+     "a": "C"
+    },
+    {
+     "q": "A这个问题B还C没有D找到答案。",
+     "word": "至今",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "04-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "老师",
+      "不但",
+      "没有批评他",
+      "反而",
+      "表扬了他"
+     ],
+     "a": "老师不但没有批评他，反而表扬了他。",
+     "vi": "Thầy giáo chẳng những không phê bình mà còn khen cậu ấy."
+    },
+    {
+     "words": [
+      "我",
+      "至今",
+      "还",
+      "记得",
+      "那一天"
+     ],
+     "a": "我至今还记得那一天。",
+     "vi": "Đến giờ tôi vẫn nhớ ngày hôm đó."
+    },
+    {
+     "words": [
+      "他们",
+      "顶着",
+      "太阳",
+      "在田里",
+      "干活儿"
+     ],
+     "a": "他们顶着太阳在田里干活儿。",
+     "vi": "Họ đội nắng làm việc ngoài đồng."
+    }
+   ]
+  },
+  {
+   "id": "04-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Khi còn trẻ, Tử Lộ rất hiếu thảo với cha mẹ.",
+     "a": "子路年轻的时候非常孝顺父母。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mặc dù gia đình nghèo, anh ấy vẫn cố gắng tìm cách chăm sóc bố mẹ.",
+     "a": "虽然家里很穷，他还是想尽办法照顾父母。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Vì bố mẹ muốn ăn cơm, anh ấy thường đi rất xa để mua gạo.",
+     "a": "因为父母想吃米饭，他常常走很远的路去买米。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Sau khi biết câu chuyện này, mọi người đều rất cảm động trước lòng hiếu thảo của anh ấy.",
+     "a": "知道这个故事以后，大家都被他的孝心感动了。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Người xưa coi việc hiếu thảo với cha mẹ là một trong những phẩm chất quan trọng nhất.",
+     "a": "古人把孝顺父母看作最重要的美德之一。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "子路非常孝顺父母。",
+     "a": "Tử Lộ vô cùng hiếu thảo với cha mẹ."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "为了让父母吃上米饭，他常常走很远的路去买米。",
+     "a": "Để cha mẹ được ăn cơm, anh thường đi bộ rất xa để mua gạo."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "虽然生活很困难，但是他从来没有忘记照顾父母。",
+     "a": "Tuy cuộc sống rất khó khăn, nhưng anh chưa bao giờ quên chăm sóc cha mẹ."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "这个故事告诉我们应该懂得感恩父母。",
+     "a": "Câu chuyện này cho chúng ta biết nên biết ơn cha mẹ."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "孝顺父母不仅是一种传统美德，也是一种责任。",
+     "a": "Hiếu thảo với cha mẹ không chỉ là một đức tính truyền thống mà còn là một trách nhiệm."
+    }
+   ]
+  },
+  {
+   "id": "04-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "从前",
+      "孝敬",
+      "满足",
+      "决心",
+      "委屈",
+      "打听",
+      "结实",
+      "顶",
+      "扶",
+      "团圆",
+      "本领",
+      "反而",
+      "孝顺"
+     ]
+    }
+   ]
+  }
+ ]
+}

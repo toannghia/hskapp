@@ -1,0 +1,358 @@
+{
+ "title": {
+  "zh": "在最美好的时刻离开",
+  "vi": "Rời khỏi vào thời khắc tốt đẹp nhất"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/17-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/17-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/17-1.mp3",
+   "audio/bai-tap-1/17-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   144,
+   145,
+   146
+  ],
+  "text": [
+   {
+    "page": 144,
+    "top": 0.604,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 145,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 146,
+    "top": 0.07,
+    "bottom": 0.337,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "以",
+   "kind": "cách dùng",
+   "summary": "Giới từ và liên từ văn viết, có ba cách dùng thường gặp.",
+   "points": [
+    {
+     "pattern": "以 + danh từ + động từ",
+     "explain": "Nghĩa như 用、凭、按照: bằng, dựa vào, theo.",
+     "examples": [
+      {
+       "zh": "他以优秀的成绩考上了大学。",
+       "vi": "Anh ấy đỗ đại học với thành tích xuất sắc."
+      },
+      {
+       "zh": "我们应该以积极的态度面对困难。",
+       "vi": "Chúng ta nên đối mặt khó khăn bằng thái độ tích cực."
+      }
+     ]
+    },
+    {
+     "pattern": "…，以 + mục đích",
+     "explain": "Nghĩa là \"để, nhằm\".",
+     "examples": [
+      {
+       "zh": "公司增加了员工，以提高服务质量。",
+       "vi": "Công ty tăng thêm nhân viên để nâng cao chất lượng phục vụ."
+      }
+     ]
+    },
+    {
+     "pattern": "以 … 为 …",
+     "explain": "Lấy… làm…, coi… là….",
+     "examples": [
+      {
+       "zh": "这次活动以学生为主。",
+       "vi": "Hoạt động lần này lấy học sinh làm chính."
+      }
+     ]
+    }
+   ],
+   "id": "17-g1"
+  },
+  {
+   "title": "平常",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"bình thường, không có gì đặc biệt\"; cũng là danh từ chỉ thời gian nghĩa là \"mọi khi, ngày thường\".",
+   "points": [
+    {
+     "pattern": "很平常 / 平常的 + danh từ",
+     "explain": "Không có gì đặc biệt.",
+     "examples": [
+      {
+       "zh": "这只是一件很平常的小事。",
+       "vi": "Đây chỉ là một việc nhỏ rất bình thường."
+      }
+     ]
+    },
+    {
+     "pattern": "平常 + mệnh đề",
+     "explain": "Lúc bình thường, mọi khi.",
+     "examples": [
+      {
+       "zh": "他平常很少说话，今天却说了很多。",
+       "vi": "Mọi khi anh ấy ít nói, hôm nay lại nói rất nhiều."
+      }
+     ]
+    }
+   ],
+   "id": "17-g2"
+  },
+  {
+   "title": "宁可",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"thà\", chọn một điều sau khi cân nhắc thiệt hơn.",
+   "points": [
+    {
+     "pattern": "宁可 A，也不 B",
+     "explain": "Thà chịu A chứ không chịu B.",
+     "examples": [
+      {
+       "zh": "我宁可走路，也不坐他的车。",
+       "vi": "Tôi thà đi bộ chứ không ngồi xe của anh ta."
+      }
+     ]
+    },
+    {
+     "pattern": "宁可 A，也要 B",
+     "explain": "Thà chịu A để đạt được B.",
+     "examples": [
+      {
+       "zh": "他宁可少睡一会儿，也要把工作做完。",
+       "vi": "Anh ấy thà ngủ ít đi một chút cũng phải làm xong việc."
+      }
+     ]
+    }
+   ],
+   "id": "17-g3"
+  },
+  {
+   "title": "忽视 và 轻视",
+   "kind": "phân biệt",
+   "summary": "Đều là động từ chỉ việc không coi trọng.",
+   "compare": {
+    "same": "Hai từ khác nhau về lý do không coi trọng, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Không để ý, bỏ sót, thường là vô ý.",
+      "b": "Coi thường, đánh giá thấp, có chủ ý."
+     },
+     {
+      "aspect": "Đối tượng",
+      "a": "Sự việc, vấn đề: 忽视健康、忽视细节。",
+      "b": "Người hoặc việc: 轻视对手、轻视体力劳动。"
+     },
+     {
+      "aspect": "Nguyên nhân",
+      "a": "Do sơ suất.",
+      "b": "Do thái độ kiêu ngạo, xem nhẹ."
+     }
+    ]
+   },
+   "id": "17-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "17-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "投入",
+    "争取",
+    "度过",
+    "告别",
+    "推荐",
+    "主持",
+    "运用",
+    "集中"
+   ],
+   "items": [
+    {
+     "q": "他把全部精力都___到了工作中。",
+     "a": "投入"
+    },
+    {
+     "q": "我们要___在月底以前完成任务。",
+     "a": "争取"
+    },
+    {
+     "q": "我在农村___了快乐的童年。",
+     "a": "度过"
+    },
+    {
+     "q": "他挥着手跟朋友们___。",
+     "a": "告别"
+    },
+    {
+     "q": "你能给我___一本好看的小说吗？",
+     "a": "推荐"
+    },
+    {
+     "q": "今晚的晚会由王老师___。",
+     "a": "主持"
+    },
+    {
+     "q": "学过的知识要学会在生活中___。",
+     "a": "运用"
+    },
+    {
+     "q": "上课的时候要___注意力。",
+     "a": "集中"
+    }
+   ]
+  },
+  {
+   "id": "17-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我们不能___任何一个对手。",
+     "options": [
+      "忽视",
+      "轻视"
+     ],
+     "a": 1,
+     "why": "Coi thường người khác: 轻视."
+    },
+    {
+     "q": "很多人只顾工作，___了自己的健康。",
+     "options": [
+      "忽视",
+      "轻视"
+     ],
+     "a": 0,
+     "why": "Vô ý không để tâm tới: 忽视."
+    },
+    {
+     "q": "我___多花点儿钱，也要买质量好的。",
+     "options": [
+      "宁可",
+      "可能"
+     ],
+     "a": 0,
+     "why": "宁可…也要…: thà… cũng phải…."
+    },
+    {
+     "q": "他___不喝酒，只有过节的时候才喝一点儿。",
+     "options": [
+      "平常",
+      "平均"
+     ],
+     "a": 0,
+     "why": "\"Mọi khi, ngày thường\": 平常."
+    }
+   ]
+  },
+  {
+   "id": "17-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他B全班第一名的成绩C通过了D考试。",
+     "word": "以",
+     "a": "B"
+    },
+    {
+     "q": "A我B自己多做一点儿，C也不想D麻烦别人。",
+     "word": "宁可",
+     "a": "B"
+    },
+    {
+     "q": "A这家饭馆B人不多，C周末D要排队。",
+     "word": "平常",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "17-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "宁可",
+      "不睡觉",
+      "也要",
+      "看完",
+      "这本书"
+     ],
+     "a": "我宁可不睡觉，也要看完这本书。",
+     "vi": "Tôi thà không ngủ cũng phải đọc xong cuốn sách này."
+    },
+    {
+     "words": [
+      "这次比赛",
+      "以",
+      "年轻人",
+      "为主"
+     ],
+     "a": "这次比赛以年轻人为主。",
+     "vi": "Cuộc thi lần này chủ yếu là người trẻ."
+    },
+    {
+     "words": [
+      "他",
+      "平常",
+      "不太",
+      "爱",
+      "说话"
+     ],
+     "a": "他平常不太爱说话。",
+     "vi": "Mọi khi anh ấy không thích nói nhiều."
+    }
+   ]
+  },
+  {
+   "id": "17-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "事物",
+      "高峰",
+      "终点",
+      "深刻",
+      "戏剧",
+      "投入",
+      "以",
+      "争取",
+      "忽视",
+      "魅力",
+      "度过",
+      "告别",
+      "平常",
+      "依然",
+      "评价",
+      "运用",
+      "宁可",
+      "体会"
+     ]
+    }
+   ]
+  }
+ ]
+}

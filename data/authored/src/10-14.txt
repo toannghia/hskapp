@@ -1,0 +1,190 @@
+#L 10
+G|毕竟|Phó từ nhấn mạnh một thực tế hoặc lý do căn bản, nghĩa là "dù sao thì, suy cho cùng".
+P|chủ ngữ + 毕竟 + vị ngữ|Nêu lý do để giải thích, thông cảm hoặc khẳng định; hay đi với 虽然…但….
+E|他毕竟才学了半年，说成这样已经不错了。|Dù sao cậu ấy mới học nửa năm, nói được thế này đã khá rồi.
+E|虽然我们吵过架，但毕竟是多年的朋友。|Tuy từng cãi nhau, nhưng suy cho cùng vẫn là bạn bè nhiều năm.
+G|逐渐|Phó từ chỉ sự thay đổi diễn ra từ từ, từng bước một.
+P|逐渐 + động từ / tính từ|Thiên về văn viết; dùng cho cả biến đổi tự nhiên lẫn biến đổi theo trình tự, có ý thức.
+E|来中国一年后，他逐渐习惯了这里的饮食。|Sau một năm ở Trung Quốc, anh ấy dần quen với ẩm thực ở đây.
+E|天色逐渐暗了下来。|Trời dần tối lại.
+G|或许|Phó từ nghĩa là "có lẽ, có thể", diễn tả phỏng đoán không chắc chắn; giống 也许 nhưng trang trọng hơn.
+P|或许 + mệnh đề / chủ ngữ + 或许 + vị ngữ|Đứng đầu câu hoặc sau chủ ngữ.
+E|或许他有自己的原因。|Có lẽ anh ấy có lý do riêng.
+E|换一种方法，问题或许就能解决。|Đổi cách khác, vấn đề có lẽ sẽ giải quyết được.
+C|显示 và 显得|Đều nói về điều lộ ra bên ngoài, nhưng nghĩa và cách dùng khác nhau.|Hai từ này không thay được cho nhau.
+R|Nghĩa|Cho thấy, thể hiện rõ một sự thật, năng lực, số liệu.|Trông có vẻ, tỏ ra có một tính chất nào đó.
+R|Theo sau|Danh từ hoặc mệnh đề: 显示了他的能力、调查显示……|Tính từ: 显得很年轻、显得不高兴。
+R|Chủ ngữ thường gặp|Số liệu, kết quả, hành động.|Người hoặc vật được nhận xét.
+F|插 拦 拍 系 说服 改进 播放 纪念
+I|他把花___在了花瓶里。|插
+I|警察在路口___住了那辆车。|拦
+I|他轻轻地___了一下我的肩膀。|拍
+I|出门前，他弯下腰___好了鞋带。|系
+I|我怎么劝也___不了他。|说服
+I|这台机器经过___以后，速度快多了。|改进
+I|电视上正在___一部老电影。|播放
+I|为了___这位作家，人们建了一座博物馆。|纪念
+Q|他___还是个孩子，你别对他要求太高。|毕竟/究竟|0|Nhấn mạnh thực tế không thể phủ nhận để giải thích: 毕竟.
+Q|穿上这件衣服，你___年轻多了。|显示/显得|1|"Trông có vẻ" + tính từ dùng 显得.
+Q|调查结果___，大部分学生每天睡眠不足八小时。|显示/显得|0|Số liệu, kết quả "cho thấy" dùng 显示.
+Q|天气___暖和起来了。|逐渐/立刻|0|Thay đổi từ từ: 逐渐.
+S|A他B已经C忘了D这件事。|或许|B
+S|A经过半年的练习，B她的发音C标准D了。|逐渐|C
+S|A虽然他做错了，B但C是你的朋友D。|毕竟|C
+O|她/逐渐/适应了/这里的/生活|她逐渐适应了这里的生活。|Cô ấy dần thích nghi với cuộc sống ở đây.
+O|他/或许/明天/就/回来了|他或许明天就回来了。|Có lẽ ngày mai anh ấy sẽ về.
+O|这次比赛/显示了/他的/真正水平|这次比赛显示了他的真正水平。|Cuộc thi lần này cho thấy trình độ thật của anh ấy.
+T|Kể lại bài khóa bằng lời của bạn|争论 奇迹 奔跑 辩论 始终 说服 摄影师 毕竟 拍 差距 试验 逐渐 改进 播放 瞬间
+#L 11
+G|所|Trợ từ văn viết đứng trước động từ, tạo thành cụm danh từ hoặc dùng trong câu bị động.
+P|(chủ ngữ +) 所 + động từ + 的 (+ danh từ)|Chỉ đối tượng của động từ: "điều mà…".
+E|这就是我所知道的全部情况。|Đây là toàn bộ tình hình mà tôi biết.
+E|他所说的话，我都记下来了。|Những lời anh ấy nói, tôi đều ghi lại cả.
+P|为 / 被 + người + 所 + động từ|Câu bị động trong văn viết.
+E|这首歌为很多年轻人所喜爱。|Bài hát này được nhiều bạn trẻ yêu thích.
+G|相当|Phó từ chỉ mức độ khá cao, nghĩa là "khá, tương đối"; cũng là động từ nghĩa là "tương đương".
+P|相当 + tính từ / động từ tâm lý|Mức độ cao nhưng chưa tới 非常.
+E|这次考试相当难。|Kỳ thi lần này khá khó.
+P|A 相当于 B|A ngang bằng với B.
+E|这里一个月的房租相当于我半个月的工资。|Tiền thuê nhà một tháng ở đây bằng nửa tháng lương của tôi.
+G|数|Số từ (đọc shù) nghĩa là "vài, mấy", dùng trong văn viết.
+P|数 + lượng từ / 十、百、千 + danh từ|Chỉ số lượng không xác định: 数次、数年、数十人、数百年.
+E|他在这家公司工作了数年。|Anh ấy đã làm ở công ty này vài năm.
+E|数百名观众参加了这次活动。|Vài trăm khán giả đã tham gia hoạt động này.
+C|持续 và 继续|Đều chỉ sự việc tiếp diễn.|Đều đứng được trước động từ: 持续 / 继续上升。
+R|Nghĩa|Kéo dài liên tục, không gián đoạn trong một khoảng thời gian.|Làm tiếp, có thể là sau khi tạm ngừng.
+R|Kết hợp|Hay đi với khoảng thời gian: 持续了三天、持续高温。|Hay đi với động từ chỉ hành động: 继续学习、继续说。
+R|Sau khi nghỉ|Không dùng.|Dùng được: 休息一下再继续。
+F|慌 享受 模仿 避免 导致 采用 计算 清醒
+I|别___，慢慢说，到底发生了什么事？|慌
+I|退休以后，他开始___轻松的生活。|享受
+I|小孩子喜欢___大人说话。|模仿
+I|开车的时候不要看手机，以___发生事故。|避免
+I|长期熬夜会___身体出现各种问题。|导致
+I|我们公司___了一种新的管理方法。|采用
+I|请帮我___一下这次旅行一共要花多少钱。|计算
+I|喝了一杯咖啡以后，他终于___了。|清醒
+Q|这场雨已经___下了三天了。|持续/继续|0|Kéo dài liên tục suốt một khoảng thời gian: 持续.
+Q|休息十分钟以后，我们___开会。|持续/继续|1|Làm tiếp sau khi tạm ngừng: 继续.
+Q|他对自己的要求___严格。|相当/相当于|0|Trước tính từ dùng phó từ 相当.
+Q|我___了解的情况并不多。|所/被|0|所 + động từ + 的: điều mà….
+S|A这部电影B为C观众D喜爱。|所|D
+S|A他的汉语B说得C流利D。|相当|C
+S|A经过B年的努力，C他终于成功了D。|数|B
+O|这/就是/我/所/希望的/结果|这就是我所希望的结果。|Đây chính là kết quả mà tôi mong muốn.
+O|高温天气/已经/持续了/一个星期|高温天气已经持续了一个星期。|Nắng nóng đã kéo dài một tuần.
+O|他/在国外/生活了/数/十年|他在国外生活了数十年。|Ông ấy sống ở nước ngoài mấy chục năm.
+T|Kể lại bài khóa bằng lời của bạn|闹钟 危害 规律 光线 过渡 实验 状态 清醒 慌 情绪 记忆 相当 持续 导致 失眠 专家 避免
+#L 12
+G|以及|Liên từ văn viết, nối các từ, cụm từ hoặc mệnh đề ngang hàng, nghĩa là "và, cùng với".
+P|A、B 以及 C|Thường đứng trước thành phần cuối; phần trước 以及 thường quan trọng hơn. Nối được cả mệnh đề.
+E|他去过北京、上海以及广州。|Anh ấy đã đến Bắc Kinh, Thượng Hải và Quảng Châu.
+E|请说明事情的经过以及你的看法。|Xin trình bày diễn biến sự việc cùng ý kiến của bạn.
+G|程度|Danh từ nghĩa là "mức độ, trình độ".
+P|… 的程度 / 在 … 程度上|Chỉ mức mà sự việc đạt tới.
+E|他的汉语已经达到了很高的程度。|Tiếng Trung của anh ấy đã đạt tới trình độ rất cao.
+E|在很大程度上，成功取决于坚持。|Ở mức độ rất lớn, thành công phụ thuộc vào sự kiên trì.
+P|文化程度|Trình độ học vấn.
+E|这份工作对文化程度没有要求。|Công việc này không yêu cầu trình độ học vấn.
+C|发达 và 发展|Đều nói về sự phát triển, nhưng từ loại khác nhau.|Hai từ này không thay được cho nhau.
+R|Từ loại|Tính từ.|Động từ, danh từ.
+R|Nghĩa|Đã ở mức phát triển cao: 交通发达、发达国家。|Quá trình phát triển, hoặc làm cho phát triển: 发展经济、经济的发展。
+R|Kết hợp|Đi được với 很、非常: 很发达。|Mang tân ngữ và bổ ngữ: 发展得很快。
+F|逗 注册 召开 合作 覆盖 推广 销售 针对
+I|他说话很幽默，常常把大家___笑。|逗
+I|使用这个软件以前，需要先___一个用户名。|注册
+I|学校明天要___一次家长会。|召开
+I|两家公司决定___开发新产品。|合作
+I|大雪___了整个城市。|覆盖
+I|这种新方法值得在全国___。|推广
+I|这款手机上个月的___量是第一名。|销售
+I|这个课程是专门___初学者设计的。|针对
+Q|这个城市的交通非常___。|发达/发展|0|Tính từ làm vị ngữ sau 非常: 发达.
+Q|这几年，这里的旅游业___得很快。|发达/发展|1|Động từ mang bổ ngữ 得很快: 发展.
+Q|会议讨论了今年的计划___明年的目标。|以及/或者|0|Nối hai thành phần ngang hàng trong văn viết: 以及.
+Q|他对这件事的关心___让我很感动。|程度/角度|0|"Mức độ" là 程度.
+S|A在一定B上，C这个办法D是有效的。|程度|B
+S|A参加会议的有B老师、学生C家长D。|以及|C
+S|A这个地区B的经济C还不太D。|发达|D
+O|他/邀请了/同学/同事/以及/老朋友|他邀请了同学、同事以及老朋友。|Anh ấy mời bạn học, đồng nghiệp và bạn cũ.
+O|这里的/通信/非常/发达|这里的通信非常发达。|Thông tin liên lạc ở đây rất phát triển.
+O|他的/紧张/程度/超出了/我的想象|他的紧张程度超出了我的想象。|Mức độ căng thẳng của anh ấy vượt quá tưởng tượng của tôi.
+T|Kể lại bài khóa bằng lời của bạn|用户 明星 直播 宣传 推广 注册 合作 伙伴 实现 覆盖 应用 以及 程度 发达 创新 销售 针对
+#L 13
+G|何况|Liên từ dùng trong câu hỏi tu từ, nghĩa là "huống chi, huống hồ".
+P|(连) A 都 / 也 …，何况 B (呢)？|A còn như thế thì B càng không cần nói.
+E|这个问题连老师都回答不了，何况学生呢？|Câu này đến thầy còn không trả lời được, huống chi học sinh?
+E|平时这里都很堵，何况是节假日。|Ngày thường ở đây đã tắc, huống hồ là ngày lễ.
+G|何必|Phó từ dùng trong câu hỏi tu từ, nghĩa là "hà tất, việc gì phải", ý là không cần thiết.
+P|何必 + động từ (呢)？|Khuyên ai đó không cần làm như vậy.
+E|都是小事，何必生气呢？|Toàn chuyện nhỏ, việc gì phải giận?
+E|离得这么近，何必开车去？|Gần thế này, cần gì phải lái xe đi?
+G|多亏|Động từ nghĩa là "may nhờ, may mà có", chỉ việc nhờ ai hoặc điều gì mà tránh được chuyện xấu.
+P|多亏 (了) + người / sự việc，(才 / 要不然) …|Vế sau nêu kết quả tốt, hoặc hậu quả đã tránh được.
+E|多亏你提醒我，要不然我就忘了。|May mà bạn nhắc, không thì tôi quên mất.
+E|多亏了医生，他才活了下来。|May nhờ bác sĩ, anh ấy mới sống sót.
+C|激烈 và 强烈|Đều là tính từ chỉ mức độ mạnh.|Hai từ đi với những danh từ khác nhau, hiếm khi thay được cho nhau.
+R|Đối tượng|Hành động, cuộc đối đầu: 比赛、竞争、争论、战斗。|Cảm giác, mong muốn, ánh sáng, phản ứng: 愿望、要求、阳光、反应。
+R|Làm trạng ngữ|Ít dùng.|Dùng được: 强烈要求、强烈反对。
+R|Ví dụ|竞争很激烈。|他有强烈的好奇心。
+F|踩 装 训练 缺乏 重复 启发 安装 造成
+I|对不起，我不小心___了你的脚。|踩
+I|箱子太小了，___不下这么多衣服。|装
+I|运动员们每天都要___六个小时。|训练
+I|他学习很努力，就是___自信。|缺乏
+I|请你把刚才的话再___一遍。|重复
+I|老师的话给了我很大的___。|启发
+I|工人正在给我们家___空调。|安装
+I|这次事故是司机太累___的。|造成
+Q|这场比赛非常___，两个队都想赢。|激烈/强烈|0|Tả cuộc thi đấu, cạnh tranh dùng 激烈.
+Q|大家___要求改变这个规定。|激烈/强烈|1|Làm trạng ngữ trước 要求 dùng 强烈.
+Q|他已经道歉了，你___还生气呢？|何必/何况|0|"Việc gì phải": 何必.
+Q|___你帮忙，我才按时完成了任务。|多亏/何必|0|Nhờ ai mà có kết quả tốt: 多亏.
+S|A大人B都搬不动，C一个孩子D呢？|何况|C
+S|A你B为这点儿小事C跟他D吵架呢？|何必|B
+S|A他B带了伞，C我们才没被D雨淋湿。|多亏|A
+O|多亏/你/来得/及时|多亏你来得及时。|May mà bạn đến kịp.
+O|你/何必/这么/着急/呢|你何必这么着急呢？|Bạn việc gì phải sốt ruột thế?
+O|这次/竞争/相当/激烈|这次竞争相当激烈。|Cuộc cạnh tranh lần này khá gay gắt.
+T|Kể lại bài khóa bằng lời của bạn|锯 筐 训练 缺乏 启发 安装 栏杆 投篮 重复 激烈 何况 好奇 何必 多亏 困扰 思维 阻碍
+#L 14
+G|所谓|Tính từ nghĩa là "cái gọi là", dùng để nêu thuật ngữ sắp giải thích, hoặc tỏ ý không thừa nhận.
+P|所谓 + A，就是 / 是指 …|Nêu khái niệm rồi giải thích.
+E|所谓“四合院”，就是四面都有房子的院子。|Cái gọi là "tứ hợp viện" chính là sân có nhà ở cả bốn phía.
+P|所谓的 + danh từ|Mang ý nghi ngờ, không công nhận.
+E|他所谓的“朋友”，在他困难的时候都不见了。|Những người mà anh ta gọi là "bạn" đều biến mất khi anh ta gặp khó khăn.
+G|则|Liên từ văn viết, chỉ sự đối chiếu giữa hai vế.
+P|A …，B 则 …|Vế sau tương phản hoặc khác với vế trước; 则 đứng sau chủ ngữ.
+E|哥哥喜欢安静，弟弟则喜欢热闹。|Anh thích yên tĩnh, còn em thì thích náo nhiệt.
+E|南方多雨，北方则比较干燥。|Miền nam mưa nhiều, miền bắc thì khá khô.
+G|起|Động từ; ngoài nghĩa "dậy, lên" còn dùng trong cụm 起作用 và làm bổ ngữ sau động từ.
+P|起 (到) … 作用|Có tác dụng, phát huy vai trò.
+E|这种药对感冒不起作用。|Loại thuốc này không có tác dụng với cảm cúm.
+P|động từ + 起 (+ tân ngữ)|Nói tới, nhớ tới: 说起、想起、提起.
+E|说起小时候的事，他总是很兴奋。|Nhắc tới chuyện hồi nhỏ, anh ấy lúc nào cũng hào hứng.
+P|động từ + 得起 / 不起|Có hoặc không đủ khả năng, nhất là về tiền: 买不起、住得起.
+E|这么贵的房子，我买不起。|Nhà đắt thế này tôi không mua nổi.
+C|通常 và 常常|Đều nói về việc hay xảy ra.|Trước động từ đôi khi thay được: 他通常 / 常常七点起床。
+R|Nghĩa|Theo lệ thường, trong tình huống bình thường.|Số lần nhiều, hay lặp lại.
+R|Từ loại|Phó từ và tính từ: 通常情况下、通常的做法。|Chỉ là phó từ.
+R|Vị trí|Đứng được đầu câu: 通常，他六点起床。|Chỉ đứng sau chủ ngữ, trước động từ.
+F|种 具备 接待 创造 关闭 组成 代表 令
+I|院子里___着两棵苹果树。|种
+I|他已经___了当老师的条件。|具备
+I|这家酒店每天要___几百位客人。|接待
+I|这个班由三十个学生___。|组成
+I|请在飞机起飞前___手机。|关闭
+I|他___全班同学在大会上发了言。|代表
+I|他的勇气___人佩服。|令
+I|人类用双手___了美好的生活。|创造
+Q|___情况下，我晚上十一点睡觉。|通常/常常|0|Làm định ngữ cho 情况 chỉ dùng được 通常.
+Q|他___忘记带钥匙。|通常的/常常|1|Phó từ chỉ tần suất đứng trước động từ.
+Q|___“代沟”，是指两代人想法上的差别。|所谓/所以|0|Nêu khái niệm để giải thích: 所谓.
+Q|姐姐爱说爱笑，妹妹___不太爱说话。|则/而且|0|Đối chiếu hai vế: 则.
+S|A他的话B对我C了很大的D作用。|起|C
+S|A城市的生活很方便，B农村的空气C更新鲜D。|则|C
+S|A“网友”，B就是C在网上认识的D朋友。|所谓|A
+O|这个办法/没有/起/作用|这个办法没有起作用。|Cách này không có tác dụng.
+O|我/通常/坐/地铁/上班|我通常坐地铁上班。|Tôi thường đi làm bằng tàu điện ngầm.
+O|白天/很热/晚上/则/比较/凉快|白天很热，晚上则比较凉快。|Ban ngày rất nóng, buổi tối thì khá mát.
+T|Kể lại bài khóa bằng lời của bạn|四合院 建筑 形式 所谓 广泛 代表 通常 组成 长辈 具备 功能 空间 种 则 情趣 封闭 亲切

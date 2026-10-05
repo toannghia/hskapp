@@ -1,0 +1,173 @@
+#L 6
+G|替|Vừa là động từ "thay thế", vừa là giới từ "thay cho, giúp cho, vì".
+P|替 + người + động từ (giới từ)|Làm việc gì thay cho ai, hoặc vì ai mà có cảm xúc.
+E|我今天有事，你能替我去开会吗？|Hôm nay tôi có việc, bạn đi họp thay tôi được không?
+E|你找到了好工作，我真替你高兴。|Bạn tìm được việc tốt, tôi thật mừng cho bạn.
+P|替 + người (động từ)|Thay vào vị trí của ai.
+E|他受伤了，教练让小李替他。|Anh ấy bị thương, huấn luyện viên cho Tiểu Lý vào thay.
+G|说不定|Diễn tả phỏng đoán "biết đâu, có lẽ"; cũng có nghĩa "chưa chắc, chưa nói trước được".
+P|说不定 + mệnh đề|Đứng đầu câu hoặc trước vị ngữ, nêu một khả năng.
+E|带把伞吧，说不定下午会下雨。|Mang ô đi, biết đâu chiều lại mưa.
+E|他说不定已经到家了。|Có lẽ anh ấy đã về đến nhà rồi.
+P|… 还说不定|Làm vị ngữ, nghĩa là chưa chắc chắn.
+E|明天去不去还说不定。|Mai có đi hay không còn chưa chắc.
+G|似的|Trợ từ đứng sau từ hoặc cụm từ để so sánh, nghĩa là "giống như, như thể".
+P|像 / 好像 / 跟 + … + 似的|Thường phối hợp với 像、好像 ở phía trước.
+E|她高兴得像个孩子似的。|Cô ấy vui như một đứa trẻ.
+E|他好像没听见似的，继续往前走。|Anh ấy như thể không nghe thấy, cứ tiếp tục đi.
+G|纷纷|Phó từ chỉ nhiều người, nhiều vật nối nhau làm cùng một việc.
+P|chủ ngữ số nhiều + 纷纷 + động từ|Chủ ngữ phải là số nhiều.
+E|下课了，学生们纷纷走出教室。|Tan học, học sinh lần lượt ra khỏi lớp.
+E|听到这个消息，朋友们纷纷打来电话。|Nghe tin, bạn bè tới tấp gọi điện.
+C|打听 và 询问|Cả hai là động từ nghĩa là "hỏi" để biết thông tin.|Đều mang được tân ngữ là điều cần biết: 打听 / 询问情况。
+R|Văn phong|Khẩu ngữ.|Văn viết, trang trọng.
+R|Nội dung|Hỏi thăm tin tức, đường đi, tình hình của ai đó, thường hỏi người ngoài cuộc.|Hỏi ý kiến, tình hình một cách chính thức, thường hỏi trực tiếp người liên quan.
+R|Kết cấu|向 / 跟 + người + 打听 + việc.|询问 + người / việc: 医生询问了病人的情况。
+F|咬 逃 杀 射 吓 追 恨 熬夜
+I|那只狗很凶，小心别被它___了。|咬
+I|你突然从门后跳出来，___了我一跳。|吓
+I|小偷看见警察，转身就___。|逃
+I|为了准备考试，他连续___了三天。|熬夜
+I|他跑得太快了，我怎么也___不上。|追
+I|他一箭就___中了远处的目标。|射
+I|她___自己当时没有说出真话。|恨
+I|过年的时候，村里家家都要___鸡做菜。|杀
+Q|我今天不舒服，你能___我请个假吗？|替/被|0|替 + người + động từ: làm thay cho ai.
+Q|别着急，他___正在路上呢。|说不定/不一定|0|Phỏng đoán "biết đâu, có lẽ" dùng 说不定.
+Q|我想向您___一下，附近有没有银行？|打听/询问|0|Hỏi đường trong khẩu ngữ, kết cấu 向…打听.
+Q|演出结束后，观众___站起来鼓掌。|纷纷/各自|0|Nhiều người nối nhau làm cùng một việc: 纷纷.
+S|他A跑得B飞快，C像一阵风D。|似的|D
+S|A春天到了，B各种花儿C开放了D。|纷纷|C
+S|A这件事B你C我D谢谢他吧。|替|C
+O|他/好像/一点儿也不/累/似的|他好像一点儿也不累似的。|Anh ấy trông như chẳng mệt chút nào.
+O|这个办法/说不定/能/解决问题|这个办法说不定能解决问题。|Cách này biết đâu giải quyết được vấn đề.
+O|大家/纷纷/表达了/自己的看法|大家纷纷表达了自己的看法。|Mọi người lần lượt nêu ý kiến của mình.
+T|Kể lại bài khóa bằng lời của bạn|除夕 由来 怪物 伤害 无奈 英雄 代替 说不定 赶紧 果然 吓 似的 纷纷 风俗
+#L 7
+G|瞎|Động từ nghĩa là "mù"; còn làm phó từ khẩu ngữ, nghĩa là làm bừa, vô căn cứ, vô ích.
+P|眼睛 + 瞎了|Mất thị lực.
+E|这位老人的一只眼睛瞎了。|Một bên mắt của cụ già này bị mù.
+P|瞎 + động từ|Làm mà không có căn cứ hoặc không có kết quả: 瞎说、瞎猜、瞎忙、瞎操心.
+E|你别瞎说，事情不是那样的。|Đừng nói bừa, sự việc không phải như thế.
+E|不用为我瞎操心，我能照顾好自己。|Đừng lo vớ vẩn cho tôi, tôi tự lo được.
+G|分别|Phó từ nghĩa là "lần lượt, riêng từng người"; còn là động từ nghĩa là "chia tay".
+P|chủ ngữ số nhiều + 分别 + động từ|Mỗi người, mỗi cái làm riêng; hoặc làm với từng đối tượng một.
+E|老师分别找他们两个人谈了话。|Thầy giáo nói chuyện riêng với từng người trong hai bạn ấy.
+E|他们三个人分别来自三个国家。|Ba người họ lần lượt đến từ ba nước khác nhau.
+P|(跟 + người) + 分别|Chia tay, xa cách.
+E|我们分别已经十年了。|Chúng tôi xa nhau đã mười năm.
+G|根|Danh từ nghĩa là "rễ"; làm lượng từ cho vật dài và mảnh.
+P|一根 + vật dài, mảnh|Dùng cho dây, tóc, que, cành cây, chuối…
+E|我的头上长出了一根白头发。|Trên đầu tôi mọc một sợi tóc bạc.
+E|他用一根绳子把箱子捆好了。|Anh ấy dùng một sợi dây buộc chặt cái hòm.
+G|便|Phó từ văn viết, nghĩa và cách dùng giống 就.
+P|… 便 + động từ|Việc sau xảy ra liền sau việc trước, hoặc là kết quả tự nhiên của việc trước.
+E|他吃完饭便回房间休息了。|Anh ấy ăn cơm xong liền về phòng nghỉ.
+E|只要努力，便会有收获。|Chỉ cần cố gắng thì sẽ có thành quả.
+C|忽然 và 突然|Đều chỉ sự việc xảy ra nhanh và bất ngờ.|Làm trạng ngữ thì thay được cho nhau: 天忽然 / 突然黑了。
+R|Từ loại|Chỉ là phó từ.|Vừa là phó từ vừa là tính từ.
+R|Làm vị ngữ, định ngữ, bổ ngữ|Không được.|Được: 事情很突然、突然的变化、来得太突然。
+R|Mức độ|Nhẹ hơn.|Nhấn mạnh sự bất ngờ hơn.
+F|摸 蹲 摇 摆 碎 硬 寻找 善于
+I|妈妈___了一下孩子的头，发现他发烧了。|摸
+I|他___在地上系鞋带。|蹲
+I|问他去不去，他只是___头。|摇
+I|杯子掉在地上，摔___了。|碎
+I|这种面包放了几天，已经变___了。|硬
+I|警察正在___那个走失的孩子。|寻找
+I|她很___跟不同的人打交道。|善于
+I|桌子上___着一瓶鲜花。|摆
+Q|这个消息来得太___了，大家都没有准备。|忽然/突然|1|Làm bổ ngữ sau 得 chỉ dùng được 突然.
+Q|他从地上捡起一___树枝。|根/支|0|树枝 dài và mảnh dùng lượng từ 根.
+Q|你不了解情况就别___猜。|瞎/假|0|瞎 + động từ: làm bừa, không căn cứ.
+Q|校长___跟每个毕业生握了手。|分别/分开|0|Làm lần lượt với từng người: 分别.
+S|他A放下B电话C出门D了。|便|C
+S|A两个孩子B住在C爷爷家和D姥姥家。|分别|B
+S|A我正要出门，B天C下起了D大雨。|忽然|C
+O|他/一说完/便/离开了|他一说完便离开了。|Anh ấy vừa nói xong liền rời đi.
+O|我们/分别/回答了/两个问题|我们分别回答了两个问题。|Chúng tôi lần lượt trả lời hai câu hỏi.
+O|你/别/瞎/担心/了|你别瞎担心了。|Bạn đừng lo vớ vẩn nữa.
+T|Kể lại hai câu chuyện thành ngữ bằng lời của bạn|摸 大象 瞎 分别 片面 结论 将军 打猎 忽然 姿势 石头 连续 便
+#L 8
+G|倒|Phó từ (đọc dào), diễn tả điều trái với dự đoán; cũng dùng để nhượng bộ trước khi nêu ý chính.
+P|… 倒 + vị ngữ (trái dự đoán)|Thực tế ngược với điều thường nghĩ.
+E|弟弟倒比哥哥高。|Em trai lại cao hơn anh.
+E|没吃药，病倒好了。|Không uống thuốc mà bệnh lại khỏi.
+P|… 倒是 …，就是 / 不过 …|Thừa nhận một mặt trước rồi mới nêu mặt chưa ổn.
+E|这件衣服质量倒是不错，就是太贵了。|Chất lượng cái áo này thì được đấy, chỉ là đắt quá.
+G|……来……去|Kết cấu lặp động từ, chỉ hành động lặp đi lặp lại nhiều lần.
+P|động từ + 来 + động từ + 去|Hai động từ giống nhau hoặc gần nghĩa; thường theo sau là kết quả.
+E|他在房间里走来走去，不知道该怎么办。|Anh ấy đi đi lại lại trong phòng, không biết nên làm thế nào.
+E|我想来想去，还是决定不去了。|Tôi nghĩ tới nghĩ lui, cuối cùng vẫn quyết định không đi.
+G|要不|Liên từ khẩu ngữ, có hai nghĩa: "nếu không thì" và "hay là".
+P|…，要不 + hậu quả|Nghĩa như 否则、不然.
+E|快点儿走吧，要不就赶不上火车了。|Đi nhanh lên, không thì lỡ tàu mất.
+P|要不 + gợi ý|Đưa ra một lựa chọn khác để người nghe cân nhắc.
+E|今天太晚了，要不我们明天再去吧。|Hôm nay muộn quá rồi, hay là mai mình hẵng đi.
+C|彼此 và 互相|Đều chỉ quan hệ qua lại giữa hai bên.|Trước động từ hai âm tiết thì thường thay được: 彼此 / 互相了解。
+R|Từ loại|Đại từ.|Phó từ.
+R|Chức năng|Làm được chủ ngữ, tân ngữ, định ngữ: 彼此的想法、不分彼此。|Chỉ làm trạng ngữ đứng trước động từ: 互相帮助。
+R|Dùng một mình|Lặp lại để đáp lời khách sáo: 彼此彼此。|Không dùng một mình.
+F|限制 节省 安慰 相处 喂养 吃亏 调皮 固定
+I|为了___时间，我们决定坐飞机去。|节省
+I|朋友考试没考好，我们都去___他。|安慰
+I|这个孩子很___，一刻也安静不下来。|调皮
+I|他们俩性格不同，但是___得很好。|相处
+I|这家饭馆每天的客人数量有___，要提前预订。|限制
+I|他没有___的工作，收入也不稳定。|固定
+I|做生意要诚实，不能让顾客___。|吃亏
+I|这些小猫都是奶奶一个人___大的。|喂养
+Q|我们是多年的朋友，非常了解___的性格。|彼此/互相|0|Làm định ngữ (彼此的…) chỉ dùng được 彼此.
+Q|同学之间应该___帮助。|彼此的/互相|1|Trạng ngữ trước động từ; 彼此的 không đứng trước động từ.
+Q|你先休息一下吧，___我来开车。|要不/倒|0|Đưa ra gợi ý dùng 要不.
+Q|大家都觉得难，他___觉得很容易。|倒/要不|0|Trái với điều mọi người nghĩ: 倒.
+S|A多穿点儿衣服，B出门C会D感冒的。|要不|B
+S|A这个办法B是C可以试一试D。|倒|B
+S|我们A认识很多年了，B一直C不分D。|彼此|D
+O|我/找来找去/也/没找到/那本书|我找来找去也没找到那本书。|Tôi tìm tới tìm lui cũng không thấy cuốn sách đó.
+O|太远了/要不/我们/打车去/吧|太远了，要不我们打车去吧。|Xa quá, hay là mình đi taxi nhé.
+O|这个主意/倒/是/不错|这个主意倒是不错。|Ý này thì cũng được đấy.
+T|Kể lại bài khóa bằng lời của bạn|成语 固定 完整 喂养 猴子 相处 彼此 消费 限制 调皮 不足 倒 要不 吃亏 安慰
+#L 9
+G|算|Ngoài nghĩa "tính toán", còn có nghĩa "được coi là" và "thôi, bỏ qua".
+P|算 (是) + danh từ / tính từ|Coi là, có thể xếp vào loại.
+E|他算是我们班汉语最好的学生。|Cậu ấy được coi là học sinh giỏi tiếng Trung nhất lớp tôi.
+E|今天不算冷。|Hôm nay chưa kể là lạnh.
+P|算了|Thôi, bỏ đi, không tính toán nữa.
+E|算了，别跟他生气了。|Thôi, đừng giận anh ấy nữa.
+P|说了算 / 说话算数|Là người quyết định; giữ lời.
+E|这件事谁说了算？|Việc này ai là người quyết định?
+G|作为|Giới từ nghĩa là "với tư cách là"; cũng là động từ nghĩa là "coi là, lấy làm".
+P|作为 + thân phận，…|Đứng đầu câu, nêu thân phận, vai trò của chủ ngữ.
+E|作为老师，他对每个学生都很负责。|Là giáo viên, ông ấy rất có trách nhiệm với từng học sinh.
+E|作为朋友，我应该告诉你真相。|Với tư cách bạn bè, tôi nên nói cho bạn biết sự thật.
+P|把 + A + 作为 + B|Coi A là B, lấy A làm B.
+E|他把跑步作为每天的习惯。|Anh ấy lấy chạy bộ làm thói quen hằng ngày.
+G|曾经|Phó từ chỉ một việc hoặc tình trạng từng có trong quá khứ, nay đã kết thúc.
+P|曾经 + động từ + 过|Thường đi với 过. Phủ định dùng 不曾、未曾 hoặc 没有…过, không nói 不曾经.
+E|我曾经在上海工作过两年。|Tôi từng làm việc ở Thượng Hải hai năm.
+E|他们曾经是很好的朋友。|Họ đã từng là bạn rất thân.
+C|亲自 và 自己|Đều nhấn mạnh việc do chính người đó làm.|Trước động từ đôi khi thay được: 他亲自 / 自己做了这道菜。
+R|Từ loại|Phó từ.|Đại từ.
+R|Sắc thái|Nhấn mạnh vì coi trọng nên trực tiếp làm, không nhờ người khác; hay dùng cho người có địa vị.|Chỉ bản thân nói chung, không có sắc thái coi trọng.
+R|Chức năng|Chỉ làm trạng ngữ: 亲自去、亲自检查。|Làm chủ ngữ, tân ngữ, định ngữ: 相信自己、自己的事。
+F|戒 保存 招待 形容 位于 讲究 光临 突出
+I|医生劝他把烟___了。|戒
+I|这些老照片他一直___得很好。|保存
+I|朋友来家里做客，她做了一桌子菜___他们。|招待
+I|那里的风景美得无法用语言___。|形容
+I|我们学校___城市的北边。|位于
+I|他穿衣服很___，每件都要搭配好。|讲究
+I|欢迎各位___本店！|光临
+I|他在这次比赛中的表现非常___。|突出
+Q|这么重要的事，经理决定___去一趟。|亲自/自己的|0|Nhấn mạnh coi trọng nên trực tiếp làm: 亲自.
+Q|你要相信___，一定能成功。|亲自/自己|1|Làm tân ngữ chỉ dùng được 自己.
+Q|我___学过一年法语，可是现在都忘了。|曾经/已经|0|Việc từng có trong quá khứ, nay không còn: 曾经.
+Q|___班长，他总是第一个到教室。|作为/因为|0|Nêu thân phận ở đầu câu: 作为.
+S|A在我们公司，B他C是D最年轻的经理了。|算|C
+S|A他B来过C这个城市D。|曾经|B
+S|A一名医生，B他C把病人的健康D放在第一位。|作为|A
+O|这里/曾经/是/一所学校|这里曾经是一所学校。|Nơi này từng là một ngôi trường.
+O|作为/学生/我们/应该/保护/环境|作为学生，我们应该保护环境。|Là học sinh, chúng ta nên bảo vệ môi trường.
+O|校长/亲自/给获奖的学生/发了/奖|校长亲自给获奖的学生发了奖。|Hiệu trưởng đích thân trao giải cho học sinh đoạt giải.
+T|Kể lại bài khóa bằng lời của bạn|文学家 地道 行家 亲自 见解 写作 讲究 好客 招待 胃口 戒 保存 曾经 形象

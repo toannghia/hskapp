@@ -1,0 +1,695 @@
+{
+ "title": {
+  "zh": "爱的细节",
+  "vi": "Những điều nhỏ nhặt trong tình yêu"
+ },
+ "audio": {
+  "text": "audio/giao-trinh-1/01-1.mp3",
+  "vocab": "audio/giao-trinh-1/01-2.mp3",
+  "workbook": [
+   "audio/bai-tap-1/01-1.mp3",
+   "audio/bai-tap-1/01-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   4,
+   5,
+   6
+  ],
+  "text": [
+   {
+    "page": 4,
+    "top": 0.59,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 5,
+    "top": 0.08,
+    "bottom": 0.95
+   },
+   {
+    "page": 6,
+    "top": 0.1,
+    "bottom": 0.25,
+    "xmin": 0.15
+   }
+  ]
+ },
+ "textFix": [
+  [
+   "评“患难与共",
+   "评为“患难与共"
+  ]
+ ],
+ "vocabFix": {
+  "1": {
+   "pinyin": "xìjié"
+  },
+  "2": {
+   "pinyin": "diàntái",
+   "pos": "danh từ",
+   "vi": "đài phát thanh",
+   "emoji": "📻"
+  },
+  "3": {
+   "pinyin": "ēn'ài",
+   "emoji": "💑"
+  },
+  "4": {
+   "pinyin": "duìbǐ"
+  },
+  "5": {
+   "pinyin": "rùwéi"
+  },
+  "6": {
+   "pinyin": "píngwěi",
+   "emoji": "🧑‍⚖️"
+  },
+  "7": {
+   "pinyin": "rúhé"
+  },
+  "8": {
+   "pinyin": "tānhuàn",
+   "emoji": "🧑‍🦽"
+  },
+  "9": {
+   "pinyin": "lí hūn",
+   "emoji": "💔"
+  },
+  "10": {
+   "pinyin": "zìshā"
+  },
+  "11": {
+   "pinyin": "bàoyuàn",
+   "emoji": "😒"
+  },
+  "12": {
+   "pinyin": "àihù"
+  },
+  "13": {
+   "pinyin": "hūnyīn",
+   "emoji": "💍"
+  },
+  "14": {
+   "pinyin": "chǎo jià",
+   "emoji": "🗯️"
+  },
+  "15": {
+   "pinyin": "xiāngjìng rúbīn",
+   "pos": "thành ngữ"
+  },
+  "16": {
+   "pinyin": "àn'àn"
+  },
+  "17": {
+   "pinyin": "lún"
+  },
+  "18": {
+   "pinyin": "bú nàifán",
+   "pos": "tính từ",
+   "vi": "sốt ruột, bực mình",
+   "emoji": "😤"
+  },
+  "19": {
+   "pinyin": "kào"
+  },
+  "20": {
+   "pinyin": "jiānbǎng"
+  },
+  "21": {
+   "pinyin": "hǎn",
+   "emoji": "🗣️"
+  },
+  "22": {
+   "pinyin": "shēn"
+  },
+  "23": {
+   "pinyin": "shǒuzhǐ",
+   "emoji": "👆"
+  },
+  "24": {
+   "pinyin": "wāiwāiniǔniǔ"
+  },
+  "25": {
+   "pinyin": "dì"
+  },
+  "26": {
+   "pinyin": "nǎodai"
+  },
+  "27": {
+   "pinyin": "nǚshì",
+   "emoji": "👩"
+  },
+  "28": {
+   "pinyin": "xùshù"
+  },
+  "29": {
+   "pinyin": "jūrán",
+   "emoji": "😲"
+  },
+  "30": {
+   "pinyin": "cuī",
+   "vi": "thúc giục, hối thúc",
+   "emoji": "⏰"
+  },
+  "31": {
+   "pinyin": "děngdài",
+   "emoji": "⏳"
+  },
+  "32": {
+   "pinyin": "wénzi",
+   "emoji": "🦟"
+  },
+  "33": {
+   "pinyin": "bànyè",
+   "emoji": "🌙"
+  },
+  "34": {
+   "pinyin": "dīng",
+   "vi": "đốt, chích"
+  },
+  "35": {
+   "pinyin": "lǎopo",
+   "emoji": "👰"
+  },
+  "36": {
+   "pinyin": "chǎo",
+   "vi": "làm ồn; ồn ào",
+   "emoji": "🔊"
+  },
+  "37": {
+   "pinyin": "xiàng",
+   "vi": "hạng, mục (dùng cho những thứ được chia thành hạng mục)"
+  },
+  "38": {
+   "pinyin": "huànnàn yǔgòng",
+   "pos": "thành ngữ",
+   "vi": "hoạn nạn có nhau"
+  }
+ },
+ "grammar": [
+  {
+   "id": "01-ruhe",
+   "title": "如何",
+   "kind": "cách dùng",
+   "summary": "Đại từ nghi vấn, nghĩa là \"như thế nào\", mang sắc thái văn viết.",
+   "points": [
+    {
+     "pattern": "如何 + động từ",
+     "explain": "Hỏi cách thức làm một việc.",
+     "examples": [
+      {
+       "zh": "这个问题应该如何解决？",
+       "vi": "Vấn đề này nên giải quyết như thế nào?"
+      },
+      {
+       "zh": "他不知道如何向父母解释这件事。",
+       "vi": "Anh ấy không biết giải thích chuyện này với bố mẹ ra sao."
+      }
+     ]
+    },
+    {
+     "pattern": "……，如何？ / danh từ + 如何？",
+     "explain": "Đặt cuối câu để hỏi ý kiến hoặc hỏi tình hình, gần nghĩa 怎么样.",
+     "examples": [
+      {
+       "zh": "周末我们一起去爬山，如何？",
+       "vi": "Cuối tuần mình cùng đi leo núi, thấy sao?"
+      },
+      {
+       "zh": "你最近工作情况如何？",
+       "vi": "Dạo này công việc của bạn thế nào?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "01-kao",
+   "title": "靠",
+   "kind": "cách dùng",
+   "summary": "Động từ có ba nghĩa thường gặp: tựa vào, nhờ vào, ở sát cạnh.",
+   "points": [
+    {
+     "pattern": "靠着 / 靠在 + nơi chốn",
+     "explain": "Tựa, dựa một phần cơ thể vào người hoặc vật.",
+     "examples": [
+      {
+       "zh": "孩子靠在妈妈身上睡着了。",
+       "vi": "Đứa bé tựa vào người mẹ ngủ thiếp đi."
+      },
+      {
+       "zh": "他喜欢靠着墙看书。",
+       "vi": "Anh ấy thích tựa lưng vào tường đọc sách."
+      }
+     ]
+    },
+    {
+     "pattern": "靠 + người / sự vật",
+     "explain": "Dựa vào, nhờ vào ai hoặc cái gì để đạt được điều gì.",
+     "examples": [
+      {
+       "zh": "学好汉语要靠自己每天练习。",
+       "vi": "Học giỏi tiếng Trung phải dựa vào việc tự luyện mỗi ngày."
+      },
+      {
+       "zh": "他靠打工挣学费。",
+       "vi": "Anh ấy nhờ đi làm thêm mà kiếm tiền học phí."
+      }
+     ]
+    },
+    {
+     "pattern": "靠 + địa điểm",
+     "explain": "Ở gần, sát cạnh.",
+     "examples": [
+      {
+       "zh": "我想要一个靠窗的座位。",
+       "vi": "Tôi muốn một chỗ ngồi cạnh cửa sổ."
+      },
+      {
+       "zh": "车来了，请往里边靠一靠。",
+       "vi": "Xe tới rồi, xin đứng dịch vào trong một chút."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "01-juran",
+   "title": "居然",
+   "kind": "cách dùng",
+   "summary": "Phó từ diễn tả điều xảy ra ngoài dự đoán, gần nghĩa 竟然 và 没想到.",
+   "points": [
+    {
+     "pattern": "chủ ngữ + 居然 + động từ / tính từ",
+     "explain": "Đứng sau chủ ngữ, trước phần vị ngữ gây bất ngờ. Không đứng đầu câu trước chủ ngữ.",
+     "examples": [
+      {
+       "zh": "这么重要的会议，他居然迟到了。",
+       "vi": "Cuộc họp quan trọng như vậy mà anh ấy lại đến muộn."
+      },
+      {
+       "zh": "才学了一年，她的汉语居然这么流利。",
+       "vi": "Mới học một năm mà tiếng Trung của cô ấy lại trôi chảy đến thế."
+      },
+      {
+       "zh": "我们十年没见，他居然还记得我的生日。",
+       "vi": "Mười năm không gặp, vậy mà anh ấy vẫn nhớ sinh nhật tôi."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "01-ruhe-zenme",
+   "title": "如何 và 怎么",
+   "kind": "phân biệt",
+   "summary": "Cả hai đều là đại từ hỏi cách thức, nhưng khác nhau về văn phong và phạm vi dùng.",
+   "compare": {
+    "same": "Đều hỏi cách thức và thay được cho nhau trong trường hợp này: 这个字如何 / 怎么写？",
+    "rows": [
+     {
+      "aspect": "Văn phong",
+      "a": "Thiên về văn viết, trang trọng.",
+      "b": "Dùng nhiều trong khẩu ngữ."
+     },
+     {
+      "aspect": "Hỏi nguyên nhân",
+      "a": "Không dùng được.",
+      "b": "Dùng được: 你怎么不高兴？"
+     },
+     {
+      "aspect": "Vị trí đặc biệt",
+      "a": "Đặt cuối câu để hỏi tình hình, xin ý kiến: 味道如何？",
+      "b": "Đặt đầu câu để tỏ ý ngạc nhiên: 怎么，你要走了？"
+     }
+    ]
+   }
+  },
+  {
+   "id": "01-dapei",
+   "title": "Kết hợp từ thường gặp",
+   "kind": "kết hợp từ",
+   "summary": "Các cụm đi kèm với từ trọng điểm của bài, nên học thuộc cả cụm.",
+   "collocations": [
+    {
+     "word": "抱怨",
+     "with": [
+      "抱怨别人",
+      "抱怨工作太累",
+      "从不抱怨"
+     ]
+    },
+    {
+     "word": "爱护",
+     "with": [
+      "爱护环境",
+      "爱护公物",
+      "爱护眼睛"
+     ]
+    },
+    {
+     "word": "细节",
+     "with": [
+      "生活的细节",
+      "注意细节",
+      "电影的细节"
+     ]
+    },
+    {
+     "word": "对比",
+     "with": [
+      "简单地对比",
+      "形成对比",
+      "对比两种方法"
+     ]
+    },
+    {
+     "word": "喊",
+     "with": [
+      "大声地喊",
+      "喊醒他",
+      "喊我一声"
+     ]
+    },
+    {
+     "word": "伸",
+     "with": [
+      "伸出手",
+      "伸进去",
+      "伸懒腰"
+     ]
+    },
+    {
+     "word": "吵",
+     "with": [
+      "吵醒",
+      "吵死了",
+      "吵起来"
+     ]
+    },
+    {
+     "word": "项",
+     "with": [
+      "一项工作",
+      "一项计划",
+      "一项研究"
+     ]
+    }
+   ]
+  }
+ ],
+ "exercises": [
+  {
+   "id": "01-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "催",
+    "递",
+    "喊",
+    "靠",
+    "伸",
+    "抱怨",
+    "爱护",
+    "等待"
+   ],
+   "items": [
+    {
+     "q": "请把桌上的那杯水___给我，谢谢。",
+     "a": "递"
+    },
+    {
+     "q": "他从来不___生活，总是笑着面对困难。",
+     "a": "抱怨"
+    },
+    {
+     "q": "别___了，我马上就出门。",
+     "a": "催"
+    },
+    {
+     "q": "我们都应该___身边的花草树木。",
+     "a": "爱护"
+    },
+    {
+     "q": "她在楼下大声___我的名字。",
+     "a": "喊"
+    },
+    {
+     "q": "考试结果还没出来，大家只能耐心___。",
+     "a": "等待"
+    },
+    {
+     "q": "他___出手，跟客人握了握手。",
+     "a": "伸"
+    },
+    {
+     "q": "坐了一天的车，她___在椅子上就睡着了。",
+     "a": "靠"
+    }
+   ]
+  },
+  {
+   "id": "01-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "听说你换了新工作，新公司的环境___？",
+     "options": [
+      "如何",
+      "怎么"
+     ],
+     "a": 0,
+     "why": "Hỏi tình hình ở cuối câu thì dùng 如何."
+    },
+    {
+     "q": "你___现在才来？电影都开始了。",
+     "options": [
+      "如何",
+      "怎么"
+     ],
+     "a": 1,
+     "why": "Hỏi nguyên nhân chỉ dùng được 怎么."
+    },
+    {
+     "q": "楼上的邻居半夜还在唱歌，太___了。",
+     "options": [
+      "吵",
+      "吵架"
+     ],
+     "a": 0,
+     "why": "吵 là tính từ \"ồn\"; 吵架 là động từ \"cãi nhau\"."
+    },
+    {
+     "q": "他平时成绩一般，这次___考了全班第一。",
+     "options": [
+      "居然",
+      "仍然"
+     ],
+     "a": 0,
+     "why": "Kết quả ngoài dự đoán dùng 居然; 仍然 là \"vẫn như cũ\"."
+    },
+    {
+     "q": "等了一个小时车还没来，大家都有点儿不___了。",
+     "options": [
+      "耐烦",
+      "耐心"
+     ],
+     "a": 0,
+     "why": "不耐烦 là một tính từ cố định, nghĩa là sốt ruột."
+    }
+   ]
+  },
+  {
+   "id": "01-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "这么冷的天，A他B只穿了C一件衬衫D。",
+     "word": "居然",
+     "a": "B"
+    },
+    {
+     "q": "A成功B要C自己的努力D。",
+     "word": "靠",
+     "a": "C"
+    },
+    {
+     "q": "我A不知道B该C向他D道歉。",
+     "word": "如何",
+     "a": "C"
+    },
+    {
+     "q": "他们俩A结婚十年，B从来没C吵D架。",
+     "word": "过",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "01-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "居然",
+      "他",
+      "这次机会",
+      "放弃了"
+     ],
+     "a": "他居然放弃了这次机会。",
+     "vi": "Anh ấy vậy mà lại từ bỏ cơ hội lần này."
+    },
+    {
+     "words": [
+      "靠在",
+      "睡着了",
+      "她",
+      "丈夫的肩膀上"
+     ],
+     "a": "她靠在丈夫的肩膀上睡着了。",
+     "vi": "Cô ấy tựa vào vai chồng ngủ thiếp đi."
+    },
+    {
+     "words": [
+      "如何",
+      "请你",
+      "解决这个问题的",
+      "你是",
+      "叙述一下"
+     ],
+     "a": "请你叙述一下你是如何解决这个问题的。",
+     "vi": "Xin bạn thuật lại bạn đã giải quyết vấn đề này như thế nào."
+    },
+    {
+     "words": [
+      "从来",
+      "他们",
+      "没",
+      "吵过架",
+      "结婚以后"
+     ],
+     "a": "他们结婚以后从来没吵过架。",
+     "vi": "Từ khi cưới, họ chưa từng cãi nhau."
+    },
+    {
+     "words": [
+      "被",
+      "我",
+      "蚊子",
+      "半夜",
+      "叮醒了"
+     ],
+     "a": "我半夜被蚊子叮醒了。",
+     "vi": "Nửa đêm tôi bị muỗi đốt tỉnh giấc."
+    }
+   ]
+  },
+  {
+   "id": "01-translate",
+   "type": "translate",
+   "title": "Dịch câu (phiếu bài tập của lớp)",
+   "source": "翻译句子：HSK5第一课到第九课.docx",
+   "items": [
+    {
+     "dir": "vi-zh",
+     "q": "Đôi khi tình yêu không thể hiện ở những việc lớn lao mà nằm trong những chi tiết nhỏ của cuộc sống.",
+     "a": "有时候，爱不是表现在大事上，而是藏在生活的小细节里。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mỗi lần về nhà, mẹ đều chuẩn bị cho tôi những món ăn mà tôi thích.",
+     "a": "每次回家，妈妈都为我准备我爱吃的菜。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Mặc dù bố không thường xuyên nói những lời tình cảm, nhưng tôi biết ông luôn quan tâm đến tôi.",
+     "a": "虽然爸爸不常说关心的话，但我知道他一直关心着我。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Sau khi trưởng thành, tôi mới dần hiểu được những điều bố mẹ đã làm cho mình.",
+     "a": "长大以后，我才慢慢明白父母为我做的一切。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Có những tình yêu chúng ta đã quen với sự tồn tại của nó nên thường không nhận ra.",
+     "a": "有些爱，我们已经习惯了它的存在，所以常常感觉不到。"
+    },
+    {
+     "dir": "vi-zh",
+     "q": "Cô ấy luôn nhớ những thói quen nhỏ của chồng và âm thầm chăm sóc anh ấy.",
+     "a": "她总是记得丈夫的小习惯，默默地照顾他。"
+    },
+    {
+     "dir": "zh-vi",
+     "q": "爱有时候就藏在生活中的一些小事里。",
+     "a": "Tình yêu đôi khi ẩn ngay trong những việc nhỏ của cuộc sống."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "父母对我们的爱往往是无私的。",
+     "a": "Tình yêu cha mẹ dành cho chúng ta thường là vô tư, không vụ lợi."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "他虽然不善于表达自己的感情，但是一直默默地关心着家人。",
+     "a": "Tuy anh ấy không giỏi bày tỏ tình cảm, nhưng vẫn luôn âm thầm quan tâm đến gia đình."
+    },
+    {
+     "dir": "zh-vi",
+     "q": "等我们真正长大以后，才会明白父母的辛苦。",
+     "a": "Đến khi thật sự trưởng thành, chúng ta mới hiểu được nỗi vất vả của cha mẹ."
+    }
+   ]
+  },
+  {
+   "id": "01-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Cặp vợ chồng thứ nhất",
+     "keywords": [
+      "瘫痪",
+      "离婚",
+      "自杀",
+      "抱怨",
+      "爱护"
+     ]
+    },
+    {
+     "prompt": "Cặp vợ chồng thứ hai",
+     "keywords": [
+      "婚姻",
+      "吵架",
+      "相敬如宾",
+      "暗暗"
+     ]
+    },
+    {
+     "prompt": "Cặp vợ chồng thứ ba",
+     "keywords": [
+      "不耐烦",
+      "靠",
+      "喊",
+      "伸",
+      "递",
+      "居然",
+      "催",
+      "等待",
+      "半夜",
+      "叮",
+      "吵"
+     ]
+    }
+   ]
+  }
+ ]
+}

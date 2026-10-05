@@ -1,0 +1,322 @@
+{
+ "title": {
+  "zh": "争论的奇迹",
+  "vi": "Kỳ tích của cuộc tranh luận"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/10-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/10-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/10-1.mp3",
+   "audio/bai-tap-1/10-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   82,
+   83,
+   84
+  ],
+  "text": [
+   {
+    "page": 82,
+    "top": 0.641,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 83,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 84,
+    "top": 0.07,
+    "bottom": 0.414,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "毕竟",
+   "kind": "cách dùng",
+   "summary": "Phó từ nhấn mạnh một thực tế hoặc lý do căn bản, nghĩa là \"dù sao thì, suy cho cùng\".",
+   "points": [
+    {
+     "pattern": "chủ ngữ + 毕竟 + vị ngữ",
+     "explain": "Nêu lý do để giải thích, thông cảm hoặc khẳng định; hay đi với 虽然…但….",
+     "examples": [
+      {
+       "zh": "他毕竟才学了半年，说成这样已经不错了。",
+       "vi": "Dù sao cậu ấy mới học nửa năm, nói được thế này đã khá rồi."
+      },
+      {
+       "zh": "虽然我们吵过架，但毕竟是多年的朋友。",
+       "vi": "Tuy từng cãi nhau, nhưng suy cho cùng vẫn là bạn bè nhiều năm."
+      }
+     ]
+    }
+   ],
+   "id": "10-g1"
+  },
+  {
+   "title": "逐渐",
+   "kind": "cách dùng",
+   "summary": "Phó từ chỉ sự thay đổi diễn ra từ từ, từng bước một.",
+   "points": [
+    {
+     "pattern": "逐渐 + động từ / tính từ",
+     "explain": "Thiên về văn viết; dùng cho cả biến đổi tự nhiên lẫn biến đổi theo trình tự, có ý thức.",
+     "examples": [
+      {
+       "zh": "来中国一年后，他逐渐习惯了这里的饮食。",
+       "vi": "Sau một năm ở Trung Quốc, anh ấy dần quen với ẩm thực ở đây."
+      },
+      {
+       "zh": "天色逐渐暗了下来。",
+       "vi": "Trời dần tối lại."
+      }
+     ]
+    }
+   ],
+   "id": "10-g2"
+  },
+  {
+   "title": "或许",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"có lẽ, có thể\", diễn tả phỏng đoán không chắc chắn; giống 也许 nhưng trang trọng hơn.",
+   "points": [
+    {
+     "pattern": "或许 + mệnh đề / chủ ngữ + 或许 + vị ngữ",
+     "explain": "Đứng đầu câu hoặc sau chủ ngữ.",
+     "examples": [
+      {
+       "zh": "或许他有自己的原因。",
+       "vi": "Có lẽ anh ấy có lý do riêng."
+      },
+      {
+       "zh": "换一种方法，问题或许就能解决。",
+       "vi": "Đổi cách khác, vấn đề có lẽ sẽ giải quyết được."
+      }
+     ]
+    }
+   ],
+   "id": "10-g3"
+  },
+  {
+   "title": "显示 và 显得",
+   "kind": "phân biệt",
+   "summary": "Đều nói về điều lộ ra bên ngoài, nhưng nghĩa và cách dùng khác nhau.",
+   "compare": {
+    "same": "Hai từ này không thay được cho nhau.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Cho thấy, thể hiện rõ một sự thật, năng lực, số liệu.",
+      "b": "Trông có vẻ, tỏ ra có một tính chất nào đó."
+     },
+     {
+      "aspect": "Theo sau",
+      "a": "Danh từ hoặc mệnh đề: 显示了他的能力、调查显示……",
+      "b": "Tính từ: 显得很年轻、显得不高兴。"
+     },
+     {
+      "aspect": "Chủ ngữ thường gặp",
+      "a": "Số liệu, kết quả, hành động.",
+      "b": "Người hoặc vật được nhận xét."
+     }
+    ]
+   },
+   "id": "10-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "10-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "插",
+    "拦",
+    "拍",
+    "系",
+    "说服",
+    "改进",
+    "播放",
+    "纪念"
+   ],
+   "items": [
+    {
+     "q": "他把花___在了花瓶里。",
+     "a": "插"
+    },
+    {
+     "q": "警察在路口___住了那辆车。",
+     "a": "拦"
+    },
+    {
+     "q": "他轻轻地___了一下我的肩膀。",
+     "a": "拍"
+    },
+    {
+     "q": "出门前，他弯下腰___好了鞋带。",
+     "a": "系"
+    },
+    {
+     "q": "我怎么劝也___不了他。",
+     "a": "说服"
+    },
+    {
+     "q": "这台机器经过___以后，速度快多了。",
+     "a": "改进"
+    },
+    {
+     "q": "电视上正在___一部老电影。",
+     "a": "播放"
+    },
+    {
+     "q": "为了___这位作家，人们建了一座博物馆。",
+     "a": "纪念"
+    }
+   ]
+  },
+  {
+   "id": "10-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "他___还是个孩子，你别对他要求太高。",
+     "options": [
+      "毕竟",
+      "究竟"
+     ],
+     "a": 0,
+     "why": "Nhấn mạnh thực tế không thể phủ nhận để giải thích: 毕竟."
+    },
+    {
+     "q": "穿上这件衣服，你___年轻多了。",
+     "options": [
+      "显示",
+      "显得"
+     ],
+     "a": 1,
+     "why": "\"Trông có vẻ\" + tính từ dùng 显得."
+    },
+    {
+     "q": "调查结果___，大部分学生每天睡眠不足八小时。",
+     "options": [
+      "显示",
+      "显得"
+     ],
+     "a": 0,
+     "why": "Số liệu, kết quả \"cho thấy\" dùng 显示."
+    },
+    {
+     "q": "天气___暖和起来了。",
+     "options": [
+      "逐渐",
+      "立刻"
+     ],
+     "a": 0,
+     "why": "Thay đổi từ từ: 逐渐."
+    }
+   ]
+  },
+  {
+   "id": "10-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他B已经C忘了D这件事。",
+     "word": "或许",
+     "a": "B"
+    },
+    {
+     "q": "A经过半年的练习，B她的发音C标准D了。",
+     "word": "逐渐",
+     "a": "C"
+    },
+    {
+     "q": "A虽然他做错了，B但C是你的朋友D。",
+     "word": "毕竟",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "10-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "她",
+      "逐渐",
+      "适应了",
+      "这里的",
+      "生活"
+     ],
+     "a": "她逐渐适应了这里的生活。",
+     "vi": "Cô ấy dần thích nghi với cuộc sống ở đây."
+    },
+    {
+     "words": [
+      "他",
+      "或许",
+      "明天",
+      "就",
+      "回来了"
+     ],
+     "a": "他或许明天就回来了。",
+     "vi": "Có lẽ ngày mai anh ấy sẽ về."
+    },
+    {
+     "words": [
+      "这次比赛",
+      "显示了",
+      "他的",
+      "真正水平"
+     ],
+     "a": "这次比赛显示了他的真正水平。",
+     "vi": "Cuộc thi lần này cho thấy trình độ thật của anh ấy."
+    }
+   ]
+  },
+  {
+   "id": "10-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "争论",
+      "奇迹",
+      "奔跑",
+      "辩论",
+      "始终",
+      "说服",
+      "摄影师",
+      "毕竟",
+      "拍",
+      "差距",
+      "试验",
+      "逐渐",
+      "改进",
+      "播放",
+      "瞬间"
+     ]
+    }
+   ]
+  }
+ ]
+}

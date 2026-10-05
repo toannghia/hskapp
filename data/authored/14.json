@@ -1,0 +1,347 @@
+{
+ "title": {
+  "zh": "北京的四合院",
+  "vi": "Tứ hợp viện Bắc Kinh"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-1/14-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-1/14-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-1/14-1.mp3",
+   "audio/bai-tap-1/14-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-1",
+  "vocabPages": [
+   116,
+   117,
+   118
+  ],
+  "text": [
+   {
+    "page": 116,
+    "top": 0.549,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 117,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 118,
+    "top": 0.07,
+    "bottom": 0.492,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "所谓",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"cái gọi là\", dùng để nêu thuật ngữ sắp giải thích, hoặc tỏ ý không thừa nhận.",
+   "points": [
+    {
+     "pattern": "所谓 + A，就是 / 是指 …",
+     "explain": "Nêu khái niệm rồi giải thích.",
+     "examples": [
+      {
+       "zh": "所谓“四合院”，就是四面都有房子的院子。",
+       "vi": "Cái gọi là \"tứ hợp viện\" chính là sân có nhà ở cả bốn phía."
+      }
+     ]
+    },
+    {
+     "pattern": "所谓的 + danh từ",
+     "explain": "Mang ý nghi ngờ, không công nhận.",
+     "examples": [
+      {
+       "zh": "他所谓的“朋友”，在他困难的时候都不见了。",
+       "vi": "Những người mà anh ta gọi là \"bạn\" đều biến mất khi anh ta gặp khó khăn."
+      }
+     ]
+    }
+   ],
+   "id": "14-g1"
+  },
+  {
+   "title": "则",
+   "kind": "cách dùng",
+   "summary": "Liên từ văn viết, chỉ sự đối chiếu giữa hai vế.",
+   "points": [
+    {
+     "pattern": "A …，B 则 …",
+     "explain": "Vế sau tương phản hoặc khác với vế trước; 则 đứng sau chủ ngữ.",
+     "examples": [
+      {
+       "zh": "哥哥喜欢安静，弟弟则喜欢热闹。",
+       "vi": "Anh thích yên tĩnh, còn em thì thích náo nhiệt."
+      },
+      {
+       "zh": "南方多雨，北方则比较干燥。",
+       "vi": "Miền nam mưa nhiều, miền bắc thì khá khô."
+      }
+     ]
+    }
+   ],
+   "id": "14-g2"
+  },
+  {
+   "title": "起",
+   "kind": "cách dùng",
+   "summary": "Động từ; ngoài nghĩa \"dậy, lên\" còn dùng trong cụm 起作用 và làm bổ ngữ sau động từ.",
+   "points": [
+    {
+     "pattern": "起 (到) … 作用",
+     "explain": "Có tác dụng, phát huy vai trò.",
+     "examples": [
+      {
+       "zh": "这种药对感冒不起作用。",
+       "vi": "Loại thuốc này không có tác dụng với cảm cúm."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 起 (+ tân ngữ)",
+     "explain": "Nói tới, nhớ tới: 说起、想起、提起.",
+     "examples": [
+      {
+       "zh": "说起小时候的事，他总是很兴奋。",
+       "vi": "Nhắc tới chuyện hồi nhỏ, anh ấy lúc nào cũng hào hứng."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 得起 / 不起",
+     "explain": "Có hoặc không đủ khả năng, nhất là về tiền: 买不起、住得起.",
+     "examples": [
+      {
+       "zh": "这么贵的房子，我买不起。",
+       "vi": "Nhà đắt thế này tôi không mua nổi."
+      }
+     ]
+    }
+   ],
+   "id": "14-g3"
+  },
+  {
+   "title": "通常 và 常常",
+   "kind": "phân biệt",
+   "summary": "Đều nói về việc hay xảy ra.",
+   "compare": {
+    "same": "Trước động từ đôi khi thay được: 他通常 / 常常七点起床。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Theo lệ thường, trong tình huống bình thường.",
+      "b": "Số lần nhiều, hay lặp lại."
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Phó từ và tính từ: 通常情况下、通常的做法。",
+      "b": "Chỉ là phó từ."
+     },
+     {
+      "aspect": "Vị trí",
+      "a": "Đứng được đầu câu: 通常，他六点起床。",
+      "b": "Chỉ đứng sau chủ ngữ, trước động từ."
+     }
+    ]
+   },
+   "id": "14-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "14-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "种",
+    "具备",
+    "接待",
+    "创造",
+    "关闭",
+    "组成",
+    "代表",
+    "令"
+   ],
+   "items": [
+    {
+     "q": "院子里___着两棵苹果树。",
+     "a": "种"
+    },
+    {
+     "q": "他已经___了当老师的条件。",
+     "a": "具备"
+    },
+    {
+     "q": "这家酒店每天要___几百位客人。",
+     "a": "接待"
+    },
+    {
+     "q": "这个班由三十个学生___。",
+     "a": "组成"
+    },
+    {
+     "q": "请在飞机起飞前___手机。",
+     "a": "关闭"
+    },
+    {
+     "q": "他___全班同学在大会上发了言。",
+     "a": "代表"
+    },
+    {
+     "q": "他的勇气___人佩服。",
+     "a": "令"
+    },
+    {
+     "q": "人类用双手___了美好的生活。",
+     "a": "创造"
+    }
+   ]
+  },
+  {
+   "id": "14-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "___情况下，我晚上十一点睡觉。",
+     "options": [
+      "通常",
+      "常常"
+     ],
+     "a": 0,
+     "why": "Làm định ngữ cho 情况 chỉ dùng được 通常."
+    },
+    {
+     "q": "他___忘记带钥匙。",
+     "options": [
+      "通常的",
+      "常常"
+     ],
+     "a": 1,
+     "why": "Phó từ chỉ tần suất đứng trước động từ."
+    },
+    {
+     "q": "___“代沟”，是指两代人想法上的差别。",
+     "options": [
+      "所谓",
+      "所以"
+     ],
+     "a": 0,
+     "why": "Nêu khái niệm để giải thích: 所谓."
+    },
+    {
+     "q": "姐姐爱说爱笑，妹妹___不太爱说话。",
+     "options": [
+      "则",
+      "而且"
+     ],
+     "a": 0,
+     "why": "Đối chiếu hai vế: 则."
+    }
+   ]
+  },
+  {
+   "id": "14-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他的话B对我C了很大的D作用。",
+     "word": "起",
+     "a": "C"
+    },
+    {
+     "q": "A城市的生活很方便，B农村的空气C更新鲜D。",
+     "word": "则",
+     "a": "C"
+    },
+    {
+     "q": "A“网友”，B就是C在网上认识的D朋友。",
+     "word": "所谓",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "14-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "这个办法",
+      "没有",
+      "起",
+      "作用"
+     ],
+     "a": "这个办法没有起作用。",
+     "vi": "Cách này không có tác dụng."
+    },
+    {
+     "words": [
+      "我",
+      "通常",
+      "坐",
+      "地铁",
+      "上班"
+     ],
+     "a": "我通常坐地铁上班。",
+     "vi": "Tôi thường đi làm bằng tàu điện ngầm."
+    },
+    {
+     "words": [
+      "白天",
+      "很热",
+      "晚上",
+      "则",
+      "比较",
+      "凉快"
+     ],
+     "a": "白天很热，晚上则比较凉快。",
+     "vi": "Ban ngày rất nóng, buổi tối thì khá mát."
+    }
+   ]
+  },
+  {
+   "id": "14-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "四合院",
+      "建筑",
+      "形式",
+      "所谓",
+      "广泛",
+      "代表",
+      "通常",
+      "组成",
+      "长辈",
+      "具备",
+      "功能",
+      "空间",
+      "种",
+      "则",
+      "情趣",
+      "封闭",
+      "亲切"
+     ]
+    }
+   ]
+  }
+ ]
+}
