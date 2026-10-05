@@ -166,3 +166,14 @@ option { background: var(--card); color: var(--ink); }
 .writer-box { width: 220px; height: 220px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); touch-action: none;
   background-image: linear-gradient(var(--line), var(--line)), linear-gradient(var(--line), var(--line));
   background-size: 100% 1px, 1px 100%; background-position: center, center; background-repeat: no-repeat; }
+
+/* Phiên ôn dạng trắc nghiệm: phần đề gọn, đáp án một hàng, để vừa màn hình điện thoại */
+.flash.quiz { min-height: 120px; padding: 14px 16px; cursor: default; }
+.flash.quiz .big { font-size: 52px; }
+.flash.quiz .emoji { font-size: 60px; }
+.flash.quiz.slim { min-height: 0; padding: 10px; }
+.answer { display: flex; align-items: center; gap: 14px; margin-top: 10px; padding: 10px 14px; border-radius: 12px; text-align: left; }
+.answer.ok { background: var(--ok-soft); } .answer.bad { background: var(--bad-soft); }
+.answer .zh { font-size: 32px; white-space: nowrap; }
+.answer.ok b { color: var(--ok); } .answer.bad b { color: var(--bad); }
+@media (max-width: 480px) { .opts .btn { min-height: 50px; } .opts.han .btn { font-size: 23px; } main { padding-top: 12px; } }

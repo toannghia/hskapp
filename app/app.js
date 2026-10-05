@@ -617,13 +617,15 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   const tally = { right: 0, wrong: 0 };
   const stage = h("div", {});
   const name = (MODES.find((m) => m[0] === mode) || [])[1] || "";
-  add(h("a", { href: back, class: "sub" }, "← Thoát phiên ôn"), stage);
+  add(stage, h("div", { style: "margin-top:36px;text-align:center" }, h("a", { href: back, class: "btn" }, "Thoát phiên ôn")));
 
   const picture = (it) => it.img ? h("img", { src: it.img, alt: "" }) : h("div", { class: "emoji" }, it.emoji);
-  const answerCard = (it) => h("div", { class: "card", style: "text-align:center" },
-    h("div", { class: "zh", style: "font-size:40px" }, it.hanzi), h("div", { style: "color:var(--acc)" }, it.pinyin),
-    h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null));
-  const head = () => h("div", { class: "row sub", style: "justify-content:space-between;margin-top:8px" },
+  // Thẻ đáp án gọn một hàng để kết quả và nút "Tiếp" nằm trọn trong màn hình điện thoại.
+  const answerCard = (it, ok) => h("div", { class: "answer " + (ok ? "ok" : "bad") },
+    h("div", { class: "zh" }, it.hanzi),
+    h("div", {}, h("b", {}, ok ? "Đúng" : "Chưa đúng"), h("span", { style: "color:var(--acc)" }, ` · ${it.pinyin}`),
+      h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null)));
+  const head = () => h("div", { class: "row sub", style: "justify-content:space-between" },
     h("span", {}, name), h("span", {}, `Còn ${queue.length} thẻ · đúng ${tally.right} · sai ${tally.wrong}`));
 
   function finish() {
@@ -675,14 +677,16 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     const prompt = {
       vi: () => [h("div", { class: "big" }, it.hanzi), speakBtn(it)],
       han: () => [h("div", { class: "vi" }, it.vi), it.pos ? h("span", { class: "tag" }, it.pos) : null],
-      listen: () => [h("div", { class: "sub" }, "Nghe và chọn từ đúng"), h("button", { class: "btn big", onclick: () => pronounce(it) }, "🔊 Nghe lại")],
+      listen: () => [h("button", { class: "btn", onclick: () => pronounce(it) }, "🔊 Nghe lại")],
       pic: () => [picture(it), h("div", { class: "sub" }, "Hình này gợi đến từ nào?")],
       type: () => [h("div", { class: "vi" }, it.vi), it.pos ? h("span", { class: "tag" }, it.pos) : null],
     }[mode];
-    const after = (ok) => [answerCard(it), h("div", { class: "fb " + (ok ? "ok" : "bad") }, ok ? "Đúng" : "Chưa đúng"),
-      h("button", { class: "btn pri big", style: "width:100%;margin-top:10px", onclick: () => done(it, ok ? 2 : 0) }, "Tiếp")];
+    const after = (ok) => [answerCard(it, ok),
+      h("button", { class: "btn pri big next", style: "width:100%;margin-top:10px", onclick: () => done(it, ok ? 2 : 0) }, "Tiếp")];
+    // Sau khi trả lời, kéo màn hình vừa đủ để thấy nút "Tiếp".
+    const showNext = () => { const b = stage.querySelector(".next"); if (b) b.scrollIntoView({ block: "nearest", behavior: "smooth" }); };
     const draw = () => {
-      const body = [head(), h("div", { class: "card flash", style: "min-height:200px;cursor:default" }, prompt())];
+      const body = [head(), h("div", { class: "card flash quiz" + (mode === "listen" ? " slim" : "") }, prompt())];
       if (mode === "type") {
         const input = h("input", { class: "type", placeholder: "Gõ chữ Hán", autocomplete: "off", disabled: picked != null, value: picked || "" });
         const submit = () => { if (input.value.trim()) { picked = input.value.trim(); draw(); } };
@@ -693,7 +697,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
           : after(picked === it.hanzi));
         document.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); picked == null ? submit() : done(it, picked === it.hanzi ? 2 : 0); } };
         stage.replaceChildren(...body.flat());
-        if (picked == null) input.focus();
+        if (picked == null) input.focus(); else showNext();
         return;
       }
       body.push(h("div", { class: "opts" + (hanOpts ? " han" : "") }, opts.map((o) =>
@@ -705,6 +709,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
         else if (picked && e.key === "Enter") done(it, picked === it ? 2 : 0);
       };
       stage.replaceChildren(...body.flat());
+      if (picked) showNext();
     };
     draw();
     if (mode === "listen") pronounce(it);
