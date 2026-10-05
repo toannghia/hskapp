@@ -5,6 +5,8 @@
 //   SUPABASE_SERVICE_ROLE_KEY   khóa bí mật (service_role hoặc sb_secret_…), KHÔNG đặt vào mã nguồn
 // Người gọi phải đang đăng nhập bằng tài khoản có vai trò quản trị.
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+// Khóa công khai của dự án (giống trong app/config.js), chỉ dùng để xác minh phiên đăng nhập của người gọi.
+const PUBLIC_KEY = process.env.SUPABASE_ANON_KEY || "sb_publishable_W2MkwXPLDp9dc8j5seOThA__2Rq_009";
 
 module.exports = async (req, res) => {
   const fail = (code, error) => res.status(code).json({ error });
@@ -24,9 +26,16 @@ module.exports = async (req, res) => {
     // 1. Xác định người gọi từ phiên đăng nhập của họ, rồi kiểm tra vai trò quản trị trong cơ sở dữ liệu.
     const token = (req.headers.authorization || "").replace(/^Bearer\s+/i, "");
     if (!token) return fail(401, "Chưa đăng nhập");
-    const who = await fetch(url + "/auth/v1/user", { headers: { apikey: key, Authorization: `Bearer ${token}` } });
-    if (!who.ok) return fail(401, "Phiên đăng nhập không hợp lệ");
-    const caller = await who.json();
+    // Kiểm tra phiên bằng khóa công khai (khóa bí mật kiểu mới không dùng chung được với phiên của người dùng);
+    // nếu không được thì thử lại bằng khóa bí mật cho các dự án dùng khóa kiểu cũ.
+    let who = null, detail = "";
+    for (const apikey of [PUBLIC_KEY, key]) {
+      const r = await fetch(url + "/auth/v1/user", { headers: { apikey, Authorization: `Bearer ${token}` } });
+      if (r.ok) { who = await r.json(); break; }
+      detail = `${r.status} ${(await r.text()).slice(0, 160)}`;
+    }
+    if (!who || !who.id) return fail(401, "Phiên đăng nhập không hợp lệ. Hãy đăng xuất, đăng nhập lại rồi thử lần nữa. (" + detail + ")");
+    const caller = who;
     const prof = await call(`/rest/v1/profiles?id=eq.${caller.id}&select=role`);
     if (!prof.ok || !prof.data[0] || prof.data[0].role !== "admin") return fail(403, "Chỉ quản trị mới được làm việc này");
 

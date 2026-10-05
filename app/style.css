@@ -135,3 +135,23 @@ audio { width: 100%; margin: 6px 0; }
 /* Danh sách bài tập ngay dưới bài đang làm */
 .exlist { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
 .exlist .btn { display: block; color: inherit; text-align: left; }
+
+/* Ô chọn và ô nhập theo đúng màu nền sáng/tối (mặc định trình duyệt cho nền trắng, chữ nhạt nên không đọc được). */
+:root { color-scheme: light dark; }
+select, input, textarea { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; }
+select { padding: 6px 8px; min-height: 36px; }
+select:disabled, input:disabled, textarea:disabled { opacity: .6; }
+::placeholder { color: var(--mute); opacity: 1; }
+option { background: var(--card); color: var(--ink); }
+
+/* Thanh trên cùng: mục đang mở được tô đậm; màn hình hẹp thì gom vào nút menu. */
+#top nav a.on { color: var(--ink); font-weight: 700; }
+#menu { display: none; }
+@media (max-width: 820px) {
+  #top { flex-wrap: wrap; gap: 10px; }
+  #sync { margin-left: auto; }
+  #menu { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 6px 12px; }
+  #top nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; overflow: visible; white-space: normal; order: 5; }
+  #top.open nav { display: flex; }
+  #top nav a { padding: 13px 4px; border-top: 1px solid var(--line); font-size: 16px; }
+}

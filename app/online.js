@@ -91,6 +91,7 @@ function drawAccount() {
   if (ME.role === "admin") nav.append(h("a", { class: "role", href: "#/admin" }, "Quản trị"));
   nav.append(h("a", { class: "role", href: "#/password" }, "Mật khẩu"));
   nav.append(h("a", { class: "role", href: "#", title: ME.email, onclick: async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); } }, "Đăng xuất"));
+  markNav();
 }
 
 route(/^password$/, () => {

@@ -215,7 +215,21 @@ const view = $("#view");
 const routes = [];
 const route = (re, fn) => routes.push([re, fn]);
 let READY = false;
+// Menu trên điện thoại: bấm nút để mở, chọn mục xong tự đóng.
+const topBar = $("#top"), menuBtn = $("#menu");
+const setMenu = (open) => { topBar.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); menuBtn.textContent = open ? "✕ Đóng" : "☰ Menu"; };
+menuBtn.addEventListener("click", () => setMenu(!topBar.classList.contains("open")));
+$("#top nav").addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+function markNav() {
+  const here = location.hash.replace(/^#\/?/, "").split("/")[0];
+  document.querySelectorAll("#top nav a").forEach((a) => {
+    const to = (a.getAttribute("href") || "").replace(/^#\/?/, "").split("/")[0];
+    a.classList.toggle("on", a.getAttribute("href").startsWith("#/") && to === here);
+  });
+}
 function render() {
+  setMenu(false);
+  markNav();
   if (!READY) return;
   closeSheet();
   document.onkeydown = null;
