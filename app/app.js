@@ -303,7 +303,7 @@ route(/^$/, () => {
 
 // ---------- Trang bài học ----------
 const TABS = [["words", "Từ mới"], ["text", "Bài khóa"], ["grammar", "Cấu trúc"], ["ex", "Bài tập"]];
-const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["type", "Gõ chữ Hán"]];
+const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["type", "Gõ chữ Hán"], ["write", "Tập viết"]];
 
 route(/^lesson\/(\d+)\/(\w+)$/, (id, tab) => {
   const l = lessonById(id);
@@ -322,7 +322,7 @@ function tabWords(l) {
       h("div", { class: "sub" }, "Chọn cách ôn. Kết quả mỗi lượt đều được ghi lại để xếp lịch ôn."),
       h("div", { class: "row", style: "margin-top:8px" },
         MODES.map(([m, name]) => h("button", { class: "btn" + (m === "flash" ? " pri" : ""), disabled: m === "pic" && pics < 4,
-          onclick: () => go(`#/study/l${l.id}/${m}`) }, m === "pic" ? `${name} (${pics})` : name)),
+          onclick: () => go(m === "write" ? `#/write/${l.id}/${l.items[0].n}` : `#/study/l${l.id}/${m}`) }, m === "pic" ? `${name} (${pics})` : name)),
         h("button", { class: "btn", onclick: () => go(`#/game/l${l.id}`) }, "🎮 Trò chơi ghép cặp")),
       h("div", { class: "row sub", style: "margin-top:10px" },
         h("button", { class: "btn" + (slow() ? " on" : ""), onclick: () => { P.settings.slow = !slow(); save(); render(); } }, slow() ? "Đọc chậm: đang bật" : "Đọc chậm: đang tắt"),
@@ -332,7 +332,8 @@ function tabWords(l) {
       h("td", {}, h("span", { class: "dot " + status(i.id), title: { new: "Chưa học", learn: "Đang học", known: "Đã thuộc" }[status(i.id)] })),
       h("td", { class: "h", onclick: () => pronounce(i) }, i.hanzi),
       h("td", { class: "p" }, i.pinyin),
-      h("td", {}, i.emoji ? i.emoji + " " : "", i.vi, h("span", { class: "tag" }, i.pos)))))),
+      h("td", {}, i.emoji ? i.emoji + " " : "", i.vi, h("span", { class: "tag" }, i.pos)),
+      h("td", {}, h("a", { class: "btn", href: `#/write/${l.id}/${i.n}`, title: "Xem cách viết và tập viết" }, "✍")))))),
     h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe."));
 }
 
@@ -376,6 +377,7 @@ function openWord(info, l, el, repaint) {
       info.base ? h("div", { class: "sub" }, `Từ gốc trong bảng từ mới: ${info.base.hanzi} (${info.base.pinyin}) ${info.base.vi}`) : null,
       h("div", { class: "row", style: "margin-top:8px" },
         speakBtn(info.item || info.hanzi),
+        h("a", { class: "btn", href: info.item ? `#/write/${l.id}/${info.item.n}` : `#/write/w/${encodeURIComponent(info.hanzi)}` }, "✍ Cách viết"),
         info.n ? null : h("button", { class: "btn" + (saved ? " on" : ""), onclick: () => {
           P.saved[info.hanzi] = saved ? { del: true, t: Date.now() } : { p: info.pinyin, vi: info.vi, lesson: l.id, t: Date.now() };
           save(); repaint(); closeSheet();

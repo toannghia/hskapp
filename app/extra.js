@@ -145,12 +145,13 @@ route(/^game\/(\w+)$/, (scope) => {
   const back = l ? `#/lesson/${l.id}/words` : "#/saved";
   if (pool.length < 6) return go(back);
   const picked = shuffle(pool).slice(0, 6);
-  const tiles = shuffle(picked.flatMap((it) => [{ it, side: "han" }, { it, side: "vi" }]));
+  // Cột trái là chữ Hán, cột phải là nghĩa; mỗi cột xáo trộn riêng.
+  const tiles = [...shuffle(picked.map((it) => ({ it, side: "han" }))), ...shuffle(picked.map((it) => ({ it, side: "vi" })))];
   let first = null, miss = 0, left = picked.length, lock = false;
   const t0 = Date.now();
   const clock = h("span", {});
   const timer = setInterval(() => { if (!clock.isConnected) return clearInterval(timer); clock.textContent = `${Math.round((Date.now() - t0) / 1000)} giây · sai ${miss}`; }, 500);
-  const board = h("div", { class: "pairs" }, tiles.map((tile) => {
+  tiles.forEach((tile) => {
     tile.el = h("button", { class: "btn " + (tile.side === "han" ? "zh" : ""), onclick: () => {
       if (lock || tile.done || tile === first) return;
       if (!first) { first = tile; tile.el.classList.add("on"); return; }
@@ -165,8 +166,9 @@ route(/^game\/(\w+)$/, (scope) => {
         setTimeout(() => { for (const x of [a, tile]) x.el.classList.remove("bad", "on"); lock = false; }, 500);
       }
     } }, tile.side === "han" ? tile.it.hanzi : tile.it.vi);
-    return tile.el;
-  }));
+  });
+  const column = (side, title) => h("div", {}, h("div", { class: "sub" }, title), tiles.filter((t) => t.side === side).map((t) => t.el));
+  const board = h("div", { class: "pairs" }, column("han", "Chữ Hán"), column("vi", "Nghĩa"));
   function finish() {
     clearInterval(timer);
     const secs = Math.round((Date.now() - t0) / 1000);
@@ -182,7 +184,7 @@ route(/^game\/(\w+)$/, (scope) => {
         h("button", { class: "btn pri", onclick: render }, "Chơi ván nữa"), h("button", { class: "btn", onclick: () => go(back) }, "Quay lại"))));
   }
   add(h("a", { href: back, class: "sub" }, "← Thoát"), h("h1", {}, "Ghép cặp"),
-    h("div", { class: "row sub" }, "Bấm một chữ Hán rồi bấm nghĩa của nó.", clock), board);
+    h("div", { class: "row sub" }, "Bấm một chữ Hán ở cột trái rồi bấm nghĩa của nó ở cột phải.", clock), board);
 });
 
 // ---------- Đánh giá tiến trình học ----------
@@ -338,4 +340,77 @@ route(/^assess\/test\/(\w+)$/, (scope) => {
         h("div", { class: "fb ok" }, "Đáp án: ", h("span", { class: q.kind === "vi" ? "" : "zh" }, q.options[q.a]), q.it ? ` · ${q.it.pinyin}` : "", q.why ? ` — ${q.why}` : "")))].flat().filter(Boolean));
   };
   ask(0);
+});
+
+// ---------- Cách viết: xem thứ tự nét và tập viết từng chữ ----------
+// Dùng thư viện mã nguồn mở Hanzi Writer (giấy phép MIT), dữ liệu nét từ dự án Make Me a Hanzi; cần có mạng.
+let writerLoading = null;
+const loadWriter = () => (writerLoading = writerLoading || new Promise((ok, fail) => {
+  if (window.HanziWriter) return ok();
+  document.head.append(h("script", { src: "https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js", onload: ok, onerror: () => { writerLoading = null; fail(); } }));
+}));
+const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+function writePage(word, info, links) {
+  const chars = [...word].filter((c) => /[一-鿿]/.test(c));
+  const results = {};
+  const status = h("div", { class: "sub" });
+  const grid = h("div", { class: "writers" });
+  add(h("a", { href: links.back, class: "sub" }, "← Quay lại"),
+    h("div", { class: "row", style: "align-items:baseline;margin-top:6px" },
+      h("h1", { class: "zh", style: "font-size:40px;margin:0" }, word),
+      h("span", { style: "color:var(--acc);font-size:20px" }, info.pinyin || ""), speakBtn(info.item || word)),
+    h("div", {}, info.vi || ""),
+    h("div", { class: "sub", style: "margin:8px 0" }, "Bấm “Xem nét” để xem thứ tự nét. Bấm “Tập viết” rồi dùng chuột hoặc ngón tay viết từng nét theo đúng thứ tự; viết sai nét nào, nét đó sẽ được gợi ý."),
+    grid, status,
+    h("div", { class: "row", style: "margin-top:16px" },
+      links.prev ? h("a", { class: "btn", href: links.prev }, "← Từ trước") : null,
+      links.next ? h("a", { class: "btn pri", href: links.next }, "Từ tiếp theo →") : null));
+  loadWriter().then(() => {
+    if (!grid.isConnected) return;
+    chars.forEach((c, k) => {
+      const box = h("div", { class: "writer-box" }), note = h("div", { class: "sub" }, " ");
+      const cell = h("div", { class: "writer" }, box, note);
+      grid.append(cell);
+      const writer = HanziWriter.create(box, c, { width: 170, height: 170, padding: 8, showOutline: true,
+        strokeColor: cssVar("--ink"), outlineColor: cssVar("--line"), drawingColor: cssVar("--acc"), highlightColor: cssVar("--ok"),
+        strokeAnimationSpeed: 0.8, delayBetweenStrokes: 250, drawingWidth: 22,
+        onLoadCharDataError: () => { note.textContent = "Chưa có dữ liệu nét cho chữ này."; } });
+      cell.append(h("div", { class: "row", style: "justify-content:center;margin-top:6px" },
+        h("button", { class: "btn", onclick: () => { writer.cancelQuiz(); writer.showCharacter(); writer.animateCharacter(); } }, "▶ Xem nét"),
+        h("button", { class: "btn", onclick: () => {
+          note.textContent = "Viết nét đầu tiên…";
+          writer.quiz({ showHintAfterMisses: 2,
+            onMistake: (d) => { note.textContent = `Nét ${d.strokeNum + 1}: chưa đúng (sai ${d.totalMistakes} lần)`; },
+            onCorrectStroke: (d) => { note.textContent = `Đúng nét ${d.strokeNum + 1}, còn ${d.strokesRemaining} nét`; },
+            onComplete: (d) => {
+              note.textContent = d.totalMistakes ? `Xong, sai ${d.totalMistakes} lần` : "Xong, không sai nét nào";
+              results[k] = d.totalMistakes;
+              if (Object.keys(results).length === chars.length && info.item && !results.graded) {
+                // Viết xong cả từ: tính như một lượt ôn (sai quá 2 lần mỗi chữ thì coi là chưa nhớ).
+                results.graded = true;
+                const miss = chars.reduce((s, _, i) => s + results[i], 0);
+                grade(info.item, miss <= chars.length * 2 ? 2 : 0, "write");
+                status.textContent = `Đã ghi nhận lượt tập viết từ này (tổng ${miss} lần sai nét).`;
+              }
+            } });
+        } }, "✍ Tập viết")));
+    });
+  }).catch(() => { grid.replaceChildren(h("div", { class: "card sub" }, "Không tải được công cụ viết chữ. Phần này cần có mạng; kiểm tra kết nối rồi tải lại trang.")); });
+}
+
+// Viết từ mới của một bài, có nút chuyển sang từ trước / từ sau.
+route(/^write\/(\d+)\/(\d+)$/, (lid, num) => {
+  const l = lessonById(lid), at = l ? l.items.findIndex((i) => i.n === Number(num)) : -1;
+  if (at < 0) return go("#/");
+  const it = l.items[at];
+  writePage(it.hanzi, { pinyin: it.pinyin, vi: it.vi, item: it }, { back: `#/lesson/${l.id}/words`,
+    prev: at > 0 ? `#/write/${l.id}/${l.items[at - 1].n}` : null, next: at + 1 < l.items.length ? `#/write/${l.id}/${l.items[at + 1].n}` : null });
+});
+// Viết một từ bất kỳ (mở từ bảng tra trong bài khóa).
+route(/^write\/w\/(.+)$/, (raw) => {
+  const word = decodeURIComponent(raw);
+  let found = null;
+  for (const l of LESSONS) if (l.gloss && l.gloss[word]) { found = { pinyin: l.gloss[word][0], vi: l.gloss[word][1] }; break; }
+  writePage(word, found || {}, { back: "javascript:history.back()" });
 });

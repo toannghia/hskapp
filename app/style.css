@@ -125,12 +125,12 @@ audio { width: 100%; margin: 6px 0; }
 .bars div { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 2px; font-size: 11px; color: var(--mute); }
 .bars i { display: block; width: 100%; min-height: 2px; background: var(--ok); border-radius: 4px 4px 0 0; }
 
-/* Trò chơi ghép cặp */
-.pairs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
-.pairs .btn { min-height: 84px; font-size: 15px; }
+/* Trò chơi ghép cặp: hai cột, trái là chữ Hán, phải là nghĩa */
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; max-width: 760px; }
+.pairs > div { display: grid; gap: 10px; align-content: start; }
+.pairs .btn { min-height: 64px; font-size: 15px; width: 100%; }
 .pairs .btn.zh { font-size: 26px; }
 .pairs .btn.ok { opacity: .45; }
-@media (min-width: 640px) { .pairs { grid-template-columns: repeat(4, 1fr); } }
 
 /* Danh sách bài tập ngay dưới bài đang làm */
 .exlist { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
@@ -155,3 +155,10 @@ option { background: var(--card); color: var(--ink); }
   #top.open nav { display: flex; }
   #top nav a { padding: 13px 4px; border-top: 1px solid var(--line); font-size: 16px; }
 }
+
+/* Cách viết: mỗi chữ một ô có lưới chữ Điền */
+.writers { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; }
+.writer { text-align: center; }
+.writer-box { width: 170px; height: 170px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); touch-action: none;
+  background-image: linear-gradient(var(--line), var(--line)), linear-gradient(var(--line), var(--line));
+  background-size: 100% 1px, 1px 100%; background-position: center, center; background-repeat: no-repeat; }

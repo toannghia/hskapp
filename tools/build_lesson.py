@@ -228,6 +228,12 @@ def load(n):
         if not v["vi"] and entry:
             v["vi"] = entry["vi"]
             warnings.append(f"Từ {v['n']} {v['hanzi']}: nghĩa lấy từ từ điển")
+    # Hình gợi ý (biểu tượng) cho các từ có thể hình dung được, dùng ở kiểu ôn "Nhìn hình đoán từ".
+    emoji_file = ROOT / "data" / "emoji.json"
+    emoji = json.loads(emoji_file.read_text()) if emoji_file.exists() else {}
+    for v in vocab:
+        if v["hanzi"] in emoji:
+            v["emoji"] = emoji[v["hanzi"]]
     for num, fix in authored.get("vocabFix", {}).items():
         hit = [v for v in vocab if v["n"] == int(num)]
         if hit:
