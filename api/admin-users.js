@@ -13,14 +13,27 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") return fail(405, "Chỉ nhận yêu cầu POST");
   const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return fail(500, "Máy chủ chưa được cấu hình SUPABASE_URL và SUPABASE_SERVICE_ROLE_KEY");
-  const service = { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
-  const call = async (path, init = {}) => {
-    const r = await fetch(url + path, { ...init, headers: { ...service, ...(init.headers || {}) } });
+  // Nhận diện trường hợp đặt nhầm khóa công khai vào chỗ khóa bí mật (lỗi hay gặp nhất).
+  const jwtRole = (() => { try { return JSON.parse(Buffer.from(key.split(".")[1], "base64").toString()).role; } catch { return null; } })();
+  if (key.startsWith("sb_publishable_") || jwtRole === "anon") {
+    return fail(500, "Biến SUPABASE_SERVICE_ROLE_KEY trên Vercel đang chứa khóa công khai. Hãy thay bằng khóa bí mật (service_role hoặc sb_secret_…) trong Supabase → Settings → API Keys, rồi Redeploy.");
+  }
+  const request = async (path, init, headers) => {
+    const r = await fetch(url + path, { ...init, headers: { "Content-Type": "application/json", ...headers, ...(init.headers || {}) } });
     const text = await r.text();
     let data = null;
     try { data = text ? JSON.parse(text) : null; } catch { data = { message: text }; }
     return { ok: r.ok, status: r.status, data };
   };
+  // Khóa kiểu cũ (JWT) cần gửi ở cả hai tiêu đề; khóa kiểu mới (sb_secret_) có dự án chỉ nhận ở apikey.
+  const call = async (path, init = {}) => {
+    let r = await request(path, init, { apikey: key, Authorization: `Bearer ${key}` });
+    if (r.status === 401 || r.status === 403) r = await request(path, init, { apikey: key });
+    return r;
+  };
+  const keyProblem = (r) => (r.status === 401 || r.status === 403
+    ? "Supabase từ chối khóa bí mật (mã " + r.status + "). Kiểm tra lại giá trị SUPABASE_SERVICE_ROLE_KEY trên Vercel rồi Redeploy."
+    : null);
 
   try {
     // 1. Xác định người gọi từ phiên đăng nhập của họ, rồi kiểm tra vai trò quản trị trong cơ sở dữ liệu.
@@ -36,8 +49,9 @@ module.exports = async (req, res) => {
     }
     if (!who || !who.id) return fail(401, "Phiên đăng nhập không hợp lệ. Hãy đăng xuất, đăng nhập lại rồi thử lần nữa. (" + detail + ")");
     const caller = who;
-    const prof = await call(`/rest/v1/profiles?id=eq.${caller.id}&select=role`);
-    if (!prof.ok || !prof.data[0] || prof.data[0].role !== "admin") return fail(403, "Chỉ quản trị mới được làm việc này");
+    const prof = await request(`/rest/v1/profiles?id=eq.${caller.id}&select=role`, {}, { apikey: PUBLIC_KEY, Authorization: `Bearer ${token}` });
+    if (!prof.ok) return fail(500, "Không đọc được hồ sơ của người gọi (mã " + prof.status + ")");
+    if (!prof.data[0] || prof.data[0].role !== "admin") return fail(403, "Chỉ quản trị mới được làm việc này");
 
     const body = typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
     const email = String(body.email || "").trim().toLowerCase();
@@ -48,6 +62,7 @@ module.exports = async (req, res) => {
     // 2a. Đặt lại mật khẩu cho tài khoản đã có.
     if (body.action === "password") {
       const found = await call(`/rest/v1/profiles?email=eq.${encodeURIComponent(email)}&select=id`);
+      if (keyProblem(found)) return fail(500, keyProblem(found));
       if (!found.ok || !found.data[0]) return fail(404, "Không tìm thấy tài khoản có email này");
       const upd = await call(`/auth/v1/admin/users/${found.data[0].id}`, { method: "PUT", body: JSON.stringify({ password }) });
       if (!upd.ok) return fail(400, (upd.data && (upd.data.msg || upd.data.message)) || "Chưa đặt lại được mật khẩu");
@@ -59,6 +74,7 @@ module.exports = async (req, res) => {
     const name = String(body.name || "").trim();
     const made = await call("/auth/v1/admin/users", { method: "POST",
       body: JSON.stringify({ email, password, email_confirm: true, user_metadata: { full_name: name } }) });
+    if (keyProblem(made)) return fail(500, keyProblem(made));
     if (!made.ok) {
       const msg = (made.data && (made.data.msg || made.data.message || made.data.error_code)) || "";
       return fail(made.status === 422 ? 409 : 400, /exist|registered/i.test(msg) ? "Email này đã có tài khoản. Dùng nút đặt lại mật khẩu ở danh sách bên dưới." : msg || "Chưa tạo được tài khoản");
