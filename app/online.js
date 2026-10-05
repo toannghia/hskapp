@@ -203,18 +203,81 @@ route(/^admin$/, async () => {
   if (!ONLINE || ME.role !== "admin") return go("#/");
   add(h("h1", {}, "Quản trị"), h("p", { class: "sub" }, "Đang tải…"));
   try {
-    const [users, lessons] = await Promise.all([
+    const [users, lessons, classes, members] = await Promise.all([
       sb.from("profiles").select("id,email,full_name,role,created_at").order("created_at").then(must),
       sb.from("lessons").select("id,updated_at").order("id").then(must),
+      sb.from("classes").select("id,name,code").order("created_at").then(must),
+      sb.from("class_members").select("class_id,user_id").then(must),
     ]);
+    // Bảng lời mời chỉ có sau khi chạy supabase/migration-002-invites.sql.
+    const inv = await sb.from("invites").select("email,full_name,role,class_id,created_at").is("accepted_at", null).order("created_at");
+    const className = (id) => (classes.find((c) => c.id === id) || {}).name || "(lớp đã xóa)";
+    const input = (attrs) => h("input", { style: "padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--bg);min-width:0;flex:1 1 180px", ...attrs });
     view.replaceChildren(h("h1", {}, "Quản trị"));
-    add(h("h2", {}, `Tài khoản (${users.length})`),
-      h("div", { class: "wrap" }, h("table", { class: "cmp" }, users.map((u) => h("tr", {},
-        h("td", {}, who(u), h("div", { class: "sub" }, u.email)),
-        h("td", {}, h("select", { disabled: u.id === ME.id, onchange: async (e) => {
-          const { error } = await sb.from("profiles").update({ role: e.target.value }).eq("id", u.id);
-          if (error) { alert("Chưa đổi được vai trò: " + error.message); render(); }
-        } }, [["student", "Học viên"], ["teacher", "Giáo viên"], ["admin", "Quản trị"]].map(([v, n]) => h("option", { value: v, selected: u.role === v }, n)))))))));
+
+    // --- Thêm tài khoản: ghi sẵn email, vai trò và lớp; có hiệu lực khi người đó đăng nhập Google.
+    const email = input({ type: "email", placeholder: "Email Google của người cần thêm" }), name = input({ placeholder: "Họ tên (không bắt buộc)" });
+    const role = h("select", {}, h("option", { value: "student" }, "Học viên"), h("option", { value: "teacher" }, "Giáo viên"));
+    const cls = h("select", {}, h("option", { value: "" }, "Chưa xếp lớp"), classes.map((c) => h("option", { value: c.id }, c.name)));
+    const out = h("div", {});
+    add(h("h2", {}, "Thêm tài khoản"),
+      inv.error ? h("div", { class: "card" }, "Chức năng này cần cập nhật cơ sở dữ liệu: chạy tệp supabase/migration-002-invites.sql trong Supabase → SQL Editor rồi tải lại trang.")
+        : h("div", { class: "card" },
+          h("div", { class: "sub" }, "Người được thêm đăng nhập bằng đúng email Google này là có ngay vai trò và lớp đã chọn, không cần nhập mã lớp. Nếu họ đã có tài khoản thì thay đổi áp dụng ngay."),
+          h("div", { class: "row", style: "margin-top:10px" }, email, name),
+          h("div", { class: "row", style: "margin-top:10px" }, h("label", {}, "Vai trò ", role), h("label", {}, "Lớp ", cls),
+            h("button", { class: "btn pri", onclick: async (e) => {
+              if (!email.value.trim()) return email.focus();
+              e.target.disabled = true;
+              const { data, error } = await sb.rpc("admin_add_account", { p_email: email.value, p_name: name.value, p_role: role.value, p_class: cls.value || null });
+              e.target.disabled = false;
+              if (error) return say(out, error.message, true);
+              if (data === "applied") return render();
+              say(out, `Đã ghi nhận ${email.value.trim()}. Vai trò và lớp sẽ được áp dụng khi người này đăng nhập lần đầu.`);
+              setTimeout(render, 1500);
+            } }, "Thêm")),
+          out,
+          classes.length ? null : h("div", { class: "sub", style: "margin-top:8px" }, "Chưa có lớp nào. Tạo lớp ở trang Giáo viên trước nếu muốn xếp lớp ngay khi thêm."),
+          inv.data.length ? [h("h3", { style: "margin-top:14px" }, `Đang chờ đăng nhập lần đầu (${inv.data.length})`),
+            h("div", { class: "wrap" }, h("table", { class: "cmp" }, inv.data.map((v) => h("tr", {},
+              h("td", {}, v.full_name || v.email, v.full_name ? h("div", { class: "sub" }, v.email) : null),
+              h("td", {}, v.role === "teacher" ? "Giáo viên" : "Học viên"),
+              h("td", {}, v.class_id ? className(v.class_id) : "Chưa xếp lớp"),
+              h("td", {}, h("button", { class: "btn", onclick: async () => {
+                const { error } = await sb.from("invites").delete().eq("email", v.email);
+                if (error) return alert("Chưa xóa được: " + error.message);
+                render();
+              } }, "Hủy"))))))] : null));
+
+    // --- Tài khoản đã đăng nhập: đổi vai trò, xếp vào lớp, rút khỏi lớp.
+    add(h("h2", {}, `Tài khoản đã đăng nhập (${users.length})`),
+      h("div", { class: "wrap" }, h("table", { class: "cmp" },
+        h("tr", {}, h("th", {}, "Người dùng"), h("th", {}, "Vai trò"), h("th", {}, "Lớp")),
+        users.map((u) => {
+          const mine = members.filter((m) => m.user_id === u.id).map((m) => m.class_id);
+          const rest = classes.filter((c) => !mine.includes(c.id));
+          return h("tr", {},
+            h("td", {}, who(u), h("div", { class: "sub" }, u.email)),
+            h("td", {}, h("select", { disabled: u.id === ME.id, onchange: async (e) => {
+              const { error } = await sb.from("profiles").update({ role: e.target.value }).eq("id", u.id);
+              if (error) { alert("Chưa đổi được vai trò: " + error.message); render(); }
+            } }, [["student", "Học viên"], ["teacher", "Giáo viên"], ["admin", "Quản trị"]].map(([v, n]) => h("option", { value: v, selected: u.role === v }, n)))),
+            h("td", {},
+              mine.map((id) => h("span", { class: "tag", style: "margin:0 6px 4px 0" }, className(id), " ",
+                h("a", { href: "#", title: "Rút khỏi lớp này", onclick: async (e) => {
+                  e.preventDefault();
+                  if (!confirm(`Rút ${who(u)} khỏi lớp ${className(id)}?`)) return;
+                  const { error } = await sb.from("class_members").delete().eq("class_id", id).eq("user_id", u.id);
+                  if (error) return alert("Chưa rút được: " + error.message);
+                  render();
+                } }, "×"))),
+              rest.length ? h("select", { onchange: async (e) => {
+                if (!e.target.value) return;
+                const { error } = await sb.from("class_members").insert({ class_id: e.target.value, user_id: u.id });
+                if (error) alert("Chưa xếp lớp được: " + error.message + (inv.error ? " (cần chạy migration-002-invites.sql)" : ""));
+                render();
+              } }, h("option", { value: "" }, "Thêm vào lớp…"), rest.map((c) => h("option", { value: c.id }, c.name))) : null));
+        }))));
 
     const log = h("div", { class: "sub" });
     add(h("h2", {}, "Nội dung bài học"),

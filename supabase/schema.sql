@@ -242,3 +242,5 @@ create policy media_write on storage.objects for all to authenticated
 -- ---------- Gán quản trị viên đầu tiên ----------
 -- Sau khi bạn đăng nhập vào app lần đầu bằng Google, chạy riêng dòng dưới (thay email của bạn):
 -- update public.profiles set role = 'admin' where email = 'email-cua-ban@gmail.com';
+
+-- Sau tệp này, chạy tiếp supabase/migration-002-invites.sql để có chức năng quản trị thêm tài khoản và xếp lớp.
