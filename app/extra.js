@@ -25,6 +25,8 @@ const rank = (x) => (x >= 0.85 ? "Vững" : x >= 0.6 ? "Khá" : x >= 0.3 ? "Đan
 // ---------- Nên học gì trước ----------
 function priorities() {
   const out = [];
+  const again = relearnItems().length;
+  if (again) out.push({ t: `Học lại ${again} từ đã quên`, s: "Nhớ đúng hai lần liên tiếp thì từ đó rời danh sách.", href: "#/study/relearn/flash" });
   const due = dueItems().length;
   if (due) out.push({ t: `Ôn ${due} thẻ đến hạn`, s: "Để lâu sẽ quên, nên làm đầu tiên.", href: "#/study/due/flash" });
   for (const l of LESSONS) for (const x of l.exercises) {
@@ -320,7 +322,7 @@ route(/^assess\/test\/(\w+)$/, (scope) => {
     const score = right(["vi", "han", "grammar"]);
     P.tests = (P.tests || []).concat([{ t: Date.now(), scope, score, n: qs.length, vocab: [right(["vi", "han"]), count(["vi", "han"])], grammar: [right(["grammar"]), count(["grammar"])] }]);
     // Từ làm sai được đưa về trạng thái cần ôn lại ngay.
-    qs.forEach((q, k) => { if (q.it && picked[k] !== q.a) P.cards[q.it.id] = nextCard(P.cards[q.it.id], 0); });
+    qs.forEach((q, k) => { if (q.it && picked[k] !== q.a) { P.cards[q.it.id] = nextCard(P.cards[q.it.id], 0); trackRelearn(q.it.id, false); } });
     logEvent({ k: "test", r: scope, ok: score, n: qs.length });
     save();
     const wrong = qs.map((q, k) => ({ q, mine: picked[k] })).filter((x) => x.mine !== x.q.a);

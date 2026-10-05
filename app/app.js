@@ -35,6 +35,8 @@ function merge(mine, theirs) {
   for (const [id, c] of Object.entries(mine.cards)) out.cards[id] = newer(c, out.cards[id], "last");
   for (const [id, a] of Object.entries(mine.answers)) out.answers[id] = newer(a, out.answers[id], "t");
   for (const [id, s] of Object.entries(mine.saved)) out.saved[id] = newer(s, out.saved[id], "t");
+  out.relearn = out.relearn || {};
+  for (const [id, r] of Object.entries(mine.relearn || {})) out.relearn[id] = newer(r, out.relearn[id], "t");
   const seen = new Set(out.log.map((e) => e.id));
   out.log = out.log.concat(mine.log.filter((e) => !seen.has(e.id))).sort((a, b) => a.t - b.t);
   // Điểm kiểm tra và kỷ lục trò chơi: gộp theo thời điểm, không để bản nào đè mất bản nào.
@@ -159,8 +161,30 @@ function nextCard(card, g, today = dayNum()) {
   c.last = Date.now();
   return c;
 }
+// Từ cần học lại: từ nào bị quên (hoặc làm sai) thì tự vào danh sách này, nhớ đúng RELEARN_GOAL lần liên tiếp thì ra.
+const RELEARN_GOAL = 2;
+function trackRelearn(id, remembered) {
+  P.relearn = P.relearn || {};
+  const cur = P.relearn[id];
+  if (!remembered) P.relearn[id] = { streak: 0, since: cur && !cur.done ? cur.since : Date.now(), t: Date.now() };
+  else if (cur && !cur.done) {
+    const streak = cur.streak + 1;
+    P.relearn[id] = streak >= RELEARN_GOAL ? { done: true, t: Date.now() } : { ...cur, streak, t: Date.now() };
+  }
+}
+// Lần đầu có tính năng này: đưa vào danh sách những từ mà lượt ôn gần nhất trước đây là "quên".
+function backfillRelearn() {
+  if (P.relearn) return;
+  P.relearn = {};
+  const last = {};
+  for (const e of P.log) if (e.k === "card") last[e.r] = e;
+  for (const [id, e] of Object.entries(last)) if (e.g === 0) P.relearn[id] = { streak: 0, since: e.t, t: e.t };
+  if (Object.keys(P.relearn).length) save();
+}
+const relearnItems = () => { const r = P.relearn || {}; return allItems().filter((i) => r[i.id] && !r[i.id].done).sort((a, b) => r[a.id].since - r[b.id].since); };
 function grade(item, g, mode) {
   P.cards[item.id] = nextCard(P.cards[item.id], g);
+  trackRelearn(item.id, g > 0);
   logEvent({ k: "card", r: item.id, g, m: mode });
   save();
 }
@@ -578,6 +602,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   if (scope === "due") { pool = allItems(); queue = [...dueItems(), ...newItemsToday()]; back = "#/"; }
   else if (scope === "saved") { pool = savedItems(); queue = shuffle(pool); back = "#/saved"; }
   else if (scope === "weak") { pool = allItems(); queue = weakItems(); back = "#/score"; }
+  else if (scope === "relearn") { pool = allItems(); queue = relearnItems(); back = "#/saved"; }
   else {
     const l = lessonById(scope.slice(1));
     if (!l) return go("#/");
@@ -688,7 +713,21 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
 // ---------- Sổ từ ----------
 route(/^saved$/, () => {
   const items = savedItems();
+  const again = relearnItems();
   add(h("h1", {}, "Sổ từ"),
+    h("h2", {}, `Từ cần học lại (${again.length})`),
+    h("div", { class: "sub" }, `Từ nào bạn quên hoặc làm sai sẽ tự vào đây. Nhớ đúng ${RELEARN_GOAL} lần liên tiếp thì từ đó tự rời danh sách.`),
+    again.length ? [h("div", { class: "row", style: "margin:12px 0" },
+        h("button", { class: "btn pri", onclick: () => go("#/study/relearn/flash") }, "Học lại bằng thẻ lật"),
+        h("button", { class: "btn", onclick: () => go("#/study/relearn/vi") }, "Chữ → nghĩa"),
+        h("button", { class: "btn", onclick: () => go("#/study/relearn/han") }, "Nghĩa → chữ"),
+        h("button", { class: "btn", onclick: () => go("#/study/relearn/listen") }, "Nghe chọn từ")),
+      h("div", { class: "wrap" }, h("table", { class: "words" }, again.map((i) => h("tr", {},
+        h("td", { class: "h", onclick: () => pronounce(i) }, i.hanzi), h("td", { class: "p" }, i.pinyin),
+        h("td", {}, i.vi, i.lesson ? h("span", { class: "tag" }, `bài ${i.lesson}`) : null),
+        h("td", { class: "sub", style: "white-space:nowrap" }, `đã nhớ ${P.relearn[i.id].streak}/${RELEARN_GOAL}`)))))]
+      : h("div", { class: "card sub" }, "Hiện không có từ nào cần học lại."),
+    h("h2", {}, `Từ bạn đã lưu (${items.length})`),
     h("div", { class: "sub" }, "Những từ bạn lưu khi đọc bài khóa. Chúng cũng được đưa vào lịch ôn hằng ngày."),
     items.length ? h("div", { class: "row", style: "margin:12px 0" },
       h("button", { class: "btn pri", onclick: () => go("#/study/saved/flash") }, "Thẻ lật"),
@@ -704,6 +743,23 @@ route(/^saved$/, () => {
 });
 
 // ---------- Lịch sử ----------
+// Một ngày trong lịch sử: liệt kê từ đã quên (kèm nghĩa) và từ đã nhớ.
+function dayWords(cards) {
+  const byId = Object.fromEntries(allItems().map((i) => [i.id, i]));
+  const uniq = (ev) => [...new Set(ev.map((e) => e.r))].map((id) => byId[id]).filter(Boolean);
+  const forgot = uniq(cards.filter((e) => e.g === 0)), kept = uniq(cards.filter((e) => e.g > 0)).filter((i) => !forgot.includes(i));
+  const still = (i) => P.relearn && P.relearn[i.id] && !P.relearn[i.id].done;
+  return [
+    h("div", {}, `Ôn từ: ${cards.length} lượt, nhớ ${cards.filter((e) => e.g > 0).length}, quên ${cards.filter((e) => e.g === 0).length}`),
+    forgot.length ? h("div", { style: "margin-top:8px" }, h("b", { style: "color:var(--bad)" }, `Từ đã quên (${forgot.length})`),
+      h("div", { class: "wrap" }, h("table", { class: "words" }, forgot.map((i) => h("tr", {},
+        h("td", { class: "h", onclick: () => pronounce(i) }, i.hanzi), h("td", { class: "p" }, i.pinyin), h("td", {}, i.vi),
+        h("td", { class: "sub", style: "white-space:nowrap" }, still(i) ? "đang học lại" : "đã nhớ lại")))))) : null,
+    kept.length ? h("details", { style: "margin-top:8px" }, h("summary", { class: "sub" }, `Từ đã nhớ (${kept.length})`),
+      h("div", { class: "zh", style: "margin-top:6px;line-height:2" }, kept.map((i) => h("span", { class: "kw", title: i.vi, onclick: () => pronounce(i) }, i.hanzi)))) : null,
+  ];
+}
+
 route(/^history$/, () => {
   add(h("h1", {}, "Lịch sử học"));
   const exName = (id) => { for (const l of LESSONS) { const x = l.exercises.find((e) => e.id === id); if (x) return `Bài ${l.id} · ${x.title}`; } return id; };
@@ -715,7 +771,7 @@ route(/^history$/, () => {
     const ev = days[d], cards = ev.filter((e) => e.k === "card");
     add(h("div", { class: "card" },
       h("h3", {}, fmtDay(d), d === dayNum() ? " · hôm nay" : ""),
-      cards.length ? h("div", {}, `Ôn từ: ${cards.length} lượt, nhớ ${cards.filter((e) => e.g > 0).length}, quên ${cards.filter((e) => e.g === 0).length}`) : null,
+      cards.length ? dayWords(cards) : null,
       ev.filter((e) => e.k === "ex").map((e) => h("div", {}, `${exName(e.r)}: đúng ${e.ok}/${e.n} câu · ${fmtTime(e.t).slice(6)}`)),
       ev.filter((e) => e.k === "write").length ? h("div", {}, `Bài viết / câu dịch đã lưu: ${ev.filter((e) => e.k === "write").length}`) : null));
   }
@@ -746,7 +802,7 @@ window.addEventListener("focus", async () => {
 });
 async function start() {
   view.replaceChildren(h("p", { class: "sub" }, "Đang tải…"));
-  try { await Promise.all([loadProgress(), loadLessons()]); READY = true; render(); }
+  try { await Promise.all([loadProgress(), loadLessons()]); backfillRelearn(); READY = true; render(); }
   catch (e) { console.error(e); view.replaceChildren(h("div", { class: "card" }, "Không tải được dữ liệu. Hãy kiểm tra kết nối rồi tải lại trang.")); }
 }
 // online.js quyết định chạy ở chế độ trên máy hay online rồi gọi start().
