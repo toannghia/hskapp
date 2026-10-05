@@ -38,14 +38,32 @@ async function bootOnline() {
 }
 
 function loginScreen(msg) {
+  const field = (attrs) => h("input", { style: "width:100%;max-width:320px;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);margin:5px 0", ...attrs });
+  const email = field({ type: "email", placeholder: "Email", autocomplete: "username" });
+  const pass = field({ type: "password", placeholder: "Mật khẩu", autocomplete: "current-password" });
+  const out = h("div", msg ? { class: "fb bad" } : {}, msg || "");
+  const signIn = async (btn) => {
+    if (!email.value.trim()) return email.focus();
+    if (!pass.value) return pass.focus();
+    btn.disabled = true;
+    const { error } = await sb.auth.signInWithPassword({ email: email.value.trim(), password: pass.value });
+    if (!error) return location.reload();
+    btn.disabled = false;
+    say(out, /invalid login/i.test(error.message) ? "Email hoặc mật khẩu không đúng." : error.message, true);
+  };
+  const button = h("button", { class: "btn pri big", style: "margin-top:8px", onclick: (e) => signIn(e.target) }, "Đăng nhập");
+  pass.addEventListener("keydown", (e) => { if (e.key === "Enter") signIn(button); });
   screen(h("div", { class: "card", style: "text-align:center;padding:36px 16px" },
     h("h1", {}, "Ôn HSK5"),
     h("p", { class: "sub" }, "Đăng nhập để lưu tiến độ học và nộp bài cho giáo viên."),
-    h("button", { class: "btn pri big", onclick: async () => {
+    h("div", {}, email), h("div", {}, pass), h("div", {}, button),
+    out,
+    h("p", { class: "sub", style: "margin:18px 0 8px" }, "hoặc"),
+    h("button", { class: "btn big", onclick: async () => {
       const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname + location.search } });
-      if (error) loginScreen("Không mở được trang đăng nhập Google: " + error.message);
+      if (error) say(out, "Không mở được trang đăng nhập Google: " + error.message, true);
     } }, "Đăng nhập bằng Google"),
-    msg ? h("div", { class: "fb bad" }, msg) : null));
+    h("p", { class: "sub", style: "margin-top:16px" }, "Chưa có tài khoản hoặc quên mật khẩu? Liên hệ quản trị của lớp để được cấp.")));
 }
 
 function joinScreen() {
@@ -71,8 +89,44 @@ function drawAccount() {
   nav.querySelectorAll(".role").forEach((x) => x.remove());
   if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, "Giáo viên"));
   if (ME.role === "admin") nav.append(h("a", { class: "role", href: "#/admin" }, "Quản trị"));
+  nav.append(h("a", { class: "role", href: "#/password" }, "Mật khẩu"));
   nav.append(h("a", { class: "role", href: "#", title: ME.email, onclick: async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); } }, "Đăng xuất"));
 }
+
+route(/^password$/, () => {
+  if (!ONLINE) return go("#/");
+  const field = (ph) => h("input", { type: "password", placeholder: ph, autocomplete: "new-password",
+    style: "display:block;width:100%;max-width:320px;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);margin:8px 0" });
+  const a = field("Mật khẩu mới (ít nhất 8 ký tự)"), b = field("Nhập lại mật khẩu mới"), out = h("div", {});
+  add(h("h1", {}, "Đặt mật khẩu"),
+    h("div", { class: "card" },
+      h("div", { class: "sub" }, `Tài khoản: ${ME.email}. Sau khi đặt, bạn đăng nhập được bằng email và mật khẩu này; nếu trước giờ dùng Google thì vẫn dùng Google được như cũ.`),
+      a, b,
+      h("button", { class: "btn pri", onclick: async (e) => {
+        if (a.value.length < 8) return say(out, "Mật khẩu cần ít nhất 8 ký tự.", true);
+        if (a.value !== b.value) return say(out, "Hai lần nhập chưa giống nhau.", true);
+        e.target.disabled = true;
+        const { error } = await sb.auth.updateUser({ password: a.value });
+        e.target.disabled = false;
+        if (error) return say(out, error.message, true);
+        a.value = b.value = "";
+        say(out, "Đã đặt mật khẩu mới.");
+      } }, "Lưu mật khẩu"), out));
+});
+
+// Gọi hàm phía máy chủ (chỉ có trên bản Vercel) để tạo tài khoản có mật khẩu hoặc đặt lại mật khẩu.
+async function adminUsers(body) {
+  const session = must(await sb.auth.getSession()).session;
+  let res;
+  try {
+    res = await fetch("/api/admin-users", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` }, body: JSON.stringify(body) });
+  } catch { throw new Error("Không gọi được máy chủ."); }
+  const data = await res.json().catch(() => null);
+  if (!data) throw new Error(res.status === 404 ? "Việc này chỉ làm được trên bản online (địa chỉ Vercel), không làm được ở bản chạy trên máy." : "Máy chủ trả lời không hợp lệ.");
+  if (!res.ok) throw new Error(data.error || "Lỗi máy chủ");
+  return data;
+}
+const randomPassword = () => { const set = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789"; const r = crypto.getRandomValues(new Uint32Array(12)); return Array.from(r, (x) => set[x % set.length]).join(""); };
 
 // ---------- Thay nơi lưu dữ liệu bằng Supabase ----------
 function useSupabase() {
@@ -219,15 +273,30 @@ route(/^admin$/, async () => {
     const email = input({ type: "email", placeholder: "Email Google của người cần thêm" }), name = input({ placeholder: "Họ tên (không bắt buộc)" });
     const role = h("select", {}, h("option", { value: "student" }, "Học viên"), h("option", { value: "teacher" }, "Giáo viên"));
     const cls = h("select", {}, h("option", { value: "" }, "Chưa xếp lớp"), classes.map((c) => h("option", { value: c.id }, c.name)));
+    const pass = input({ placeholder: "Mật khẩu, ít nhất 8 ký tự (để trống nếu người này dùng Google)", autocomplete: "off" });
     const out = h("div", {});
     add(h("h2", {}, "Thêm tài khoản"),
       inv.error ? h("div", { class: "card" }, "Chức năng này cần cập nhật cơ sở dữ liệu: chạy tệp supabase/migration-002-invites.sql trong Supabase → SQL Editor rồi tải lại trang.")
         : h("div", { class: "card" },
-          h("div", { class: "sub" }, "Người được thêm đăng nhập bằng đúng email Google này là có ngay vai trò và lớp đã chọn, không cần nhập mã lớp. Nếu họ đã có tài khoản thì thay đổi áp dụng ngay."),
+          h("div", { class: "sub" }, "Có hai cách. Nhập mật khẩu: tài khoản được tạo ngay, người đó đăng nhập bằng email và mật khẩu bạn đặt. Để trống mật khẩu: người đó đăng nhập bằng Google với đúng email này. Cả hai cách đều có ngay vai trò và lớp đã chọn, không cần mã lớp."),
           h("div", { class: "row", style: "margin-top:10px" }, email, name),
+          h("div", { class: "row", style: "margin-top:10px" }, pass,
+            h("button", { class: "btn", onclick: () => { pass.value = randomPassword(); } }, "Tạo ngẫu nhiên")),
           h("div", { class: "row", style: "margin-top:10px" }, h("label", {}, "Vai trò ", role), h("label", {}, "Lớp ", cls),
             h("button", { class: "btn pri", onclick: async (e) => {
               if (!email.value.trim()) return email.focus();
+              if (pass.value) {
+                // Có mật khẩu: tạo tài khoản ngay qua hàm phía máy chủ.
+                if (pass.value.length < 8) return say(out, "Mật khẩu cần ít nhất 8 ký tự.", true);
+                e.target.disabled = true;
+                try {
+                  await adminUsers({ action: "create", email: email.value, password: pass.value, name: name.value, role: role.value, classId: cls.value || null });
+                  say(out, `Đã tạo tài khoản ${email.value.trim()} với mật khẩu: ${pass.value} — hãy gửi cho người dùng rồi nhắc họ đổi mật khẩu sau khi đăng nhập.`);
+                  email.value = name.value = pass.value = "";
+                } catch (err) { say(out, err.message, true); }
+                e.target.disabled = false;
+                return;
+              }
               e.target.disabled = true;
               const { data, error } = await sb.rpc("admin_add_account", { p_email: email.value, p_name: name.value, p_role: role.value, p_class: cls.value || null });
               e.target.disabled = false;
@@ -252,7 +321,7 @@ route(/^admin$/, async () => {
     // --- Tài khoản đã đăng nhập: đổi vai trò, xếp vào lớp, rút khỏi lớp.
     add(h("h2", {}, `Tài khoản đã đăng nhập (${users.length})`),
       h("div", { class: "wrap" }, h("table", { class: "cmp" },
-        h("tr", {}, h("th", {}, "Người dùng"), h("th", {}, "Vai trò"), h("th", {}, "Lớp")),
+        h("tr", {}, h("th", {}, "Người dùng"), h("th", {}, "Vai trò"), h("th", {}, "Lớp"), h("th", {}, "Mật khẩu")),
         users.map((u) => {
           const mine = members.filter((m) => m.user_id === u.id).map((m) => m.class_id);
           const rest = classes.filter((c) => !mine.includes(c.id));
@@ -276,7 +345,16 @@ route(/^admin$/, async () => {
                 const { error } = await sb.from("class_members").insert({ class_id: e.target.value, user_id: u.id });
                 if (error) alert("Chưa xếp lớp được: " + error.message + (inv.error ? " (cần chạy migration-002-invites.sql)" : ""));
                 render();
-              } }, h("option", { value: "" }, "Thêm vào lớp…"), rest.map((c) => h("option", { value: c.id }, c.name))) : null));
+              } }, h("option", { value: "" }, "Thêm vào lớp…"), rest.map((c) => h("option", { value: c.id }, c.name))) : null),
+            h("td", {}, h("button", { class: "btn", onclick: async (e) => {
+              const fresh = randomPassword();
+              if (!confirm(`Đặt mật khẩu mới cho ${u.email}? Mật khẩu cũ (nếu có) sẽ không dùng được nữa.`)) return;
+              e.target.disabled = true;
+              try {
+                await adminUsers({ action: "password", email: u.email, password: fresh });
+                e.target.replaceWith(h("div", { class: "fb ok" }, "Mật khẩu mới: ", h("b", {}, fresh), h("div", { class: "sub" }, "Chỉ hiện một lần. Gửi cho người dùng và nhắc họ đổi lại.")));
+              } catch (err) { e.target.disabled = false; alert(err.message); }
+            } }, "Đặt lại")));
         }))));
 
     const log = h("div", { class: "sub" });
