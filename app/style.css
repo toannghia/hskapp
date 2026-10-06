@@ -213,3 +213,15 @@ details.fold > ol { margin-top: 8px; }
 .example .zh { font-size: 18px; line-height: 1.5; }
 .example .zh b { color: var(--acc); }
 .flash .examples { width: 100%; max-width: 520px; margin-top: 12px; }
+
+/* Danh sách từ mới: mỗi từ hai dòng gọn, câu ví dụ chỉ hiện khi bấm */
+.wordlist .word { padding: 10px 2px; border-bottom: 1px solid var(--line); }
+.wtop { display: flex; align-items: baseline; gap: 10px; }
+.wtop .dot { flex: none; align-self: center; margin-top: 0; }
+.wtop .h { font-family: var(--han); font-size: 24px; cursor: pointer; white-space: nowrap; }
+.wtop .p { color: var(--mute); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.btn.mini { min-height: 34px; padding: 4px 10px; flex: none; align-self: center; }
+.wmean { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 4px 0 0 19px; }
+.wmean.tap { cursor: pointer; }
+.wmean .more { color: var(--acc); font-size: 13px; white-space: nowrap; flex: none; }
+.wordlist .examples { margin: 6px 0 2px 19px; }

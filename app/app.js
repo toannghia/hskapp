@@ -342,13 +342,25 @@ function tabWords(l) {
         h("button", { class: "btn" + (slow() ? " on" : ""), onclick: () => { P.settings.slow = !slow(); save(); render(); } }, slow() ? "Đọc chậm: đang bật" : "Đọc chậm: đang tắt"),
         l.items.some((i) => i.clip) ? "Bài này phát âm bằng giọng đọc thật của giáo trình." : "Bài này chưa có giọng đọc thật cho từng từ, đang dùng giọng của thiết bị.")),
     [].concat(l.audio.vocab).map(audio),
-    h("div", { class: "wrap" }, h("table", { class: "words" }, l.items.map((i) => h("tr", {},
-      h("td", {}, h("span", { class: "dot " + status(i.id), title: { new: "Chưa học", learn: "Đang học", known: "Đã thuộc" }[status(i.id)] })),
-      h("td", { class: "h", onclick: () => pronounce(i) }, i.hanzi),
-      h("td", { class: "p" }, i.pinyin),
-      h("td", {}, i.emoji ? i.emoji + " " : "", i.vi, h("span", { class: "tag" }, i.pos), exampleView(i, 1)),
-      h("td", {}, h("a", { class: "btn", href: `#/write/${l.id}/${i.n}`, title: "Xem cách viết và tập viết" }, "✍")))))),
-    h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe."));
+    // Mỗi từ một dòng gọn: chữ Hán, pinyin, nghĩa. Bấm vào dòng nghĩa để mở hoặc đóng câu ví dụ.
+    h("div", { class: "wordlist" }, l.items.map((i) => {
+      const ex = exampleView(i, 2);
+      const box = ex ? h("div", { hidden: true }, ex) : null;
+      const arrow = ex ? h("span", { class: "more" }, "ví dụ ›") : null;
+      return h("div", { class: "word" },
+        h("div", { class: "wtop" },
+          h("span", { class: "dot " + status(i.id), title: { new: "Chưa học", learn: "Đang học", known: "Đã thuộc" }[status(i.id)] }),
+          h("span", { class: "h", onclick: () => pronounce(i) }, i.hanzi),
+          h("span", { class: "p" }, i.pinyin),
+          h("a", { class: "btn mini", href: `#/write/${l.id}/${i.n}`, title: "Xem cách viết và tập viết" }, "✍")),
+        h("div", { class: "wmean" + (ex ? " tap" : ""), onclick: () => {
+          if (!box) return;
+          box.hidden = !box.hidden;
+          arrow.textContent = box.hidden ? "ví dụ ›" : "ẩn ví dụ ⌄";
+        } }, h("span", {}, i.emoji ? i.emoji + " " : "", i.vi, i.pos ? h("span", { class: "tag" }, i.pos) : null), arrow),
+        box);
+    })),
+    h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe, bấm vào dòng nghĩa để xem câu ví dụ."));
 }
 
 // ---------- Bài khóa: đánh dấu từ mới, bấm vào từ để tra ----------
