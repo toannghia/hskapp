@@ -42,5 +42,292 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "密切",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"mật thiết, chặt chẽ\"; làm trạng ngữ nghĩa là \"sát sao\".",
+   "points": [
+    {
+     "pattern": "关系密切 / 密切的 + danh từ",
+     "explain": "Quan hệ gần gũi, gắn bó.",
+     "examples": [
+      {
+       "zh": "他们两家的关系非常密切。",
+       "vi": "Quan hệ hai nhà họ rất mật thiết."
+      }
+     ]
+    },
+    {
+     "pattern": "密切 + động từ (注意 / 观察 / 合作)",
+     "explain": "Theo dõi, phối hợp một cách sát sao.",
+     "examples": [
+      {
+       "zh": "医生正在密切观察病人的情况。",
+       "vi": "Bác sĩ đang theo dõi sát tình hình bệnh nhân."
+      }
+     ]
+    }
+   ],
+   "id": "32-g1"
+  },
+  {
+   "title": "尽量",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"cố hết mức có thể\".",
+   "points": [
+    {
+     "pattern": "尽量 + động từ / tính từ",
+     "explain": "Đứng trước điều cần cố gắng đạt được.",
+     "examples": [
+      {
+       "zh": "我会尽量早点儿到。",
+       "vi": "Tôi sẽ cố gắng đến sớm nhất có thể."
+      },
+      {
+       "zh": "说话的时候请尽量简单一点儿。",
+       "vi": "Khi nói xin cố gắng đơn giản một chút."
+      }
+     ]
+    }
+   ],
+   "id": "32-g2"
+  },
+  {
+   "title": "逐步",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"từng bước\", chỉ thay đổi có chủ ý, theo từng giai đoạn.",
+   "points": [
+    {
+     "pattern": "逐步 + động từ hai âm tiết",
+     "explain": "Thường đi với 提高、改善、解决、实现.",
+     "examples": [
+      {
+       "zh": "我们要逐步改善工作条件。",
+       "vi": "Chúng ta cần từng bước cải thiện điều kiện làm việc."
+      },
+      {
+       "zh": "他的计划正在逐步实现。",
+       "vi": "Kế hoạch của anh ấy đang từng bước thành hiện thực."
+      }
+     ]
+    }
+   ],
+   "id": "32-g3"
+  },
+  {
+   "title": "鼓励 và 鼓舞",
+   "kind": "phân biệt",
+   "summary": "Đều là làm cho người khác có thêm tinh thần.",
+   "compare": {
+    "same": "Hai từ khác nhau về chủ thể và cấu trúc, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Chủ thể",
+      "a": "Người: dùng lời nói, hành động để khích lệ.",
+      "b": "Sự việc, tin tức, tấm gương làm người ta phấn chấn."
+     },
+     {
+      "aspect": "Kết cấu",
+      "a": "鼓励 + người + làm gì: 鼓励他参加比赛。",
+      "b": "令人鼓舞、受到鼓舞、鼓舞人心。"
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Động từ, danh từ.",
+      "b": "Động từ, tính từ: 令人鼓舞的消息。"
+     }
+    ]
+   },
+   "id": "32-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "32-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "砍",
+    "破坏",
+    "消失",
+    "公布",
+    "燃烧",
+    "掌握",
+    "贡献",
+    "尊敬"
+   ],
+   "items": [
+    {
+     "q": "为了保护森林，这里不允许___树。",
+     "a": "砍"
+    },
+    {
+     "q": "乱扔垃圾会___环境。",
+     "a": "破坏"
+    },
+    {
+     "q": "太阳出来以后，雾很快就___了。",
+     "a": "消失"
+    },
+    {
+     "q": "考试成绩将在下周一___。",
+     "a": "公布"
+    },
+    {
+     "q": "木头在火里___着。",
+     "a": "燃烧"
+    },
+    {
+     "q": "他只用了一年就___了这门技术。",
+     "a": "掌握"
+    },
+    {
+     "q": "他为家乡的教育做出了很大的___。",
+     "a": "贡献"
+    },
+    {
+     "q": "他是一位受人___的老教授。",
+     "a": "尊敬"
+    }
+   ]
+  },
+  {
+   "id": "32-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "老师常常___我们多提问题。",
+     "options": [
+      "鼓励",
+      "鼓舞"
+     ],
+     "a": 0,
+     "why": "Người khích lệ người khác làm gì: 鼓励."
+    },
+    {
+     "q": "这个好消息令人___。",
+     "options": [
+      "鼓励",
+      "鼓舞"
+     ],
+     "a": 1,
+     "why": "Tin tức làm phấn chấn, kết cấu 令人鼓舞."
+    },
+    {
+     "q": "这两个问题有着___的联系。",
+     "options": [
+      "密切",
+      "亲切"
+     ],
+     "a": 0,
+     "why": "Liên hệ chặt chẽ: 密切."
+    },
+    {
+     "q": "学外语要___多听多说。",
+     "options": [
+      "尽量",
+      "尽管"
+     ],
+     "a": 0,
+     "why": "Cố hết mức có thể: 尽量."
+    }
+   ]
+  },
+  {
+   "id": "32-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A我们B会C满足D顾客的要求。",
+     "word": "尽量",
+     "a": "C"
+    },
+    {
+     "q": "A公司的规模B正在C扩大D。",
+     "word": "逐步",
+     "a": "C"
+    },
+    {
+     "q": "A请B注意C天气的D变化。",
+     "word": "密切",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "32-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "请",
+      "尽量",
+      "不要",
+      "迟到"
+     ],
+     "a": "请尽量不要迟到。",
+     "vi": "Xin cố gắng đừng đến muộn."
+    },
+    {
+     "words": [
+      "这个问题",
+      "正在",
+      "逐步",
+      "得到",
+      "解决"
+     ],
+     "a": "这个问题正在逐步得到解决。",
+     "vi": "Vấn đề này đang từng bước được giải quyết."
+    },
+    {
+     "words": [
+      "两国",
+      "之间的",
+      "合作",
+      "越来越",
+      "密切"
+     ],
+     "a": "两国之间的合作越来越密切。",
+     "vi": "Hợp tác giữa hai nước ngày càng chặt chẽ."
+    }
+   ]
+  },
+  {
+   "id": "32-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "消失",
+      "破坏",
+      "砍",
+      "生存",
+      "沙漠",
+      "数据",
+      "资源",
+      "工业",
+      "废",
+      "燃烧",
+      "密切",
+      "尾气",
+      "自觉",
+      "能源",
+      "逐步",
+      "尽量",
+      "鼓舞",
+      "贡献",
+      "命运",
+      "掌握"
+     ]
+    }
+   ]
+  }
+ ]
 }

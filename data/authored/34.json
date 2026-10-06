@@ -42,5 +42,288 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "总之",
+   "kind": "cách dùng",
+   "summary": "Liên từ nghĩa là \"tóm lại, nói chung\", tổng kết những điều vừa nói, hoặc nêu kết luận dù chi tiết chưa rõ.",
+   "points": [
+    {
+     "pattern": "…，总之，+ kết luận",
+     "explain": "Đứng đầu câu kết.",
+     "examples": [
+      {
+       "zh": "你可以坐车，也可以骑车，总之，九点以前要到。",
+       "vi": "Bạn có thể đi xe buýt hoặc xe đạp, tóm lại phải đến trước chín giờ."
+      },
+      {
+       "zh": "我忘了他的名字，总之是一个很有名的作家。",
+       "vi": "Tôi quên tên ông ấy rồi, nói chung là một nhà văn rất nổi tiếng."
+      }
+     ]
+    }
+   ],
+   "id": "34-g1"
+  },
+  {
+   "title": "唯一",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"duy nhất\", chỉ làm định ngữ.",
+   "points": [
+    {
+     "pattern": "唯一 (的) + danh từ",
+     "explain": "Chỉ có một, không có cái thứ hai.",
+     "examples": [
+      {
+       "zh": "这是解决问题的唯一办法。",
+       "vi": "Đây là cách duy nhất để giải quyết vấn đề."
+      },
+      {
+       "zh": "他是我们班唯一去过中国的人。",
+       "vi": "Cậu ấy là người duy nhất trong lớp tôi từng đến Trung Quốc."
+      }
+     ]
+    }
+   ],
+   "id": "34-g2"
+  },
+  {
+   "title": "随身",
+   "kind": "cách dùng",
+   "summary": "Tính từ và phó từ nghĩa là \"mang theo bên mình\".",
+   "points": [
+    {
+     "pattern": "随身 + 带 / 携带 / danh từ",
+     "explain": "Ví dụ: 随身带着、随身物品.",
+     "examples": [
+      {
+       "zh": "出门旅行要随身带着护照。",
+       "vi": "Đi du lịch phải mang hộ chiếu theo người."
+      },
+      {
+       "zh": "请保管好您的随身物品。",
+       "vi": "Xin giữ gìn cẩn thận đồ đạc mang theo người."
+      }
+     ]
+    }
+   ],
+   "id": "34-g3"
+  },
+  {
+   "title": "反复 và 重复",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc lặp lại.",
+   "compare": {
+    "same": "Hai từ khác nhau về từ loại, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Làm đi làm lại nhiều lần, mỗi lần có thể khác đi.",
+      "b": "Lặp lại y nguyên cái đã có."
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Chủ yếu là phó từ: 反复练习、反复考虑。",
+      "b": "Động từ: 重复一遍、内容重复了。"
+     },
+     {
+      "aspect": "Mang tân ngữ",
+      "a": "Không.",
+      "b": "Có: 重复刚才的话。"
+     }
+    ]
+   },
+   "id": "34-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "34-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "抓",
+    "啄",
+    "区分",
+    "充当",
+    "爱惜",
+    "保养",
+    "概括",
+    "迎接"
+   ],
+   "items": [
+    {
+     "q": "猫___住了一只老鼠。",
+     "a": "抓"
+    },
+    {
+     "q": "小鸟在地上___食。",
+     "a": "啄"
+    },
+    {
+     "q": "这对双胞胎很难___。",
+     "a": "区分"
+    },
+    {
+     "q": "在这次活动中，他___了翻译的角色。",
+     "a": "充当"
+    },
+    {
+     "q": "我们要___粮食，不能浪费。",
+     "a": "爱惜"
+    },
+    {
+     "q": "这辆车___得很好，看起来像新的一样。",
+     "a": "保养"
+    },
+    {
+     "q": "请用一句话___这篇文章的意思。",
+     "a": "概括"
+    },
+    {
+     "q": "全家人都在准备___新年。",
+     "a": "迎接"
+    }
+   ]
+  },
+  {
+   "id": "34-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这个动作他___练习了几十遍。",
+     "options": [
+      "反复",
+      "重复"
+     ],
+     "a": 0,
+     "why": "Phó từ đứng trước động từ, làm đi làm lại: 反复."
+    },
+    {
+     "q": "请把你的问题再___一遍。",
+     "options": [
+      "反复",
+      "重复"
+     ],
+     "a": 1,
+     "why": "Động từ \"nhắc lại y nguyên\": 重复."
+    },
+    {
+     "q": "这是我今天___的要求。",
+     "options": [
+      "唯一",
+      "统一"
+     ],
+     "a": 0,
+     "why": "Duy nhất: 唯一."
+    },
+    {
+     "q": "天气多变，最好___带一把伞。",
+     "options": [
+      "随身",
+      "随便"
+     ],
+     "a": 0,
+     "why": "Mang theo bên mình: 随身."
+    }
+   ]
+  },
+  {
+   "id": "34-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A你可以同意，B也可以反对，C你要D告诉我。",
+     "word": "总之",
+     "a": "C"
+    },
+    {
+     "q": "A她是B我C的D朋友。",
+     "word": "唯一",
+     "a": "C"
+    },
+    {
+     "q": "A重要的B东西C最好D带着。",
+     "word": "随身",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "34-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "这是",
+      "我们",
+      "唯一的",
+      "选择"
+     ],
+     "a": "这是我们唯一的选择。",
+     "vi": "Đây là lựa chọn duy nhất của chúng ta."
+    },
+    {
+     "words": [
+      "老师",
+      "反复",
+      "强调",
+      "这个",
+      "问题"
+     ],
+     "a": "老师反复强调这个问题。",
+     "vi": "Thầy giáo nhấn mạnh vấn đề này nhiều lần."
+    },
+    {
+     "words": [
+      "总之",
+      "我们",
+      "一定",
+      "要",
+      "按时",
+      "完成"
+     ],
+     "a": "总之，我们一定要按时完成。",
+     "vi": "Tóm lại, chúng ta nhất định phải hoàn thành đúng hạn."
+    }
+   ]
+  },
+  {
+   "id": "34-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "接触",
+      "特征",
+      "翅膀",
+      "昆虫",
+      "区分",
+      "唯一",
+      "充当",
+      "总之",
+      "角色",
+      "爱惜",
+      "保养",
+      "反复",
+      "随身",
+      "光滑",
+      "抓",
+      "种类",
+      "概括",
+      "痛快",
+      "迎接",
+      "干燥",
+      "秘密"
+     ]
+    }
+   ]
+  }
+ ]
 }

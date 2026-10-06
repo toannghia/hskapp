@@ -42,5 +42,300 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "从此",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"từ đó, từ nay\", chỉ khoảng thời gian tính từ thời điểm vừa nhắc trở đi.",
+   "points": [
+    {
+     "pattern": "…，从此 + (就 / 再也 / 以后) …",
+     "explain": "Đứng đầu vế sau.",
+     "examples": [
+      {
+       "zh": "那次失败以后，他从此变得更加努力。",
+       "vi": "Sau lần thất bại đó, từ ấy anh trở nên chăm chỉ hơn."
+      },
+      {
+       "zh": "两个人吵了一架，从此再也不说话了。",
+       "vi": "Hai người cãi nhau một trận, từ đó không nói chuyện với nhau nữa."
+      }
+     ]
+    }
+   ],
+   "id": "28-g1"
+  },
+  {
+   "title": "假设",
+   "kind": "cách dùng",
+   "summary": "Liên từ nghĩa là \"giả sử\"; cũng là danh từ, động từ nghĩa là \"giả thiết\".",
+   "points": [
+    {
+     "pattern": "假设 + điều kiện，(就 / 那么) …",
+     "explain": "Nêu một tình huống chưa có thật.",
+     "examples": [
+      {
+       "zh": "假设你迷路了，你会怎么办？",
+       "vi": "Giả sử bạn bị lạc, bạn sẽ làm gì?"
+      }
+     ]
+    },
+    {
+     "pattern": "一个假设 / 只是假设",
+     "explain": "Danh từ.",
+     "examples": [
+      {
+       "zh": "这只是一个假设，还需要证明。",
+       "vi": "Đây mới chỉ là giả thiết, còn cần chứng minh."
+      }
+     ]
+    }
+   ],
+   "id": "28-g2"
+  },
+  {
+   "title": "堆",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"chất đống\"; cũng là lượng từ nghĩa là \"đống\".",
+   "points": [
+    {
+     "pattern": "堆 + 着 / 满 / 在 …",
+     "explain": "Chất lại thành đống.",
+     "examples": [
+      {
+       "zh": "房间里堆满了旧报纸。",
+       "vi": "Trong phòng chất đầy báo cũ."
+      }
+     ]
+    },
+    {
+     "pattern": "一 (大) 堆 + danh từ",
+     "explain": "Lượng từ, chỉ số lượng nhiều.",
+     "examples": [
+      {
+       "zh": "我今天有一大堆事情要处理。",
+       "vi": "Hôm nay tôi có cả đống việc phải xử lý."
+      }
+     ]
+    }
+   ],
+   "id": "28-g3"
+  },
+  {
+   "title": "反应 và 反映",
+   "kind": "phân biệt",
+   "summary": "Hai từ đồng âm, hay bị viết lẫn.",
+   "compare": {
+    "same": "Nghĩa khác nhau nên không thay được cho nhau.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Phản ứng, sự đáp lại trước một tác động.",
+      "b": "Phản ánh: thể hiện ra bản chất; hoặc trình bày lên cấp trên."
+     },
+     {
+      "aspect": "Mang tân ngữ",
+      "a": "Thường không: 反应很快、没有反应。",
+      "b": "Có: 反映问题、反映了社会的变化。"
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "他的反应很快。",
+      "b": "这部电影反映了农村的生活。"
+     }
+    ]
+   },
+   "id": "28-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "28-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "乘",
+    "堆",
+    "面对",
+    "制作",
+    "提问",
+    "制订",
+    "到达",
+    "成立"
+   ],
+   "items": [
+    {
+     "q": "我们是___飞机去上海的。",
+     "a": "乘"
+    },
+    {
+     "q": "桌子上___着很多书。",
+     "a": "堆"
+    },
+    {
+     "q": "___困难，他从来不低头。",
+     "a": "面对"
+    },
+    {
+     "q": "这个蛋糕是她亲手___的。",
+     "a": "制作"
+    },
+    {
+     "q": "讲座结束后，观众可以向专家___。",
+     "a": "提问"
+    },
+    {
+     "q": "我们需要___一个详细的学习计划。",
+     "a": "制订"
+    },
+    {
+     "q": "火车将在下午三点___北京。",
+     "a": "到达"
+    },
+    {
+     "q": "这家公司是十年前___的。",
+     "a": "成立"
+    }
+   ]
+  },
+  {
+   "id": "28-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "他把大家的意见___给了经理。",
+     "options": [
+      "反应",
+      "反映"
+     ],
+     "a": 1,
+     "why": "Trình bày ý kiến lên cấp trên: 反映."
+    },
+    {
+     "q": "听到这个消息，他一点儿___也没有。",
+     "options": [
+      "反应",
+      "反映"
+     ],
+     "a": 0,
+     "why": "Sự đáp lại trước tác động: 反应."
+    },
+    {
+     "q": "他二十岁离开家乡，___再也没有回去过。",
+     "options": [
+      "从此",
+      "从前"
+     ],
+     "a": 0,
+     "why": "Từ thời điểm đó trở đi: 从此."
+    },
+    {
+     "q": "___你是老板，你会怎么处理这件事？",
+     "options": [
+      "假设",
+      "假装"
+     ],
+     "a": 0,
+     "why": "Nêu tình huống chưa có thật: 假设."
+    }
+   ]
+  },
+  {
+   "id": "28-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他搬到了国外，B我们C失去了D联系。",
+     "word": "从此",
+     "a": "B"
+    },
+    {
+     "q": "A门口B着C很多D箱子。",
+     "word": "堆",
+     "a": "B"
+    },
+    {
+     "q": "A你B有一百万，C你会D做什么？",
+     "word": "假设",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "28-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "从此",
+      "再也",
+      "没有",
+      "迟到过"
+     ],
+     "a": "他从此再也没有迟到过。",
+     "vi": "Từ đó anh ấy không bao giờ đến muộn nữa."
+    },
+    {
+     "words": [
+      "假设",
+      "明天",
+      "下雨",
+      "比赛",
+      "就",
+      "取消"
+     ],
+     "a": "假设明天下雨，比赛就取消。",
+     "vi": "Giả sử mai mưa thì trận đấu sẽ hủy."
+    },
+    {
+     "words": [
+      "我",
+      "还有",
+      "一大堆",
+      "工作",
+      "要做"
+     ],
+     "a": "我还有一大堆工作要做。",
+     "vi": "Tôi còn cả đống việc phải làm."
+    }
+   ]
+  },
+  {
+   "id": "28-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "届",
+      "本科",
+      "面对",
+      "乐观",
+      "就业",
+      "优势",
+      "简历",
+      "职位",
+      "体验",
+      "从此",
+      "参考",
+      "成长",
+      "假设",
+      "反应",
+      "陆续",
+      "提问",
+      "堆",
+      "具体",
+      "专注",
+      "前途"
+     ]
+    }
+   ]
+  }
+ ]
 }

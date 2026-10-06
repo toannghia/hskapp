@@ -42,5 +42,309 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "除非",
+   "kind": "cách dùng",
+   "summary": "Liên từ nghĩa là \"trừ phi\", nêu điều kiện duy nhất.",
+   "points": [
+    {
+     "pattern": "除非 A，否则 / 不然 B",
+     "explain": "Không có A thì sẽ là B.",
+     "examples": [
+      {
+       "zh": "除非你亲自去请，否则他不会来。",
+       "vi": "Trừ phi bạn đích thân đi mời, nếu không anh ấy sẽ không đến."
+      }
+     ]
+    },
+    {
+     "pattern": "除非 A，才 B",
+     "explain": "Chỉ khi có A mới có B.",
+     "examples": [
+      {
+       "zh": "除非下大雨，比赛才会取消。",
+       "vi": "Chỉ khi mưa to, trận đấu mới bị hủy."
+      }
+     ]
+    }
+   ],
+   "id": "36-g1"
+  },
+  {
+   "title": "直",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"liên tục, không ngừng\" hoặc \"thẳng một mạch\"; cũng là tính từ nghĩa là \"thẳng\".",
+   "points": [
+    {
+     "pattern": "直 + động từ",
+     "explain": "Hành động diễn ra liên tục.",
+     "examples": [
+      {
+       "zh": "孩子冷得直发抖。",
+       "vi": "Đứa bé lạnh đến run lên bần bật."
+      },
+      {
+       "zh": "他看着我直点头。",
+       "vi": "Anh ấy nhìn tôi gật đầu lia lịa."
+      }
+     ]
+    },
+    {
+     "pattern": "直 + 到 / 达 / 往 …",
+     "explain": "Đi thẳng tới, không vòng.",
+     "examples": [
+      {
+       "zh": "这趟车直达上海。",
+       "vi": "Chuyến tàu này chạy thẳng tới Thượng Hải."
+      }
+     ]
+    }
+   ],
+   "id": "36-g2"
+  },
+  {
+   "title": "反正",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"dù sao thì, đằng nào cũng\": kết luận không đổi trong mọi tình huống.",
+   "points": [
+    {
+     "pattern": "(不管 / 无论 …，) 反正 …",
+     "explain": "Vế trước nêu các khả năng, vế sau nêu điều chắc chắn.",
+     "examples": [
+      {
+       "zh": "不管你怎么说，反正我不去。",
+       "vi": "Dù bạn nói thế nào, đằng nào tôi cũng không đi."
+      },
+      {
+       "zh": "反正时间还早，我们走着去吧。",
+       "vi": "Dù sao cũng còn sớm, mình đi bộ đi."
+      }
+     ]
+    }
+   ],
+   "id": "36-g3"
+  },
+  {
+   "title": "应付 và 处理",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc đối phó, giải quyết công việc.",
+   "compare": {
+    "same": "Nói về việc lo liệu công việc thì đôi khi thay được: 应付 / 处理日常事务。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Đối phó, xoay xở; cũng có nghĩa làm qua loa cho xong.",
+      "b": "Giải quyết, xử lý cho ổn thỏa."
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Có thể mang nghĩa tiêu cực: 应付了事、随便应付。",
+      "b": "Trung tính, nghiêm túc: 认真处理、处理问题。"
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "这么多工作，我一个人应付不了。",
+      "b": "这件事由经理亲自处理。"
+     }
+    ]
+   },
+   "id": "36-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "36-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "养",
+    "捡",
+    "浇",
+    "吹",
+    "砸",
+    "装饰",
+    "庆祝",
+    "分享"
+   ],
+   "items": [
+    {
+     "q": "奶奶在院子里___了几只鸡。",
+     "a": "养"
+    },
+    {
+     "q": "他在路上___到了一个钱包。",
+     "a": "捡"
+    },
+    {
+     "q": "这些花每天早上要___一次水。",
+     "a": "浇"
+    },
+    {
+     "q": "一阵风把桌上的纸都___跑了。",
+     "a": "吹"
+    },
+    {
+     "q": "他不小心把玻璃杯___碎了。",
+     "a": "砸"
+    },
+    {
+     "q": "孩子们用彩纸___了教室。",
+     "a": "装饰"
+    },
+    {
+     "q": "全家人聚在一起___奶奶的八十岁生日。",
+     "a": "庆祝"
+    },
+    {
+     "q": "他喜欢和朋友___自己的旅行经历。",
+     "a": "分享"
+    }
+   ]
+  },
+  {
+   "id": "36-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这件事很重要，必须认真___。",
+     "options": [
+      "应付",
+      "处理"
+     ],
+     "a": 1,
+     "why": "Giải quyết nghiêm túc: 处理."
+    },
+    {
+     "q": "他不认真写作业，只是随便___一下。",
+     "options": [
+      "应付",
+      "处理"
+     ],
+     "a": 0,
+     "why": "Làm qua loa cho xong: 应付."
+    },
+    {
+     "q": "___你答应帮忙，否则我一个人做不完。",
+     "options": [
+      "除非",
+      "除了"
+     ],
+     "a": 0,
+     "why": "Điều kiện duy nhất, đi với 否则: 除非."
+    },
+    {
+     "q": "去不去都行，___我没什么事。",
+     "options": [
+      "反正",
+      "反而"
+     ],
+     "a": 0,
+     "why": "Đằng nào cũng: 反正."
+    }
+   ]
+  },
+  {
+   "id": "36-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他累得B喘C气D。",
+     "word": "直",
+     "a": "B"
+    },
+    {
+     "q": "A你去不去，B我C要D去。",
+     "word": "反正",
+     "a": "B"
+    },
+    {
+     "q": "A你B早点儿出发，C不然D会迟到的。",
+     "word": "除非",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "36-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "除非",
+      "你",
+      "告诉我",
+      "原因",
+      "否则",
+      "我",
+      "不同意"
+     ],
+     "a": "除非你告诉我原因，否则我不同意。",
+     "vi": "Trừ phi bạn nói cho tôi lý do, nếu không tôi không đồng ý."
+    },
+    {
+     "words": [
+      "反正",
+      "已经",
+      "迟到了",
+      "就",
+      "别",
+      "着急了"
+     ],
+     "a": "反正已经迟到了，就别着急了。",
+     "vi": "Đằng nào cũng muộn rồi, đừng sốt ruột nữa."
+    },
+    {
+     "words": [
+      "她",
+      "高兴得",
+      "直",
+      "拍手"
+     ],
+     "a": "她高兴得直拍手。",
+     "vi": "Cô ấy vui đến mức vỗ tay liên hồi."
+    }
+   ]
+  },
+  {
+   "id": "36-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "养",
+      "除非",
+      "奋斗",
+      "乐趣",
+      "在乎",
+      "剪刀",
+      "捡",
+      "装饰",
+      "暴雨",
+      "紧急",
+      "抢救",
+      "直",
+      "不然",
+      "回报",
+      "浇",
+      "施肥",
+      "熟练",
+      "应付",
+      "自豪",
+      "分享",
+      "庆祝",
+      "砸",
+      "反正",
+      "热爱"
+     ]
+    }
+   ]
+  }
+ ]
 }

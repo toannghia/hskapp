@@ -1,0 +1,192 @@
+#L 32
+G|密切|Tính từ nghĩa là "mật thiết, chặt chẽ"; làm trạng ngữ nghĩa là "sát sao".
+P|关系密切 / 密切的 + danh từ|Quan hệ gần gũi, gắn bó.
+E|他们两家的关系非常密切。|Quan hệ hai nhà họ rất mật thiết.
+P|密切 + động từ (注意 / 观察 / 合作)|Theo dõi, phối hợp một cách sát sao.
+E|医生正在密切观察病人的情况。|Bác sĩ đang theo dõi sát tình hình bệnh nhân.
+G|尽量|Phó từ nghĩa là "cố hết mức có thể".
+P|尽量 + động từ / tính từ|Đứng trước điều cần cố gắng đạt được.
+E|我会尽量早点儿到。|Tôi sẽ cố gắng đến sớm nhất có thể.
+E|说话的时候请尽量简单一点儿。|Khi nói xin cố gắng đơn giản một chút.
+G|逐步|Phó từ nghĩa là "từng bước", chỉ thay đổi có chủ ý, theo từng giai đoạn.
+P|逐步 + động từ hai âm tiết|Thường đi với 提高、改善、解决、实现.
+E|我们要逐步改善工作条件。|Chúng ta cần từng bước cải thiện điều kiện làm việc.
+E|他的计划正在逐步实现。|Kế hoạch của anh ấy đang từng bước thành hiện thực.
+C|鼓励 và 鼓舞|Đều là làm cho người khác có thêm tinh thần.|Hai từ khác nhau về chủ thể và cấu trúc, ít khi thay được.
+R|Chủ thể|Người: dùng lời nói, hành động để khích lệ.|Sự việc, tin tức, tấm gương làm người ta phấn chấn.
+R|Kết cấu|鼓励 + người + làm gì: 鼓励他参加比赛。|令人鼓舞、受到鼓舞、鼓舞人心。
+R|Từ loại|Động từ, danh từ.|Động từ, tính từ: 令人鼓舞的消息。
+F|砍 破坏 消失 公布 燃烧 掌握 贡献 尊敬
+I|为了保护森林，这里不允许___树。|砍
+I|乱扔垃圾会___环境。|破坏
+I|太阳出来以后，雾很快就___了。|消失
+I|考试成绩将在下周一___。|公布
+I|木头在火里___着。|燃烧
+I|他只用了一年就___了这门技术。|掌握
+I|他为家乡的教育做出了很大的___。|贡献
+I|他是一位受人___的老教授。|尊敬
+Q|老师常常___我们多提问题。|鼓励/鼓舞|0|Người khích lệ người khác làm gì: 鼓励.
+Q|这个好消息令人___。|鼓励/鼓舞|1|Tin tức làm phấn chấn, kết cấu 令人鼓舞.
+Q|这两个问题有着___的联系。|密切/亲切|0|Liên hệ chặt chẽ: 密切.
+Q|学外语要___多听多说。|尽量/尽管|0|Cố hết mức có thể: 尽量.
+S|A我们B会C满足D顾客的要求。|尽量|C
+S|A公司的规模B正在C扩大D。|逐步|C
+S|A请B注意C天气的D变化。|密切|B
+O|请/尽量/不要/迟到|请尽量不要迟到。|Xin cố gắng đừng đến muộn.
+O|这个问题/正在/逐步/得到/解决|这个问题正在逐步得到解决。|Vấn đề này đang từng bước được giải quyết.
+O|两国/之间的/合作/越来越/密切|两国之间的合作越来越密切。|Hợp tác giữa hai nước ngày càng chặt chẽ.
+T|Kể lại bài khóa bằng lời của bạn|消失 破坏 砍 生存 沙漠 数据 资源 工业 废 燃烧 密切 尾气 自觉 能源 逐步 尽量 鼓舞 贡献 命运 掌握
+#L 33
+G|照常|Phó từ nghĩa là "như thường lệ".
+P|照常 + động từ / 一切照常|Việc vẫn diễn ra như mọi khi dù có thay đổi.
+E|明天虽然下雨，比赛照常进行。|Mai tuy mưa, trận đấu vẫn diễn ra như thường.
+E|节日期间，商店照常营业。|Trong dịp lễ, cửa hàng vẫn mở cửa như thường.
+G|难怪|Phó từ nghĩa là "thảo nào, hèn chi": đã hiểu ra nguyên nhân nên không còn thấy lạ.
+P|难怪 + sự việc，(原来) …|Vế còn lại nêu nguyên nhân vừa biết.
+E|难怪他今天这么高兴，原来是考了第一名。|Thảo nào hôm nay cậu ấy vui thế, hóa ra thi được hạng nhất.
+E|外面下雪了，难怪这么冷。|Ngoài trời có tuyết, hèn chi lạnh thế.
+G|与其|Liên từ dùng để so sánh hai lựa chọn và bỏ lựa chọn nêu trước.
+P|与其 A，不如 B|Làm A chi bằng làm B.
+E|与其在这儿等，不如自己去找他。|Ngồi đây chờ chi bằng tự đi tìm anh ấy.
+E|与其抱怨，不如想办法解决问题。|Than phiền chi bằng tìm cách giải quyết vấn đề.
+C|表现 và 体现|Đều chỉ việc bộc lộ ra.|Hai từ khác nhau về chủ ngữ thường gặp, ít khi thay được.
+R|Nghĩa|Bộc lộ ra ngoài qua hành vi, thái độ; cũng là danh từ nghĩa là "biểu hiện, thành tích".|Một tính chất, tinh thần trừu tượng được thể hiện cụ thể qua sự vật.
+R|Chủ ngữ|Thường là người: 他表现得很好。|Thường là sự việc: 这件事体现了他的责任心。
+R|Làm danh từ|他的表现很出色。|Ít dùng.
+F|扩 缓解 咨询 归纳 赔偿 批准 取消 期待
+I|这条路太窄了，需要再___宽一些。|扩
+I|听音乐可以___紧张的情绪。|缓解
+I|关于签证的问题，你可以打电话___一下。|咨询
+I|请把这篇文章的主要内容___一下。|归纳
+I|他把别人的手机弄坏了，应该___。|赔偿
+I|他的请假申请已经得到了经理的___。|批准
+I|因为天气不好，今天的航班被___了。|取消
+I|孩子们都很___这次旅行。|期待
+Q|他在这次比赛中___得非常出色。|表现/体现|0|Người bộc lộ qua hành vi, mang bổ ngữ 得: 表现.
+Q|这个设计___了中国的传统文化。|表示/体现|1|Tinh thần trừu tượng thể hiện qua sự vật: 体现.
+Q|___他汉语说得这么好，原来他在中国住了十年。|难怪/难免|0|Hiểu ra nguyên nhân: 难怪.
+Q|放假期间，图书馆___开放。|照常/照顾|0|Như thường lệ: 照常.
+S|A不管B发生什么事，C我们的工作D进行。|照常|D
+S|A花钱修旧的，B不如C买个D新的。|与其|A
+S|A他昨晚B没睡好，C今天D没精神。|难怪|C
+O|与其/坐车/不如/走路/去|与其坐车，不如走路去。|Đi xe chi bằng đi bộ.
+O|难怪/你/不知道/原来/你/没来|难怪你不知道，原来你没来。|Thảo nào bạn không biết, hóa ra bạn không đến.
+O|明天/学校/照常/上课|明天学校照常上课。|Ngày mai trường vẫn học như thường.
+T|Kể lại bài khóa bằng lời của bạn|缓解 繁荣 体现 拥挤 面积 宽 扩 不妨 展开 归纳 咨询 照常 赔偿 政府 批准 改革 取消 自愿 难怪 与其 期待
+#L 34
+G|总之|Liên từ nghĩa là "tóm lại, nói chung", tổng kết những điều vừa nói, hoặc nêu kết luận dù chi tiết chưa rõ.
+P|…，总之，+ kết luận|Đứng đầu câu kết.
+E|你可以坐车，也可以骑车，总之，九点以前要到。|Bạn có thể đi xe buýt hoặc xe đạp, tóm lại phải đến trước chín giờ.
+E|我忘了他的名字，总之是一个很有名的作家。|Tôi quên tên ông ấy rồi, nói chung là một nhà văn rất nổi tiếng.
+G|唯一|Tính từ nghĩa là "duy nhất", chỉ làm định ngữ.
+P|唯一 (的) + danh từ|Chỉ có một, không có cái thứ hai.
+E|这是解决问题的唯一办法。|Đây là cách duy nhất để giải quyết vấn đề.
+E|他是我们班唯一去过中国的人。|Cậu ấy là người duy nhất trong lớp tôi từng đến Trung Quốc.
+G|随身|Tính từ và phó từ nghĩa là "mang theo bên mình".
+P|随身 + 带 / 携带 / danh từ|Ví dụ: 随身带着、随身物品.
+E|出门旅行要随身带着护照。|Đi du lịch phải mang hộ chiếu theo người.
+E|请保管好您的随身物品。|Xin giữ gìn cẩn thận đồ đạc mang theo người.
+C|反复 và 重复|Đều chỉ việc lặp lại.|Hai từ khác nhau về từ loại, ít khi thay được.
+R|Nghĩa|Làm đi làm lại nhiều lần, mỗi lần có thể khác đi.|Lặp lại y nguyên cái đã có.
+R|Từ loại|Chủ yếu là phó từ: 反复练习、反复考虑。|Động từ: 重复一遍、内容重复了。
+R|Mang tân ngữ|Không.|Có: 重复刚才的话。
+F|抓 啄 区分 充当 爱惜 保养 概括 迎接
+I|猫___住了一只老鼠。|抓
+I|小鸟在地上___食。|啄
+I|这对双胞胎很难___。|区分
+I|在这次活动中，他___了翻译的角色。|充当
+I|我们要___粮食，不能浪费。|爱惜
+I|这辆车___得很好，看起来像新的一样。|保养
+I|请用一句话___这篇文章的意思。|概括
+I|全家人都在准备___新年。|迎接
+Q|这个动作他___练习了几十遍。|反复/重复|0|Phó từ đứng trước động từ, làm đi làm lại: 反复.
+Q|请把你的问题再___一遍。|反复/重复|1|Động từ "nhắc lại y nguyên": 重复.
+Q|这是我今天___的要求。|唯一/统一|0|Duy nhất: 唯一.
+Q|天气多变，最好___带一把伞。|随身/随便|0|Mang theo bên mình: 随身.
+S|A你可以同意，B也可以反对，C你要D告诉我。|总之|C
+S|A她是B我C的D朋友。|唯一|C
+S|A重要的B东西C最好D带着。|随身|D
+O|这是/我们/唯一的/选择|这是我们唯一的选择。|Đây là lựa chọn duy nhất của chúng ta.
+O|老师/反复/强调/这个/问题|老师反复强调这个问题。|Thầy giáo nhấn mạnh vấn đề này nhiều lần.
+O|总之/我们/一定/要/按时/完成|总之，我们一定要按时完成。|Tóm lại, chúng ta nhất định phải hoàn thành đúng hạn.
+T|Kể lại bài khóa bằng lời của bạn|接触 特征 翅膀 昆虫 区分 唯一 充当 总之 角色 爱惜 保养 反复 随身 光滑 抓 种类 概括 痛快 迎接 干燥 秘密
+#L 35
+G|赶快|Phó từ nghĩa là "mau chóng, nhanh lên".
+P|赶快 + động từ|Thường dùng khi giục giã.
+E|要下雨了，赶快回家吧。|Sắp mưa rồi, mau về nhà đi.
+E|发现问题要赶快告诉老师。|Phát hiện vấn đề phải mau báo cho thầy cô.
+G|片|Lượng từ cho vật mỏng dẹt; cho vùng rộng; và cho cảnh tượng, âm thanh, tấm lòng (khi đó chỉ đi với 一).
+P|一片 + vật mỏng|Ví dụ: 一片面包、两片药.
+E|他每天早上吃两片面包。|Sáng nào anh ấy cũng ăn hai lát bánh mì.
+P|一片 + vùng rộng / cảnh tượng / âm thanh|Ví dụ: 一片草地、一片掌声、一片好心.
+E|山脚下是一片绿色的草地。|Dưới chân núi là một vùng cỏ xanh.
+E|教室里响起了一片掌声。|Trong lớp vang lên một tràng vỗ tay.
+G|根本|Phó từ nghĩa là "hoàn toàn, tuyệt nhiên", thường dùng trong câu phủ định; cũng là tính từ nghĩa là "căn bản, gốc rễ".
+P|根本 + 不 / 没 …|Phủ định triệt để.
+E|我根本不认识他。|Tôi hoàn toàn không quen anh ta.
+P|根本 (的) + danh từ|Điều chủ yếu, cốt lõi.
+E|这才是问题的根本原因。|Đây mới là nguyên nhân gốc rễ của vấn đề.
+C|特殊 và 特别|Đều nghĩa là "đặc biệt", khác với thông thường.|Làm định ngữ thì thay được: 特殊 / 特别的情况。
+R|Từ loại|Chỉ là tính từ.|Tính từ và phó từ.
+R|Làm trạng ngữ|Không.|Được: 特别好、特别喜欢、特别是……
+R|Sắc thái|Khác hẳn loại thường, mang tính ngoại lệ: 特殊情况、特殊照顾。|Khác thường, nổi bật; khẩu ngữ hơn.
+F|歇 冒 抽 恢复 指挥 吸收 控制 补充
+I|走了这么久，我们找个地方___一会儿吧。|歇
+I|锅里的水已经开始___热气了。|冒
+I|他每天都___时间陪孩子读书。|抽
+I|经过一个月的休息，他的身体完全___了。|恢复
+I|警察站在路口___交通。|指挥
+I|植物通过根___水分。|吸收
+I|他努力___着自己的情绪。|控制
+I|运动以后要及时___水分。|补充
+Q|我今天___累，想早点儿睡。|特殊/特别|1|Làm trạng ngữ trước tính từ chỉ dùng được 特别.
+Q|他因为身体的___情况，没有参加军训。|特殊/特别地|0|Tính từ làm định ngữ, tình huống ngoại lệ: 特殊.
+Q|这件事我___没听说过。|根本/基本|0|Phủ định triệt để: 根本没.
+Q|火车快要开了，我们___上车吧。|赶快/赶上|0|Giục làm nhanh: 赶快.
+S|A你说的那个人B我C不D认识。|根本|C
+S|A窗外是B一C绿色的D树林。|片|C
+S|A时间不早了，B你C去D睡觉吧。|赶快|C
+O|我/根本/没/想到/会/这样|我根本没想到会这样。|Tôi hoàn toàn không ngờ lại thành ra thế này.
+O|你/赶快/把/窗户/关上|你赶快把窗户关上。|Bạn mau đóng cửa sổ lại.
+O|远处/传来/一片/欢笑声|远处传来一片欢笑声。|Từ xa vọng lại một tràng tiếng cười vui.
+T|Kể lại bài khóa bằng lời của bạn|炎热 歇 肌肉 恢复 湿润 指挥 赶快 毛孔 冒 片 常识 根 吸收 控制 成分 根本 释放 补充 蒸腾 特殊 系统
+#L 36
+G|除非|Liên từ nghĩa là "trừ phi", nêu điều kiện duy nhất.
+P|除非 A，否则 / 不然 B|Không có A thì sẽ là B.
+E|除非你亲自去请，否则他不会来。|Trừ phi bạn đích thân đi mời, nếu không anh ấy sẽ không đến.
+P|除非 A，才 B|Chỉ khi có A mới có B.
+E|除非下大雨，比赛才会取消。|Chỉ khi mưa to, trận đấu mới bị hủy.
+G|直|Phó từ nghĩa là "liên tục, không ngừng" hoặc "thẳng một mạch"; cũng là tính từ nghĩa là "thẳng".
+P|直 + động từ|Hành động diễn ra liên tục.
+E|孩子冷得直发抖。|Đứa bé lạnh đến run lên bần bật.
+E|他看着我直点头。|Anh ấy nhìn tôi gật đầu lia lịa.
+P|直 + 到 / 达 / 往 …|Đi thẳng tới, không vòng.
+E|这趟车直达上海。|Chuyến tàu này chạy thẳng tới Thượng Hải.
+G|反正|Phó từ nghĩa là "dù sao thì, đằng nào cũng": kết luận không đổi trong mọi tình huống.
+P|(不管 / 无论 …，) 反正 …|Vế trước nêu các khả năng, vế sau nêu điều chắc chắn.
+E|不管你怎么说，反正我不去。|Dù bạn nói thế nào, đằng nào tôi cũng không đi.
+E|反正时间还早，我们走着去吧。|Dù sao cũng còn sớm, mình đi bộ đi.
+C|应付 và 处理|Đều chỉ việc đối phó, giải quyết công việc.|Nói về việc lo liệu công việc thì đôi khi thay được: 应付 / 处理日常事务。
+R|Nghĩa|Đối phó, xoay xở; cũng có nghĩa làm qua loa cho xong.|Giải quyết, xử lý cho ổn thỏa.
+R|Sắc thái|Có thể mang nghĩa tiêu cực: 应付了事、随便应付。|Trung tính, nghiêm túc: 认真处理、处理问题。
+R|Ví dụ|这么多工作，我一个人应付不了。|这件事由经理亲自处理。
+F|养 捡 浇 吹 砸 装饰 庆祝 分享
+I|奶奶在院子里___了几只鸡。|养
+I|他在路上___到了一个钱包。|捡
+I|这些花每天早上要___一次水。|浇
+I|一阵风把桌上的纸都___跑了。|吹
+I|他不小心把玻璃杯___碎了。|砸
+I|孩子们用彩纸___了教室。|装饰
+I|全家人聚在一起___奶奶的八十岁生日。|庆祝
+I|他喜欢和朋友___自己的旅行经历。|分享
+Q|这件事很重要，必须认真___。|应付/处理|1|Giải quyết nghiêm túc: 处理.
+Q|他不认真写作业，只是随便___一下。|应付/处理|0|Làm qua loa cho xong: 应付.
+Q|___你答应帮忙，否则我一个人做不完。|除非/除了|0|Điều kiện duy nhất, đi với 否则: 除非.
+Q|去不去都行，___我没什么事。|反正/反而|0|Đằng nào cũng: 反正.
+S|A他累得B喘C气D。|直|B
+S|A你去不去，B我C要D去。|反正|B
+S|A你B早点儿出发，C不然D会迟到的。|除非|A
+O|除非/你/告诉我/原因/否则/我/不同意|除非你告诉我原因，否则我不同意。|Trừ phi bạn nói cho tôi lý do, nếu không tôi không đồng ý.
+O|反正/已经/迟到了/就/别/着急了|反正已经迟到了，就别着急了。|Đằng nào cũng muộn rồi, đừng sốt ruột nữa.
+O|她/高兴得/直/拍手|她高兴得直拍手。|Cô ấy vui đến mức vỗ tay liên hồi.
+T|Kể lại bài khóa bằng lời của bạn|养 除非 奋斗 乐趣 在乎 剪刀 捡 装饰 暴雨 紧急 抢救 直 不然 回报 浇 施肥 熟练 应付 自豪 分享 庆祝 砸 反正 热爱

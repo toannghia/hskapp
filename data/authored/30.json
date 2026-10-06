@@ -42,5 +42,292 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "无意",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"vô tình, không cố ý\"; cũng là động từ nghĩa là \"không có ý định\".",
+   "points": [
+    {
+     "pattern": "无意 (中 / 间) + động từ",
+     "explain": "Việc xảy ra không do chủ ý.",
+     "examples": [
+      {
+       "zh": "我无意中听到了他们的谈话。",
+       "vi": "Tôi vô tình nghe được cuộc nói chuyện của họ."
+      }
+     ]
+    },
+    {
+     "pattern": "无意 + động từ",
+     "explain": "Không định làm.",
+     "examples": [
+      {
+       "zh": "我无意打扰你，只是想问个问题。",
+       "vi": "Tôi không định làm phiền bạn, chỉ muốn hỏi một câu."
+      }
+     ]
+    }
+   ],
+   "id": "30-g1"
+  },
+  {
+   "title": "有利",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"có lợi\".",
+   "points": [
+    {
+     "pattern": "对 … 有利 / 有利于 …",
+     "explain": "Hai cách nói cùng nghĩa; 有利于 đứng trước đối tượng được lợi.",
+     "examples": [
+      {
+       "zh": "早睡早起对身体有利。",
+       "vi": "Ngủ sớm dậy sớm có lợi cho sức khỏe."
+      },
+      {
+       "zh": "多读书有利于提高写作水平。",
+       "vi": "Đọc nhiều sách có lợi cho việc nâng cao khả năng viết."
+      }
+     ]
+    }
+   ],
+   "id": "30-g2"
+  },
+  {
+   "title": "的确",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"quả thực, đúng là\", khẳng định điều gì là thật.",
+   "points": [
+    {
+     "pattern": "的确 + động từ / tính từ",
+     "explain": "Đứng sau chủ ngữ.",
+     "examples": [
+      {
+       "zh": "这道题的确很难。",
+       "vi": "Câu này quả thực rất khó."
+      },
+      {
+       "zh": "他的确来过，我亲眼看见的。",
+       "vi": "Anh ấy đúng là đã đến, tôi tận mắt thấy."
+      }
+     ]
+    }
+   ],
+   "id": "30-g3"
+  },
+  {
+   "title": "接近 và 靠近",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ khoảng cách gần lại.",
+   "compare": {
+    "same": "Nói về khoảng cách không gian thì thay được: 接近 / 靠近目标。",
+    "rows": [
+     {
+      "aspect": "Phạm vi",
+      "a": "Cả không gian lẫn trừu tượng: thời gian, số lượng, trình độ.",
+      "b": "Chủ yếu là khoảng cách không gian."
+     },
+     {
+      "aspect": "Nghĩa trừu tượng",
+      "a": "接近尾声、接近一百人、水平很接近。",
+      "b": "Không dùng."
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "船慢慢接近了岸边。",
+      "b": "请不要靠近火。"
+     }
+    ]
+   },
+   "id": "30-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "30-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "逃避",
+    "延长",
+    "改善",
+    "构成",
+    "刺激",
+    "挖掘",
+    "运输",
+    "落后"
+   ],
+   "items": [
+    {
+     "q": "遇到问题要想办法解决，不能___。",
+     "a": "逃避"
+    },
+    {
+     "q": "为了方便顾客，商场把营业时间___到了晚上十点。",
+     "a": "延长"
+    },
+    {
+     "q": "这几年，农村的生活条件___了很多。",
+     "a": "改善"
+    },
+    {
+     "q": "水是由氢和氧___的。",
+     "a": "构成"
+    },
+    {
+     "q": "这个消息对他的___很大。",
+     "a": "刺激"
+    },
+    {
+     "q": "好老师善于___学生的潜力。",
+     "a": "挖掘"
+    },
+    {
+     "q": "这些水果是用飞机___过来的。",
+     "a": "运输"
+    },
+    {
+     "q": "虚心使人进步，骄傲使人___。",
+     "a": "落后"
+    }
+   ]
+  },
+  {
+   "id": "30-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "比赛已经___结束了。",
+     "options": [
+      "接近",
+      "靠近"
+     ],
+     "a": 0,
+     "why": "Thời gian, nghĩa trừu tượng: 接近."
+    },
+    {
+     "q": "危险！请不要___那台机器。",
+     "options": [
+      "接近的",
+      "靠近"
+     ],
+     "a": 1,
+     "why": "Khoảng cách không gian, mang tân ngữ: 靠近."
+    },
+    {
+     "q": "坚持锻炼___身体健康。",
+     "options": [
+      "有利于",
+      "有利"
+     ],
+     "a": 0,
+     "why": "Có đối tượng theo sau: 有利于."
+    },
+    {
+     "q": "你说得对，这___是我的错。",
+     "options": [
+      "的确",
+      "的话"
+     ],
+     "a": 0,
+     "why": "Khẳng định là thật: 的确."
+    }
+   ]
+  },
+  {
+   "id": "30-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A我B中C发现了D这个秘密。",
+     "word": "无意",
+     "a": "B"
+    },
+    {
+     "q": "A这种做法B对保护环境C很D。",
+     "word": "有利",
+     "a": "D"
+    },
+    {
+     "q": "A他B是一个C值得信任的D人。",
+     "word": "的确",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "30-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "无意中",
+      "找到了",
+      "丢失的",
+      "钥匙"
+     ],
+     "a": "我无意中找到了丢失的钥匙。",
+     "vi": "Tôi vô tình tìm thấy chiếc chìa khóa bị mất."
+    },
+    {
+     "words": [
+      "这个决定",
+      "对",
+      "公司的发展",
+      "十分",
+      "有利"
+     ],
+     "a": "这个决定对公司的发展十分有利。",
+     "vi": "Quyết định này rất có lợi cho sự phát triển của công ty."
+    },
+    {
+     "words": [
+      "这里的",
+      "风景",
+      "的确",
+      "很美"
+     ],
+     "a": "这里的风景的确很美。",
+     "vi": "Phong cảnh ở đây quả thực rất đẹp."
+    }
+   ]
+  },
+  {
+   "id": "30-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "运输",
+      "商品",
+      "延长",
+      "存活",
+      "改善",
+      "无意",
+      "巧妙",
+      "天敌",
+      "构成",
+      "逃避",
+      "旺盛",
+      "核心",
+      "刺激",
+      "活力",
+      "落后",
+      "危机",
+      "有利",
+      "潜力",
+      "接近",
+      "的确"
+     ]
+    }
+   ]
+  }
+ ]
 }

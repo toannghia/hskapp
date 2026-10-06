@@ -42,5 +42,304 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "赶快",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"mau chóng, nhanh lên\".",
+   "points": [
+    {
+     "pattern": "赶快 + động từ",
+     "explain": "Thường dùng khi giục giã.",
+     "examples": [
+      {
+       "zh": "要下雨了，赶快回家吧。",
+       "vi": "Sắp mưa rồi, mau về nhà đi."
+      },
+      {
+       "zh": "发现问题要赶快告诉老师。",
+       "vi": "Phát hiện vấn đề phải mau báo cho thầy cô."
+      }
+     ]
+    }
+   ],
+   "id": "35-g1"
+  },
+  {
+   "title": "片",
+   "kind": "cách dùng",
+   "summary": "Lượng từ cho vật mỏng dẹt; cho vùng rộng; và cho cảnh tượng, âm thanh, tấm lòng (khi đó chỉ đi với 一).",
+   "points": [
+    {
+     "pattern": "一片 + vật mỏng",
+     "explain": "Ví dụ: 一片面包、两片药.",
+     "examples": [
+      {
+       "zh": "他每天早上吃两片面包。",
+       "vi": "Sáng nào anh ấy cũng ăn hai lát bánh mì."
+      }
+     ]
+    },
+    {
+     "pattern": "一片 + vùng rộng / cảnh tượng / âm thanh",
+     "explain": "Ví dụ: 一片草地、一片掌声、一片好心.",
+     "examples": [
+      {
+       "zh": "山脚下是一片绿色的草地。",
+       "vi": "Dưới chân núi là một vùng cỏ xanh."
+      },
+      {
+       "zh": "教室里响起了一片掌声。",
+       "vi": "Trong lớp vang lên một tràng vỗ tay."
+      }
+     ]
+    }
+   ],
+   "id": "35-g2"
+  },
+  {
+   "title": "根本",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"hoàn toàn, tuyệt nhiên\", thường dùng trong câu phủ định; cũng là tính từ nghĩa là \"căn bản, gốc rễ\".",
+   "points": [
+    {
+     "pattern": "根本 + 不 / 没 …",
+     "explain": "Phủ định triệt để.",
+     "examples": [
+      {
+       "zh": "我根本不认识他。",
+       "vi": "Tôi hoàn toàn không quen anh ta."
+      }
+     ]
+    },
+    {
+     "pattern": "根本 (的) + danh từ",
+     "explain": "Điều chủ yếu, cốt lõi.",
+     "examples": [
+      {
+       "zh": "这才是问题的根本原因。",
+       "vi": "Đây mới là nguyên nhân gốc rễ của vấn đề."
+      }
+     ]
+    }
+   ],
+   "id": "35-g3"
+  },
+  {
+   "title": "特殊 và 特别",
+   "kind": "phân biệt",
+   "summary": "Đều nghĩa là \"đặc biệt\", khác với thông thường.",
+   "compare": {
+    "same": "Làm định ngữ thì thay được: 特殊 / 特别的情况。",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Chỉ là tính từ.",
+      "b": "Tính từ và phó từ."
+     },
+     {
+      "aspect": "Làm trạng ngữ",
+      "a": "Không.",
+      "b": "Được: 特别好、特别喜欢、特别是……"
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Khác hẳn loại thường, mang tính ngoại lệ: 特殊情况、特殊照顾。",
+      "b": "Khác thường, nổi bật; khẩu ngữ hơn."
+     }
+    ]
+   },
+   "id": "35-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "35-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "歇",
+    "冒",
+    "抽",
+    "恢复",
+    "指挥",
+    "吸收",
+    "控制",
+    "补充"
+   ],
+   "items": [
+    {
+     "q": "走了这么久，我们找个地方___一会儿吧。",
+     "a": "歇"
+    },
+    {
+     "q": "锅里的水已经开始___热气了。",
+     "a": "冒"
+    },
+    {
+     "q": "他每天都___时间陪孩子读书。",
+     "a": "抽"
+    },
+    {
+     "q": "经过一个月的休息，他的身体完全___了。",
+     "a": "恢复"
+    },
+    {
+     "q": "警察站在路口___交通。",
+     "a": "指挥"
+    },
+    {
+     "q": "植物通过根___水分。",
+     "a": "吸收"
+    },
+    {
+     "q": "他努力___着自己的情绪。",
+     "a": "控制"
+    },
+    {
+     "q": "运动以后要及时___水分。",
+     "a": "补充"
+    }
+   ]
+  },
+  {
+   "id": "35-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我今天___累，想早点儿睡。",
+     "options": [
+      "特殊",
+      "特别"
+     ],
+     "a": 1,
+     "why": "Làm trạng ngữ trước tính từ chỉ dùng được 特别."
+    },
+    {
+     "q": "他因为身体的___情况，没有参加军训。",
+     "options": [
+      "特殊",
+      "特别地"
+     ],
+     "a": 0,
+     "why": "Tính từ làm định ngữ, tình huống ngoại lệ: 特殊."
+    },
+    {
+     "q": "这件事我___没听说过。",
+     "options": [
+      "根本",
+      "基本"
+     ],
+     "a": 0,
+     "why": "Phủ định triệt để: 根本没."
+    },
+    {
+     "q": "火车快要开了，我们___上车吧。",
+     "options": [
+      "赶快",
+      "赶上"
+     ],
+     "a": 0,
+     "why": "Giục làm nhanh: 赶快."
+    }
+   ]
+  },
+  {
+   "id": "35-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A你说的那个人B我C不D认识。",
+     "word": "根本",
+     "a": "C"
+    },
+    {
+     "q": "A窗外是B一C绿色的D树林。",
+     "word": "片",
+     "a": "C"
+    },
+    {
+     "q": "A时间不早了，B你C去D睡觉吧。",
+     "word": "赶快",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "35-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "根本",
+      "没",
+      "想到",
+      "会",
+      "这样"
+     ],
+     "a": "我根本没想到会这样。",
+     "vi": "Tôi hoàn toàn không ngờ lại thành ra thế này."
+    },
+    {
+     "words": [
+      "你",
+      "赶快",
+      "把",
+      "窗户",
+      "关上"
+     ],
+     "a": "你赶快把窗户关上。",
+     "vi": "Bạn mau đóng cửa sổ lại."
+    },
+    {
+     "words": [
+      "远处",
+      "传来",
+      "一片",
+      "欢笑声"
+     ],
+     "a": "远处传来一片欢笑声。",
+     "vi": "Từ xa vọng lại một tràng tiếng cười vui."
+    }
+   ]
+  },
+  {
+   "id": "35-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "炎热",
+      "歇",
+      "肌肉",
+      "恢复",
+      "湿润",
+      "指挥",
+      "赶快",
+      "毛孔",
+      "冒",
+      "片",
+      "常识",
+      "根",
+      "吸收",
+      "控制",
+      "成分",
+      "根本",
+      "释放",
+      "补充",
+      "蒸腾",
+      "特殊",
+      "系统"
+     ]
+    }
+   ]
+  }
+ ]
 }

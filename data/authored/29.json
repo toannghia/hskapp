@@ -42,5 +42,307 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "不如",
+   "kind": "cách dùng",
+   "summary": "Động từ so sánh nghĩa là \"không bằng\"; cũng là liên từ dùng để đề nghị, nghĩa là \"chi bằng\".",
+   "points": [
+    {
+     "pattern": "A 不如 B (+ tính từ)",
+     "explain": "A kém B.",
+     "examples": [
+      {
+       "zh": "走路不如骑车快。",
+       "vi": "Đi bộ không nhanh bằng đi xe đạp."
+      }
+     ]
+    },
+    {
+     "pattern": "(与其 …，) 不如 + đề nghị",
+     "explain": "Đưa ra lựa chọn tốt hơn.",
+     "examples": [
+      {
+       "zh": "天气这么好，不如我们去公园走走。",
+       "vi": "Trời đẹp thế này, chi bằng mình ra công viên đi dạo."
+      }
+     ]
+    }
+   ],
+   "id": "29-g1"
+  },
+  {
+   "title": "干脆",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"dứt khoát, thẳng thắn\"; làm phó từ nghĩa là \"dứt khoát làm luôn, làm quách đi\".",
+   "points": [
+    {
+     "pattern": "很干脆 / 说话干脆",
+     "explain": "Tính từ.",
+     "examples": [
+      {
+       "zh": "他做事很干脆，从不犹豫。",
+       "vi": "Anh ấy làm việc rất dứt khoát, không bao giờ do dự."
+      }
+     ]
+    },
+    {
+     "pattern": "干脆 + động từ",
+     "explain": "Chọn cách triệt để nhất.",
+     "examples": [
+      {
+       "zh": "电脑修了几次还是坏，干脆买台新的吧。",
+       "vi": "Máy tính sửa mấy lần vẫn hỏng, mua quách cái mới đi."
+      }
+     ]
+    }
+   ],
+   "id": "29-g2"
+  },
+  {
+   "title": "万一",
+   "kind": "cách dùng",
+   "summary": "Liên từ nghĩa là \"lỡ như, nhỡ may\", nêu khả năng rất nhỏ nhưng không mong muốn; cũng là danh từ nghĩa là \"điều bất trắc\".",
+   "points": [
+    {
+     "pattern": "万一 + tình huống，…",
+     "explain": "Liên từ.",
+     "examples": [
+      {
+       "zh": "带上伞吧，万一下雨呢。",
+       "vi": "Mang ô theo đi, nhỡ mưa thì sao."
+      }
+     ]
+    },
+    {
+     "pattern": "以防万一",
+     "explain": "Danh từ: đề phòng bất trắc.",
+     "examples": [
+      {
+       "zh": "多带点儿钱，以防万一。",
+       "vi": "Mang thêm ít tiền để phòng khi bất trắc."
+      }
+     ]
+    }
+   ],
+   "id": "29-g3"
+  },
+  {
+   "title": "挤 và 拥挤",
+   "kind": "phân biệt",
+   "summary": "Đều nói về sự đông đúc, chật chội.",
+   "compare": {
+    "same": "Làm vị ngữ tả nơi đông người thì thay được: 车上很挤 / 很拥挤。",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Động từ và tính từ.",
+      "b": "Chủ yếu là tính từ."
+     },
+     {
+      "aspect": "Làm động từ",
+      "a": "Chen, bóp, nặn: 挤上车、挤牙膏、挤时间。",
+      "b": "Không dùng như vậy."
+     },
+     {
+      "aspect": "Văn phong",
+      "a": "Khẩu ngữ.",
+      "b": "Văn viết: 交通拥挤、拥挤的人群。"
+     }
+    ]
+   },
+   "id": "29-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "29-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "垮",
+    "傻",
+    "挤",
+    "倒闭",
+    "促进",
+    "妨碍",
+    "维持",
+    "培养"
+   ],
+   "items": [
+    {
+     "q": "这座旧桥被大水冲___了。",
+     "a": "垮"
+    },
+    {
+     "q": "你真___，这么冷的天还穿这么少。",
+     "a": "傻"
+    },
+    {
+     "q": "他好不容易才___上了公共汽车。",
+     "a": "挤"
+    },
+    {
+     "q": "因为经营不好，那家商店去年___了。",
+     "a": "倒闭"
+    },
+    {
+     "q": "体育运动能___身体健康。",
+     "a": "促进"
+    },
+    {
+     "q": "请把音乐声音关小一点儿，别___别人休息。",
+     "a": "妨碍"
+    },
+    {
+     "q": "他靠打工___一家人的生活。",
+     "a": "维持"
+    },
+    {
+     "q": "父母应该从小___孩子的阅读习惯。",
+     "a": "培养"
+    }
+   ]
+  },
+  {
+   "id": "29-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "节假日，景区里总是十分___。",
+     "options": [
+      "干脆",
+      "拥挤"
+     ],
+     "a": 1,
+     "why": "Tả nơi đông đúc: 拥挤."
+    },
+    {
+     "q": "等公共汽车太慢了，我们___走路去吧。",
+     "options": [
+      "干脆",
+      "万一"
+     ],
+     "a": 0,
+     "why": "Chọn luôn cách triệt để: 干脆."
+    },
+    {
+     "q": "你把电话号码留给我，___有事我好联系你。",
+     "options": [
+      "万一",
+      "不如"
+     ],
+     "a": 0,
+     "why": "Lỡ như: 万一."
+    },
+    {
+     "q": "这家饭馆的菜___那家好吃。",
+     "options": [
+      "不如",
+      "不然"
+     ],
+     "a": 0,
+     "why": "So sánh kém hơn: 不如."
+    }
+   ]
+  },
+  {
+   "id": "29-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A这件事B太麻烦了，C别做D了。",
+     "word": "干脆",
+     "a": "C"
+    },
+    {
+     "q": "A我的汉语B你C说得D流利。",
+     "word": "不如",
+     "a": "B"
+    },
+    {
+     "q": "A早点儿出发吧，B路上C堵车D呢。",
+     "word": "万一",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "29-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "与其",
+      "在家",
+      "看电视",
+      "不如",
+      "出去",
+      "走走"
+     ],
+     "a": "与其在家看电视，不如出去走走。",
+     "vi": "Ở nhà xem tivi chi bằng ra ngoài đi dạo."
+    },
+    {
+     "words": [
+      "他",
+      "干脆",
+      "把",
+      "工作",
+      "辞了"
+     ],
+     "a": "他干脆把工作辞了。",
+     "vi": "Anh ấy dứt khoát nghỉ việc luôn."
+    },
+    {
+     "words": [
+      "万一",
+      "我",
+      "迟到了",
+      "你们",
+      "先",
+      "开始"
+     ],
+     "a": "万一我迟到了，你们先开始。",
+     "vi": "Lỡ tôi đến muộn thì các bạn cứ bắt đầu trước."
+    }
+   ]
+  },
+  {
+   "id": "29-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "培养",
+      "对手",
+      "利润",
+      "诚信",
+      "营业",
+      "不如",
+      "干脆",
+      "挤",
+      "垮",
+      "垄断",
+      "倒闭",
+      "资金",
+      "生态",
+      "适当",
+      "促使",
+      "妨碍",
+      "促进",
+      "利益",
+      "万一",
+      "维持"
+     ]
+    }
+   ]
+  }
+ ]
 }

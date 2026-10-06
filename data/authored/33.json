@@ -42,5 +42,288 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "照常",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"như thường lệ\".",
+   "points": [
+    {
+     "pattern": "照常 + động từ / 一切照常",
+     "explain": "Việc vẫn diễn ra như mọi khi dù có thay đổi.",
+     "examples": [
+      {
+       "zh": "明天虽然下雨，比赛照常进行。",
+       "vi": "Mai tuy mưa, trận đấu vẫn diễn ra như thường."
+      },
+      {
+       "zh": "节日期间，商店照常营业。",
+       "vi": "Trong dịp lễ, cửa hàng vẫn mở cửa như thường."
+      }
+     ]
+    }
+   ],
+   "id": "33-g1"
+  },
+  {
+   "title": "难怪",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"thảo nào, hèn chi\": đã hiểu ra nguyên nhân nên không còn thấy lạ.",
+   "points": [
+    {
+     "pattern": "难怪 + sự việc，(原来) …",
+     "explain": "Vế còn lại nêu nguyên nhân vừa biết.",
+     "examples": [
+      {
+       "zh": "难怪他今天这么高兴，原来是考了第一名。",
+       "vi": "Thảo nào hôm nay cậu ấy vui thế, hóa ra thi được hạng nhất."
+      },
+      {
+       "zh": "外面下雪了，难怪这么冷。",
+       "vi": "Ngoài trời có tuyết, hèn chi lạnh thế."
+      }
+     ]
+    }
+   ],
+   "id": "33-g2"
+  },
+  {
+   "title": "与其",
+   "kind": "cách dùng",
+   "summary": "Liên từ dùng để so sánh hai lựa chọn và bỏ lựa chọn nêu trước.",
+   "points": [
+    {
+     "pattern": "与其 A，不如 B",
+     "explain": "Làm A chi bằng làm B.",
+     "examples": [
+      {
+       "zh": "与其在这儿等，不如自己去找他。",
+       "vi": "Ngồi đây chờ chi bằng tự đi tìm anh ấy."
+      },
+      {
+       "zh": "与其抱怨，不如想办法解决问题。",
+       "vi": "Than phiền chi bằng tìm cách giải quyết vấn đề."
+      }
+     ]
+    }
+   ],
+   "id": "33-g3"
+  },
+  {
+   "title": "表现 và 体现",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc bộc lộ ra.",
+   "compare": {
+    "same": "Hai từ khác nhau về chủ ngữ thường gặp, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Bộc lộ ra ngoài qua hành vi, thái độ; cũng là danh từ nghĩa là \"biểu hiện, thành tích\".",
+      "b": "Một tính chất, tinh thần trừu tượng được thể hiện cụ thể qua sự vật."
+     },
+     {
+      "aspect": "Chủ ngữ",
+      "a": "Thường là người: 他表现得很好。",
+      "b": "Thường là sự việc: 这件事体现了他的责任心。"
+     },
+     {
+      "aspect": "Làm danh từ",
+      "a": "他的表现很出色。",
+      "b": "Ít dùng."
+     }
+    ]
+   },
+   "id": "33-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "33-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "扩",
+    "缓解",
+    "咨询",
+    "归纳",
+    "赔偿",
+    "批准",
+    "取消",
+    "期待"
+   ],
+   "items": [
+    {
+     "q": "这条路太窄了，需要再___宽一些。",
+     "a": "扩"
+    },
+    {
+     "q": "听音乐可以___紧张的情绪。",
+     "a": "缓解"
+    },
+    {
+     "q": "关于签证的问题，你可以打电话___一下。",
+     "a": "咨询"
+    },
+    {
+     "q": "请把这篇文章的主要内容___一下。",
+     "a": "归纳"
+    },
+    {
+     "q": "他把别人的手机弄坏了，应该___。",
+     "a": "赔偿"
+    },
+    {
+     "q": "他的请假申请已经得到了经理的___。",
+     "a": "批准"
+    },
+    {
+     "q": "因为天气不好，今天的航班被___了。",
+     "a": "取消"
+    },
+    {
+     "q": "孩子们都很___这次旅行。",
+     "a": "期待"
+    }
+   ]
+  },
+  {
+   "id": "33-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "他在这次比赛中___得非常出色。",
+     "options": [
+      "表现",
+      "体现"
+     ],
+     "a": 0,
+     "why": "Người bộc lộ qua hành vi, mang bổ ngữ 得: 表现."
+    },
+    {
+     "q": "这个设计___了中国的传统文化。",
+     "options": [
+      "表示",
+      "体现"
+     ],
+     "a": 1,
+     "why": "Tinh thần trừu tượng thể hiện qua sự vật: 体现."
+    },
+    {
+     "q": "___他汉语说得这么好，原来他在中国住了十年。",
+     "options": [
+      "难怪",
+      "难免"
+     ],
+     "a": 0,
+     "why": "Hiểu ra nguyên nhân: 难怪."
+    },
+    {
+     "q": "放假期间，图书馆___开放。",
+     "options": [
+      "照常",
+      "照顾"
+     ],
+     "a": 0,
+     "why": "Như thường lệ: 照常."
+    }
+   ]
+  },
+  {
+   "id": "33-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A不管B发生什么事，C我们的工作D进行。",
+     "word": "照常",
+     "a": "D"
+    },
+    {
+     "q": "A花钱修旧的，B不如C买个D新的。",
+     "word": "与其",
+     "a": "A"
+    },
+    {
+     "q": "A他昨晚B没睡好，C今天D没精神。",
+     "word": "难怪",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "33-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "与其",
+      "坐车",
+      "不如",
+      "走路",
+      "去"
+     ],
+     "a": "与其坐车，不如走路去。",
+     "vi": "Đi xe chi bằng đi bộ."
+    },
+    {
+     "words": [
+      "难怪",
+      "你",
+      "不知道",
+      "原来",
+      "你",
+      "没来"
+     ],
+     "a": "难怪你不知道，原来你没来。",
+     "vi": "Thảo nào bạn không biết, hóa ra bạn không đến."
+    },
+    {
+     "words": [
+      "明天",
+      "学校",
+      "照常",
+      "上课"
+     ],
+     "a": "明天学校照常上课。",
+     "vi": "Ngày mai trường vẫn học như thường."
+    }
+   ]
+  },
+  {
+   "id": "33-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "缓解",
+      "繁荣",
+      "体现",
+      "拥挤",
+      "面积",
+      "宽",
+      "扩",
+      "不妨",
+      "展开",
+      "归纳",
+      "咨询",
+      "照常",
+      "赔偿",
+      "政府",
+      "批准",
+      "改革",
+      "取消",
+      "自愿",
+      "难怪",
+      "与其",
+      "期待"
+     ]
+    }
+   ]
+  }
+ ]
 }

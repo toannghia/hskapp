@@ -1,0 +1,154 @@
+#L 28
+G|从此|Phó từ nghĩa là "từ đó, từ nay", chỉ khoảng thời gian tính từ thời điểm vừa nhắc trở đi.
+P|…，从此 + (就 / 再也 / 以后) …|Đứng đầu vế sau.
+E|那次失败以后，他从此变得更加努力。|Sau lần thất bại đó, từ ấy anh trở nên chăm chỉ hơn.
+E|两个人吵了一架，从此再也不说话了。|Hai người cãi nhau một trận, từ đó không nói chuyện với nhau nữa.
+G|假设|Liên từ nghĩa là "giả sử"; cũng là danh từ, động từ nghĩa là "giả thiết".
+P|假设 + điều kiện，(就 / 那么) …|Nêu một tình huống chưa có thật.
+E|假设你迷路了，你会怎么办？|Giả sử bạn bị lạc, bạn sẽ làm gì?
+P|一个假设 / 只是假设|Danh từ.
+E|这只是一个假设，还需要证明。|Đây mới chỉ là giả thiết, còn cần chứng minh.
+G|堆|Động từ nghĩa là "chất đống"; cũng là lượng từ nghĩa là "đống".
+P|堆 + 着 / 满 / 在 …|Chất lại thành đống.
+E|房间里堆满了旧报纸。|Trong phòng chất đầy báo cũ.
+P|一 (大) 堆 + danh từ|Lượng từ, chỉ số lượng nhiều.
+E|我今天有一大堆事情要处理。|Hôm nay tôi có cả đống việc phải xử lý.
+C|反应 và 反映|Hai từ đồng âm, hay bị viết lẫn.|Nghĩa khác nhau nên không thay được cho nhau.
+R|Nghĩa|Phản ứng, sự đáp lại trước một tác động.|Phản ánh: thể hiện ra bản chất; hoặc trình bày lên cấp trên.
+R|Mang tân ngữ|Thường không: 反应很快、没有反应。|Có: 反映问题、反映了社会的变化。
+R|Ví dụ|他的反应很快。|这部电影反映了农村的生活。
+F|乘 堆 面对 制作 提问 制订 到达 成立
+I|我们是___飞机去上海的。|乘
+I|桌子上___着很多书。|堆
+I|___困难，他从来不低头。|面对
+I|这个蛋糕是她亲手___的。|制作
+I|讲座结束后，观众可以向专家___。|提问
+I|我们需要___一个详细的学习计划。|制订
+I|火车将在下午三点___北京。|到达
+I|这家公司是十年前___的。|成立
+Q|他把大家的意见___给了经理。|反应/反映|1|Trình bày ý kiến lên cấp trên: 反映.
+Q|听到这个消息，他一点儿___也没有。|反应/反映|0|Sự đáp lại trước tác động: 反应.
+Q|他二十岁离开家乡，___再也没有回去过。|从此/从前|0|Từ thời điểm đó trở đi: 从此.
+Q|___你是老板，你会怎么处理这件事？|假设/假装|0|Nêu tình huống chưa có thật: 假设.
+S|A他搬到了国外，B我们C失去了D联系。|从此|B
+S|A门口B着C很多D箱子。|堆|B
+S|A你B有一百万，C你会D做什么？|假设|A
+O|他/从此/再也/没有/迟到过|他从此再也没有迟到过。|Từ đó anh ấy không bao giờ đến muộn nữa.
+O|假设/明天/下雨/比赛/就/取消|假设明天下雨，比赛就取消。|Giả sử mai mưa thì trận đấu sẽ hủy.
+O|我/还有/一大堆/工作/要做|我还有一大堆工作要做。|Tôi còn cả đống việc phải làm.
+T|Kể lại bài khóa bằng lời của bạn|届 本科 面对 乐观 就业 优势 简历 职位 体验 从此 参考 成长 假设 反应 陆续 提问 堆 具体 专注 前途
+#L 29
+G|不如|Động từ so sánh nghĩa là "không bằng"; cũng là liên từ dùng để đề nghị, nghĩa là "chi bằng".
+P|A 不如 B (+ tính từ)|A kém B.
+E|走路不如骑车快。|Đi bộ không nhanh bằng đi xe đạp.
+P|(与其 …，) 不如 + đề nghị|Đưa ra lựa chọn tốt hơn.
+E|天气这么好，不如我们去公园走走。|Trời đẹp thế này, chi bằng mình ra công viên đi dạo.
+G|干脆|Tính từ nghĩa là "dứt khoát, thẳng thắn"; làm phó từ nghĩa là "dứt khoát làm luôn, làm quách đi".
+P|很干脆 / 说话干脆|Tính từ.
+E|他做事很干脆，从不犹豫。|Anh ấy làm việc rất dứt khoát, không bao giờ do dự.
+P|干脆 + động từ|Chọn cách triệt để nhất.
+E|电脑修了几次还是坏，干脆买台新的吧。|Máy tính sửa mấy lần vẫn hỏng, mua quách cái mới đi.
+G|万一|Liên từ nghĩa là "lỡ như, nhỡ may", nêu khả năng rất nhỏ nhưng không mong muốn; cũng là danh từ nghĩa là "điều bất trắc".
+P|万一 + tình huống，…|Liên từ.
+E|带上伞吧，万一下雨呢。|Mang ô theo đi, nhỡ mưa thì sao.
+P|以防万一|Danh từ: đề phòng bất trắc.
+E|多带点儿钱，以防万一。|Mang thêm ít tiền để phòng khi bất trắc.
+C|挤 và 拥挤|Đều nói về sự đông đúc, chật chội.|Làm vị ngữ tả nơi đông người thì thay được: 车上很挤 / 很拥挤。
+R|Từ loại|Động từ và tính từ.|Chủ yếu là tính từ.
+R|Làm động từ|Chen, bóp, nặn: 挤上车、挤牙膏、挤时间。|Không dùng như vậy.
+R|Văn phong|Khẩu ngữ.|Văn viết: 交通拥挤、拥挤的人群。
+F|垮 傻 挤 倒闭 促进 妨碍 维持 培养
+I|这座旧桥被大水冲___了。|垮
+I|你真___，这么冷的天还穿这么少。|傻
+I|他好不容易才___上了公共汽车。|挤
+I|因为经营不好，那家商店去年___了。|倒闭
+I|体育运动能___身体健康。|促进
+I|请把音乐声音关小一点儿，别___别人休息。|妨碍
+I|他靠打工___一家人的生活。|维持
+I|父母应该从小___孩子的阅读习惯。|培养
+Q|节假日，景区里总是十分___。|干脆/拥挤|1|Tả nơi đông đúc: 拥挤.
+Q|等公共汽车太慢了，我们___走路去吧。|干脆/万一|0|Chọn luôn cách triệt để: 干脆.
+Q|你把电话号码留给我，___有事我好联系你。|万一/不如|0|Lỡ như: 万一.
+Q|这家饭馆的菜___那家好吃。|不如/不然|0|So sánh kém hơn: 不如.
+S|A这件事B太麻烦了，C别做D了。|干脆|C
+S|A我的汉语B你C说得D流利。|不如|B
+S|A早点儿出发吧，B路上C堵车D呢。|万一|B
+O|与其/在家/看电视/不如/出去/走走|与其在家看电视，不如出去走走。|Ở nhà xem tivi chi bằng ra ngoài đi dạo.
+O|他/干脆/把/工作/辞了|他干脆把工作辞了。|Anh ấy dứt khoát nghỉ việc luôn.
+O|万一/我/迟到了/你们/先/开始|万一我迟到了，你们先开始。|Lỡ tôi đến muộn thì các bạn cứ bắt đầu trước.
+T|Kể lại bài khóa bằng lời của bạn|培养 对手 利润 诚信 营业 不如 干脆 挤 垮 垄断 倒闭 资金 生态 适当 促使 妨碍 促进 利益 万一 维持
+#L 30
+G|无意|Phó từ nghĩa là "vô tình, không cố ý"; cũng là động từ nghĩa là "không có ý định".
+P|无意 (中 / 间) + động từ|Việc xảy ra không do chủ ý.
+E|我无意中听到了他们的谈话。|Tôi vô tình nghe được cuộc nói chuyện của họ.
+P|无意 + động từ|Không định làm.
+E|我无意打扰你，只是想问个问题。|Tôi không định làm phiền bạn, chỉ muốn hỏi một câu.
+G|有利|Tính từ nghĩa là "có lợi".
+P|对 … 有利 / 有利于 …|Hai cách nói cùng nghĩa; 有利于 đứng trước đối tượng được lợi.
+E|早睡早起对身体有利。|Ngủ sớm dậy sớm có lợi cho sức khỏe.
+E|多读书有利于提高写作水平。|Đọc nhiều sách có lợi cho việc nâng cao khả năng viết.
+G|的确|Phó từ nghĩa là "quả thực, đúng là", khẳng định điều gì là thật.
+P|的确 + động từ / tính từ|Đứng sau chủ ngữ.
+E|这道题的确很难。|Câu này quả thực rất khó.
+E|他的确来过，我亲眼看见的。|Anh ấy đúng là đã đến, tôi tận mắt thấy.
+C|接近 và 靠近|Đều chỉ khoảng cách gần lại.|Nói về khoảng cách không gian thì thay được: 接近 / 靠近目标。
+R|Phạm vi|Cả không gian lẫn trừu tượng: thời gian, số lượng, trình độ.|Chủ yếu là khoảng cách không gian.
+R|Nghĩa trừu tượng|接近尾声、接近一百人、水平很接近。|Không dùng.
+R|Ví dụ|船慢慢接近了岸边。|请不要靠近火。
+F|逃避 延长 改善 构成 刺激 挖掘 运输 落后
+I|遇到问题要想办法解决，不能___。|逃避
+I|为了方便顾客，商场把营业时间___到了晚上十点。|延长
+I|这几年，农村的生活条件___了很多。|改善
+I|水是由氢和氧___的。|构成
+I|这个消息对他的___很大。|刺激
+I|好老师善于___学生的潜力。|挖掘
+I|这些水果是用飞机___过来的。|运输
+I|虚心使人进步，骄傲使人___。|落后
+Q|比赛已经___结束了。|接近/靠近|0|Thời gian, nghĩa trừu tượng: 接近.
+Q|危险！请不要___那台机器。|接近的/靠近|1|Khoảng cách không gian, mang tân ngữ: 靠近.
+Q|坚持锻炼___身体健康。|有利于/有利|0|Có đối tượng theo sau: 有利于.
+Q|你说得对，这___是我的错。|的确/的话|0|Khẳng định là thật: 的确.
+S|A我B中C发现了D这个秘密。|无意|B
+S|A这种做法B对保护环境C很D。|有利|D
+S|A他B是一个C值得信任的D人。|的确|B
+O|我/无意中/找到了/丢失的/钥匙|我无意中找到了丢失的钥匙。|Tôi vô tình tìm thấy chiếc chìa khóa bị mất.
+O|这个决定/对/公司的发展/十分/有利|这个决定对公司的发展十分有利。|Quyết định này rất có lợi cho sự phát triển của công ty.
+O|这里的/风景/的确/很美|这里的风景的确很美。|Phong cảnh ở đây quả thực rất đẹp.
+T|Kể lại bài khóa bằng lời của bạn|运输 商品 延长 存活 改善 无意 巧妙 天敌 构成 逃避 旺盛 核心 刺激 活力 落后 危机 有利 潜力 接近 的确
+#L 31
+G|嗯|Thán từ biểu thị đồng ý hoặc đã nghe thấy; đọc lên giọng thì tỏ ý thắc mắc.
+P|嗯，+ câu|Dùng trong hội thoại.
+E|嗯，我知道了。|Ừ, tôi biết rồi.
+E|嗯？你刚才说什么？|Hả? Bạn vừa nói gì?
+G|轻易|Phó từ nghĩa là "dễ dàng" hoặc "tùy tiện, thiếu cân nhắc", thường dùng trong câu phủ định.
+P|不 / 别 + 轻易 + động từ|Không dễ gì, đừng vội vàng.
+E|他不会轻易改变主意。|Anh ấy không dễ dàng đổi ý.
+E|不要轻易相信陌生人的话。|Đừng dễ dàng tin lời người lạ.
+G|无所谓|Động từ nghĩa là "không sao cả, thế nào cũng được".
+P|(对 …) 无所谓 / … 都无所谓|Không bận tâm.
+E|吃什么我都无所谓，你决定吧。|Ăn gì tôi cũng được, bạn quyết định đi.
+E|他对别人的看法一点儿也无所谓。|Anh ấy chẳng bận tâm chút nào tới cách nhìn của người khác.
+C|轻易 và 容易|Đều có nghĩa "dễ".|Trước động từ đôi khi thay được: 不轻易 / 不容易相信别人。
+R|Nghĩa|Không tốn sức; hoặc tùy tiện, thiếu cân nhắc.|Không khó; hoặc dễ xảy ra.
+R|Câu thường gặp|Câu phủ định: 不轻易放弃、别轻易答应。|Cả khẳng định lẫn phủ định: 很容易、不容易。
+R|Làm vị ngữ|Ít dùng.|Dùng được: 这道题很容易。
+F|劝 圆 出示 赞成 犹豫 缩短 处理 值班
+I|大家都___他别生气了。|劝
+I|今晚的月亮又大又___。|圆
+I|进入图书馆请___学生证。|出示
+I|我完全___你的看法。|赞成
+I|他___了很久，还是没有决定。|犹豫
+I|新修的高速公路___了两个城市之间的距离。|缩短
+I|这件事交给我来___吧。|处理
+I|今天晚上轮到我在医院___。|值班
+Q|这个问题很___，谁都会回答。|轻易/容易|1|Làm vị ngữ sau 很: 容易.
+Q|他不___向别人借钱。|轻易/容易|0|"Không tùy tiện" trong câu phủ định: 轻易.
+Q|坐火车还是坐飞机，我___，听你的。|无所谓/不见得|0|Thế nào cũng được: 无所谓.
+Q|___，你说得有道理。|嗯/呢|0|Thán từ tỏ ý đồng ý đứng đầu câu: 嗯.
+S|A你B不要C答应D别人的要求。|轻易|C
+S|A去哪儿B旅行C我都D。|无所谓|D
+S|A他是个B很谨慎的人，C不会D下结论。|轻易|D
+O|他/从来/不/轻易/发脾气|他从来不轻易发脾气。|Anh ấy chưa bao giờ dễ nổi nóng.
+O|输赢/对我/来说/无所谓|输赢对我来说无所谓。|Thắng thua với tôi không quan trọng.
+O|成功/不是/轻易/就能/得到的|成功不是轻易就能得到的。|Thành công không phải thứ dễ dàng có được.
+T|Kể lại bài khóa bằng lời của bạn|门槛 报社 编辑 轻易 处理 劝 出示 赞成 迫切 犹豫 冷淡 无所谓 八成 模糊 了不起 缩短 谦虚 实践

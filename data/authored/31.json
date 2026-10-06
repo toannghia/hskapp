@@ -42,5 +42,284 @@
     "xmin": 0.13
    }
   ]
- }
+ },
+ "grammar": [
+  {
+   "title": "嗯",
+   "kind": "cách dùng",
+   "summary": "Thán từ biểu thị đồng ý hoặc đã nghe thấy; đọc lên giọng thì tỏ ý thắc mắc.",
+   "points": [
+    {
+     "pattern": "嗯，+ câu",
+     "explain": "Dùng trong hội thoại.",
+     "examples": [
+      {
+       "zh": "嗯，我知道了。",
+       "vi": "Ừ, tôi biết rồi."
+      },
+      {
+       "zh": "嗯？你刚才说什么？",
+       "vi": "Hả? Bạn vừa nói gì?"
+      }
+     ]
+    }
+   ],
+   "id": "31-g1"
+  },
+  {
+   "title": "轻易",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"dễ dàng\" hoặc \"tùy tiện, thiếu cân nhắc\", thường dùng trong câu phủ định.",
+   "points": [
+    {
+     "pattern": "不 / 别 + 轻易 + động từ",
+     "explain": "Không dễ gì, đừng vội vàng.",
+     "examples": [
+      {
+       "zh": "他不会轻易改变主意。",
+       "vi": "Anh ấy không dễ dàng đổi ý."
+      },
+      {
+       "zh": "不要轻易相信陌生人的话。",
+       "vi": "Đừng dễ dàng tin lời người lạ."
+      }
+     ]
+    }
+   ],
+   "id": "31-g2"
+  },
+  {
+   "title": "无所谓",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"không sao cả, thế nào cũng được\".",
+   "points": [
+    {
+     "pattern": "(对 …) 无所谓 / … 都无所谓",
+     "explain": "Không bận tâm.",
+     "examples": [
+      {
+       "zh": "吃什么我都无所谓，你决定吧。",
+       "vi": "Ăn gì tôi cũng được, bạn quyết định đi."
+      },
+      {
+       "zh": "他对别人的看法一点儿也无所谓。",
+       "vi": "Anh ấy chẳng bận tâm chút nào tới cách nhìn của người khác."
+      }
+     ]
+    }
+   ],
+   "id": "31-g3"
+  },
+  {
+   "title": "轻易 và 容易",
+   "kind": "phân biệt",
+   "summary": "Đều có nghĩa \"dễ\".",
+   "compare": {
+    "same": "Trước động từ đôi khi thay được: 不轻易 / 不容易相信别人。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Không tốn sức; hoặc tùy tiện, thiếu cân nhắc.",
+      "b": "Không khó; hoặc dễ xảy ra."
+     },
+     {
+      "aspect": "Câu thường gặp",
+      "a": "Câu phủ định: 不轻易放弃、别轻易答应。",
+      "b": "Cả khẳng định lẫn phủ định: 很容易、不容易。"
+     },
+     {
+      "aspect": "Làm vị ngữ",
+      "a": "Ít dùng.",
+      "b": "Dùng được: 这道题很容易。"
+     }
+    ]
+   },
+   "id": "31-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "31-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "劝",
+    "圆",
+    "出示",
+    "赞成",
+    "犹豫",
+    "缩短",
+    "处理",
+    "值班"
+   ],
+   "items": [
+    {
+     "q": "大家都___他别生气了。",
+     "a": "劝"
+    },
+    {
+     "q": "今晚的月亮又大又___。",
+     "a": "圆"
+    },
+    {
+     "q": "进入图书馆请___学生证。",
+     "a": "出示"
+    },
+    {
+     "q": "我完全___你的看法。",
+     "a": "赞成"
+    },
+    {
+     "q": "他___了很久，还是没有决定。",
+     "a": "犹豫"
+    },
+    {
+     "q": "新修的高速公路___了两个城市之间的距离。",
+     "a": "缩短"
+    },
+    {
+     "q": "这件事交给我来___吧。",
+     "a": "处理"
+    },
+    {
+     "q": "今天晚上轮到我在医院___。",
+     "a": "值班"
+    }
+   ]
+  },
+  {
+   "id": "31-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这个问题很___，谁都会回答。",
+     "options": [
+      "轻易",
+      "容易"
+     ],
+     "a": 1,
+     "why": "Làm vị ngữ sau 很: 容易."
+    },
+    {
+     "q": "他不___向别人借钱。",
+     "options": [
+      "轻易",
+      "容易"
+     ],
+     "a": 0,
+     "why": "\"Không tùy tiện\" trong câu phủ định: 轻易."
+    },
+    {
+     "q": "坐火车还是坐飞机，我___，听你的。",
+     "options": [
+      "无所谓",
+      "不见得"
+     ],
+     "a": 0,
+     "why": "Thế nào cũng được: 无所谓."
+    },
+    {
+     "q": "___，你说得有道理。",
+     "options": [
+      "嗯",
+      "呢"
+     ],
+     "a": 0,
+     "why": "Thán từ tỏ ý đồng ý đứng đầu câu: 嗯."
+    }
+   ]
+  },
+  {
+   "id": "31-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A你B不要C答应D别人的要求。",
+     "word": "轻易",
+     "a": "C"
+    },
+    {
+     "q": "A去哪儿B旅行C我都D。",
+     "word": "无所谓",
+     "a": "D"
+    },
+    {
+     "q": "A他是个B很谨慎的人，C不会D下结论。",
+     "word": "轻易",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "31-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "从来",
+      "不",
+      "轻易",
+      "发脾气"
+     ],
+     "a": "他从来不轻易发脾气。",
+     "vi": "Anh ấy chưa bao giờ dễ nổi nóng."
+    },
+    {
+     "words": [
+      "输赢",
+      "对我",
+      "来说",
+      "无所谓"
+     ],
+     "a": "输赢对我来说无所谓。",
+     "vi": "Thắng thua với tôi không quan trọng."
+    },
+    {
+     "words": [
+      "成功",
+      "不是",
+      "轻易",
+      "就能",
+      "得到的"
+     ],
+     "a": "成功不是轻易就能得到的。",
+     "vi": "Thành công không phải thứ dễ dàng có được."
+    }
+   ]
+  },
+  {
+   "id": "31-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "门槛",
+      "报社",
+      "编辑",
+      "轻易",
+      "处理",
+      "劝",
+      "出示",
+      "赞成",
+      "迫切",
+      "犹豫",
+      "冷淡",
+      "无所谓",
+      "八成",
+      "模糊",
+      "了不起",
+      "缩短",
+      "谦虚",
+      "实践"
+     ]
+    }
+   ]
+  }
+ ]
 }
