@@ -81,6 +81,65 @@ def cvdict():
     return _dict
 
 
+_hanzi = None
+
+
+def hanzi_data():
+    """Cấu tạo từng chữ Hán từ Make Me a Hanzi (dictionary.txt, nguồn Unihan và CJKlib),
+    tệp data/dict/makemeahanzi-dictionary.txt; không có tệp thì trả về rỗng."""
+    global _hanzi
+    if _hanzi is None:
+        _hanzi = {}
+        path = ROOT / "data" / "dict" / "makemeahanzi-dictionary.txt"
+        for line in path.read_text().splitlines() if path.exists() else []:
+            e = json.loads(line)
+            _hanzi[e["character"]] = e
+    return _hanzi
+
+
+SHAPE = {"⿰": "trái – phải", "⿱": "trên – dưới", "⿲": "trái – giữa – phải", "⿳": "trên – giữa – dưới", "⿴": "bao quanh",
+         "⿵": "bao từ trên", "⿶": "bao từ dưới", "⿷": "bao từ trái", "⿸": "bao trên trái", "⿹": "bao trên phải",
+         "⿺": "bao dưới trái", "⿻": "lồng nhau"}
+KIND = {"pictophonetic": "hình thanh", "ideographic": "hội ý", "pictographic": "tượng hình"}
+
+
+def char_table(chars):
+    """Thông tin từng chữ đơn cho trang cách viết: cách đọc, nghĩa, bộ thủ, hình thái, kiểu cấu tạo."""
+    big, han = cvdict(), hanzi_data()
+    names_file = ROOT / "data" / "radicals.json"
+    names = json.loads(names_file.read_text()) if names_file.exists() else {}
+    out = {}
+    for c in sorted(chars):
+        if c not in big and c not in han:
+            continue
+        e, info = han.get(c, {}), {"p": big[c]["p"] if c in big else "", "vi": big[c]["vi"] if c in big else ""}
+        rad = e.get("radical")
+        if rad:
+            info["rad"] = [rad] + names.get(rad, [])
+        ids = e.get("decomposition", "")
+        if ids and ids[0] in SHAPE and "？" not in ids:
+            # Chỉ lấy các thành phần ở tầng ngoài cùng; thành phần ghép thì tìm chữ tương ứng, không có thì ghi các mảnh.
+            whole = {v.get("decomposition"): k for k, v in han.items()} if not hasattr(char_table, "whole") else char_table.whole
+            char_table.whole = whole
+            kids, i = [], 1
+            for _ in range(3 if ids[0] in "⿲⿳" else 2):
+                j = i
+                need = 1
+                while need and j < len(ids):
+                    need += (3 if ids[j] in "⿲⿳" else 2) - 1 if ids[j] in SHAPE else -1
+                    j += 1
+                sub = ids[i:j]
+                kids.append(sub if len(sub) == 1 else whole.get(sub) or "(" + "".join(x for x in sub if x not in SHAPE) + ")")
+                i = j
+            if len(kids) >= 2 and all(kids):
+                info["shape"] = [SHAPE[ids[0]], kids]
+        ety = e.get("etymology") or {}
+        if ety.get("type") in KIND:
+            info["kind"] = [KIND[ety["type"]], ety.get("semantic", ""), ety.get("phonetic", "")]
+        out[c] = info
+    return out
+
+
 def pos_name(p):
     return " / ".join(ONE.get(x + ".", x) for x in p.rstrip(".").split("./")) if p else ""
 
@@ -289,8 +348,7 @@ def main():
                   "vocab": d["vocab"], "names": d["names"], "text": text, "textTokens": tokens,
                   "gloss": {w: [e["p"], e["vi"]] for w, e in scope.items() if w in used and w not in own},
                   # Từng chữ đơn trong bảng từ: cách đọc và nghĩa của riêng chữ đó, dùng ở trang cách viết.
-                  "chars": {c: [cvdict()[c]["p"], cvdict()[c]["vi"]]
-                            for c in sorted({c for v in d["vocab"] for c in v["hanzi"]}) if c in cvdict()},
+                  "chars": char_table({c for v in d["vocab"] for c in v["hanzi"]}),
                   "grammar": authored.get("grammar", []), "exercises": authored.get("exercises", []),
                   "warnings": warnings}
         (out_dir / f"{n:02d}.json").write_text(json.dumps(lesson, ensure_ascii=False, indent=1))

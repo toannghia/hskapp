@@ -353,7 +353,10 @@ const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyV
 
 // Cách đọc và nghĩa của một chữ đơn, lấy từ dữ liệu các bài học.
 function charInfo(c) {
-  for (const l of LESSONS) if (l.chars && l.chars[c]) return { pinyin: l.chars[c][0], vi: l.chars[c][1] };
+  for (const l of LESSONS) if (l.chars && l.chars[c]) {
+    const e = l.chars[c];      // dữ liệu nạp trước đây là mảng [pinyin, nghĩa]; bản mới là đối tượng có thêm cấu tạo chữ
+    return Array.isArray(e) ? { pinyin: e[0], vi: e[1] } : { pinyin: e.p, vi: e.vi, rad: e.rad, shape: e.shape, kind: e.kind };
+  }
   for (const l of LESSONS) if (l.gloss && l.gloss[c]) return { pinyin: l.gloss[c][0], vi: l.gloss[c][1] };
   return {};
 }
@@ -413,6 +416,13 @@ function writePage(word, info, links) {
         h("div", { class: "charinfo" },
           h("div", {}, h("span", { class: "sub" }, "Chữ: "), h("b", { class: "zh", style: "font-size:26px" }, c)),
           h("div", {}, h("span", { class: "sub" }, "Bính âm: "), h("b", { style: "color:var(--acc);font-size:20px" }, ci.pinyin || "—"), " ", speakBtn(c)),
+          ci.shape ? h("div", {}, h("span", { class: "sub" }, "Hình thái: "), h("span", { class: "tag" }, ci.shape[0]), " ",
+            h("b", { class: "zh" }, ci.shape[1].join(" + "))) : null,
+          ci.kind ? h("div", {}, h("span", { class: "sub" }, "Lục thư: "), h("b", {}, ci.kind[0]),
+            ci.kind[1] || ci.kind[2] ? h("span", { class: "sub" }, " · ", ci.kind[1] ? [h("span", { class: "zh" }, ci.kind[1]), " gợi nghĩa"] : "",
+              ci.kind[1] && ci.kind[2] ? ", " : "", ci.kind[2] ? [h("span", { class: "zh" }, ci.kind[2]), " gợi âm"] : "") : null) : null,
+          ci.rad ? h("div", {}, h("span", { class: "sub" }, "Bộ: "), h("b", {}, ci.rad[1] || ""), " ", h("b", { class: "zh", style: "color:var(--radical)" }, ci.rad[0]),
+            ci.rad[2] ? h("span", { class: "sub" }, ` (${ci.rad[2]})`) : null) : null,
           h("div", {}, h("span", { class: "sub" }, "Số nét: "), strokes, radical),
           ci.vi ? h("div", {}, h("span", { class: "sub" }, "Nghĩa của chữ: "), ci.vi) : null,
           note,
