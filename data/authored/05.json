@@ -169,6 +169,42 @@
     ]
    },
    "id": "05-g4"
+  },
+  {
+   "title": "为（wéi）",
+   "kind": "cách dùng",
+   "summary": "Động từ đọc là wéi, thường đứng sau một động từ khác làm bổ ngữ.",
+   "points": [
+    {
+     "pattern": "động từ + 为 + kết quả",
+     "explain": "Nghĩa là \"thành, trở thành\": 变为、成为、改为.",
+     "examples": [
+      {
+       "zh": "这座老工厂后来改为了博物馆。",
+       "vi": "Nhà máy cũ này về sau được đổi thành bảo tàng."
+      },
+      {
+       "zh": "经过努力，他成为了一名医生。",
+       "vi": "Nhờ nỗ lực, anh ấy đã trở thành bác sĩ."
+      }
+     ]
+    },
+    {
+     "pattern": "以 / 称 / 选 … + 为 …",
+     "explain": "Nghĩa là \"coi là, làm, là\".",
+     "examples": [
+      {
+       "zh": "大家都选他为班长。",
+       "vi": "Mọi người đều bầu cậu ấy làm lớp trưởng."
+      },
+      {
+       "zh": "做事应该以安全为第一。",
+       "vi": "Làm việc gì cũng nên lấy an toàn làm đầu."
+      }
+     ]
+    }
+   ],
+   "id": "05-g5"
   }
  ],
  "exercises": [

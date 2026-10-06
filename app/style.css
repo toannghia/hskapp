@@ -235,3 +235,6 @@ a.stat { display: block; color: inherit; }
 .pair { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: center; padding: 10px 14px; margin: 8px 0; }
 .pair > div { cursor: pointer; min-width: 0; } .pair .zh { font-size: 24px; } .pair .p { color: var(--acc); }
 @media (max-width: 480px) { .pair { grid-template-columns: 1fr 1fr; } .pair .tag { grid-column: 1 / -1; justify-self: start; margin-left: 0; } }
+.book { margin-top: 10px; padding: 8px 12px; border-left: 3px solid var(--acc); background: var(--bg); border-radius: 0 8px 8px 0; }
+.book p { margin: 6px 0; } ol.exs { padding-left: 26px; margin: 4px 0; } ol.exs li { margin: 6px 0; }
+table.cmp.zh td { font-size: 18px; } .drillhead { margin: 4px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }

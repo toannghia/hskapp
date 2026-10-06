@@ -270,6 +270,37 @@ def tokenize(paras, own, known, warnings):
     return out
 
 
+def book_grammar(n, authored):
+    """Xếp phần cấu trúc theo đúng sách: mục, lời giải thích, ví dụ và 练一练 lấy từ data/book (tools/book_grammar.py).
+
+    Lời giải thích tiếng Việt đã soạn được giữ lại cho mục trùng tên; mục đã soạn mà sách không có thì xếp cuối, đánh dấu "extra".
+    """
+    f = ROOT / "data" / "book" / f"{n:02d}.json"
+    if not f.exists():
+        return authored
+    book = json.loads(f.read_text())
+    han = lambda t: "".join(re.findall(r"[一-鿿]+", t))
+    left = list(authored)
+    def take(pred):
+        for g in left:
+            if pred(g):
+                left.remove(g)
+                return g
+    out = []
+    for k, p in enumerate(book["points"], 1):
+        g = take(lambda g: g["kind"] == "cách dùng" and han(g["title"]) == han(p["word"])) or \
+            {"id": f"{n:02d}-b{k}", "title": p["word"], "kind": "cách dùng", "summary": "", "points": []}
+        out.append({**g, "book": {"parts": p["parts"], "drill": p["drill"]}})
+    take(lambda g: g["kind"] == "kết hợp từ")
+    if book["collocations"]:
+        out.append({"id": f"{n:02d}-c", "title": "词语搭配", "kind": "kết hợp từ", "summary": "Bảng kết hợp từ của bài, theo sách.", "table": book["collocations"]})
+    for c in book["compare"]:
+        g = take(lambda g: g["kind"] == "phân biệt" and all(w in g["title"] for w in c["words"]))
+        if g:
+            out.append({**g, "book": {"drill": c["drill"]}})
+    return out + [{**g, "extra": True} for g in left]
+
+
 def load(n):
     authored = json.loads((ROOT / "data" / "authored" / f"{n:02d}.json").read_text())
     src, warnings = authored["source"], []
@@ -383,7 +414,7 @@ def main():
                   "gloss": {w: [e["p"], e["vi"]] for w, e in scope.items() if w in used and w not in own},
                   # Từng chữ đơn trong bảng từ: cách đọc và nghĩa của riêng chữ đó, dùng ở trang cách viết.
                   "chars": char_table({c for v in d["vocab"] for c in v["hanzi"]}),
-                  "grammar": authored.get("grammar", []), "exercises": authored.get("exercises", []),
+                  "grammar": book_grammar(n, authored.get("grammar", [])), "exercises": authored.get("exercises", []),
                   "warnings": warnings}
         (out_dir / f"{n:02d}.json").write_text(json.dumps(lesson, ensure_ascii=False, indent=1))
         chars = sum(len(p) for p in text)

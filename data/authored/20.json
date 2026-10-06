@@ -133,6 +133,28 @@
     ]
    },
    "id": "20-g3"
+  },
+  {
+   "title": "动词 + 得 / 不 + 起",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ khả năng, cho biết có (hay không có) đủ điều kiện, khả năng để làm hoặc chịu được việc gì, thường là về tiền bạc, thời gian.",
+   "points": [
+    {
+     "pattern": "động từ + 得起 / 不起",
+     "explain": "买不起 mua không nổi, 吃得起 ăn nổi, 等不起 chờ không nổi, 对不起 có lỗi với.",
+     "examples": [
+      {
+       "zh": "这种手机太贵了，我买不起。",
+       "vi": "Loại điện thoại này đắt quá, tôi mua không nổi."
+      },
+      {
+       "zh": "时间这么紧，我们等不起。",
+       "vi": "Thời gian gấp thế này, chúng tôi không chờ nổi."
+      }
+     ]
+    }
+   ],
+   "id": "20-g4"
   }
  ],
  "exercises": [

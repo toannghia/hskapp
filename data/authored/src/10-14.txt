@@ -55,6 +55,14 @@ C|持续 và 继续|Đều chỉ sự việc tiếp diễn.|Đều đứng đư�
 R|Nghĩa|Kéo dài liên tục, không gián đoạn trong một khoảng thời gian.|Làm tiếp, có thể là sau khi tạm ngừng.
 R|Kết hợp|Hay đi với khoảng thời gian: 持续了三天、持续高温。|Hay đi với động từ chỉ hành động: 继续学习、继续说。
 R|Sau khi nghỉ|Không dùng.|Dùng được: 休息一下再继续。
+G|来 / 过来|Bổ ngữ xu hướng đứng sau động từ, ở đây dùng với nghĩa trừu tượng.
+P|醒 + 来 / 过来|Chỉ sự chuyển từ ngủ sang tỉnh.
+E|我早上醒来的时候，天还没亮。|Sáng nay lúc tôi tỉnh dậy, trời vẫn chưa sáng.
+P|động từ + 过来|Trở về trạng thái ban đầu, trạng thái bình thường: 醒过来、明白过来、改过来.
+E|休息了几天，他的身体慢慢恢复过来了。|Nghỉ mấy hôm, sức khỏe anh ấy dần hồi phục lại.
+E|这个坏习惯很难改过来。|Thói quen xấu này rất khó sửa lại.
+P|động từ + 得 / 不 + 过来|Có đủ (hoặc không đủ) sức, thời gian để làm hết; thường dùng ở dạng phủ định.
+E|工作太多，我一个人忙不过来。|Việc nhiều quá, một mình tôi làm không xuể.
 F|慌 享受 模仿 避免 导致 采用 计算 清醒
 I|别___，慢慢说，到底发生了什么事？|慌
 I|退休以后，他开始___轻松的生活。|享受

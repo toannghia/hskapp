@@ -90,6 +90,15 @@ C|反复 và 重复|Đều chỉ việc lặp lại.|Hai từ khác nhau về t�
 R|Nghĩa|Làm đi làm lại nhiều lần, mỗi lần có thể khác đi.|Lặp lại y nguyên cái đã có.
 R|Từ loại|Chủ yếu là phó từ: 反复练习、反复考虑。|Động từ: 重复一遍、内容重复了。
 R|Mang tân ngữ|Không.|Có: 重复刚才的话。
+G|动词 + 过|Bổ ngữ xu hướng đứng sau động từ, chỉ sự đổi hướng hoặc đổi vị trí nhờ hành động.
+P|động từ + 过 (+ tân ngữ)|Người hoặc vật đổi hướng: 转过身、回过头.
+E|听到有人叫他，他回过头看了看。|Nghe có người gọi, anh ấy ngoảnh đầu lại nhìn.
+P|động từ + 过 (+ tân ngữ)|Người hoặc vật chuyển từ chỗ này sang chỗ khác: 接过、递过、走过.
+E|她接过礼物，高兴地笑了。|Cô ấy đón lấy món quà, cười vui vẻ.
+G|动词 + 开|Bổ ngữ đứng sau động từ, chỉ sự mở ra, duỗi ra, giãn ra.
+P|động từ + 开|张开 há ra, dang ra; 打开 mở ra; 伸开 duỗi ra; 展开 trải ra.
+E|医生让他张开嘴。|Bác sĩ bảo anh ấy há miệng ra.
+E|她打开窗户，让新鲜空气进来。|Cô ấy mở cửa sổ cho không khí trong lành vào.
 F|抓 啄 区分 充当 爱惜 保养 概括 迎接
 I|猫___住了一只老鼠。|抓
 I|小鸟在地上___食。|啄

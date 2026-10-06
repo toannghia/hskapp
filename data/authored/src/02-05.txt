@@ -103,6 +103,10 @@ C|满足 và 满意|Đều diễn tả cảm giác hài lòng, nhưng cách dùn
 R|Nghĩa chính|Cảm thấy đã đủ, không đòi hỏi thêm.|Thấy hợp ý, vừa lòng với người hoặc việc.
 R|Mang tân ngữ|Dùng như động từ "đáp ứng": 满足要求、满足需要。|Không mang tân ngữ kiểu đó.
 R|Kết cấu|满足于 + hiện trạng: 不满足于现在的成绩。|对 + đối tượng + 满意: 对服务很满意。
+G|……得不行|Bổ ngữ mức độ đứng sau tính từ hoặc động từ tâm lý, nghĩa là "… không chịu nổi, … hết sức". Gần nghĩa với 得很、得不得了.
+P|tính từ / động từ tâm lý + 得不行|Nhấn mạnh mức độ rất cao, hay dùng trong khẩu ngữ.
+E|走了一天的路，我累得不行。|Đi bộ cả ngày, tôi mệt không chịu nổi.
+E|听说要去旅行，孩子们高兴得不行。|Nghe nói sắp đi du lịch, bọn trẻ vui hết sức.
 F|滑 扶 甩 占 孝敬 打听 委屈 流传
 I|下雪以后路很___，走路要小心。|滑
 I|看到老人上车，他赶紧过去___了一把。|扶
@@ -147,6 +151,13 @@ C|美丽 và 优美|Đều là tính từ nghĩa là "đẹp".|Đều tả đư�
 R|Đối tượng|Rộng: người, cảnh vật, đồ vật, điều trừu tượng.|Cảnh vật, tư thế, động tác, âm nhạc, lời văn.
 R|Tả người|Dùng được: 美丽的姑娘。|Không tả dung mạo; chỉ tả dáng, động tác: 优美的舞姿。
 R|Sắc thái|Đẹp nói chung.|Đẹp và tao nhã, hài hòa.
+G|为（wéi）|Động từ đọc là wéi, thường đứng sau một động từ khác làm bổ ngữ.
+P|động từ + 为 + kết quả|Nghĩa là "thành, trở thành": 变为、成为、改为.
+E|这座老工厂后来改为了博物馆。|Nhà máy cũ này về sau được đổi thành bảo tàng.
+E|经过努力，他成为了一名医生。|Nhờ nỗ lực, anh ấy đã trở thành bác sĩ.
+P|以 / 称 / 选 … + 为 …|Nghĩa là "coi là, làm, là".
+E|大家都选他为班长。|Mọi người đều bầu cậu ấy làm lớp trưởng.
+E|做事应该以安全为第一。|Làm việc gì cũng nên lấy an toàn làm đầu.
 F|救 晕 抢 埋 碰 挡 冲 充满
 I|医生及时赶到，___了他一命。|救
 I|她坐船的时候常常会头___。|晕

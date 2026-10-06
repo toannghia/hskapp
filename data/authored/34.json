@@ -135,6 +135,56 @@
     ]
    },
    "id": "34-g4"
+  },
+  {
+   "title": "动词 + 过",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ xu hướng đứng sau động từ, chỉ sự đổi hướng hoặc đổi vị trí nhờ hành động.",
+   "points": [
+    {
+     "pattern": "động từ + 过 (+ tân ngữ)",
+     "explain": "Người hoặc vật đổi hướng: 转过身、回过头.",
+     "examples": [
+      {
+       "zh": "听到有人叫他，他回过头看了看。",
+       "vi": "Nghe có người gọi, anh ấy ngoảnh đầu lại nhìn."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 过 (+ tân ngữ)",
+     "explain": "Người hoặc vật chuyển từ chỗ này sang chỗ khác: 接过、递过、走过.",
+     "examples": [
+      {
+       "zh": "她接过礼物，高兴地笑了。",
+       "vi": "Cô ấy đón lấy món quà, cười vui vẻ."
+      }
+     ]
+    }
+   ],
+   "id": "34-g5"
+  },
+  {
+   "title": "动词 + 开",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ đứng sau động từ, chỉ sự mở ra, duỗi ra, giãn ra.",
+   "points": [
+    {
+     "pattern": "động từ + 开",
+     "explain": "张开 há ra, dang ra; 打开 mở ra; 伸开 duỗi ra; 展开 trải ra.",
+     "examples": [
+      {
+       "zh": "医生让他张开嘴。",
+       "vi": "Bác sĩ bảo anh ấy há miệng ra."
+      },
+      {
+       "zh": "她打开窗户，让新鲜空气进来。",
+       "vi": "Cô ấy mở cửa sổ cho không khí trong lành vào."
+      }
+     ]
+    }
+   ],
+   "id": "34-g6"
   }
  ],
  "exercises": [

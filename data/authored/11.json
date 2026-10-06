@@ -151,6 +151,48 @@
     ]
    },
    "id": "11-g4"
+  },
+  {
+   "title": "来 / 过来",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ xu hướng đứng sau động từ, ở đây dùng với nghĩa trừu tượng.",
+   "points": [
+    {
+     "pattern": "醒 + 来 / 过来",
+     "explain": "Chỉ sự chuyển từ ngủ sang tỉnh.",
+     "examples": [
+      {
+       "zh": "我早上醒来的时候，天还没亮。",
+       "vi": "Sáng nay lúc tôi tỉnh dậy, trời vẫn chưa sáng."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 过来",
+     "explain": "Trở về trạng thái ban đầu, trạng thái bình thường: 醒过来、明白过来、改过来.",
+     "examples": [
+      {
+       "zh": "休息了几天，他的身体慢慢恢复过来了。",
+       "vi": "Nghỉ mấy hôm, sức khỏe anh ấy dần hồi phục lại."
+      },
+      {
+       "zh": "这个坏习惯很难改过来。",
+       "vi": "Thói quen xấu này rất khó sửa lại."
+      }
+     ]
+    },
+    {
+     "pattern": "động từ + 得 / 不 + 过来",
+     "explain": "Có đủ (hoặc không đủ) sức, thời gian để làm hết; thường dùng ở dạng phủ định.",
+     "examples": [
+      {
+       "zh": "工作太多，我一个人忙不过来。",
+       "vi": "Việc nhiều quá, một mình tôi làm không xuể."
+      }
+     ]
+    }
+   ],
+   "id": "11-g5"
   }
  ],
  "exercises": [

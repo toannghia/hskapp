@@ -135,6 +135,10 @@ C|损失 và 失去|Đều chỉ việc không còn có thứ gì đó.|Hai từ
 R|Đối tượng|Tiền của, vật chất, thời gian: 损失了很多钱。|Điều trừu tượng, người, cơ hội: 失去信心、失去朋友、失去机会。
 R|Từ loại|Động từ và danh từ: 造成损失、经济损失。|Chỉ là động từ.
 R|Ví dụ|这场大火损失很大。|他失去了一次好机会。
+G|动词 + 下来|Bổ ngữ xu hướng dùng với nghĩa mở rộng: hành động hoàn thành, kèm ý tách ra hoặc được giữ cố định lại.
+P|động từ + 下来|定下来 quyết định xong, 记下来 ghi lại, 留下来 ở lại, 脱下来 cởi ra.
+E|开会的时间已经定下来了。|Thời gian họp đã được chốt rồi.
+E|请把老师说的重点记下来。|Hãy ghi lại những ý chính thầy cô nói.
 F|睁 犯 责备 珍惜 观察 把握 发挥 吸取
 I|他太累了，眼睛都___不开了。|睁
 I|每个人都会___错误，重要的是改正。|犯

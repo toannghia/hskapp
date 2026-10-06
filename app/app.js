@@ -139,8 +139,17 @@ async function loadLessons() {
       emoji: v.emoji || "", img: v.img || (imgs[v.n] ? `data/images/${pad(d.id)}/${imgs[v.n]}` : ""), imgCredit: v.imgCredit,
       clip: v.clip, ex: v.ex || [],
     }));
+    // 练一练 của sách: mỗi câu luyện đi kèm một mục cấu trúc, làm xong lưu lại và gửi giáo viên chữa.
+    const drills = d.grammar.flatMap((g) => (g.book && g.book.drill ? g.book.drill.items : []).map((text, k) => (
+      { gid: g.id, word: g.title, task: g.book.drill.title, text, first: k === 0, prompt: `[${g.title}] ${g.book.drill.title}: ${text}` })));
+    if (drills.length && !d.exercises.some((x) => x.type === "drill")) {
+      const at = d.exercises.findIndex((x) => x.type === "retell");
+      d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-drill`, type: "drill", title: "练一练 theo sách", items: drills });
+    }
     // Bài tập đặt câu sinh từ phần cấu trúc: mỗi điểm "cách dùng" một đề, đặt trước bài kể lại.
-    const pts = d.grammar.filter((g) => g.kind === "cách dùng" && g.id);
+    // Xếp theo mã mục (thứ tự lúc soạn) để thứ tự đề không đổi khi phần cấu trúc được xếp lại theo sách.
+    const gnum = (g) => Number((g.id.match(/-g(\d+)$/) || [0, 999])[1]);
+    const pts = d.grammar.filter((g) => g.kind === "cách dùng" && g.id).sort((a, b) => gnum(a) - gnum(b));
     if (pts.length && !d.exercises.some((x) => x.type === "compose")) {
       const at = d.exercises.findIndex((x) => x.type === "retell");
       d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-compose`, type: "compose", title: "Đặt câu với cấu trúc",
@@ -447,31 +456,43 @@ function openWord(info, l, el, repaint) {
 }
 
 // ---------- Cấu trúc ----------
+// Nội dung một mục cấu trúc, xếp theo sách: lời giải thích tiếng Việt, rồi nguyên văn giải thích và ví dụ của sách.
+// Mục chưa có phần của sách thì hiện ví dụ tự soạn. Dùng chung cho thẻ "Cấu trúc" và phiên ôn cấu trúc.
+function grammarBody(g) {
+  const book = g.book && g.book.parts;
+  const zhLine = (t) => h("span", { class: "zh", style: "cursor:pointer", title: "Bấm để nghe", onclick: () => speak(t) }, t);
+  const out = [g.summary ? h("div", { class: "sub" }, g.summary) : null];
+  for (const pt of g.points || []) {
+    out.push(h("p", {}, h("b", { class: "zh", style: "color:var(--acc)" }, pt.pattern), h("br"), pt.explain));
+    if (!book) out.push(h("ul", { class: "exs" }, pt.examples.map((x) => h("li", {}, zhLine(x.zh), h("br"), h("span", { class: "sub" }, x.vi)))));
+  }
+  if (book) out.push(h("div", { class: "book" }, h("div", { class: "sub" }, "Theo sách"), book.map((pt) => [
+    pt.explain ? h("p", { class: "zh" }, pt.explain) : null,
+    pt.examples.length ? h("ol", { class: "exs" }, pt.examples.map((x) => h("li", {}, zhLine(x)))) : null])));
+  if (g.compare) {
+    const [a, b] = g.title.split("và").map((x) => x.trim());
+    out.push(h("p", {}, g.compare.same), h("div", { class: "wrap" }, h("table", { class: "cmp" },
+      h("tr", {}, h("th", {}), h("th", { class: "zh" }, a), h("th", { class: "zh" }, b)),
+      g.compare.rows.map((r) => h("tr", {}, h("td", {}, r.aspect), h("td", {}, r.a), h("td", {}, r.b))))));
+  }
+  if (g.collocations) out.push(h("div", { class: "wrap" }, h("table", { class: "cmp" }, g.collocations.map((c) =>
+    h("tr", {}, h("td", { class: "zh", style: "font-size:22px;white-space:nowrap" }, c.word), h("td", { class: "zh" }, c.with.join("　")))))));
+  for (const t of g.table || []) out.push(h("div", { class: "wrap" }, h("table", { class: "cmp zh" },
+    h("tr", {}, t.head.map((x) => h("th", {}, x))), t.rows.map((r) => h("tr", {}, r.map((x) => h("td", {}, x)))))));
+  return out;
+}
 function tabGrammar(l) {
   if (!l.grammar.length) add(h("div", { class: "card sub" }, "Bài này chưa có phần cấu trúc."));
   else if (typeof grammarStudyBox === "function") add(grammarStudyBox(l));
+  const compose = l.exercises.find((x) => x.type === "compose"), drill = l.exercises.find((x) => x.type === "drill");
   for (const g of l.grammar) {
-    const card = h("div", { class: "card" },
-      h("h3", {}, h("span", { class: "zh" }, g.title), h("span", { class: "tag acc" }, g.kind)),
-      h("div", { class: "sub" }, g.summary));
-    const compose = l.exercises.find((x) => x.type === "compose");
-    if (compose && compose.items.some((it) => it.word === g.title)) card.firstChild.append(h("a", { class: "btn mini", style: "float:right", href: `#/ex/${l.id}/${compose.id}` }, "✍ Đặt câu"));
-    for (const pt of g.points || []) {
-      card.append(h("p", {}, h("b", { class: "zh", style: "color:var(--acc)" }, pt.pattern), h("br"), pt.explain),
-        h("ul", { class: "exs" }, pt.examples.map((x) => h("li", {},
-          h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(x.zh) }, x.zh), h("br"), h("span", { class: "sub" }, x.vi)))));
-    }
-    if (g.compare) {
-      const [a, b] = g.title.split("và").map((s) => s.trim());
-      card.append(h("p", {}, g.compare.same), h("div", { class: "wrap" }, h("table", { class: "cmp" },
-        h("tr", {}, h("th", {}), h("th", { class: "zh" }, a), h("th", { class: "zh" }, b)),
-        g.compare.rows.map((r) => h("tr", {}, h("td", {}, r.aspect), h("td", {}, r.a), h("td", {}, r.b))))));
-    }
-    if (g.collocations) {
-      card.append(h("div", { class: "wrap" }, h("table", { class: "cmp" }, g.collocations.map((c) =>
-        h("tr", {}, h("td", { class: "zh", style: "font-size:22px;white-space:nowrap" }, c.word), h("td", { class: "zh" }, c.with.join("　")))))));
-    }
-    add(card);
+    const n = drill ? drill.items.filter((it) => it.gid === g.id).length : 0;
+    add(h("div", { class: "card" },
+      h("h3", {}, h("span", { class: "zh" }, g.title), h("span", { class: "tag acc" }, g.kind), g.extra ? h("span", { class: "tag" }, "ngoài phần chú thích của sách") : null),
+      grammarBody(g),
+      h("div", { class: "row", style: "margin-top:10px" },
+        n ? h("a", { class: "btn mini", href: `#/ex/${l.id}/${drill.id}` }, `练一练 · ${n} câu`) : null,
+        compose && compose.items.some((it) => it.word === g.title) ? h("a", { class: "btn mini", href: `#/ex/${l.id}/${compose.id}` }, "✍ Đặt câu") : null)));
   }
 }
 
@@ -641,6 +662,26 @@ const EX = {
         teacherBox(x, it, i, a, draw), history(a));
     }
     return out;
+  },
+  drill(x, it, i, draw) {
+    const k = ansKey(x, i), a = P.answers[k] || {};
+    const note = h("span", { class: "sub" });
+    const ta = h("textarea", { class: "zh", placeholder: "Viết câu trả lời của bạn…", oninput: () => refresh() }, a.v || "");
+    const refresh = () => { const v = ta.value.trim(); note.textContent = a.done && v === a.v ? `Đã lưu lúc ${fmtTime(a.t)}` : a.done && v ? "Có thay đổi chưa lưu" : ""; };
+    refresh();
+    return [it.first ? h("div", { class: "drillhead" }, h("b", { class: "zh" }, it.word), h("span", { class: "sub zh" }, ` ${it.task}`)) : null,
+      h("div", { class: "zh", style: "white-space:pre-line" }, it.text), ta,
+      h("div", { class: "row", style: "margin-top:6px" },
+        h("button", { class: "btn pri", onclick: () => {
+          const v = ta.value.trim();
+          if (!v) return ta.focus();
+          if (v === a.v && a.done) return;
+          P.answers[k] = { ...a, v, done: true, t: Date.now(), hist: a.done ? keepHist(a) : a.hist };
+          logEvent({ k: "write", l: null, r: k });
+          save(); draw();
+          if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
+        } }, a.done ? "Lưu bản mới" : "Lưu"), note),
+      a.done ? teacherBox(x, it, i, a, draw) : null, history(a)];
   },
   compose(x, it, i, draw) {
     const k = ansKey(x, i), a = P.answers[k] || {};

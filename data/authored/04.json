@@ -145,6 +145,28 @@
     ]
    },
    "id": "04-g4"
+  },
+  {
+   "title": "……得不行",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ mức độ đứng sau tính từ hoặc động từ tâm lý, nghĩa là \"… không chịu nổi, … hết sức\". Gần nghĩa với 得很、得不得了.",
+   "points": [
+    {
+     "pattern": "tính từ / động từ tâm lý + 得不行",
+     "explain": "Nhấn mạnh mức độ rất cao, hay dùng trong khẩu ngữ.",
+     "examples": [
+      {
+       "zh": "走了一天的路，我累得不行。",
+       "vi": "Đi bộ cả ngày, tôi mệt không chịu nổi."
+      },
+      {
+       "zh": "听说要去旅行，孩子们高兴得不行。",
+       "vi": "Nghe nói sắp đi du lịch, bọn trẻ vui hết sức."
+      }
+     ]
+    }
+   ],
+   "id": "04-g5"
   }
  ],
  "exercises": [

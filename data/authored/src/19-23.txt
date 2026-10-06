@@ -54,6 +54,10 @@ C|记录 và 纪录|Phát âm giống nhau, đều liên quan tới việc ghi l
 R|Từ loại|Động từ và danh từ.|Chủ yếu là danh từ.
 R|Nghĩa|Ghi chép lại; bản ghi chép: 记录会议内容、会议记录。|Thành tích cao nhất; phim tài liệu: 世界纪录、纪录片。
 R|Kết hợp|做记录、记录下来。|创造纪录、打破纪录。
+G|动词 + 得 / 不 + 起|Bổ ngữ khả năng, cho biết có (hay không có) đủ điều kiện, khả năng để làm hoặc chịu được việc gì, thường là về tiền bạc, thời gian.
+P|động từ + 得起 / 不起|买不起 mua không nổi, 吃得起 ăn nổi, 等不起 chờ không nổi, 对不起 có lỗi với.
+E|这种手机太贵了，我买不起。|Loại điện thoại này đắt quá, tôi mua không nổi.
+E|时间这么紧，我们等不起。|Thời gian gấp thế này, chúng tôi không chờ nổi.
 F|翻 搭 涨 出版 从事 办理 登记 印刷
 I|他一有空就___开那本小说看几页。|翻
 I|孩子们用木头___了一个小房子。|搭

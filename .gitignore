@@ -31,3 +31,6 @@ __pycache__/
 
 # Tệp khóa bí mật tải từ Google Cloud: không bao giờ đưa lên kho
 client_secret*.json
+
+# Phần chú thích trích từ sách (giải thích, ví dụ, 练一练): nội dung của sách, không đưa lên kho
+data/book/

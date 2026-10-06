@@ -146,6 +146,28 @@
     ]
    },
    "id": "27-g4"
+  },
+  {
+   "title": "动词 + 下来",
+   "kind": "cách dùng",
+   "summary": "Bổ ngữ xu hướng dùng với nghĩa mở rộng: hành động hoàn thành, kèm ý tách ra hoặc được giữ cố định lại.",
+   "points": [
+    {
+     "pattern": "động từ + 下来",
+     "explain": "定下来 quyết định xong, 记下来 ghi lại, 留下来 ở lại, 脱下来 cởi ra.",
+     "examples": [
+      {
+       "zh": "开会的时间已经定下来了。",
+       "vi": "Thời gian họp đã được chốt rồi."
+      },
+      {
+       "zh": "请把老师说的重点记下来。",
+       "vi": "Hãy ghi lại những ý chính thầy cô nói."
+      }
+     ]
+    }
+   ],
+   "id": "27-g5"
   }
  ],
  "exercises": [

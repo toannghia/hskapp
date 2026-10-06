@@ -47,18 +47,7 @@ route(/^gram\/(\w+)$/, (scope) => {
   const stage = h("div", {});
   add(stage, h("div", { style: "margin-top:36px;text-align:center" }, h("a", { href: back, class: "btn" }, "Thoát phiên ôn")));
 
-  const explain = (g) => [
-    h("div", { class: "sub" }, g.summary),
-    (g.points || []).map((pt) => [
-      h("p", {}, h("b", { class: "zh", style: "color:var(--acc)" }, pt.pattern), h("br"), pt.explain),
-      h("ul", { class: "exs" }, pt.examples.map((x) => h("li", {},
-        h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(x.zh) }, x.zh), h("br"), h("span", { class: "sub" }, x.vi))))]),
-    g.compare ? (() => {
-      const [a, b] = g.title.split("và").map((s) => s.trim());
-      return [h("p", {}, g.compare.same), h("div", { class: "wrap" }, h("table", { class: "cmp" },
-        h("tr", {}, h("th", {}), h("th", { class: "zh" }, a), h("th", { class: "zh" }, b)),
-        g.compare.rows.map((r) => h("tr", {}, h("td", {}, r.aspect), h("td", {}, r.a), h("td", {}, r.b)))))];
-    })() : null];
+  const explain = (g) => grammarBody(g);
 
   function finish() {
     document.onkeydown = null;
