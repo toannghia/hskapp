@@ -245,11 +245,13 @@ const setMenu = (open) => { topBar.classList.toggle("open", open); menuBtn.setAt
 menuBtn.addEventListener("click", () => setMenu(!topBar.classList.contains("open")));
 $("#top nav").addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
 function markNav() {
-  const here = location.hash.replace(/^#\/?/, "").split("/")[0];
-  document.querySelectorAll("#top nav a").forEach((a) => {
-    const to = (a.getAttribute("href") || "").replace(/^#\/?/, "").split("/")[0];
-    a.classList.toggle("on", a.getAttribute("href").startsWith("#/") && to === here);
-  });
+  // Tô đậm mục đang mở: ưu tiên mục trùng hẳn đường dẫn, không có thì lấy mục cùng nhóm (phần đầu đường dẫn).
+  const path = location.hash.replace(/^#\/?/, "");
+  const links = [...document.querySelectorAll("#top nav a")].filter((a) => (a.getAttribute("href") || "").startsWith("#/"));
+  const to = (a) => a.getAttribute("href").replace(/^#\/?/, "");
+  const exact = links.some((a) => to(a) === path);
+  document.querySelectorAll("#top nav a").forEach((a) => a.classList.remove("on"));
+  for (const a of links) a.classList.toggle("on", exact ? to(a) === path : to(a).split("/")[0] === path.split("/")[0] && !to(a).includes("/"));
 }
 function render() {
   setMenu(false);

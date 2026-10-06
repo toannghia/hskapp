@@ -102,7 +102,8 @@ function drawAccount() {
     const foot = document.querySelector("footer");
     if (foot) foot.hidden = true;
   } else nav.append(h("a", { class: "role", href: "#/reviews" }, "Bài đã chữa"));
-  if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, teacherOnly() ? "Lớp và học viên" : "Giáo viên"));
+  if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, teacherOnly() ? "Học viên" : "Giáo viên"),
+    h("a", { class: "role", href: "#/teacher/grade" }, "Chữa bài"));
   if (ME.role === "admin") nav.append(h("a", { class: "role", href: "#/admin" }, "Quản trị"));
   nav.append(h("a", { class: "role", href: "#/password" }, "Mật khẩu"));
   nav.append(h("a", { class: "role", href: "#", title: ME.email, onclick: async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); } }, "Đăng xuất"));
@@ -293,27 +294,94 @@ function exerciseLabel(s) {
 }
 const teacherFilter = { cls: "", student: "", show: "waiting" };
 
+// Dữ liệu chung cho các trang của giáo viên: lớp, học viên, tiến độ, bài viết.
+async function loadTeacherData() {
+  const classes = must(await sb.from("classes").select("id,name,code,teacher_id,class_members(user_id,profiles(id,full_name,email,role))").order("created_at"));
+  // Học viên của lớp: bỏ chính mình và các giáo viên khác cùng lớp.
+  for (const c of classes) c.students = c.class_members.filter((m) => m.user_id !== ME.id && m.profiles && m.profiles.role === "student");
+  const ids = [...new Set(classes.flatMap((c) => c.students.map((m) => m.user_id)))];
+  const [prog, subs] = ids.length ? await Promise.all([
+    sb.from("progress").select("user_id,doc,updated_at").in("user_id", ids).then(must),
+    sb.from("submissions").select("id,user_id,lesson_id,exercise_id,item_index,prompt,content,created_at,profiles(full_name,email),reviews(id,corrected,comment,score,created_at)")
+      .in("user_id", ids).order("created_at", { ascending: false }).limit(500).then(must),
+  ]) : [[], []];
+  return { classes, ids, subs, progOf: Object.fromEntries(prog.map((p) => [p.user_id, p])),
+    people: Object.fromEntries(classes.flatMap((c) => c.students.map((m) => [m.user_id, m.profiles]))) };
+}
+const classPicker = (classes, onChange) => (classes.length > 1 ? h("label", { class: "sub" }, "Lớp ",
+  h("select", { onchange: (e) => { teacherFilter.cls = e.target.value; teacherFilter.student = ""; onChange(); } },
+    h("option", { value: "" }, "Tất cả lớp"), classes.map((c) => h("option", { value: c.id, selected: teacherFilter.cls === c.id }, c.name)))) : null);
+
+// Trang chính của giáo viên: thống kê nhanh và danh sách học viên.
 route(/^teacher$/, async () => {
   if (!ONLINE || ME.role === "student") return go("#/");
-  add(h("h1", {}, "Giáo viên"), h("p", { class: "sub" }, "Đang tải…"));
+  add(h("h1", {}, "Học viên"), h("p", { class: "sub" }, "Đang tải…"));
   try {
-    const classes = must(await sb.from("classes").select("id,name,code,teacher_id,class_members(user_id,profiles(id,full_name,email))").order("created_at"));
-    const ids = [...new Set(classes.flatMap((c) => c.class_members.map((m) => m.user_id)))];
-    const [prog, subs] = ids.length ? await Promise.all([
-      sb.from("progress").select("user_id,doc,updated_at").in("user_id", ids).then(must),
-      sb.from("submissions").select("id,user_id,lesson_id,exercise_id,item_index,prompt,content,created_at,profiles(full_name,email),reviews(id,corrected,comment,score,created_at)")
-        .in("user_id", ids).order("created_at", { ascending: false }).limit(500).then(must),
-    ]) : [[], []];
-    const progOf = Object.fromEntries(prog.map((p) => [p.user_id, p]));
-    const people = Object.fromEntries(classes.flatMap((c) => c.class_members.map((m) => [m.user_id, m.profiles])));
-    view.replaceChildren(h("h1", {}, "Giáo viên"));
+    const d = await loadTeacherData(), f = teacherFilter, today = dayNum();
+    const shown = d.classes.filter((c) => !f.cls || c.id === f.cls);
+    const rows = [];
+    for (const c of shown) for (const m of c.students) {
+      if (rows.some((r) => r.id === m.user_id)) continue;
+      const p = d.progOf[m.user_id], doc = p ? p.doc : {}, st = docStats(doc);
+      const mine = d.subs.filter((s) => s.user_id === m.user_id);
+      rows.push({ id: m.user_id, name: who(m.profiles), cls: c.name, st, doc, updated: p && p.updated_at,
+        todayReviews: (doc.log || []).filter((e) => e.k === "card" && dayNum(e.t) === today).length,
+        waiting: mine.filter((s) => !s.reviews.length).length, written: mine.length });
+    }
+    // Người cần nhắc lên trước, sau đó tới người có bài chờ chữa, rồi theo tên.
+    rows.sort((a, b) => b.st.flags.length - a.st.flags.length || b.waiting - a.waiting || a.name.localeCompare(b.name));
+    const waiting = rows.reduce((n, r) => n + r.waiting, 0);
+    const activeToday = rows.filter((r) => r.st.idle === 0).length, needNudge = rows.filter((r) => r.st.flags.length).length;
+    const avgWords = rows.length ? Math.round(rows.reduce((n, r) => n + r.st.learned, 0) / rows.length) : 0;
+    const lastTests = rows.map((r) => r.st.tests[r.st.tests.length - 1]).filter(Boolean);
+    const avgTest = lastTests.length ? Math.round(100 * lastTests.reduce((n, t) => n + t.score / t.n, 0) / lastTests.length) : null;
 
-    // --- Chữa bài viết ---
-    const f = teacherFilter;
-    const inClass = (uid) => !f.cls || (classes.find((c) => c.id === f.cls) || { class_members: [] }).class_members.some((m) => m.user_id === uid);
+    view.replaceChildren(h("div", { class: "row", style: "justify-content:space-between" }, h("h1", {}, "Học viên"), classPicker(d.classes, render)));
+    add(h("div", { class: "grid tiles" },
+        h("div", { class: "stat" }, h("b", {}, rows.length), h("span", {}, "học viên")),
+        h("div", { class: "stat" }, h("b", {}, `${activeToday}/${rows.length}`), h("span", {}, "có học hôm nay")),
+        h("div", { class: "stat" + (needNudge ? " hot" : "") }, h("b", {}, needNudge), h("span", {}, "cần nhắc")),
+        h("a", { class: "stat" + (waiting ? " hot" : ""), href: "#/teacher/grade", style: "color:inherit" }, h("b", {}, waiting), h("span", {}, "bài chờ chữa →")),
+        h("div", { class: "stat" }, h("b", {}, avgWords), h("span", {}, "từ đã học, trung bình")),
+        h("div", { class: "stat" }, h("b", {}, avgTest == null ? "—" : avgTest + "%"), h("span", {}, "điểm kiểm tra gần nhất, TB"))),
+      rows.length ? rows.map((r) => h("a", { class: "card person", href: `#/teacher/student/${r.id}` },
+        h("div", { class: "row", style: "justify-content:space-between;flex-wrap:nowrap" },
+          h("b", {}, r.name), h("span", { class: "sub", style: "white-space:nowrap" }, r.st.idle == null ? "chưa học" : r.st.idle === 0 ? "hôm nay" : `${r.st.idle} ngày trước`)),
+        r.st.flags.length ? h("div", { class: "flag" }, r.st.flags.join(" · ")) : null,
+        h("div", { class: "sub" }, `${r.st.learned} từ · tuần này ${r.st.active7}/7 ngày · hôm nay ${r.todayReviews} lượt ôn`,
+          r.st.tests.length ? ` · kiểm tra ${r.st.tests[r.st.tests.length - 1].score}/${r.st.tests[r.st.tests.length - 1].n}` : "",
+          shown.length > 1 ? ` · ${r.cls}` : ""),
+        r.written ? h("div", { class: r.waiting ? "flag" : "sub" }, r.waiting ? `${r.waiting} bài viết chờ chữa` : `${r.written} bài viết, đã chữa hết`) : null))
+        : h("div", { class: "card sub" }, d.classes.length ? "Chưa thấy học viên nào trong lớp. Nếu lớp đã có học viên mà không hiện ở đây, quản trị cần chạy tệp supabase/migration-004-co-teachers.sql trong Supabase."
+          : "Bạn chưa có lớp nào. Tạo lớp ở bên dưới, hoặc nhờ quản trị xếp bạn vào một lớp."));
+
+    // Thông tin lớp và tạo lớp: ít dùng nên thu gọn lại.
+    const name = h("input", { placeholder: "Tên lớp mới", style: "padding:9px;flex:1 1 160px;min-width:0" });
+    add(h("details", { style: "margin-top:18px" }, h("summary", { class: "sub" }, `Lớp và mã lớp (${d.classes.length})`),
+      d.classes.map((c) => h("div", { class: "card", style: "padding:10px 14px" }, h("b", {}, c.name), h("span", { class: "tag acc" }, `mã lớp: ${c.code}`),
+        h("span", { class: "sub" }, ` · ${c.students.length} học viên`))),
+      h("div", { class: "row", style: "margin-top:8px" }, name, h("button", { class: "btn", onclick: async () => {
+        if (!name.value.trim()) return name.focus();
+        const { error } = await sb.from("classes").insert({ name: name.value.trim(), code: newCode(), teacher_id: ME.id });
+        if (error) return alert("Chưa tạo được lớp: " + error.message);
+        render();
+      } }, "Tạo lớp"))));
+  } catch (e) {
+    console.error(e);
+    view.replaceChildren(h("h1", {}, "Học viên"), h("div", { class: "card" }, "Không tải được dữ liệu lớp: " + (e.message || e)));
+  }
+});
+
+// Trang chữa bài: danh sách bài viết, lọc theo lớp, học viên và trạng thái.
+route(/^teacher\/grade$/, async () => {
+  if (!ONLINE || ME.role === "student") return go("#/");
+  add(h("h1", {}, "Chữa bài"), h("p", { class: "sub" }, "Đang tải…"));
+  try {
+    const d = await loadTeacherData(), f = teacherFilter;
+    const inClass = (uid) => !f.cls || (d.classes.find((c) => c.id === f.cls) || { students: [] }).students.some((m) => m.user_id === uid);
     const list = h("div", {});
     const paint = () => {
-      const rows = subs.filter((s) => inClass(s.user_id) && (!f.student || s.user_id === f.student));
+      const rows = d.subs.filter((s) => inClass(s.user_id) && (!f.student || s.user_id === f.student));
       // Mỗi câu chỉ giữ bản mới nhất của học viên; các bản cũ hơn xem được trong thẻ.
       const latest = [], seen = new Set();
       for (const s of rows) { const k = `${s.user_id}|${s.exercise_id}|${s.item_index}`; if (!seen.has(k)) { seen.add(k); latest.push({ ...s, older: rows.filter((o) => o !== s && `${o.user_id}|${o.exercise_id}|${o.item_index}` === k) }); } }
@@ -323,51 +391,18 @@ route(/^teacher$/, async () => {
         h("div", { class: "sub", style: "margin:8px 0" }, `Chờ chữa ${waiting.length} · đã chữa ${graded.length}`),
         ...(shown.length ? shown.map(gradeCard) : [h("div", { class: "card sub" }, f.show === "waiting" ? "Không có bài nào đang chờ chữa." : "Không có bài nào.")]));
     };
-    const pick = (key, options) => h("select", { onchange: (e) => { f[key] = e.target.value; if (key === "cls") { f.student = ""; render(); } else paint(); } },
+    const pick = (key, options) => h("select", { onchange: (e) => { f[key] = e.target.value; paint(); } },
       options.map(([v, n]) => h("option", { value: v, selected: f[key] === v }, n)));
-    const students = ids.filter(inClass).map((id) => [id, who(people[id])]).sort((a, b) => a[1].localeCompare(b[1]));
-    const before = view.children.length;
-    add(h("h2", {}, "Chữa bài viết của học viên"),
-      h("div", { class: "row" },
-        h("label", {}, "Lớp ", pick("cls", [["", "Tất cả lớp"], ...classes.map((c) => [c.id, c.name])])),
-        h("label", {}, "Học viên ", pick("student", [["", "Tất cả"], ...students])),
-        h("label", {}, "Hiện ", pick("show", [["waiting", "Bài chờ chữa"], ["graded", "Bài đã chữa"], ["all", "Tất cả"]]))),
+    const students = d.ids.filter(inClass).map((id) => [id, who(d.people[id])]).sort((a, b) => a[1].localeCompare(b[1]));
+    view.replaceChildren(h("div", { class: "row", style: "justify-content:space-between" }, h("h1", {}, "Chữa bài"), classPicker(d.classes, render)));
+    add(h("div", { class: "row" },
+        h("label", { class: "sub" }, "Học viên ", pick("student", [["", "Tất cả"], ...students])),
+        h("label", { class: "sub" }, "Hiện ", pick("show", [["waiting", "Chờ chữa"], ["graded", "Đã chữa"], ["all", "Tất cả"]]))),
       list);
     paint();
-    const gradingNodes = [...view.children].slice(before);
-
-    // --- Lớp và tiến độ ---
-    const name = h("input", { placeholder: "Tên lớp mới", style: "padding:9px" });
-    const waitingAll = subs.filter((s) => !s.reviews.length).length;
-    add(waitingAll ? h("div", { class: "card warn" }, h("b", {}, `Có ${waitingAll} bài viết đang chờ chữa`), h("span", { class: "sub" }, " · xem ở cuối trang, hoặc bấm vào cột “Bài viết” của từng học viên.")) : null,
-      h("h2", {}, "Lớp của tôi"),
-      classes.map((c) => h("div", { class: "card" },
-        h("h3", {}, c.name, h("span", { class: "tag acc" }, `mã lớp: ${c.code}`)),
-        c.class_members.length ? h("div", { class: "wrap" }, h("table", { class: "cmp" },
-          h("tr", {}, h("th", {}, "Học viên"), h("th", {}, "Từ đã học"), h("th", {}, "Lượt ôn"), h("th", {}, "Kiểm tra gần nhất"), h("th", {}, "Bài viết"), h("th", {}, "Hoạt động gần nhất")),
-          c.class_members.map((m) => {
-            const p = progOf[m.user_id], doc = p ? p.doc : {};
-            const mine = subs.filter((s) => s.user_id === m.user_id);
-            const st = docStats(doc);
-            return h("tr", {}, h("td", {}, h("a", { href: `#/teacher/student/${m.user_id}` }, who(m.profiles)),
-                st.flags.length ? h("div", { style: "color:var(--bad);font-size:13px" }, st.flags.join(" · ")) : null),
-              h("td", {}, Object.keys(doc.cards || {}).length), h("td", {}, (doc.log || []).filter((e) => e.k === "card").length),
-              h("td", {}, (doc.tests || []).length ? `${doc.tests[doc.tests.length - 1].score}/${doc.tests[doc.tests.length - 1].n} (${doc.tests.length} bài)` : "chưa làm"),
-              h("td", {}, mine.length ? h("a", { href: "#", onclick: (e) => { e.preventDefault(); f.cls = c.id; f.student = m.user_id; f.show = "all"; render(); } },
-                `${mine.length} bài, ${mine.filter((s) => !s.reviews.length).length} chờ chữa`) : "chưa có"),
-              h("td", {}, p ? when(p.updated_at) : "chưa học"));
-          }))) : h("div", { class: "sub" }, "Chưa có học viên. Gửi mã lớp cho học viên, hoặc nhờ quản trị thêm tài khoản vào lớp."))),
-      h("div", { class: "row" }, name, h("button", { class: "btn", onclick: async () => {
-        if (!name.value.trim()) return name.focus();
-        const { error } = await sb.from("classes").insert({ name: name.value.trim(), code: newCode(), teacher_id: ME.id });
-        if (error) return alert("Chưa tạo được lớp: " + error.message);
-        render();
-      } }, "Tạo lớp")));
-    // Đưa phần chữa bài xuống dưới danh sách lớp, để mở trang là thấy ngay học viên.
-    view.append(...gradingNodes);
   } catch (e) {
     console.error(e);
-    view.replaceChildren(h("h1", {}, "Giáo viên"), h("div", { class: "card" }, "Không tải được dữ liệu lớp: " + (e.message || e)));
+    view.replaceChildren(h("h1", {}, "Chữa bài"), h("div", { class: "card" }, "Không tải được: " + (e.message || e)));
   }
 });
 

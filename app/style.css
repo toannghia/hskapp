@@ -184,3 +184,18 @@ option { background: var(--card); color: var(--ink); }
 
 /* Mục menu bị ẩn theo vai trò phải ẩn cả trong menu điện thoại */
 #top nav a[hidden] { display: none; }
+
+/* Trang giáo viên: ô thống kê nhanh và thẻ học viên gọn cho điện thoại */
+.grid.tiles { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+.grid.tiles .stat { padding: 10px 12px; }
+.grid.tiles .stat b { font-size: 22px; }
+.stat.hot { border-color: var(--acc); background: var(--acc-soft); }
+.card.person { display: block; color: inherit; padding: 11px 14px; margin: 8px 0; }
+.flag { color: var(--bad); font-size: 14px; }
+@media (max-width: 480px) {
+  .grid.tiles { grid-template-columns: 1fr 1fr 1fr; }
+  .grid.tiles .stat b { font-size: 20px; }
+  .grid.tiles .stat span { font-size: 12px; }
+  h1 { font-size: 21px; }
+  .card { padding: 12px; }
+}
