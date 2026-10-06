@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "培养对手",
+  "vi": "Đào tạo đối thủ"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/29-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/29-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/29-1.mp3",
+   "audio/bai-tap-2/29-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   97,
+   98,
+   99
+  ],
+  "text": [
+   {
+    "page": 97,
+    "top": 0.598,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 98,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 99,
+    "top": 0.07,
+    "bottom": 0.486,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

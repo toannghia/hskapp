@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "登门槛效应",
+  "vi": "Hiệu ứng \"thò chân vào cửa\""
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/31-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/31-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/31-1.mp3",
+   "audio/bai-tap-2/31-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   115,
+   116,
+   117
+  ],
+  "text": [
+   {
+    "page": 115,
+    "top": 0.62,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 116,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 117,
+    "top": 0.07,
+    "bottom": 0.414,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

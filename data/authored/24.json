@@ -1,0 +1,330 @@
+{
+ "title": {
+  "zh": "支教行动",
+  "vi": "Hoạt động dạy học tình nguyện"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/24-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/24-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/24-1.mp3",
+   "audio/bai-tap-2/24-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   56,
+   57,
+   58
+  ],
+  "text": [
+   {
+    "page": 56,
+    "top": 0.612,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 57,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 58,
+    "top": 0.07,
+    "bottom": 0.53,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "行动",
+   "kind": "cách dùng",
+   "summary": "Danh từ nghĩa là \"hành động\"; cũng là động từ nghĩa là \"hành động, đi lại\".",
+   "points": [
+    {
+     "pattern": "采取行动 / 用行动 + động từ",
+     "explain": "Danh từ.",
+     "examples": [
+      {
+       "zh": "我们应该马上采取行动。",
+       "vi": "Chúng ta nên hành động ngay."
+      },
+      {
+       "zh": "他用行动证明了自己。",
+       "vi": "Anh ấy chứng minh bản thân bằng hành động."
+      }
+     ]
+    },
+    {
+     "pattern": "行动起来 / 行动不便",
+     "explain": "Động từ.",
+     "examples": [
+      {
+       "zh": "说得再多也没用，大家快行动起来吧。",
+       "vi": "Nói nhiều cũng vô ích, mọi người hãy bắt tay vào làm đi."
+      },
+      {
+       "zh": "爷爷年纪大了，行动不太方便。",
+       "vi": "Ông đã cao tuổi, đi lại không tiện lắm."
+      }
+     ]
+    }
+   ],
+   "id": "24-g1"
+  },
+  {
+   "title": "义务",
+   "kind": "cách dùng",
+   "summary": "Danh từ nghĩa là \"nghĩa vụ\"; cũng là tính từ nghĩa là \"làm không công, tình nguyện\".",
+   "points": [
+    {
+     "pattern": "有义务 + động từ / 尽义务",
+     "explain": "Danh từ: việc phải làm theo luật hoặc đạo lý.",
+     "examples": [
+      {
+       "zh": "子女有义务照顾父母。",
+       "vi": "Con cái có nghĩa vụ chăm sóc cha mẹ."
+      }
+     ]
+    },
+    {
+     "pattern": "义务 + động từ / danh từ",
+     "explain": "Làm không lấy tiền.",
+     "examples": [
+      {
+       "zh": "他每个周末都去医院做义务劳动。",
+       "vi": "Cuối tuần nào anh ấy cũng đến bệnh viện lao động tình nguyện."
+      },
+      {
+       "zh": "这位律师义务为老人提供帮助。",
+       "vi": "Vị luật sư này giúp đỡ người già không lấy tiền."
+      }
+     ]
+    }
+   ],
+   "id": "24-g2"
+  },
+  {
+   "title": "发言 và 发表",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc nêu ý kiến trước nhiều người.",
+   "compare": {
+    "same": "Hai từ khác nhau về cấu trúc nên không thay được cho nhau.",
+    "rows": [
+     {
+      "aspect": "Tân ngữ",
+      "a": "Không mang tân ngữ; là từ ly hợp: 发了言、发过言。",
+      "b": "Mang tân ngữ: 发表意见、发表文章、发表看法。"
+     },
+     {
+      "aspect": "Nghĩa",
+      "a": "Phát biểu trong cuộc họp, lớp học; cũng là danh từ \"bài phát biểu\".",
+      "b": "Công bố ý kiến, đăng bài viết."
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "他在会上发了言。",
+      "b": "他发表了一篇论文。"
+     }
+    ]
+   },
+   "id": "24-g3"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "24-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "闯",
+    "鼓掌",
+    "朗读",
+    "采访",
+    "利用",
+    "指导",
+    "承担",
+    "操心"
+   ],
+   "items": [
+    {
+     "q": "他一个人到大城市去___，吃了不少苦。",
+     "a": "闯"
+    },
+    {
+     "q": "演出结束后，观众热烈___。",
+     "a": "鼓掌"
+    },
+    {
+     "q": "请大声___这篇课文。",
+     "a": "朗读"
+    },
+    {
+     "q": "记者正在___那位运动员。",
+     "a": "采访"
+    },
+    {
+     "q": "我们要好好___这次机会。",
+     "a": "利用"
+    },
+    {
+     "q": "在老师的___下，他进步很快。",
+     "a": "指导"
+    },
+    {
+     "q": "出了问题，他主动___了责任。",
+     "a": "承担"
+    },
+    {
+     "q": "孩子都长大了，您就别再___了。",
+     "a": "操心"
+    }
+   ]
+  },
+  {
+   "id": "24-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "请大家对这个计划___自己的看法。",
+     "options": [
+      "发言",
+      "发表"
+     ],
+     "a": 1,
+     "why": "Mang tân ngữ 看法: 发表."
+    },
+    {
+     "q": "明天的会议上，每个人都要___。",
+     "options": [
+      "发言",
+      "发表"
+     ],
+     "a": 0,
+     "why": "Không có tân ngữ, phát biểu trong cuộc họp: 发言."
+    },
+    {
+     "q": "保护环境是每个人的___。",
+     "options": [
+      "义务",
+      "业务"
+     ],
+     "a": 0,
+     "why": "Nghĩa vụ: 义务."
+    },
+    {
+     "q": "光说不行，要拿出实际___来。",
+     "options": [
+      "行动",
+      "活动"
+     ],
+     "a": 0,
+     "why": "Hành động thực tế: 行动."
+    }
+   ]
+  },
+  {
+   "id": "24-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A父母B有C教育孩子D。",
+     "word": "义务",
+     "a": "C"
+    },
+    {
+     "q": "A他B在大会上C了自己的看法D。",
+     "word": "发表",
+     "a": "C"
+    },
+    {
+     "q": "A听到消息后，B警察C立刻D起来。",
+     "word": "行动",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "24-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我们",
+      "应该",
+      "立刻",
+      "采取",
+      "行动"
+     ],
+     "a": "我们应该立刻采取行动。",
+     "vi": "Chúng ta nên hành động ngay lập tức."
+    },
+    {
+     "words": [
+      "他",
+      "在",
+      "大会上",
+      "发表了",
+      "自己的意见"
+     ],
+     "a": "他在大会上发表了自己的意见。",
+     "vi": "Anh ấy nêu ý kiến của mình tại đại hội."
+    },
+    {
+     "words": [
+      "每个公民",
+      "都",
+      "有",
+      "纳税的",
+      "义务"
+     ],
+     "a": "每个公民都有纳税的义务。",
+     "vi": "Mỗi công dân đều có nghĩa vụ nộp thuế."
+    }
+   ]
+  },
+  {
+   "id": "24-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "支教",
+      "行动",
+      "家访",
+      "发言",
+      "交往",
+      "体贴",
+      "鼓掌",
+      "用功",
+      "进步",
+      "朗读",
+      "勇气",
+      "闯",
+      "采访",
+      "利用",
+      "指导",
+      "培训",
+      "承担",
+      "义务",
+      "艰巨",
+      "收获"
+     ]
+    }
+   ]
+  }
+ ]
+}

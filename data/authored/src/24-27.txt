@@ -1,0 +1,157 @@
+#L 24
+G|行动|Danh từ nghĩa là "hành động"; cũng là động từ nghĩa là "hành động, đi lại".
+P|采取行动 / 用行动 + động từ|Danh từ.
+E|我们应该马上采取行动。|Chúng ta nên hành động ngay.
+E|他用行动证明了自己。|Anh ấy chứng minh bản thân bằng hành động.
+P|行动起来 / 行动不便|Động từ.
+E|说得再多也没用，大家快行动起来吧。|Nói nhiều cũng vô ích, mọi người hãy bắt tay vào làm đi.
+E|爷爷年纪大了，行动不太方便。|Ông đã cao tuổi, đi lại không tiện lắm.
+G|义务|Danh từ nghĩa là "nghĩa vụ"; cũng là tính từ nghĩa là "làm không công, tình nguyện".
+P|有义务 + động từ / 尽义务|Danh từ: việc phải làm theo luật hoặc đạo lý.
+E|子女有义务照顾父母。|Con cái có nghĩa vụ chăm sóc cha mẹ.
+P|义务 + động từ / danh từ|Làm không lấy tiền.
+E|他每个周末都去医院做义务劳动。|Cuối tuần nào anh ấy cũng đến bệnh viện lao động tình nguyện.
+E|这位律师义务为老人提供帮助。|Vị luật sư này giúp đỡ người già không lấy tiền.
+C|发言 và 发表|Đều chỉ việc nêu ý kiến trước nhiều người.|Hai từ khác nhau về cấu trúc nên không thay được cho nhau.
+R|Tân ngữ|Không mang tân ngữ; là từ ly hợp: 发了言、发过言。|Mang tân ngữ: 发表意见、发表文章、发表看法。
+R|Nghĩa|Phát biểu trong cuộc họp, lớp học; cũng là danh từ "bài phát biểu".|Công bố ý kiến, đăng bài viết.
+R|Ví dụ|他在会上发了言。|他发表了一篇论文。
+F|闯 鼓掌 朗读 采访 利用 指导 承担 操心
+I|他一个人到大城市去___，吃了不少苦。|闯
+I|演出结束后，观众热烈___。|鼓掌
+I|请大声___这篇课文。|朗读
+I|记者正在___那位运动员。|采访
+I|我们要好好___这次机会。|利用
+I|在老师的___下，他进步很快。|指导
+I|出了问题，他主动___了责任。|承担
+I|孩子都长大了，您就别再___了。|操心
+Q|请大家对这个计划___自己的看法。|发言/发表|1|Mang tân ngữ 看法: 发表.
+Q|明天的会议上，每个人都要___。|发言/发表|0|Không có tân ngữ, phát biểu trong cuộc họp: 发言.
+Q|保护环境是每个人的___。|义务/业务|0|Nghĩa vụ: 义务.
+Q|光说不行，要拿出实际___来。|行动/活动|0|Hành động thực tế: 行动.
+S|A父母B有C教育孩子D。|义务|C
+S|A他B在大会上C了自己的看法D。|发表|C
+S|A听到消息后，B警察C立刻D起来。|行动|D
+O|我们/应该/立刻/采取/行动|我们应该立刻采取行动。|Chúng ta nên hành động ngay lập tức.
+O|他/在/大会上/发表了/自己的意见|他在大会上发表了自己的意见。|Anh ấy nêu ý kiến của mình tại đại hội.
+O|每个公民/都/有/纳税的/义务|每个公民都有纳税的义务。|Mỗi công dân đều có nghĩa vụ nộp thuế.
+T|Kể lại bài khóa bằng lời của bạn|支教 行动 家访 发言 交往 体贴 鼓掌 用功 进步 朗读 勇气 闯 采访 利用 指导 培训 承担 义务 艰巨 收获
+#L 25
+G|简直|Phó từ nhấn mạnh mức độ rất cao, nghĩa là "quả thực, thật là", có ý hơi cường điệu.
+P|简直 + tính từ / động từ / 像 … 一样|Đứng sau chủ ngữ.
+E|这里的风景简直太美了。|Phong cảnh ở đây quả thật quá đẹp.
+E|他画的马简直像真的一样。|Con ngựa anh ấy vẽ quả thực giống như thật.
+E|我简直不敢相信自己的眼睛。|Tôi quả thực không dám tin vào mắt mình.
+G|朝|Giới từ nghĩa là "hướng về, nhằm về phía"; cũng là động từ nghĩa là "quay về hướng".
+P|朝 + phương hướng / người + động từ|Chỉ hướng của hành động.
+E|他朝我挥了挥手。|Anh ấy vẫy tay về phía tôi.
+E|一直朝前走，就能看到银行。|Cứ đi thẳng về phía trước là thấy ngân hàng.
+P|… 朝 + phương hướng|Động từ: quay mặt về.
+E|这间卧室朝南，阳光很好。|Phòng ngủ này quay về hướng nam, rất nhiều nắng.
+G|丝毫|Phó từ nghĩa là "một chút, mảy may", thường dùng trong câu phủ định.
+P|丝毫 + 不 / 没有 …|Nhấn mạnh hoàn toàn không.
+E|他对这件事丝毫不感兴趣。|Anh ấy không mảy may hứng thú với việc này.
+E|我丝毫没有责备你的意思。|Tôi không hề có ý trách bạn.
+C|严肃 và 严格|Đều chứa ý "nghiêm".|Hai từ nói về hai phương diện khác nhau, ít khi thay được.
+R|Nghĩa|Vẻ mặt, thái độ, không khí nghiêm trang, không đùa cợt.|Yêu cầu cao, làm đúng quy định, không dễ dãi.
+R|Kết hợp|表情严肃、严肃的问题。|严格要求、严格遵守、严格的老师。
+R|Làm trạng ngữ|严肃地说、严肃处理。|严格地执行、严格控制。
+F|沉 窄 滚 朝 威胁 承受 游览 摔倒
+I|这个箱子太___了，我一个人搬不动。|沉
+I|这条路很___，两辆车很难同时通过。|窄
+I|球从山坡上___了下来。|滚
+I|他转过身，___门口走去。|朝
+I|空气污染严重___着人们的健康。|威胁
+I|他___不了这么大的压力。|承受
+I|我们用了一整天___这座古城。|游览
+I|路太滑了，他不小心___了。|摔倒
+Q|我们的数学老师对学生要求很___。|严肃/严格|1|Yêu cầu cao: 严格.
+Q|他的表情很___，好像出了什么大事。|严肃/严格|0|Vẻ mặt nghiêm: 严肃.
+Q|这个消息___让人不敢相信。|简直/一直|0|Nhấn mạnh mức độ: 简直.
+Q|他对别人的批评___不在乎。|丝毫/彻底|0|"Không mảy may": 丝毫不.
+S|A这孩子B太C聪明D了。|简直|B
+S|A他B没有C受到D影响。|丝毫|B
+S|A孩子们B大海的方向C跑D去。|朝|B
+O|这个地方/简直/像/画儿/一样|这个地方简直像画儿一样。|Nơi này quả thực đẹp như tranh.
+O|他/丝毫/没有/放弃的/意思|他丝毫没有放弃的意思。|Anh ấy không hề có ý bỏ cuộc.
+O|小狗/朝/主人/跑了/过去|小狗朝主人跑了过去。|Chú chó chạy về phía chủ.
+T|Kể lại bài khóa bằng lời của bạn|返航 恶劣 可怕 风浪 慌张 使劲 简直 沉 严肃 猛烈 威胁 平衡 重量 负重 摔倒 丝毫 风险 谨慎 承受 彻底
+#L 26
+G|来|Trợ từ đứng sau số từ hoặc lượng từ, chỉ số ước lượng "khoảng, trên dưới".
+P|số tròn chục / trăm + 来 + lượng từ + danh từ|Ví dụ: 十来个、二十来岁、一百来人.
+E|教室里坐着二十来个学生。|Trong lớp có khoảng hai mươi học sinh.
+E|这个箱子有三十来斤重。|Cái hòm này nặng khoảng ba mươi cân.
+P|số nhỏ + lượng từ đo lường + 来 + tính từ|Ví dụ: 三斤来重、两米来长.
+E|这条鱼有三斤来重。|Con cá này nặng khoảng ba cân.
+G|至于|Giới từ dùng để chuyển sang một việc khác có liên quan, nghĩa là "còn về"; làm động từ thường ở dạng phủ định 不至于.
+P|至于 + chủ đề mới，…|Đứng đầu vế sau.
+E|我只知道他辞职了，至于原因，我就不清楚了。|Tôi chỉ biết anh ấy đã nghỉ việc, còn về lý do thì tôi không rõ.
+P|不至于 + động từ|Chưa đến mức.
+E|他虽然生气，但还不至于不理你。|Tuy giận nhưng anh ấy chưa đến mức không thèm để ý bạn.
+G|总算|Phó từ nghĩa là "cuối cùng cũng", chỉ điều mong đợi lâu đã thành; cũng có nghĩa "nhìn chung cũng tạm được".
+P|总算 + động từ / tính từ|Mang ý nhẹ nhõm.
+E|下了一个星期的雨，今天总算晴了。|Mưa suốt một tuần, hôm nay cuối cùng trời cũng tạnh.
+E|他的汉语说得总算还可以。|Tiếng Trung của anh ấy nói chung cũng tạm ổn.
+C|总算 và 终于|Đều nói điều gì đó cuối cùng đã xảy ra sau thời gian dài.|Kết quả tốt thì thay được: 总算 / 终于到了。
+R|Sắc thái|Khẩu ngữ; kết quả là điều mong muốn, có ý nhẹ nhõm.|Trung tính, dùng cả trong văn viết; kết quả có thể tốt hoặc xấu.
+R|Kết quả xấu|Không dùng.|Dùng được: 他终于病倒了。
+R|Nghĩa "tạm được"|Có: 成绩总算不错。|Không có.
+F|雇 搞 耽误 投资 提倡 冒险 反省 据说
+I|他们___了一位阿姨照顾老人。|雇
+I|你到底在___什么？这么长时间还没弄好。|搞
+I|对不起，___了您这么长时间。|耽误
+I|他把钱都___到了朋友的公司里。|投资
+I|政府___大家节约用水。|提倡
+I|天气这么差还去爬山，太___了。|冒险
+I|做错了事，应该好好___一下。|反省
+I|___这家饭馆已经有一百多年的历史了。|据说
+Q|病了很久，他___倒下了，再也没有起来。|总算/终于|1|Kết quả xấu không dùng 总算.
+Q|修了三次，这台电脑___能用了。|总算/至于|0|Điều mong đợi lâu cuối cùng đã thành: 总算.
+Q|我会准时到，___他来不来，我不知道。|至于/对于|0|Chuyển sang chủ đề khác có liên quan: 至于.
+Q|参加会议的有五十___人。|来/多少|0|Số ước lượng sau số tròn chục: 来.
+S|A他B等了C一个小时，朋友D来了。|总算|D
+S|A这本书B有三百C页D。|来|C
+S|A我明天一定去，B时间C我们再商量D。|至于|B
+O|我们/走了/十来/公里/的路|我们走了十来公里的路。|Chúng tôi đã đi khoảng mười cây số.
+O|找了/半天/总算/找到了/钥匙|找了半天，总算找到了钥匙。|Tìm mãi, cuối cùng cũng thấy chìa khóa.
+O|这点儿/小事/不至于/让他/生气|这点儿小事不至于让他生气。|Chuyện nhỏ thế này chưa đến mức làm anh ấy giận.
+T|Kể lại bài khóa bằng lời của bạn|忙碌 被动 奴隶 思想 反省 据说 冒险 文明 雇 来 出色 耽误 至于 得罪 总算 灵魂 疲劳 提倡 寂寞 效率
+#L 27
+G|舍不得|Động từ nghĩa là "không nỡ, tiếc không muốn" rời xa, dùng hoặc bỏ đi. Trái nghĩa là 舍得.
+P|舍不得 + người / vật|Không nỡ rời xa.
+E|要毕业了，大家都舍不得离开学校。|Sắp tốt nghiệp, ai cũng không nỡ rời trường.
+P|舍不得 + động từ|Tiếc, không nỡ làm.
+E|这件衣服太贵了，她一直舍不得穿。|Cái áo này đắt quá, cô ấy mãi không nỡ mặc.
+E|奶奶舍不得花钱，什么都自己做。|Bà tiếc tiền không dám tiêu, cái gì cũng tự làm.
+G|未必|Phó từ nghĩa là "chưa chắc, không hẳn", phủ định một cách nhẹ nhàng.
+P|未必 + động từ / tính từ|Trái nghĩa với 必然、一定.
+E|贵的东西未必好。|Đồ đắt chưa chắc đã tốt.
+E|他说的话未必都是真的。|Lời anh ấy nói chưa chắc đều là thật.
+G|在于|Động từ nghĩa là "nằm ở, là ở", chỉ ra điểm mấu chốt; cũng có nghĩa "tùy thuộc vào".
+P|… (的关键 / 原因) 在于 …|Nêu điểm mấu chốt.
+E|成功的关键在于坚持。|Mấu chốt của thành công nằm ở sự kiên trì.
+E|去不去在于你自己。|Đi hay không là tùy ở bạn.
+C|损失 và 失去|Đều chỉ việc không còn có thứ gì đó.|Hai từ đi với những đối tượng khác nhau.
+R|Đối tượng|Tiền của, vật chất, thời gian: 损失了很多钱。|Điều trừu tượng, người, cơ hội: 失去信心、失去朋友、失去机会。
+R|Từ loại|Động từ và danh từ: 造成损失、经济损失。|Chỉ là động từ.
+R|Ví dụ|这场大火损失很大。|他失去了一次好机会。
+F|睁 犯 责备 珍惜 观察 把握 发挥 吸取
+I|他太累了，眼睛都___不开了。|睁
+I|每个人都会___错误，重要的是改正。|犯
+I|孩子已经知道错了，你就别再___他了。|责备
+I|我们要___跟家人在一起的时间。|珍惜
+I|医生要他住院___几天。|观察
+I|机会来了，一定要好好___。|把握
+I|这次比赛他没有___出真正的水平。|发挥
+I|我们应该从失败中___教训。|吸取
+Q|这场地震给当地造成了很大的___。|损失/失去|0|Làm danh từ "thiệt hại": 损失.
+Q|他因为迟到___了这次面试的机会。|损失/失去|1|Mất cơ hội (trừu tượng): 失去.
+Q|这辆旧自行车用了十年，他还___扔。|舍不得/来不及|0|Tiếc không nỡ bỏ: 舍不得.
+Q|努力了___能成功，但是不努力一定不会成功。|未必/必然|0|Chưa chắc: 未必.
+S|A这个问题B的关键C大家D怎么看。|在于|C
+S|A妈妈B让孩子C一个人D出国。|舍不得|B
+S|A学历高的人，B能力C就D强。|未必|C
+O|我/舍不得/离开/这些/朋友|我舍不得离开这些朋友。|Tôi không nỡ rời xa những người bạn này.
+O|便宜的/东西/未必/不好|便宜的东西未必不好。|Đồ rẻ chưa chắc đã không tốt.
+O|学习的/乐趣/在于/不断/进步|学习的乐趣在于不断进步。|Niềm vui của việc học nằm ở chỗ không ngừng tiến bộ.
+T|Kể lại bài khóa bằng lời của bạn|象棋 教练 答应 损失 将军 服气 运气 发挥 灰心 吸取 教训 未必 在于 心态 珍惜 失去 把握 责备 舍不得 后果

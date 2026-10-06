@@ -1,0 +1,344 @@
+{
+ "title": {
+  "zh": "你属于哪一种“忙”？",
+  "vi": "Bạn thuộc nhóm người \"bận rộn\" nào?"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/26-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/26-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/26-1.mp3",
+   "audio/bai-tap-2/26-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   72,
+   73,
+   74
+  ],
+  "text": [
+   {
+    "page": 72,
+    "top": 0.577,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 73,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 74,
+    "top": 0.07,
+    "bottom": 0.543,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "来",
+   "kind": "cách dùng",
+   "summary": "Trợ từ đứng sau số từ hoặc lượng từ, chỉ số ước lượng \"khoảng, trên dưới\".",
+   "points": [
+    {
+     "pattern": "số tròn chục / trăm + 来 + lượng từ + danh từ",
+     "explain": "Ví dụ: 十来个、二十来岁、一百来人.",
+     "examples": [
+      {
+       "zh": "教室里坐着二十来个学生。",
+       "vi": "Trong lớp có khoảng hai mươi học sinh."
+      },
+      {
+       "zh": "这个箱子有三十来斤重。",
+       "vi": "Cái hòm này nặng khoảng ba mươi cân."
+      }
+     ]
+    },
+    {
+     "pattern": "số nhỏ + lượng từ đo lường + 来 + tính từ",
+     "explain": "Ví dụ: 三斤来重、两米来长.",
+     "examples": [
+      {
+       "zh": "这条鱼有三斤来重。",
+       "vi": "Con cá này nặng khoảng ba cân."
+      }
+     ]
+    }
+   ],
+   "id": "26-g1"
+  },
+  {
+   "title": "至于",
+   "kind": "cách dùng",
+   "summary": "Giới từ dùng để chuyển sang một việc khác có liên quan, nghĩa là \"còn về\"; làm động từ thường ở dạng phủ định 不至于.",
+   "points": [
+    {
+     "pattern": "至于 + chủ đề mới，…",
+     "explain": "Đứng đầu vế sau.",
+     "examples": [
+      {
+       "zh": "我只知道他辞职了，至于原因，我就不清楚了。",
+       "vi": "Tôi chỉ biết anh ấy đã nghỉ việc, còn về lý do thì tôi không rõ."
+      }
+     ]
+    },
+    {
+     "pattern": "不至于 + động từ",
+     "explain": "Chưa đến mức.",
+     "examples": [
+      {
+       "zh": "他虽然生气，但还不至于不理你。",
+       "vi": "Tuy giận nhưng anh ấy chưa đến mức không thèm để ý bạn."
+      }
+     ]
+    }
+   ],
+   "id": "26-g2"
+  },
+  {
+   "title": "总算",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"cuối cùng cũng\", chỉ điều mong đợi lâu đã thành; cũng có nghĩa \"nhìn chung cũng tạm được\".",
+   "points": [
+    {
+     "pattern": "总算 + động từ / tính từ",
+     "explain": "Mang ý nhẹ nhõm.",
+     "examples": [
+      {
+       "zh": "下了一个星期的雨，今天总算晴了。",
+       "vi": "Mưa suốt một tuần, hôm nay cuối cùng trời cũng tạnh."
+      },
+      {
+       "zh": "他的汉语说得总算还可以。",
+       "vi": "Tiếng Trung của anh ấy nói chung cũng tạm ổn."
+      }
+     ]
+    }
+   ],
+   "id": "26-g3"
+  },
+  {
+   "title": "总算 và 终于",
+   "kind": "phân biệt",
+   "summary": "Đều nói điều gì đó cuối cùng đã xảy ra sau thời gian dài.",
+   "compare": {
+    "same": "Kết quả tốt thì thay được: 总算 / 终于到了。",
+    "rows": [
+     {
+      "aspect": "Sắc thái",
+      "a": "Khẩu ngữ; kết quả là điều mong muốn, có ý nhẹ nhõm.",
+      "b": "Trung tính, dùng cả trong văn viết; kết quả có thể tốt hoặc xấu."
+     },
+     {
+      "aspect": "Kết quả xấu",
+      "a": "Không dùng.",
+      "b": "Dùng được: 他终于病倒了。"
+     },
+     {
+      "aspect": "Nghĩa \"tạm được\"",
+      "a": "Có: 成绩总算不错。",
+      "b": "Không có."
+     }
+    ]
+   },
+   "id": "26-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "26-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "雇",
+    "搞",
+    "耽误",
+    "投资",
+    "提倡",
+    "冒险",
+    "反省",
+    "据说"
+   ],
+   "items": [
+    {
+     "q": "他们___了一位阿姨照顾老人。",
+     "a": "雇"
+    },
+    {
+     "q": "你到底在___什么？这么长时间还没弄好。",
+     "a": "搞"
+    },
+    {
+     "q": "对不起，___了您这么长时间。",
+     "a": "耽误"
+    },
+    {
+     "q": "他把钱都___到了朋友的公司里。",
+     "a": "投资"
+    },
+    {
+     "q": "政府___大家节约用水。",
+     "a": "提倡"
+    },
+    {
+     "q": "天气这么差还去爬山，太___了。",
+     "a": "冒险"
+    },
+    {
+     "q": "做错了事，应该好好___一下。",
+     "a": "反省"
+    },
+    {
+     "q": "___这家饭馆已经有一百多年的历史了。",
+     "a": "据说"
+    }
+   ]
+  },
+  {
+   "id": "26-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "病了很久，他___倒下了，再也没有起来。",
+     "options": [
+      "总算",
+      "终于"
+     ],
+     "a": 1,
+     "why": "Kết quả xấu không dùng 总算."
+    },
+    {
+     "q": "修了三次，这台电脑___能用了。",
+     "options": [
+      "总算",
+      "至于"
+     ],
+     "a": 0,
+     "why": "Điều mong đợi lâu cuối cùng đã thành: 总算."
+    },
+    {
+     "q": "我会准时到，___他来不来，我不知道。",
+     "options": [
+      "至于",
+      "对于"
+     ],
+     "a": 0,
+     "why": "Chuyển sang chủ đề khác có liên quan: 至于."
+    },
+    {
+     "q": "参加会议的有五十___人。",
+     "options": [
+      "来",
+      "多少"
+     ],
+     "a": 0,
+     "why": "Số ước lượng sau số tròn chục: 来."
+    }
+   ]
+  },
+  {
+   "id": "26-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A他B等了C一个小时，朋友D来了。",
+     "word": "总算",
+     "a": "D"
+    },
+    {
+     "q": "A这本书B有三百C页D。",
+     "word": "来",
+     "a": "C"
+    },
+    {
+     "q": "A我明天一定去，B时间C我们再商量D。",
+     "word": "至于",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "26-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我们",
+      "走了",
+      "十来",
+      "公里",
+      "的路"
+     ],
+     "a": "我们走了十来公里的路。",
+     "vi": "Chúng tôi đã đi khoảng mười cây số."
+    },
+    {
+     "words": [
+      "找了",
+      "半天",
+      "总算",
+      "找到了",
+      "钥匙"
+     ],
+     "a": "找了半天，总算找到了钥匙。",
+     "vi": "Tìm mãi, cuối cùng cũng thấy chìa khóa."
+    },
+    {
+     "words": [
+      "这点儿",
+      "小事",
+      "不至于",
+      "让他",
+      "生气"
+     ],
+     "a": "这点儿小事不至于让他生气。",
+     "vi": "Chuyện nhỏ thế này chưa đến mức làm anh ấy giận."
+    }
+   ]
+  },
+  {
+   "id": "26-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "忙碌",
+      "被动",
+      "奴隶",
+      "思想",
+      "反省",
+      "据说",
+      "冒险",
+      "文明",
+      "雇",
+      "来",
+      "出色",
+      "耽误",
+      "至于",
+      "得罪",
+      "总算",
+      "灵魂",
+      "疲劳",
+      "提倡",
+      "寂寞",
+      "效率"
+     ]
+    }
+   ]
+  }
+ ]
+}

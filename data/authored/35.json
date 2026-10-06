@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "植物会出汗",
+  "vi": "Thực vật cũng đổ mồ hôi"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/35-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/35-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/35-1.mp3",
+   "audio/bai-tap-2/35-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   149,
+   150,
+   151
+  ],
+  "text": [
+   {
+    "page": 149,
+    "top": 0.635,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 150,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 151,
+    "top": 0.07,
+    "bottom": 0.245,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

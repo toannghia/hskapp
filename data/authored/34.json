@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "鸟儿的护肤术",
+  "vi": "Cách loài chim bảo vệ da"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/34-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/34-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/34-1.mp3",
+   "audio/bai-tap-2/34-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   141,
+   142,
+   143
+  ],
+  "text": [
+   {
+    "page": 141,
+    "top": 0.588,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 142,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 143,
+    "top": 0.07,
+    "bottom": 0.411,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

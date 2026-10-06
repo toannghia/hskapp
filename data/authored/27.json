@@ -1,0 +1,338 @@
+{
+ "title": {
+  "zh": "下棋",
+  "vi": "Đánh cờ"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/27-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/27-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/27-1.mp3",
+   "audio/bai-tap-2/27-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   80,
+   81,
+   82,
+   83
+  ],
+  "text": [
+   {
+    "page": 80,
+    "top": 0.754,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 81,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 82,
+    "top": 0.07,
+    "bottom": 0.918,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "舍不得",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"không nỡ, tiếc không muốn\" rời xa, dùng hoặc bỏ đi. Trái nghĩa là 舍得.",
+   "points": [
+    {
+     "pattern": "舍不得 + người / vật",
+     "explain": "Không nỡ rời xa.",
+     "examples": [
+      {
+       "zh": "要毕业了，大家都舍不得离开学校。",
+       "vi": "Sắp tốt nghiệp, ai cũng không nỡ rời trường."
+      }
+     ]
+    },
+    {
+     "pattern": "舍不得 + động từ",
+     "explain": "Tiếc, không nỡ làm.",
+     "examples": [
+      {
+       "zh": "这件衣服太贵了，她一直舍不得穿。",
+       "vi": "Cái áo này đắt quá, cô ấy mãi không nỡ mặc."
+      },
+      {
+       "zh": "奶奶舍不得花钱，什么都自己做。",
+       "vi": "Bà tiếc tiền không dám tiêu, cái gì cũng tự làm."
+      }
+     ]
+    }
+   ],
+   "id": "27-g1"
+  },
+  {
+   "title": "未必",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"chưa chắc, không hẳn\", phủ định một cách nhẹ nhàng.",
+   "points": [
+    {
+     "pattern": "未必 + động từ / tính từ",
+     "explain": "Trái nghĩa với 必然、一定.",
+     "examples": [
+      {
+       "zh": "贵的东西未必好。",
+       "vi": "Đồ đắt chưa chắc đã tốt."
+      },
+      {
+       "zh": "他说的话未必都是真的。",
+       "vi": "Lời anh ấy nói chưa chắc đều là thật."
+      }
+     ]
+    }
+   ],
+   "id": "27-g2"
+  },
+  {
+   "title": "在于",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"nằm ở, là ở\", chỉ ra điểm mấu chốt; cũng có nghĩa \"tùy thuộc vào\".",
+   "points": [
+    {
+     "pattern": "… (的关键 / 原因) 在于 …",
+     "explain": "Nêu điểm mấu chốt.",
+     "examples": [
+      {
+       "zh": "成功的关键在于坚持。",
+       "vi": "Mấu chốt của thành công nằm ở sự kiên trì."
+      },
+      {
+       "zh": "去不去在于你自己。",
+       "vi": "Đi hay không là tùy ở bạn."
+      }
+     ]
+    }
+   ],
+   "id": "27-g3"
+  },
+  {
+   "title": "损失 và 失去",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc không còn có thứ gì đó.",
+   "compare": {
+    "same": "Hai từ đi với những đối tượng khác nhau.",
+    "rows": [
+     {
+      "aspect": "Đối tượng",
+      "a": "Tiền của, vật chất, thời gian: 损失了很多钱。",
+      "b": "Điều trừu tượng, người, cơ hội: 失去信心、失去朋友、失去机会。"
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Động từ và danh từ: 造成损失、经济损失。",
+      "b": "Chỉ là động từ."
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "这场大火损失很大。",
+      "b": "他失去了一次好机会。"
+     }
+    ]
+   },
+   "id": "27-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "27-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "睁",
+    "犯",
+    "责备",
+    "珍惜",
+    "观察",
+    "把握",
+    "发挥",
+    "吸取"
+   ],
+   "items": [
+    {
+     "q": "他太累了，眼睛都___不开了。",
+     "a": "睁"
+    },
+    {
+     "q": "每个人都会___错误，重要的是改正。",
+     "a": "犯"
+    },
+    {
+     "q": "孩子已经知道错了，你就别再___他了。",
+     "a": "责备"
+    },
+    {
+     "q": "我们要___跟家人在一起的时间。",
+     "a": "珍惜"
+    },
+    {
+     "q": "医生要他住院___几天。",
+     "a": "观察"
+    },
+    {
+     "q": "机会来了，一定要好好___。",
+     "a": "把握"
+    },
+    {
+     "q": "这次比赛他没有___出真正的水平。",
+     "a": "发挥"
+    },
+    {
+     "q": "我们应该从失败中___教训。",
+     "a": "吸取"
+    }
+   ]
+  },
+  {
+   "id": "27-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "这场地震给当地造成了很大的___。",
+     "options": [
+      "损失",
+      "失去"
+     ],
+     "a": 0,
+     "why": "Làm danh từ \"thiệt hại\": 损失."
+    },
+    {
+     "q": "他因为迟到___了这次面试的机会。",
+     "options": [
+      "损失",
+      "失去"
+     ],
+     "a": 1,
+     "why": "Mất cơ hội (trừu tượng): 失去."
+    },
+    {
+     "q": "这辆旧自行车用了十年，他还___扔。",
+     "options": [
+      "舍不得",
+      "来不及"
+     ],
+     "a": 0,
+     "why": "Tiếc không nỡ bỏ: 舍不得."
+    },
+    {
+     "q": "努力了___能成功，但是不努力一定不会成功。",
+     "options": [
+      "未必",
+      "必然"
+     ],
+     "a": 0,
+     "why": "Chưa chắc: 未必."
+    }
+   ]
+  },
+  {
+   "id": "27-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A这个问题B的关键C大家D怎么看。",
+     "word": "在于",
+     "a": "C"
+    },
+    {
+     "q": "A妈妈B让孩子C一个人D出国。",
+     "word": "舍不得",
+     "a": "B"
+    },
+    {
+     "q": "A学历高的人，B能力C就D强。",
+     "word": "未必",
+     "a": "C"
+    }
+   ]
+  },
+  {
+   "id": "27-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "舍不得",
+      "离开",
+      "这些",
+      "朋友"
+     ],
+     "a": "我舍不得离开这些朋友。",
+     "vi": "Tôi không nỡ rời xa những người bạn này."
+    },
+    {
+     "words": [
+      "便宜的",
+      "东西",
+      "未必",
+      "不好"
+     ],
+     "a": "便宜的东西未必不好。",
+     "vi": "Đồ rẻ chưa chắc đã không tốt."
+    },
+    {
+     "words": [
+      "学习的",
+      "乐趣",
+      "在于",
+      "不断",
+      "进步"
+     ],
+     "a": "学习的乐趣在于不断进步。",
+     "vi": "Niềm vui của việc học nằm ở chỗ không ngừng tiến bộ."
+    }
+   ]
+  },
+  {
+   "id": "27-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "象棋",
+      "教练",
+      "答应",
+      "损失",
+      "将军",
+      "服气",
+      "运气",
+      "发挥",
+      "灰心",
+      "吸取",
+      "教训",
+      "未必",
+      "在于",
+      "心态",
+      "珍惜",
+      "失去",
+      "把握",
+      "责备",
+      "舍不得",
+      "后果"
+     ]
+    }
+   ]
+  }
+ ]
+}

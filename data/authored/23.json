@@ -1,0 +1,333 @@
+{
+ "title": {
+  "zh": "放手",
+  "vi": "Buông tay"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/23-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/23-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/23-1.mp3",
+   "audio/bai-tap-2/23-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   48,
+   49,
+   50
+  ],
+  "text": [
+   {
+    "page": 48,
+    "top": 0.642,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 49,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 50,
+    "top": 0.07,
+    "bottom": 0.492,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "一致",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"nhất trí, giống nhau\"; làm phó từ nghĩa là \"cùng nhau, đồng lòng\".",
+   "points": [
+    {
+     "pattern": "… (和 / 跟 …) 一致",
+     "explain": "Tính từ làm vị ngữ.",
+     "examples": [
+      {
+       "zh": "我们的看法完全一致。",
+       "vi": "Quan điểm của chúng tôi hoàn toàn thống nhất."
+      }
+     ]
+    },
+    {
+     "pattern": "一致 + động từ",
+     "explain": "Phó từ: mọi người cùng làm như nhau.",
+     "examples": [
+      {
+       "zh": "大家一致同意这个计划。",
+       "vi": "Mọi người nhất trí đồng ý kế hoạch này."
+      }
+     ]
+    }
+   ],
+   "id": "23-g1"
+  },
+  {
+   "title": "某",
+   "kind": "cách dùng",
+   "summary": "Đại từ chỉ người hoặc vật không xác định, hoặc không muốn nói rõ.",
+   "points": [
+    {
+     "pattern": "某 + (lượng từ) + danh từ",
+     "explain": "Ví dụ: 某人、某一天、某些方面.",
+     "examples": [
+      {
+       "zh": "某一天，他突然离开了这座城市。",
+       "vi": "Vào một ngày nọ, anh ấy đột nhiên rời khỏi thành phố này."
+      },
+      {
+       "zh": "在某些方面，我比不上他。",
+       "vi": "Ở một số mặt, tôi không bằng anh ấy."
+      }
+     ]
+    }
+   ],
+   "id": "23-g2"
+  },
+  {
+   "title": "幸亏",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"may mà\", chỉ nhờ một điều thuận lợi mà tránh được chuyện xấu.",
+   "points": [
+    {
+     "pattern": "幸亏 …，(才 / 要不 / 否则) …",
+     "explain": "Vế sau nêu kết quả tốt, hoặc hậu quả đã tránh được.",
+     "examples": [
+      {
+       "zh": "幸亏你提醒我，要不我就迟到了。",
+       "vi": "May mà bạn nhắc, không thì tôi đã đến muộn."
+      },
+      {
+       "zh": "幸亏带了伞，才没被淋湿。",
+       "vi": "May mà mang ô nên mới không bị ướt."
+      }
+     ]
+    }
+   ],
+   "id": "23-g3"
+  },
+  {
+   "title": "单独 và 独自",
+   "kind": "phân biệt",
+   "summary": "Đều chỉ việc làm một mình.",
+   "compare": {
+    "same": "Trước động từ đôi khi thay được: 单独 / 独自生活。",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Tách riêng ra, không chung với người hoặc vật khác.",
+      "b": "Chỉ có một mình, không ai đi cùng."
+     },
+     {
+      "aspect": "Đối tượng",
+      "a": "Dùng cho cả người và vật: 单独谈话、单独放。",
+      "b": "Chỉ dùng cho người: 独自旅行。"
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Tính từ, phó từ.",
+      "b": "Phó từ."
+     }
+    ]
+   },
+   "id": "23-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "23-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "遵守",
+    "征求",
+    "违反",
+    "出席",
+    "担任",
+    "录取",
+    "面临",
+    "沟通"
+   ],
+   "items": [
+    {
+     "q": "开车要___交通规则。",
+     "a": "遵守"
+    },
+    {
+     "q": "做决定以前，他先___了父母的意见。",
+     "a": "征求"
+    },
+    {
+     "q": "他因为___学校纪律受到了批评。",
+     "a": "违反"
+    },
+    {
+     "q": "明天的会议，校长也会___。",
+     "a": "出席"
+    },
+    {
+     "q": "他在公司___经理已经三年了。",
+     "a": "担任"
+    },
+    {
+     "q": "她被北京大学___了。",
+     "a": "录取"
+    },
+    {
+     "q": "毕业生都___着找工作的压力。",
+     "a": "面临"
+    },
+    {
+     "q": "父母应该多跟孩子___。",
+     "a": "沟通"
+    }
+   ]
+  },
+  {
+   "id": "23-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "他喜欢___去旅行，不喜欢跟团。",
+     "options": [
+      "单独",
+      "独自"
+     ],
+     "a": 1,
+     "why": "Một mình, không ai đi cùng (chỉ người): 独自."
+    },
+    {
+     "q": "这件衣服要___洗，不能跟别的放在一起。",
+     "options": [
+      "单独",
+      "独自"
+     ],
+     "a": 0,
+     "why": "Tách riêng vật ra: 单独."
+    },
+    {
+     "q": "___我们出门早，否则就赶不上飞机了。",
+     "options": [
+      "幸亏",
+      "一旦"
+     ],
+     "a": 0,
+     "why": "May mà: 幸亏."
+    },
+    {
+     "q": "大家的意见很不___，讨论了很久。",
+     "options": [
+      "一致",
+      "一样的"
+     ],
+     "a": 0,
+     "why": "Ý kiến thống nhất: 一致."
+    }
+   ]
+  },
+  {
+   "id": "23-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A同学们B选他C当班长D。",
+     "word": "一致",
+     "a": "B"
+    },
+    {
+     "q": "A他在B大学C教过D几年书。",
+     "word": "某",
+     "a": "B"
+    },
+    {
+     "q": "A医生B来得及时，C他才D没有危险。",
+     "word": "幸亏",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "23-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "大家",
+      "一致",
+      "认为",
+      "这个办法",
+      "最好"
+     ],
+     "a": "大家一致认为这个办法最好。",
+     "vi": "Mọi người nhất trí cho rằng cách này tốt nhất."
+    },
+    {
+     "words": [
+      "幸亏",
+      "你",
+      "帮了我",
+      "不然",
+      "我",
+      "完成不了"
+     ],
+     "a": "幸亏你帮了我，不然我完成不了。",
+     "vi": "May mà bạn giúp, không thì tôi không làm xong được."
+    },
+    {
+     "words": [
+      "我",
+      "想",
+      "单独",
+      "跟你",
+      "谈一谈"
+     ],
+     "a": "我想单独跟你谈一谈。",
+     "vi": "Tôi muốn nói chuyện riêng với bạn."
+    }
+   ]
+  },
+  {
+   "id": "23-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "乖",
+      "刻苦",
+      "遵守",
+      "纪律",
+      "征求",
+      "阶段",
+      "规矩",
+      "目标",
+      "录取",
+      "面临",
+      "一致",
+      "让步",
+      "陌生",
+      "某",
+      "单独",
+      "沟通",
+      "沉默",
+      "幸亏"
+     ]
+    }
+   ]
+  }
+ ]
+}

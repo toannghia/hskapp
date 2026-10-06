@@ -158,5 +158,291 @@
   "pinyin": "gàn huór",
   "pos": "động từ",
   "vi": "làm việc (chân tay)"
+ },
+ "19.2": {
+  "hanzi": "萝卜",
+  "pinyin": "luóbo",
+  "pos": "danh từ",
+  "vi": "cây củ cải, củ cải",
+  "outOfSyllabus": true
+ },
+ "19.9": {
+  "hanzi": "般",
+  "pinyin": "bān",
+  "pos": "trợ từ",
+  "vi": "giống như, tựa như",
+  "outOfSyllabus": true
+ },
+ "19.14": {
+  "hanzi": "梨",
+  "pinyin": "lí",
+  "pos": "danh từ",
+  "vi": "quả lê",
+  "outOfSyllabus": false
+ },
+ "19.19": {
+  "hanzi": "丝",
+  "pinyin": "sī",
+  "pos": "danh từ",
+  "vi": "sợi",
+  "outOfSyllabus": true
+ },
+ "19.20": {
+  "hanzi": "搅拌",
+  "pinyin": "jiǎobàn",
+  "pos": "động từ",
+  "vi": "khuấy, trộn",
+  "outOfSyllabus": true
+ },
+ "19.22": {
+  "hanzi": "原料",
+  "pinyin": "yuánliào",
+  "pos": "danh từ",
+  "vi": "nguyên liệu",
+  "outOfSyllabus": false
+ },
+ "19.32": {
+  "hanzi": "糊",
+  "pinyin": "hú",
+  "pos": "động từ",
+  "vi": "khét, cháy",
+  "outOfSyllabus": true
+ },
+ "19.33": {
+  "hanzi": "文火",
+  "pinyin": "wénhuǒ",
+  "pos": "danh từ",
+  "vi": "lửa nhỏ, lửa riu riu",
+  "outOfSyllabus": true
+ },
+ "19.37": {
+  "hanzi": "少许",
+  "pinyin": "shǎoxǔ",
+  "pos": "tính từ",
+  "vi": "một chút",
+  "outOfSyllabus": true
+ },
+ "19.43": {
+  "hanzi": "痰",
+  "pinyin": "tán",
+  "pos": "danh từ",
+  "vi": "đàm, đờm",
+  "outOfSyllabus": true
+ },
+ "21.4": {
+  "hanzi": "偶然",
+  "pinyin": "ǒurán",
+  "pos": "tính từ / phó từ",
+  "vi": "tình cờ; thỉnh thoảng",
+  "outOfSyllabus": false
+ },
+ "21.23": {
+  "hanzi": "收集",
+  "pinyin": "shōují",
+  "pos": "động từ",
+  "vi": "thu thập, thu gom",
+  "outOfSyllabus": true
+ },
+ "21.25": {
+  "hanzi": "繁体字",
+  "pinyin": "fántǐzì",
+  "pos": "danh từ",
+  "vi": "chữ phồn thể",
+  "outOfSyllabus": true
+ },
+ "21.27": {
+  "hanzi": "方言",
+  "pinyin": "fāngyán",
+  "pos": "danh từ",
+  "vi": "tiếng địa phương",
+  "outOfSyllabus": true
+ },
+ "21.33": {
+  "hanzi": "单位",
+  "pinyin": "dānwèi",
+  "pos": "danh từ",
+  "vi": "đơn vị",
+  "outOfSyllabus": false
+ },
+ "22.3": {
+  "hanzi": "作文",
+  "pinyin": "zuòwén",
+  "pos": "danh từ",
+  "vi": "bài làm văn",
+  "outOfSyllabus": false
+ },
+ "22.19": {
+  "hanzi": "承认",
+  "pinyin": "chéngrèn",
+  "pos": "động từ",
+  "vi": "thừa nhận, chấp nhận",
+  "outOfSyllabus": false
+ },
+ "22.30": {
+  "hanzi": "童话",
+  "pinyin": "tónghuà",
+  "pos": "danh từ",
+  "vi": "truyện đồng thoại, truyện cổ tích",
+  "outOfSyllabus": true
+ },
+ "23.28": {
+  "hanzi": "隐约",
+  "pinyin": "yǐnyuē",
+  "pos": "tính từ",
+  "vi": "mơ hồ, lờ mờ",
+  "outOfSyllabus": true
+ },
+ "24.11": {
+  "hanzi": "舞蹈",
+  "pinyin": "wǔdǎo",
+  "pos": "danh từ",
+  "vi": "sự nhảy múa",
+  "outOfSyllabus": true
+ },
+ "24.12": {
+  "hanzi": "冠军",
+  "pinyin": "guànjūn",
+  "pos": "danh từ",
+  "vi": "quán quân, giải nhất",
+  "outOfSyllabus": false
+ },
+ "25.4": {
+  "hanzi": "风浪",
+  "pinyin": "fēnglàng",
+  "pos": "danh từ",
+  "vi": "sóng gió",
+  "outOfSyllabus": false
+ },
+ "25.6": {
+  "hanzi": "舱",
+  "pinyin": "cāng",
+  "pos": "danh từ",
+  "vi": "khoang, buồng",
+  "outOfSyllabus": false
+ },
+ "25.35": {
+  "hanzi": "效应",
+  "pinyin": "xiàoyìng",
+  "pos": "danh từ",
+  "vi": "tác động, ảnh hưởng, hiệu ứng",
+  "outOfSyllabus": true
+ },
+ "26.23": {
+  "hanzi": "得罪",
+  "pinyin": "dézuì",
+  "pos": "động từ",
+  "vi": "làm phật lòng, xúc phạm",
+  "outOfSyllabus": true
+ },
+ "27.7": {
+  "hanzi": "服气",
+  "pinyin": "fúqì",
+  "pos": "động từ",
+  "vi": "chịu phục, chịu thua",
+  "outOfSyllabus": true
+ },
+ "27.9": {
+  "hanzi": "局",
+  "pinyin": "jú",
+  "pos": "lượng từ",
+  "vi": "ván (cờ)",
+  "outOfSyllabus": true
+ },
+ "27.18": {
+  "hanzi": "心态",
+  "pinyin": "xīntài",
+  "pos": "danh từ",
+  "vi": "tâm lý, trạng thái tâm lý",
+  "outOfSyllabus": true
+ },
+ "29.34": {
+  "hanzi": "维持",
+  "pinyin": "wéichí",
+  "pos": "động từ",
+  "vi": "duy trì, giữ lại",
+  "outOfSyllabus": true
+ },
+ "29.35": {
+  "hanzi": "饱和",
+  "pinyin": "bǎohé",
+  "pos": "động từ",
+  "vi": "bão hòa",
+  "outOfSyllabus": true
+ },
+ "30.8": {
+  "hanzi": "无意",
+  "pinyin": "wúyì",
+  "pos": "phó từ",
+  "vi": "tình cờ, vô tình",
+  "outOfSyllabus": true
+ },
+ "30.13": {
+  "hanzi": "设备",
+  "pinyin": "shèbèi",
+  "pos": "danh từ",
+  "vi": "thiết bị, dụng cụ",
+  "outOfSyllabus": false
+ },
+ "30.35": {
+  "hanzi": "佳",
+  "pinyin": "jiā",
+  "pos": "tính từ",
+  "vi": "tốt, đẹp, hay",
+  "outOfSyllabus": true
+ },
+ "32.29": {
+  "hanzi": "能源",
+  "pinyin": "néngyuán",
+  "pos": "danh từ",
+  "vi": "nguồn năng lượng",
+  "outOfSyllabus": false
+ },
+ "34.3": {
+  "hanzi": "翅膀",
+  "pinyin": "chìbǎng",
+  "pos": "danh từ",
+  "vi": "cánh (côn trùng, chim)",
+  "outOfSyllabus": false
+ },
+ "36.3": {
+  "hanzi": "奋斗",
+  "pinyin": "fèndòu",
+  "pos": "động từ",
+  "vi": "phấn đấu, cố gắng",
+  "outOfSyllabus": false
+ },
+ "36.14": {
+  "hanzi": "抢救",
+  "pinyin": "qiǎngjiù",
+  "pos": "động từ",
+  "vi": "cứu, cấp cứu",
+  "outOfSyllabus": true
+ },
+ "36.34": {
+  "hanzi": "砸",
+  "pinyin": "zá",
+  "pos": "động từ",
+  "vi": "đè nát, đè bẹp, đập",
+  "outOfSyllabus": true
+ },
+ "24.35": {
+  "hanzi": "艰巨",
+  "pinyin": "jiānjù"
+ },
+ "27.20": {
+  "hanzi": "否认",
+  "pinyin": "fǒurèn"
+ },
+ "30.12": {
+  "pinyin": "niányú",
+  "vi": "cá nheo"
+ },
+ "33.13": {
+  "hanzi": "展开",
+  "pinyin": "zhǎnkāi"
+ },
+ "35.11": {
+  "hanzi": "汗腺",
+  "pinyin": "hànxiàn"
  }
 }

@@ -1,0 +1,320 @@
+{
+ "title": {
+  "zh": "阅读与思考",
+  "vi": "Đọc và suy nghĩ"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/22-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/22-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/22-1.mp3",
+   "audio/bai-tap-2/22-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   41,
+   42,
+   43
+  ],
+  "text": [
+   {
+    "page": 41,
+    "top": 0.524,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 42,
+    "top": 0.07,
+    "bottom": 0.861,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "一旦",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"một khi\", nêu giả thiết về một thời điểm chưa xác định; vế sau thường có 就.",
+   "points": [
+    {
+     "pattern": "一旦 + điều kiện，(就) + kết quả",
+     "explain": "Hễ điều kiện xảy ra thì kết quả theo ngay.",
+     "examples": [
+      {
+       "zh": "一旦决定了，就不要后悔。",
+       "vi": "Một khi đã quyết định thì đừng hối hận."
+      },
+      {
+       "zh": "这种机会一旦错过，就很难再有了。",
+       "vi": "Cơ hội thế này một khi bỏ lỡ thì khó có lại."
+      }
+     ]
+    }
+   ],
+   "id": "22-g1"
+  },
+  {
+   "title": "难免",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"khó tránh khỏi\".",
+   "points": [
+    {
+     "pattern": "难免 + (会 / 要) + động từ / … 是难免的",
+     "explain": "Điều không mong muốn nhưng khó tránh.",
+     "examples": [
+      {
+       "zh": "第一次上台，难免会紧张。",
+       "vi": "Lần đầu lên sân khấu, khó tránh khỏi hồi hộp."
+      },
+      {
+       "zh": "工作中出现错误是难免的。",
+       "vi": "Trong công việc mắc sai sót là điều khó tránh."
+      }
+     ]
+    }
+   ],
+   "id": "22-g2"
+  },
+  {
+   "title": "自从",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"từ khi\", chỉ mốc bắt đầu trong quá khứ.",
+   "points": [
+    {
+     "pattern": "自从 + sự việc (+ 以后 / 以来)，…",
+     "explain": "Chỉ dùng cho quá khứ.",
+     "examples": [
+      {
+       "zh": "自从有了孩子，他们很少出去旅行了。",
+       "vi": "Từ khi có con, họ ít đi du lịch hẳn."
+      },
+      {
+       "zh": "自从搬家以后，我每天走路上班。",
+       "vi": "Từ khi chuyển nhà, ngày nào tôi cũng đi bộ đi làm."
+      }
+     ]
+    }
+   ],
+   "id": "22-g3"
+  },
+  {
+   "title": "平等 và 公平",
+   "kind": "phân biệt",
+   "summary": "Đều nói về sự không thiên lệch.",
+   "compare": {
+    "same": "Hai từ nói về hai phương diện khác nhau, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Ngang hàng về địa vị, quyền lợi.",
+      "b": "Hợp lý, không thiên vị khi xử lý việc."
+     },
+     {
+      "aspect": "Đối tượng",
+      "a": "Quan hệ giữa người với người: 男女平等、平等对待。",
+      "b": "Cách làm, kết quả: 公平竞争、这样做不公平。"
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "人人平等。",
+      "b": "比赛结果很公平。"
+     }
+    ]
+   },
+   "id": "22-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "22-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "强调",
+    "转变",
+    "属于",
+    "对待",
+    "交换",
+    "拥有",
+    "承认",
+    "主张"
+   ],
+   "items": [
+    {
+     "q": "老师一再___考试时不能看手机。",
+     "a": "强调"
+    },
+    {
+     "q": "经过这件事，他的态度有了很大的___。",
+     "a": "转变"
+    },
+    {
+     "q": "这个座位___那位先生。",
+     "a": "属于"
+    },
+    {
+     "q": "我们应该认真___每一位顾客。",
+     "a": "对待"
+    },
+    {
+     "q": "两个人互相___了电话号码。",
+     "a": "交换"
+    },
+    {
+     "q": "他___一家自己的公司。",
+     "a": "拥有"
+    },
+    {
+     "q": "他终于___是自己做错了。",
+     "a": "承认"
+    },
+    {
+     "q": "我___先调查清楚再做决定。",
+     "a": "主张"
+    }
+   ]
+  },
+  {
+   "id": "22-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "法律面前人人___。",
+     "options": [
+      "平等",
+      "公平"
+     ],
+     "a": 0,
+     "why": "Ngang hàng về quyền lợi: 平等."
+    },
+    {
+     "q": "只让他一个人加班，这不___。",
+     "options": [
+      "平等",
+      "公平"
+     ],
+     "a": 1,
+     "why": "Cách xử lý thiên vị, không hợp lý: 不公平."
+    },
+    {
+     "q": "刚开始工作，___会遇到一些困难。",
+     "options": [
+      "难免",
+      "难道"
+     ],
+     "a": 0,
+     "why": "Khó tránh khỏi: 难免."
+    },
+    {
+     "q": "___学会了游泳，他每个周末都去游泳馆。",
+     "options": [
+      "自从",
+      "一旦"
+     ],
+     "a": 0,
+     "why": "Mốc bắt đầu trong quá khứ: 自从."
+    }
+   ]
+  },
+  {
+   "id": "22-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A发现B问题，C就要D马上解决。",
+     "word": "一旦",
+     "a": "A"
+    },
+    {
+     "q": "A两个人B在一起生活，C会有D矛盾。",
+     "word": "难免",
+     "a": "C"
+    },
+    {
+     "q": "A去年B来到中国，C他的汉语D进步很快。",
+     "word": "自从",
+     "a": "A"
+    }
+   ]
+  },
+  {
+   "id": "22-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "你",
+      "一旦",
+      "开始了",
+      "就",
+      "不能",
+      "停下来"
+     ],
+     "a": "你一旦开始了，就不能停下来。",
+     "vi": "Một khi bạn đã bắt đầu thì không được dừng lại."
+    },
+    {
+     "words": [
+      "年轻人",
+      "难免",
+      "会",
+      "犯错误"
+     ],
+     "a": "年轻人难免会犯错误。",
+     "vi": "Người trẻ khó tránh khỏi mắc sai lầm."
+    },
+    {
+     "words": [
+      "自从",
+      "认识了他",
+      "我",
+      "变得",
+      "开朗多了"
+     ],
+     "a": "自从认识了他，我变得开朗多了。",
+     "vi": "Từ khi quen anh ấy, tôi trở nên cởi mở hơn nhiều."
+    }
+   ]
+  },
+  {
+   "id": "22-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "过分",
+      "强调",
+      "观点",
+      "客观",
+      "全面",
+      "转变",
+      "观念",
+      "一旦",
+      "属于",
+      "对待",
+      "拥有",
+      "承认",
+      "难免",
+      "平等",
+      "自私",
+      "理由",
+      "自从",
+      "价值"
+     ]
+    }
+   ]
+  }
+ ]
+}

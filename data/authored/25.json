@@ -1,0 +1,342 @@
+{
+ "title": {
+  "zh": "给自己加满水",
+  "vi": "Bơm nước vào tàu"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/25-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/25-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/25-1.mp3",
+   "audio/bai-tap-2/25-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   65,
+   66,
+   67
+  ],
+  "text": [
+   {
+    "page": 65,
+    "top": 0.617,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 66,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 67,
+    "top": 0.07,
+    "bottom": 0.307,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "简直",
+   "kind": "cách dùng",
+   "summary": "Phó từ nhấn mạnh mức độ rất cao, nghĩa là \"quả thực, thật là\", có ý hơi cường điệu.",
+   "points": [
+    {
+     "pattern": "简直 + tính từ / động từ / 像 … 一样",
+     "explain": "Đứng sau chủ ngữ.",
+     "examples": [
+      {
+       "zh": "这里的风景简直太美了。",
+       "vi": "Phong cảnh ở đây quả thật quá đẹp."
+      },
+      {
+       "zh": "他画的马简直像真的一样。",
+       "vi": "Con ngựa anh ấy vẽ quả thực giống như thật."
+      },
+      {
+       "zh": "我简直不敢相信自己的眼睛。",
+       "vi": "Tôi quả thực không dám tin vào mắt mình."
+      }
+     ]
+    }
+   ],
+   "id": "25-g1"
+  },
+  {
+   "title": "朝",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"hướng về, nhằm về phía\"; cũng là động từ nghĩa là \"quay về hướng\".",
+   "points": [
+    {
+     "pattern": "朝 + phương hướng / người + động từ",
+     "explain": "Chỉ hướng của hành động.",
+     "examples": [
+      {
+       "zh": "他朝我挥了挥手。",
+       "vi": "Anh ấy vẫy tay về phía tôi."
+      },
+      {
+       "zh": "一直朝前走，就能看到银行。",
+       "vi": "Cứ đi thẳng về phía trước là thấy ngân hàng."
+      }
+     ]
+    },
+    {
+     "pattern": "… 朝 + phương hướng",
+     "explain": "Động từ: quay mặt về.",
+     "examples": [
+      {
+       "zh": "这间卧室朝南，阳光很好。",
+       "vi": "Phòng ngủ này quay về hướng nam, rất nhiều nắng."
+      }
+     ]
+    }
+   ],
+   "id": "25-g2"
+  },
+  {
+   "title": "丝毫",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"một chút, mảy may\", thường dùng trong câu phủ định.",
+   "points": [
+    {
+     "pattern": "丝毫 + 不 / 没有 …",
+     "explain": "Nhấn mạnh hoàn toàn không.",
+     "examples": [
+      {
+       "zh": "他对这件事丝毫不感兴趣。",
+       "vi": "Anh ấy không mảy may hứng thú với việc này."
+      },
+      {
+       "zh": "我丝毫没有责备你的意思。",
+       "vi": "Tôi không hề có ý trách bạn."
+      }
+     ]
+    }
+   ],
+   "id": "25-g3"
+  },
+  {
+   "title": "严肃 và 严格",
+   "kind": "phân biệt",
+   "summary": "Đều chứa ý \"nghiêm\".",
+   "compare": {
+    "same": "Hai từ nói về hai phương diện khác nhau, ít khi thay được.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Vẻ mặt, thái độ, không khí nghiêm trang, không đùa cợt.",
+      "b": "Yêu cầu cao, làm đúng quy định, không dễ dãi."
+     },
+     {
+      "aspect": "Kết hợp",
+      "a": "表情严肃、严肃的问题。",
+      "b": "严格要求、严格遵守、严格的老师。"
+     },
+     {
+      "aspect": "Làm trạng ngữ",
+      "a": "严肃地说、严肃处理。",
+      "b": "严格地执行、严格控制。"
+     }
+    ]
+   },
+   "id": "25-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "25-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "沉",
+    "窄",
+    "滚",
+    "朝",
+    "威胁",
+    "承受",
+    "游览",
+    "摔倒"
+   ],
+   "items": [
+    {
+     "q": "这个箱子太___了，我一个人搬不动。",
+     "a": "沉"
+    },
+    {
+     "q": "这条路很___，两辆车很难同时通过。",
+     "a": "窄"
+    },
+    {
+     "q": "球从山坡上___了下来。",
+     "a": "滚"
+    },
+    {
+     "q": "他转过身，___门口走去。",
+     "a": "朝"
+    },
+    {
+     "q": "空气污染严重___着人们的健康。",
+     "a": "威胁"
+    },
+    {
+     "q": "他___不了这么大的压力。",
+     "a": "承受"
+    },
+    {
+     "q": "我们用了一整天___这座古城。",
+     "a": "游览"
+    },
+    {
+     "q": "路太滑了，他不小心___了。",
+     "a": "摔倒"
+    }
+   ]
+  },
+  {
+   "id": "25-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我们的数学老师对学生要求很___。",
+     "options": [
+      "严肃",
+      "严格"
+     ],
+     "a": 1,
+     "why": "Yêu cầu cao: 严格."
+    },
+    {
+     "q": "他的表情很___，好像出了什么大事。",
+     "options": [
+      "严肃",
+      "严格"
+     ],
+     "a": 0,
+     "why": "Vẻ mặt nghiêm: 严肃."
+    },
+    {
+     "q": "这个消息___让人不敢相信。",
+     "options": [
+      "简直",
+      "一直"
+     ],
+     "a": 0,
+     "why": "Nhấn mạnh mức độ: 简直."
+    },
+    {
+     "q": "他对别人的批评___不在乎。",
+     "options": [
+      "丝毫",
+      "彻底"
+     ],
+     "a": 0,
+     "why": "\"Không mảy may\": 丝毫不."
+    }
+   ]
+  },
+  {
+   "id": "25-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A这孩子B太C聪明D了。",
+     "word": "简直",
+     "a": "B"
+    },
+    {
+     "q": "A他B没有C受到D影响。",
+     "word": "丝毫",
+     "a": "B"
+    },
+    {
+     "q": "A孩子们B大海的方向C跑D去。",
+     "word": "朝",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "25-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "这个地方",
+      "简直",
+      "像",
+      "画儿",
+      "一样"
+     ],
+     "a": "这个地方简直像画儿一样。",
+     "vi": "Nơi này quả thực đẹp như tranh."
+    },
+    {
+     "words": [
+      "他",
+      "丝毫",
+      "没有",
+      "放弃的",
+      "意思"
+     ],
+     "a": "他丝毫没有放弃的意思。",
+     "vi": "Anh ấy không hề có ý bỏ cuộc."
+    },
+    {
+     "words": [
+      "小狗",
+      "朝",
+      "主人",
+      "跑了",
+      "过去"
+     ],
+     "a": "小狗朝主人跑了过去。",
+     "vi": "Chú chó chạy về phía chủ."
+    }
+   ]
+  },
+  {
+   "id": "25-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "返航",
+      "恶劣",
+      "可怕",
+      "风浪",
+      "慌张",
+      "使劲",
+      "简直",
+      "沉",
+      "严肃",
+      "猛烈",
+      "威胁",
+      "平衡",
+      "重量",
+      "负重",
+      "摔倒",
+      "丝毫",
+      "风险",
+      "谨慎",
+      "承受",
+      "彻底"
+     ]
+    }
+   ]
+  }
+ ]
+}

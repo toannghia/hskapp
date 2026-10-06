@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "竞争让市场更高效",
+  "vi": "Cạnh tranh khiến thị trường phát triển."
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/30-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/30-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/30-1.mp3",
+   "audio/bai-tap-2/30-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   105,
+   106,
+   107
+  ],
+  "text": [
+   {
+    "page": 105,
+    "top": 0.617,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 106,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 107,
+    "top": 0.07,
+    "bottom": 0.277,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "以堵治堵——缓解交通有妙招",
+  "vi": "\"Dùng tắc trị tắc\" - tuyệt chiêu giảm tải giao thông"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/33-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/33-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/33-1.mp3",
+   "audio/bai-tap-2/33-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   131,
+   132,
+   133
+  ],
+  "text": [
+   {
+    "page": 131,
+    "top": 0.62,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 132,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 133,
+    "top": 0.07,
+    "bottom": 0.435,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

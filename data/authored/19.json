@@ -1,0 +1,335 @@
+{
+ "title": {
+  "zh": "家乡的萝卜饼",
+  "vi": "Bánh củ cải quê nhà"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/19-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/19-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/19-1.mp3",
+   "audio/bai-tap-2/19-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   15,
+   16,
+   17
+  ],
+  "text": [
+   {
+    "page": 15,
+    "top": 0.616,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 16,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 17,
+    "top": 0.07,
+    "bottom": 0.444,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "般",
+   "kind": "cách dùng",
+   "summary": "Trợ từ văn viết đứng sau danh từ hoặc cụm từ để so sánh, nghĩa là \"như, tựa như\".",
+   "points": [
+    {
+     "pattern": "(像 / 如) + A + 般 + (的 / 地) …",
+     "explain": "Thường phối hợp với 像、如 ở phía trước.",
+     "examples": [
+      {
+       "zh": "她的笑容像阳光般温暖。",
+       "vi": "Nụ cười của cô ấy ấm áp như ánh nắng."
+      },
+      {
+       "zh": "时间像流水般过去了。",
+       "vi": "Thời gian trôi qua như nước chảy."
+      }
+     ]
+    }
+   ],
+   "id": "19-g1"
+  },
+  {
+   "title": "闻",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"ngửi\"; trong văn viết và từ ghép còn có nghĩa \"nghe\".",
+   "points": [
+    {
+     "pattern": "闻 + mùi / 闻起来 + tính từ",
+     "explain": "Dùng mũi để ngửi.",
+     "examples": [
+      {
+       "zh": "你闻闻，这是什么味道？",
+       "vi": "Bạn ngửi xem, đây là mùi gì?"
+      },
+      {
+       "zh": "这道菜闻起来很香。",
+       "vi": "Món này ngửi rất thơm."
+      }
+     ]
+    },
+    {
+     "pattern": "nghĩa \"nghe\" trong từ ghép, thành ngữ",
+     "explain": "Ví dụ: 新闻、百闻不如一见.",
+     "examples": [
+      {
+       "zh": "百闻不如一见，你还是亲自去看看吧。",
+       "vi": "Trăm nghe không bằng một thấy, bạn nên tự đi xem."
+      }
+     ]
+    }
+   ],
+   "id": "19-g2"
+  },
+  {
+   "title": "趁",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"nhân lúc, tranh thủ lúc\".",
+   "points": [
+    {
+     "pattern": "趁 (着) + thời cơ / điều kiện + động từ",
+     "explain": "Tận dụng lúc điều kiện đang thuận lợi.",
+     "examples": [
+      {
+       "zh": "趁热吃吧，凉了就不好吃了。",
+       "vi": "Ăn lúc còn nóng đi, nguội là không ngon nữa."
+      },
+      {
+       "zh": "我想趁假期回一趟老家。",
+       "vi": "Tôi muốn tranh thủ kỳ nghỉ về quê một chuyến."
+      }
+     ]
+    }
+   ],
+   "id": "19-g3"
+  },
+  {
+   "title": "怀念 và 想念",
+   "kind": "phân biệt",
+   "summary": "Đều là động từ chỉ sự nhớ nhung.",
+   "compare": {
+    "same": "Với người đang xa cách thì đôi khi thay được: 怀念 / 想念老朋友。",
+    "rows": [
+     {
+      "aspect": "Đối tượng",
+      "a": "Người đã mất, thời đã qua, nơi không thể trở lại.",
+      "b": "Người, nơi chốn hiện vẫn còn, có thể gặp lại."
+     },
+     {
+      "aspect": "Sắc thái",
+      "a": "Trang trọng, sâu lắng, thiên về văn viết.",
+      "b": "Thân mật, dùng hằng ngày."
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "怀念童年、怀念去世的奶奶。",
+      "b": "想念父母、想念家乡的菜。"
+     }
+    ]
+   },
+   "id": "19-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "19-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "炒",
+    "煮",
+    "切",
+    "夸",
+    "盖",
+    "烫",
+    "淋",
+    "薄"
+   ],
+   "items": [
+    {
+     "q": "妈妈正在厨房___青菜。",
+     "a": "炒"
+    },
+    {
+     "q": "饺子要在开水里___十分钟。",
+     "a": "煮"
+    },
+    {
+     "q": "请把西瓜___成小块。",
+     "a": "切"
+    },
+    {
+     "q": "老师常常___他学习认真。",
+     "a": "夸"
+    },
+    {
+     "q": "睡觉的时候要___好被子。",
+     "a": "盖"
+    },
+    {
+     "q": "汤刚做好，很___，小心点儿。",
+     "a": "烫"
+    },
+    {
+     "q": "没带伞，他被雨___湿了。",
+     "a": "淋"
+    },
+    {
+     "q": "这件衣服太___了，冬天穿不暖和。",
+     "a": "薄"
+    }
+   ]
+  },
+  {
+   "id": "19-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "离开家乡多年，他常常___小时候的生活。",
+     "options": [
+      "怀念",
+      "想念"
+     ],
+     "a": 0,
+     "why": "Thời đã qua, không trở lại được: 怀念."
+    },
+    {
+     "q": "我很___在国外留学的女儿。",
+     "options": [
+      "怀念",
+      "想念"
+     ],
+     "a": 1,
+     "why": "Người vẫn còn và sẽ gặp lại, cách nói hằng ngày: 想念."
+    },
+    {
+     "q": "___天还没黑，我们赶紧出发吧。",
+     "options": [
+      "趁",
+      "闻"
+     ],
+     "a": 0,
+     "why": "Tranh thủ lúc: 趁."
+    },
+    {
+     "q": "这种花___起来有点儿像苹果。",
+     "options": [
+      "闻",
+      "听"
+     ],
+     "a": 0,
+     "why": "Nói về mùi: 闻起来."
+    }
+   ]
+  },
+  {
+   "id": "19-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A我们B年轻C多学一点儿D东西。",
+     "word": "趁",
+     "a": "B"
+    },
+    {
+     "q": "A她的皮肤B像雪C白D。",
+     "word": "般",
+     "a": "C"
+    },
+    {
+     "q": "A这瓶牛奶B起来C有点儿酸D了。",
+     "word": "闻",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "19-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "趁他还没走",
+      "你",
+      "快",
+      "问问他"
+     ],
+     "a": "趁他还没走，你快问问他。",
+     "vi": "Nhân lúc anh ấy chưa đi, bạn mau hỏi anh ấy đi."
+    },
+    {
+     "words": [
+      "孩子们",
+      "像",
+      "小鸟",
+      "般",
+      "跑了出去"
+     ],
+     "a": "孩子们像小鸟般跑了出去。",
+     "vi": "Bọn trẻ chạy ùa ra như đàn chim nhỏ."
+    },
+    {
+     "words": [
+      "我",
+      "很",
+      "怀念",
+      "大学时代",
+      "的生活"
+     ],
+     "a": "我很怀念大学时代的生活。",
+     "vi": "Tôi rất nhớ cuộc sống thời đại học."
+    }
+   ]
+  },
+  {
+   "id": "19-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "家乡",
+      "萝卜",
+      "怀念",
+      "色彩",
+      "清淡",
+      "可口",
+      "夸",
+      "炒",
+      "切",
+      "均匀",
+      "原料",
+      "薄",
+      "透明",
+      "预防",
+      "闻",
+      "趁",
+      "口味",
+      "特色"
+     ]
+    }
+   ]
+  }
+ ]
+}

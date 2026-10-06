@@ -1,0 +1,46 @@
+{
+ "title": {
+  "zh": "身边的环保",
+  "vi": "Bảo vệ môi trường quanh ta"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/32-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/32-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/32-1.mp3",
+   "audio/bai-tap-2/32-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   123,
+   124,
+   125
+  ],
+  "text": [
+   {
+    "page": 123,
+    "top": 0.63,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 124,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 125,
+    "top": 0.07,
+    "bottom": 0.454,
+    "xmin": 0.13
+   }
+  ]
+ }
+}

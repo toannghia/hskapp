@@ -1,0 +1,323 @@
+{
+ "title": {
+  "zh": "小人书摊",
+  "vi": "Quầy truyện tranh"
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/20-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/20-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/20-1.mp3",
+   "audio/bai-tap-2/20-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   23,
+   24,
+   25
+  ],
+  "text": [
+   {
+    "page": 23,
+    "top": 0.609,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 24,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 25,
+    "top": 0.07,
+    "bottom": 0.44,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "支",
+   "kind": "cách dùng",
+   "summary": "Động từ nghĩa là \"chống, dựng lên\"; cũng là lượng từ.",
+   "points": [
+    {
+     "pattern": "支 + (起) + đồ vật",
+     "explain": "Dùng vật gì chống cho đứng vững, dựng lên.",
+     "examples": [
+      {
+       "zh": "他们在河边支起了一个帐篷。",
+       "vi": "Họ dựng một cái lều bên bờ sông."
+      },
+      {
+       "zh": "他用手支着头，好像在想什么。",
+       "vi": "Anh ấy chống tay lên đầu, như đang nghĩ gì đó."
+      }
+     ]
+    },
+    {
+     "pattern": "一支 + bút / bài hát / đội ngũ",
+     "explain": "Lượng từ cho vật dài nhỏ, bài hát, đội.",
+     "examples": [
+      {
+       "zh": "我买了两支笔。",
+       "vi": "Tôi mua hai cây bút."
+      }
+     ]
+    }
+   ],
+   "id": "20-g1"
+  },
+  {
+   "title": "凭",
+   "kind": "cách dùng",
+   "summary": "Giới từ nghĩa là \"dựa vào, căn cứ vào\".",
+   "points": [
+    {
+     "pattern": "凭 + giấy tờ / căn cứ + động từ",
+     "explain": "Nêu thứ làm căn cứ để thực hiện việc gì.",
+     "examples": [
+      {
+       "zh": "请凭票入场。",
+       "vi": "Xin vào cửa bằng vé."
+      },
+      {
+       "zh": "他凭自己的努力考上了大学。",
+       "vi": "Anh ấy đỗ đại học nhờ nỗ lực của chính mình."
+      }
+     ]
+    },
+    {
+     "pattern": "凭什么 …？",
+     "explain": "Hỏi vặn: dựa vào đâu mà…",
+     "examples": [
+      {
+       "zh": "你凭什么说我做错了？",
+       "vi": "Bạn dựa vào đâu mà nói tôi làm sai?"
+      }
+     ]
+    }
+   ],
+   "id": "20-g2"
+  },
+  {
+   "title": "记录 và 纪录",
+   "kind": "phân biệt",
+   "summary": "Phát âm giống nhau, đều liên quan tới việc ghi lại.",
+   "compare": {
+    "same": "Hai từ hay bị viết lẫn; nghĩa \"kỷ lục\" chỉ viết 纪录.",
+    "rows": [
+     {
+      "aspect": "Từ loại",
+      "a": "Động từ và danh từ.",
+      "b": "Chủ yếu là danh từ."
+     },
+     {
+      "aspect": "Nghĩa",
+      "a": "Ghi chép lại; bản ghi chép: 记录会议内容、会议记录。",
+      "b": "Thành tích cao nhất; phim tài liệu: 世界纪录、纪录片。"
+     },
+     {
+      "aspect": "Kết hợp",
+      "a": "做记录、记录下来。",
+      "b": "创造纪录、打破纪录。"
+     }
+    ]
+   },
+   "id": "20-g3"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "20-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "翻",
+    "搭",
+    "涨",
+    "出版",
+    "从事",
+    "办理",
+    "登记",
+    "印刷"
+   ],
+   "items": [
+    {
+     "q": "他一有空就___开那本小说看几页。",
+     "a": "翻"
+    },
+    {
+     "q": "孩子们用木头___了一个小房子。",
+     "a": "搭"
+    },
+    {
+     "q": "最近蔬菜的价格又___了。",
+     "a": "涨"
+    },
+    {
+     "q": "这本书是去年___的。",
+     "a": "出版"
+    },
+    {
+     "q": "他___教育工作已经二十年了。",
+     "a": "从事"
+    },
+    {
+     "q": "出国以前要___很多手续。",
+     "a": "办理"
+    },
+    {
+     "q": "入住酒店时需要先在前台___。",
+     "a": "登记"
+    },
+    {
+     "q": "这本画册___得非常漂亮。",
+     "a": "印刷"
+    }
+   ]
+  },
+  {
+   "id": "20-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "他打破了男子一百米的世界___。",
+     "options": [
+      "记录",
+      "纪录"
+     ],
+     "a": 1,
+     "why": "\"Kỷ lục\" viết 纪录."
+    },
+    {
+     "q": "请把大家的意见___下来。",
+     "options": [
+      "记录",
+      "纪录"
+     ],
+     "a": 0,
+     "why": "Động từ \"ghi lại\" là 记录."
+    },
+    {
+     "q": "借书需要___学生证。",
+     "options": [
+      "凭",
+      "支"
+     ],
+     "a": 0,
+     "why": "Dựa vào giấy tờ: 凭."
+    },
+    {
+     "q": "他们在院子里___起了一张桌子。",
+     "options": [
+      "支",
+      "凭"
+     ],
+     "a": 0,
+     "why": "Dựng lên, chống lên: 支."
+    }
+   ]
+  },
+  {
+   "id": "20-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A你B什么C不让我D进去？",
+     "word": "凭",
+     "a": "B"
+    },
+    {
+     "q": "A他用一根木头B把窗户C了起来D。",
+     "word": "支",
+     "a": "C"
+    },
+    {
+     "q": "A他B多年的经验C解决了D这个问题。",
+     "word": "凭",
+     "a": "B"
+    }
+   ]
+  },
+  {
+   "id": "20-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "他",
+      "凭",
+      "一张照片",
+      "找到了",
+      "老朋友"
+     ],
+     "a": "他凭一张照片找到了老朋友。",
+     "vi": "Anh ấy tìm được bạn cũ nhờ một tấm ảnh."
+    },
+    {
+     "words": [
+      "请",
+      "把",
+      "这次会议的内容",
+      "记录",
+      "下来"
+     ],
+     "a": "请把这次会议的内容记录下来。",
+     "vi": "Xin ghi lại nội dung cuộc họp lần này."
+    },
+    {
+     "words": [
+      "爸爸",
+      "在阳台上",
+      "支起了",
+      "一把大伞"
+     ],
+     "a": "爸爸在阳台上支起了一把大伞。",
+     "vi": "Bố dựng một cái ô lớn ngoài ban công."
+    }
+   ]
+  },
+  {
+   "id": "20-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "摊",
+      "出版",
+      "连环画",
+      "年代",
+      "单调",
+      "娱乐",
+      "无数",
+      "青少年",
+      "棚子",
+      "粗糙",
+      "翻",
+      "整齐",
+      "年纪",
+      "登记",
+      "手续",
+      "押金",
+      "凭",
+      "涨"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,336 @@
+{
+ "title": {
+  "zh": "汉字叔叔：一个美国人的汉字情缘",
+  "vi": "Tình yêu chữ Hán của \"ông chú người Mỹ\""
+ },
+ "audio": {
+  "text": [
+   "audio/giao-trinh-2/21-1.mp3"
+  ],
+  "vocab": [
+   "audio/giao-trinh-2/21-2.mp3"
+  ],
+  "workbook": [
+   "audio/bai-tap-2/21-1.mp3",
+   "audio/bai-tap-2/21-2.mp3"
+  ]
+ },
+ "source": {
+  "book": "giao-trinh-2",
+  "vocabPages": [
+   31,
+   32,
+   33
+  ],
+  "text": [
+   {
+    "page": 31,
+    "top": 0.607,
+    "bottom": 0.94,
+    "xmin": 0.15
+   },
+   {
+    "page": 32,
+    "top": 0.07,
+    "bottom": 0.95,
+    "xmin": 0.13
+   },
+   {
+    "page": 33,
+    "top": 0.07,
+    "bottom": 0.454,
+    "xmin": 0.13
+   }
+  ]
+ },
+ "grammar": [
+  {
+   "title": "硬",
+   "kind": "cách dùng",
+   "summary": "Tính từ nghĩa là \"cứng\"; làm phó từ nghĩa là \"cố, gắng gượng, khăng khăng\" làm việc gì dù không thuận.",
+   "points": [
+    {
+     "pattern": "硬 + động từ",
+     "explain": "Cố làm cho bằng được, bất chấp điều kiện hoặc ý muốn của người khác.",
+     "examples": [
+      {
+       "zh": "他不饿，妈妈硬让他再吃一碗。",
+       "vi": "Cậu ấy không đói, mẹ vẫn cố bắt ăn thêm một bát."
+      },
+      {
+       "zh": "他生病了，还硬撑着去上班。",
+       "vi": "Anh ấy ốm mà vẫn gắng gượng đi làm."
+      }
+     ]
+    },
+    {
+     "pattern": "很硬 / 硬的 + danh từ",
+     "explain": "Nghĩa gốc: cứng, rắn.",
+     "examples": [
+      {
+       "zh": "这张床太硬了，睡着不舒服。",
+       "vi": "Cái giường này cứng quá, nằm không thoải mái."
+      }
+     ]
+    }
+   ],
+   "id": "21-g1"
+  },
+  {
+   "title": "偶然",
+   "kind": "cách dùng",
+   "summary": "Tính từ và phó từ, nghĩa là \"tình cờ, ngẫu nhiên\".",
+   "points": [
+    {
+     "pattern": "偶然 + động từ / 偶然的 + danh từ / 很偶然",
+     "explain": "Việc xảy ra ngoài dự tính.",
+     "examples": [
+      {
+       "zh": "我在街上偶然遇到了小学同学。",
+       "vi": "Tôi tình cờ gặp bạn tiểu học trên phố."
+      },
+      {
+       "zh": "这次成功不是偶然的。",
+       "vi": "Thành công lần này không phải ngẫu nhiên."
+      }
+     ]
+    }
+   ],
+   "id": "21-g2"
+  },
+  {
+   "title": "尽快",
+   "kind": "cách dùng",
+   "summary": "Phó từ nghĩa là \"càng nhanh càng tốt, sớm nhất có thể\".",
+   "points": [
+    {
+     "pattern": "尽快 + động từ",
+     "explain": "Đứng trước động từ.",
+     "examples": [
+      {
+       "zh": "收到邮件后请尽快回复。",
+       "vi": "Nhận được thư xin trả lời sớm nhất có thể."
+      },
+      {
+       "zh": "我们会尽快解决这个问题。",
+       "vi": "Chúng tôi sẽ giải quyết vấn đề này nhanh nhất có thể."
+      }
+     ]
+    }
+   ],
+   "id": "21-g3"
+  },
+  {
+   "title": "偶然 và 偶尔",
+   "kind": "phân biệt",
+   "summary": "Đều nói về việc không thường xảy ra.",
+   "compare": {
+    "same": "Làm trạng ngữ đôi khi thay được, nhưng ý nhấn khác nhau.",
+    "rows": [
+     {
+      "aspect": "Nghĩa",
+      "a": "Ngẫu nhiên, ngoài dự tính; trái nghĩa với 必然.",
+      "b": "Thỉnh thoảng, số lần ít; trái nghĩa với 经常."
+     },
+     {
+      "aspect": "Từ loại",
+      "a": "Tính từ và phó từ: 偶然的机会、很偶然。",
+      "b": "Chỉ là phó từ."
+     },
+     {
+      "aspect": "Ví dụ",
+      "a": "偶然发现了一个秘密。",
+      "b": "我偶尔去看一次电影。"
+     }
+    ]
+   },
+   "id": "21-g4"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "21-fill",
+   "type": "fill",
+   "title": "Chọn từ điền vào chỗ trống",
+   "bank": [
+    "输入",
+    "创办",
+    "克服",
+    "包含",
+    "称赞",
+    "佩服",
+    "下载",
+    "退休"
+   ],
+   "items": [
+    {
+     "q": "请在这里___你的密码。",
+     "a": "输入"
+    },
+    {
+     "q": "这所学校是一位老教授___的。",
+     "a": "创办"
+    },
+    {
+     "q": "只要有信心，就能___任何困难。",
+     "a": "克服"
+    },
+    {
+     "q": "这个价格___早餐。",
+     "a": "包含"
+    },
+    {
+     "q": "大家都___她是个好医生。",
+     "a": "称赞"
+    },
+    {
+     "q": "我很___他的勇气。",
+     "a": "佩服"
+    },
+    {
+     "q": "这个软件可以免费___。",
+     "a": "下载"
+    },
+    {
+     "q": "我爸爸明年就要___了。",
+     "a": "退休"
+    }
+   ]
+  },
+  {
+   "id": "21-choice",
+   "type": "choice",
+   "title": "Chọn đáp án đúng",
+   "items": [
+    {
+     "q": "我们___去饭馆吃饭，平时都在家做。",
+     "options": [
+      "偶然",
+      "偶尔"
+     ],
+     "a": 1,
+     "why": "Thỉnh thoảng, số lần ít: 偶尔."
+    },
+    {
+     "q": "一个___的机会，他认识了现在的妻子。",
+     "options": [
+      "偶然",
+      "偶尔"
+     ],
+     "a": 0,
+     "why": "Làm định ngữ (…的机会) chỉ dùng được 偶然."
+    },
+    {
+     "q": "请你___把报告交给我。",
+     "options": [
+      "尽快",
+      "赶上"
+     ],
+     "a": 0,
+     "why": "Sớm nhất có thể: 尽快."
+    },
+    {
+     "q": "我说不去，他___拉着我去了。",
+     "options": [
+      "硬",
+      "紧"
+     ],
+     "a": 0,
+     "why": "Cố ép làm: 硬."
+    }
+   ]
+  },
+  {
+   "id": "21-position",
+   "type": "position",
+   "title": "Chọn vị trí đúng cho từ trong ngoặc",
+   "items": [
+    {
+     "q": "A发现问题以后，B我们C要D解决。",
+     "word": "尽快",
+     "a": "D"
+    },
+    {
+     "q": "A我是B在一本杂志上C看到D这个消息的。",
+     "word": "偶然",
+     "a": "B"
+    },
+    {
+     "q": "A他不同意，B你C别D让他参加。",
+     "word": "硬",
+     "a": "D"
+    }
+   ]
+  },
+  {
+   "id": "21-order",
+   "type": "order",
+   "title": "Sắp xếp từ thành câu",
+   "items": [
+    {
+     "words": [
+      "我",
+      "偶然",
+      "听到了",
+      "他们的",
+      "谈话"
+     ],
+     "a": "我偶然听到了他们的谈话。",
+     "vi": "Tôi tình cờ nghe được cuộc nói chuyện của họ."
+    },
+    {
+     "words": [
+      "请",
+      "尽快",
+      "给我",
+      "回个电话"
+     ],
+     "a": "请尽快给我回个电话。",
+     "vi": "Xin gọi lại cho tôi sớm nhất có thể."
+    },
+    {
+     "words": [
+      "他",
+      "硬",
+      "把",
+      "礼物",
+      "塞给了我"
+     ],
+     "a": "他硬把礼物塞给了我。",
+     "vi": "Anh ấy cứ dúi quà vào tay tôi."
+    }
+   ]
+  },
+  {
+   "id": "21-retell",
+   "type": "retell",
+   "title": "Kể lại bài khóa theo từ gợi ý",
+   "items": [
+    {
+     "prompt": "Kể lại bài khóa bằng lời của bạn",
+     "keywords": [
+      "逻辑",
+      "硬",
+      "偶然",
+      "演变",
+      "遗憾",
+      "思考",
+      "抓紧",
+      "尽快",
+      "输入",
+      "创办",
+      "公开",
+      "克服",
+      "收集",
+      "称赞",
+      "佩服",
+      "完善",
+      "退休",
+      "追求",
+      "梦想"
+     ]
+    }
+   ]
+  }
+ ]
+}

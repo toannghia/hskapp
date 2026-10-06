@@ -1,0 +1,190 @@
+#L 19
+G|般|Trợ từ văn viết đứng sau danh từ hoặc cụm từ để so sánh, nghĩa là "như, tựa như".
+P|(像 / 如) + A + 般 + (的 / 地) …|Thường phối hợp với 像、如 ở phía trước.
+E|她的笑容像阳光般温暖。|Nụ cười của cô ấy ấm áp như ánh nắng.
+E|时间像流水般过去了。|Thời gian trôi qua như nước chảy.
+G|闻|Động từ nghĩa là "ngửi"; trong văn viết và từ ghép còn có nghĩa "nghe".
+P|闻 + mùi / 闻起来 + tính từ|Dùng mũi để ngửi.
+E|你闻闻，这是什么味道？|Bạn ngửi xem, đây là mùi gì?
+E|这道菜闻起来很香。|Món này ngửi rất thơm.
+P|nghĩa "nghe" trong từ ghép, thành ngữ|Ví dụ: 新闻、百闻不如一见.
+E|百闻不如一见，你还是亲自去看看吧。|Trăm nghe không bằng một thấy, bạn nên tự đi xem.
+G|趁|Giới từ nghĩa là "nhân lúc, tranh thủ lúc".
+P|趁 (着) + thời cơ / điều kiện + động từ|Tận dụng lúc điều kiện đang thuận lợi.
+E|趁热吃吧，凉了就不好吃了。|Ăn lúc còn nóng đi, nguội là không ngon nữa.
+E|我想趁假期回一趟老家。|Tôi muốn tranh thủ kỳ nghỉ về quê một chuyến.
+C|怀念 và 想念|Đều là động từ chỉ sự nhớ nhung.|Với người đang xa cách thì đôi khi thay được: 怀念 / 想念老朋友。
+R|Đối tượng|Người đã mất, thời đã qua, nơi không thể trở lại.|Người, nơi chốn hiện vẫn còn, có thể gặp lại.
+R|Sắc thái|Trang trọng, sâu lắng, thiên về văn viết.|Thân mật, dùng hằng ngày.
+R|Ví dụ|怀念童年、怀念去世的奶奶。|想念父母、想念家乡的菜。
+F|炒 煮 切 夸 盖 烫 淋 薄
+I|妈妈正在厨房___青菜。|炒
+I|饺子要在开水里___十分钟。|煮
+I|请把西瓜___成小块。|切
+I|老师常常___他学习认真。|夸
+I|睡觉的时候要___好被子。|盖
+I|汤刚做好，很___，小心点儿。|烫
+I|没带伞，他被雨___湿了。|淋
+I|这件衣服太___了，冬天穿不暖和。|薄
+Q|离开家乡多年，他常常___小时候的生活。|怀念/想念|0|Thời đã qua, không trở lại được: 怀念.
+Q|我很___在国外留学的女儿。|怀念/想念|1|Người vẫn còn và sẽ gặp lại, cách nói hằng ngày: 想念.
+Q|___天还没黑，我们赶紧出发吧。|趁/闻|0|Tranh thủ lúc: 趁.
+Q|这种花___起来有点儿像苹果。|闻/听|0|Nói về mùi: 闻起来.
+S|A我们B年轻C多学一点儿D东西。|趁|B
+S|A她的皮肤B像雪C白D。|般|C
+S|A这瓶牛奶B起来C有点儿酸D了。|闻|B
+O|趁他还没走/你/快/问问他|趁他还没走，你快问问他。|Nhân lúc anh ấy chưa đi, bạn mau hỏi anh ấy đi.
+O|孩子们/像/小鸟/般/跑了出去|孩子们像小鸟般跑了出去。|Bọn trẻ chạy ùa ra như đàn chim nhỏ.
+O|我/很/怀念/大学时代/的生活|我很怀念大学时代的生活。|Tôi rất nhớ cuộc sống thời đại học.
+T|Kể lại bài khóa bằng lời của bạn|家乡 萝卜 怀念 色彩 清淡 可口 夸 炒 切 均匀 原料 薄 透明 预防 闻 趁 口味 特色
+#L 20
+G|支|Động từ nghĩa là "chống, dựng lên"; cũng là lượng từ.
+P|支 + (起) + đồ vật|Dùng vật gì chống cho đứng vững, dựng lên.
+E|他们在河边支起了一个帐篷。|Họ dựng một cái lều bên bờ sông.
+E|他用手支着头，好像在想什么。|Anh ấy chống tay lên đầu, như đang nghĩ gì đó.
+P|一支 + bút / bài hát / đội ngũ|Lượng từ cho vật dài nhỏ, bài hát, đội.
+E|我买了两支笔。|Tôi mua hai cây bút.
+G|凭|Giới từ nghĩa là "dựa vào, căn cứ vào".
+P|凭 + giấy tờ / căn cứ + động từ|Nêu thứ làm căn cứ để thực hiện việc gì.
+E|请凭票入场。|Xin vào cửa bằng vé.
+E|他凭自己的努力考上了大学。|Anh ấy đỗ đại học nhờ nỗ lực của chính mình.
+P|凭什么 …？|Hỏi vặn: dựa vào đâu mà…
+E|你凭什么说我做错了？|Bạn dựa vào đâu mà nói tôi làm sai?
+C|记录 và 纪录|Phát âm giống nhau, đều liên quan tới việc ghi lại.|Hai từ hay bị viết lẫn; nghĩa "kỷ lục" chỉ viết 纪录.
+R|Từ loại|Động từ và danh từ.|Chủ yếu là danh từ.
+R|Nghĩa|Ghi chép lại; bản ghi chép: 记录会议内容、会议记录。|Thành tích cao nhất; phim tài liệu: 世界纪录、纪录片。
+R|Kết hợp|做记录、记录下来。|创造纪录、打破纪录。
+F|翻 搭 涨 出版 从事 办理 登记 印刷
+I|他一有空就___开那本小说看几页。|翻
+I|孩子们用木头___了一个小房子。|搭
+I|最近蔬菜的价格又___了。|涨
+I|这本书是去年___的。|出版
+I|他___教育工作已经二十年了。|从事
+I|出国以前要___很多手续。|办理
+I|入住酒店时需要先在前台___。|登记
+I|这本画册___得非常漂亮。|印刷
+Q|他打破了男子一百米的世界___。|记录/纪录|1|"Kỷ lục" viết 纪录.
+Q|请把大家的意见___下来。|记录/纪录|0|Động từ "ghi lại" là 记录.
+Q|借书需要___学生证。|凭/支|0|Dựa vào giấy tờ: 凭.
+Q|他们在院子里___起了一张桌子。|支/凭|0|Dựng lên, chống lên: 支.
+S|A你B什么C不让我D进去？|凭|B
+S|A他用一根木头B把窗户C了起来D。|支|C
+S|A他B多年的经验C解决了D这个问题。|凭|B
+O|他/凭/一张照片/找到了/老朋友|他凭一张照片找到了老朋友。|Anh ấy tìm được bạn cũ nhờ một tấm ảnh.
+O|请/把/这次会议的内容/记录/下来|请把这次会议的内容记录下来。|Xin ghi lại nội dung cuộc họp lần này.
+O|爸爸/在阳台上/支起了/一把大伞|爸爸在阳台上支起了一把大伞。|Bố dựng một cái ô lớn ngoài ban công.
+T|Kể lại bài khóa bằng lời của bạn|摊 出版 连环画 年代 单调 娱乐 无数 青少年 棚子 粗糙 翻 整齐 年纪 登记 手续 押金 凭 涨
+#L 21
+G|硬|Tính từ nghĩa là "cứng"; làm phó từ nghĩa là "cố, gắng gượng, khăng khăng" làm việc gì dù không thuận.
+P|硬 + động từ|Cố làm cho bằng được, bất chấp điều kiện hoặc ý muốn của người khác.
+E|他不饿，妈妈硬让他再吃一碗。|Cậu ấy không đói, mẹ vẫn cố bắt ăn thêm một bát.
+E|他生病了，还硬撑着去上班。|Anh ấy ốm mà vẫn gắng gượng đi làm.
+P|很硬 / 硬的 + danh từ|Nghĩa gốc: cứng, rắn.
+E|这张床太硬了，睡着不舒服。|Cái giường này cứng quá, nằm không thoải mái.
+G|偶然|Tính từ và phó từ, nghĩa là "tình cờ, ngẫu nhiên".
+P|偶然 + động từ / 偶然的 + danh từ / 很偶然|Việc xảy ra ngoài dự tính.
+E|我在街上偶然遇到了小学同学。|Tôi tình cờ gặp bạn tiểu học trên phố.
+E|这次成功不是偶然的。|Thành công lần này không phải ngẫu nhiên.
+G|尽快|Phó từ nghĩa là "càng nhanh càng tốt, sớm nhất có thể".
+P|尽快 + động từ|Đứng trước động từ.
+E|收到邮件后请尽快回复。|Nhận được thư xin trả lời sớm nhất có thể.
+E|我们会尽快解决这个问题。|Chúng tôi sẽ giải quyết vấn đề này nhanh nhất có thể.
+C|偶然 và 偶尔|Đều nói về việc không thường xảy ra.|Làm trạng ngữ đôi khi thay được, nhưng ý nhấn khác nhau.
+R|Nghĩa|Ngẫu nhiên, ngoài dự tính; trái nghĩa với 必然.|Thỉnh thoảng, số lần ít; trái nghĩa với 经常.
+R|Từ loại|Tính từ và phó từ: 偶然的机会、很偶然。|Chỉ là phó từ.
+R|Ví dụ|偶然发现了一个秘密。|我偶尔去看一次电影。
+F|输入 创办 克服 包含 称赞 佩服 下载 退休
+I|请在这里___你的密码。|输入
+I|这所学校是一位老教授___的。|创办
+I|只要有信心，就能___任何困难。|克服
+I|这个价格___早餐。|包含
+I|大家都___她是个好医生。|称赞
+I|我很___他的勇气。|佩服
+I|这个软件可以免费___。|下载
+I|我爸爸明年就要___了。|退休
+Q|我们___去饭馆吃饭，平时都在家做。|偶然/偶尔|1|Thỉnh thoảng, số lần ít: 偶尔.
+Q|一个___的机会，他认识了现在的妻子。|偶然/偶尔|0|Làm định ngữ (…的机会) chỉ dùng được 偶然.
+Q|请你___把报告交给我。|尽快/赶上|0|Sớm nhất có thể: 尽快.
+Q|我说不去，他___拉着我去了。|硬/紧|0|Cố ép làm: 硬.
+S|A发现问题以后，B我们C要D解决。|尽快|D
+S|A我是B在一本杂志上C看到D这个消息的。|偶然|B
+S|A他不同意，B你C别D让他参加。|硬|D
+O|我/偶然/听到了/他们的/谈话|我偶然听到了他们的谈话。|Tôi tình cờ nghe được cuộc nói chuyện của họ.
+O|请/尽快/给我/回个电话|请尽快给我回个电话。|Xin gọi lại cho tôi sớm nhất có thể.
+O|他/硬/把/礼物/塞给了我|他硬把礼物塞给了我。|Anh ấy cứ dúi quà vào tay tôi.
+T|Kể lại bài khóa bằng lời của bạn|逻辑 硬 偶然 演变 遗憾 思考 抓紧 尽快 输入 创办 公开 克服 收集 称赞 佩服 完善 退休 追求 梦想
+#L 22
+G|一旦|Phó từ nghĩa là "một khi", nêu giả thiết về một thời điểm chưa xác định; vế sau thường có 就.
+P|一旦 + điều kiện，(就) + kết quả|Hễ điều kiện xảy ra thì kết quả theo ngay.
+E|一旦决定了，就不要后悔。|Một khi đã quyết định thì đừng hối hận.
+E|这种机会一旦错过，就很难再有了。|Cơ hội thế này một khi bỏ lỡ thì khó có lại.
+G|难免|Tính từ nghĩa là "khó tránh khỏi".
+P|难免 + (会 / 要) + động từ / … 是难免的|Điều không mong muốn nhưng khó tránh.
+E|第一次上台，难免会紧张。|Lần đầu lên sân khấu, khó tránh khỏi hồi hộp.
+E|工作中出现错误是难免的。|Trong công việc mắc sai sót là điều khó tránh.
+G|自从|Giới từ nghĩa là "từ khi", chỉ mốc bắt đầu trong quá khứ.
+P|自从 + sự việc (+ 以后 / 以来)，…|Chỉ dùng cho quá khứ.
+E|自从有了孩子，他们很少出去旅行了。|Từ khi có con, họ ít đi du lịch hẳn.
+E|自从搬家以后，我每天走路上班。|Từ khi chuyển nhà, ngày nào tôi cũng đi bộ đi làm.
+C|平等 và 公平|Đều nói về sự không thiên lệch.|Hai từ nói về hai phương diện khác nhau, ít khi thay được.
+R|Nghĩa|Ngang hàng về địa vị, quyền lợi.|Hợp lý, không thiên vị khi xử lý việc.
+R|Đối tượng|Quan hệ giữa người với người: 男女平等、平等对待。|Cách làm, kết quả: 公平竞争、这样做不公平。
+R|Ví dụ|人人平等。|比赛结果很公平。
+F|强调 转变 属于 对待 交换 拥有 承认 主张
+I|老师一再___考试时不能看手机。|强调
+I|经过这件事，他的态度有了很大的___。|转变
+I|这个座位___那位先生。|属于
+I|我们应该认真___每一位顾客。|对待
+I|两个人互相___了电话号码。|交换
+I|他___一家自己的公司。|拥有
+I|他终于___是自己做错了。|承认
+I|我___先调查清楚再做决定。|主张
+Q|法律面前人人___。|平等/公平|0|Ngang hàng về quyền lợi: 平等.
+Q|只让他一个人加班，这不___。|平等/公平|1|Cách xử lý thiên vị, không hợp lý: 不公平.
+Q|刚开始工作，___会遇到一些困难。|难免/难道|0|Khó tránh khỏi: 难免.
+Q|___学会了游泳，他每个周末都去游泳馆。|自从/一旦|0|Mốc bắt đầu trong quá khứ: 自从.
+S|A发现B问题，C就要D马上解决。|一旦|A
+S|A两个人B在一起生活，C会有D矛盾。|难免|C
+S|A去年B来到中国，C他的汉语D进步很快。|自从|A
+O|你/一旦/开始了/就/不能/停下来|你一旦开始了，就不能停下来。|Một khi bạn đã bắt đầu thì không được dừng lại.
+O|年轻人/难免/会/犯错误|年轻人难免会犯错误。|Người trẻ khó tránh khỏi mắc sai lầm.
+O|自从/认识了他/我/变得/开朗多了|自从认识了他，我变得开朗多了。|Từ khi quen anh ấy, tôi trở nên cởi mở hơn nhiều.
+T|Kể lại bài khóa bằng lời của bạn|过分 强调 观点 客观 全面 转变 观念 一旦 属于 对待 拥有 承认 难免 平等 自私 理由 自从 价值
+#L 23
+G|一致|Tính từ nghĩa là "nhất trí, giống nhau"; làm phó từ nghĩa là "cùng nhau, đồng lòng".
+P|… (和 / 跟 …) 一致|Tính từ làm vị ngữ.
+E|我们的看法完全一致。|Quan điểm của chúng tôi hoàn toàn thống nhất.
+P|一致 + động từ|Phó từ: mọi người cùng làm như nhau.
+E|大家一致同意这个计划。|Mọi người nhất trí đồng ý kế hoạch này.
+G|某|Đại từ chỉ người hoặc vật không xác định, hoặc không muốn nói rõ.
+P|某 + (lượng từ) + danh từ|Ví dụ: 某人、某一天、某些方面.
+E|某一天，他突然离开了这座城市。|Vào một ngày nọ, anh ấy đột nhiên rời khỏi thành phố này.
+E|在某些方面，我比不上他。|Ở một số mặt, tôi không bằng anh ấy.
+G|幸亏|Phó từ nghĩa là "may mà", chỉ nhờ một điều thuận lợi mà tránh được chuyện xấu.
+P|幸亏 …，(才 / 要不 / 否则) …|Vế sau nêu kết quả tốt, hoặc hậu quả đã tránh được.
+E|幸亏你提醒我，要不我就迟到了。|May mà bạn nhắc, không thì tôi đã đến muộn.
+E|幸亏带了伞，才没被淋湿。|May mà mang ô nên mới không bị ướt.
+C|单独 và 独自|Đều chỉ việc làm một mình.|Trước động từ đôi khi thay được: 单独 / 独自生活。
+R|Nghĩa|Tách riêng ra, không chung với người hoặc vật khác.|Chỉ có một mình, không ai đi cùng.
+R|Đối tượng|Dùng cho cả người và vật: 单独谈话、单独放。|Chỉ dùng cho người: 独自旅行。
+R|Từ loại|Tính từ, phó từ.|Phó từ.
+F|遵守 征求 违反 出席 担任 录取 面临 沟通
+I|开车要___交通规则。|遵守
+I|做决定以前，他先___了父母的意见。|征求
+I|他因为___学校纪律受到了批评。|违反
+I|明天的会议，校长也会___。|出席
+I|他在公司___经理已经三年了。|担任
+I|她被北京大学___了。|录取
+I|毕业生都___着找工作的压力。|面临
+I|父母应该多跟孩子___。|沟通
+Q|他喜欢___去旅行，不喜欢跟团。|单独/独自|1|Một mình, không ai đi cùng (chỉ người): 独自.
+Q|这件衣服要___洗，不能跟别的放在一起。|单独/独自|0|Tách riêng vật ra: 单独.
+Q|___我们出门早，否则就赶不上飞机了。|幸亏/一旦|0|May mà: 幸亏.
+Q|大家的意见很不___，讨论了很久。|一致/一样的|0|Ý kiến thống nhất: 一致.
+S|A同学们B选他C当班长D。|一致|B
+S|A他在B大学C教过D几年书。|某|B
+S|A医生B来得及时，C他才D没有危险。|幸亏|A
+O|大家/一致/认为/这个办法/最好|大家一致认为这个办法最好。|Mọi người nhất trí cho rằng cách này tốt nhất.
+O|幸亏/你/帮了我/不然/我/完成不了|幸亏你帮了我，不然我完成不了。|May mà bạn giúp, không thì tôi không làm xong được.
+O|我/想/单独/跟你/谈一谈|我想单独跟你谈一谈。|Tôi muốn nói chuyện riêng với bạn.
+T|Kể lại bài khóa bằng lời của bạn|乖 刻苦 遵守 纪律 征求 阶段 规矩 目标 录取 面临 一致 让步 陌生 某 单独 沟通 沉默 幸亏
