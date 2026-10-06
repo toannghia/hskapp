@@ -29,11 +29,10 @@ function priorities() {
   if (again) out.push({ t: `Học lại ${again} từ đã quên`, s: "Nhớ đúng hai lần liên tiếp thì từ đó rời danh sách.", href: "#/study/relearn/flash" });
   const due = dueItems().length;
   if (due) out.push({ t: `Ôn ${due} thẻ đến hạn`, s: "Để lâu sẽ quên, nên làm đầu tiên.", href: "#/study/due/flash" });
-  for (const l of LESSONS) for (const x of l.exercises) {
-    if (!AUTO.has(x.type)) continue;
-    const wrong = x.items.filter((_, i) => { const a = P.answers[ansKey(x, i)]; return a && a.done && !a.ok; }).length;
-    if (wrong) out.push({ t: `Xem lại ${wrong} câu sai: ${x.title}`, s: `Bài ${l.id}`, href: `#/ex/${l.id}/${x.id}` });
-  }
+  const redo = wrongDue().length;
+  if (redo) out.push({ t: `Làm lại ${redo} câu bài tập đã sai`, s: "Đúng hai lần liên tiếp thì câu đó rời sổ câu sai.", href: "#/redo" });
+  const gram = gramDue().length;
+  if (gram) out.push({ t: `Ôn ${gram} cấu trúc đến hạn`, s: "Cấu trúc cũng được hỏi lại theo lịch như từ mới.", href: "#/gram/due" });
   const weak = weakItems().length;
   if (weak) out.push({ t: `Luyện ${weak} từ hay quên`, s: "Những từ bạn đã quên từ hai lần trở lên.", href: "#/study/weak/flash" });
   const fresh = newItemsToday().length;

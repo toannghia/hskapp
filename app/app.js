@@ -37,6 +37,9 @@ function merge(mine, theirs) {
   for (const [id, s] of Object.entries(mine.saved)) out.saved[id] = newer(s, out.saved[id], "t");
   out.relearn = out.relearn || {};
   for (const [id, r] of Object.entries(mine.relearn || {})) out.relearn[id] = newer(r, out.relearn[id], "t");
+  // Thẻ ôn cấu trúc và sổ câu sai cũng gộp theo thời điểm như trên.
+  if (mine.gcards || out.gcards) { out.gcards = out.gcards || {}; for (const [id, c] of Object.entries(mine.gcards || {})) out.gcards[id] = newer(c, out.gcards[id], "last"); }
+  if (mine.wrong || out.wrong) { out.wrong = out.wrong || {}; for (const [id, w] of Object.entries(mine.wrong || {})) out.wrong[id] = newer(w, out.wrong[id], "t"); }
   const seen = new Set(out.log.map((e) => e.id));
   out.log = out.log.concat(mine.log.filter((e) => !seen.has(e.id))).sort((a, b) => a.t - b.t);
   // Điểm kiểm tra và kỷ lục trò chơi: gộp theo thời điểm, không để bản nào đè mất bản nào.
@@ -303,6 +306,7 @@ route(/^$/, () => {
     typeof importCard === "function" ? importCard() : null,
     typeof reviewNotice === "function" ? reviewNotice() : null,
     typeof homeExtras === "function" ? homeExtras() : null,
+    typeof reviewExtras === "function" ? reviewExtras() : null,
     h("h2", {}, "Bài học"),
     LESSONS.length ? null : h("div", { class: "card sub" }, "Chưa có bài học nào. Quản trị cần nạp nội dung trước."),
     LESSONS.map((l) => {
@@ -317,7 +321,7 @@ route(/^$/, () => {
 
 // ---------- Trang bài học ----------
 const TABS = [["words", "Từ mới"], ["text", "Bài khóa"], ["grammar", "Cấu trúc"], ["ex", "Bài tập"]];
-const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["type", "Gõ chữ Hán"], ["write", "Tập viết"]];
+const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["cloze", "Điền từ vào câu"], ["type", "Gõ chữ Hán"], ["write", "Tập viết"]];
 
 route(/^lesson\/(\d+)\/(\w+)$/, (id, tab) => {
   const l = lessonById(id);
@@ -418,6 +422,7 @@ function openWord(info, l, el, repaint) {
 // ---------- Cấu trúc ----------
 function tabGrammar(l) {
   if (!l.grammar.length) add(h("div", { class: "card sub" }, "Bài này chưa có phần cấu trúc."));
+  else if (typeof grammarStudyBox === "function") add(grammarStudyBox(l));
   for (const g of l.grammar) {
     const card = h("div", { class: "card" },
       h("h3", {}, h("span", { class: "zh" }, g.title), h("span", { class: "tag acc" }, g.kind)),
@@ -527,6 +532,7 @@ function checkAll(l, x) {
     if (!a || a.v == null || a.v === "" || (Array.isArray(a.v) && !a.v.length)) return;
     n++;
     a.ok = isRight(x, it, a.v); a.done = true; a.t = Date.now();
+    if (typeof trackWrong === "function") trackWrong(k, a.ok);
     if (a.ok) right++;
   });
   logEvent({ k: "ex", l: l.id, r: x.id, ok: right, n });
@@ -643,6 +649,9 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     queue = mode === "flash" ? [...pool].sort((a, b) => rank(a) - rank(b)) : shuffle(pool);
   }
   if (mode === "pic") queue = queue.filter((i) => i.img || i.emoji);
+  // Điền từ vào câu: chỉ những từ có câu ví dụ chứa đúng từ đó.
+  const clozeOf = (i) => i.ex.filter(([zh]) => zh.includes(i.hanzi));
+  if (mode === "cloze") queue = queue.filter((i) => clozeOf(i).length);
   const total = queue.length;
   const tally = { right: 0, wrong: 0 };
   const stage = h("div", {});
@@ -663,7 +672,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     h("div", { class: "zh" }, it.hanzi),
     h("div", {}, h("b", {}, ok ? "Đúng" : "Chưa đúng"), h("span", { style: "color:var(--acc)" }, ` · ${it.pinyin}`),
       h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null),
-      exampleView(it, 1)));
+      mode === "cloze" ? null : exampleView(it, 1)));
   const head = () => h("div", { class: "row sub", style: "justify-content:space-between" },
     h("span", {}, name), h("span", {}, `Còn ${queue.length} thẻ · đúng ${tally.right} · sai ${tally.wrong}`));
 
@@ -709,16 +718,25 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     draw();
   }
   function quiz(it) {
-    const others = shuffle((pool.length >= 4 ? pool : allItems()).filter((o) => o.hanzi !== it.hanzi && o.vi !== it.vi)).slice(0, 3);
+    let others = shuffle((pool.length >= 4 ? pool : allItems()).filter((o) => o.hanzi !== it.hanzi && o.vi !== it.vi));
+    // Câu điền từ: đưa các từ cùng từ loại lên trước để không loại được đáp án chỉ nhờ ngữ pháp.
+    const sent = mode === "cloze" ? shuffle(clozeOf(it))[0] : null;
+    if (sent) others = others.filter((o) => !sent[0].includes(o.hanzi)).sort((a, b) => (b.pos === it.pos) - (a.pos === it.pos));
+    others = others.slice(0, 3);
     const opts = shuffle([it, ...others]);
     const hanOpts = mode !== "vi";
+    const typing = mode === "type" || (mode === "cloze" && P.settings.clozeType);
     let picked = null;
+    const gap = () => { const at = sent[0].indexOf(it.hanzi); return [sent[0].slice(0, at), h("span", { class: "gap" }, picked ? it.hanzi : "　　"), sent[0].slice(at + it.hanzi.length)]; };
     const prompt = {
       vi: () => [h("div", { class: "big" }, it.hanzi), speakBtn(it)],
       han: () => [h("div", { class: "vi" }, it.vi), it.pos ? h("span", { class: "tag" }, it.pos) : null],
       listen: () => [h("button", { class: "btn", onclick: () => pronounce(it) }, "🔊 Nghe lại")],
       pic: () => [picture(it), h("div", { class: "sub" }, "Hình này gợi đến từ nào?")],
       type: () => [h("div", { class: "vi" }, it.vi), it.pos ? h("span", { class: "tag" }, it.pos) : null],
+      cloze: () => [h("div", { class: "zh sent" }, gap()), h("div", { class: "sub" }, sent[1]),
+        picked ? h("button", { class: "btn mini", onclick: () => speak(sent[0]) }, "🔊 Nghe cả câu")
+          : h("button", { class: "btn mini", onclick: () => { P.settings.clozeType = !P.settings.clozeType; save(); quiz(it); } }, P.settings.clozeType ? "Đổi sang chọn đáp án" : "Tự gõ (khó hơn)")],
     }[mode];
     const after = (ok) => [answerCard(it, ok),
       h("button", { class: "btn pri big next", style: "width:100%;margin-top:10px", onclick: () => done(it, ok ? 2 : 0) }, "Tiếp")];
@@ -726,7 +744,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     const showNext = () => { const b = stage.querySelector(".next"); if (b) b.scrollIntoView({ block: "nearest", behavior: "smooth" }); };
     const draw = () => {
       const body = [head(), h("div", { class: "card flash quiz" + (mode === "listen" ? " slim" : "") }, prompt())];
-      if (mode === "type") {
+      if (typing) {
         const input = h("input", { class: "type", placeholder: "Gõ chữ Hán", autocomplete: "off", disabled: picked != null, value: picked || "" });
         const submit = () => { if (input.value.trim()) { picked = input.value.trim(); draw(); } };
         body.push(input, picked == null
@@ -848,7 +866,7 @@ window.addEventListener("focus", async () => {
 });
 async function start() {
   view.replaceChildren(h("p", { class: "sub" }, "Đang tải…"));
-  try { await Promise.all([loadProgress(), loadLessons()]); backfillRelearn(); READY = true; render(); }
+  try { await Promise.all([loadProgress(), loadLessons()]); backfillRelearn(); if (typeof backfillWrong === "function") backfillWrong(); READY = true; render(); }
   catch (e) { console.error(e); view.replaceChildren(h("div", { class: "card" }, "Không tải được dữ liệu. Hãy kiểm tra kết nối rồi tải lại trang.")); }
 }
 // online.js quyết định chạy ở chế độ trên máy hay online rồi gọi start().

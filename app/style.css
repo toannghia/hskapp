@@ -101,8 +101,8 @@ input.type { width: 100%; text-align: center; font-family: var(--han); font-size
 /* Bài tập */
 .ex li { margin: 12px 0; }
 .ex li select { font-family: var(--han); font-size: 19px; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); }
-.ex textarea { width: 100%; min-height: 84px; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); margin-top: 6px; }
-.ex textarea.zh { font-size: 20px; }
+.ex textarea, textarea.wide { width: 100%; min-height: 84px; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); margin-top: 6px; }
+.ex textarea.zh, textarea.wide.zh { font-size: 20px; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; min-height: 44px; }
 .chips .btn { font-family: var(--han); font-size: 19px; padding: 5px 12px; }
 .chips.built { border-bottom: 2px solid var(--line); padding-bottom: 6px; }
@@ -225,3 +225,8 @@ details.fold > ol { margin-top: 8px; }
 .wmean.tap { cursor: pointer; }
 .wmean .more { color: var(--acc); font-size: 13px; white-space: nowrap; flex: none; }
 .wordlist .examples { margin: 6px 0 2px 19px; }
+
+/* Câu có chỗ trống: điền từ vào câu, làm lại câu sai */
+.sent { font-size: 24px; line-height: 1.7; }
+.gap { display: inline-block; min-width: 2.2em; margin: 0 3px; padding: 0 4px; text-align: center; border-bottom: 2px solid var(--acc); color: var(--acc); }
+a.stat { display: block; color: inherit; }
