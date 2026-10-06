@@ -481,6 +481,7 @@ route(/^ex\/(\d+)\/([\w-]+)$/, (lid, xid) => {
   add(
     h("a", { href: `#/lesson/${l.id}/ex`, class: "sub" }, `← Bài ${l.id}: bài tập`),
     h("h1", {}, x.title),
+    typeof exerciseReviewBox === "function" ? exerciseReviewBox(x) : null,
     x.type === "fill" ? h("div", { class: "card zh" }, "Từ cho sẵn: ", x.bank.join("　")) : null,
     h("div", { class: "card" }, list, foot), nav);
   draw();

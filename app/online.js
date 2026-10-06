@@ -300,12 +300,15 @@ async function loadTeacherData() {
   // Học viên của lớp: bỏ chính mình và các giáo viên khác cùng lớp.
   for (const c of classes) c.students = c.class_members.filter((m) => m.user_id !== ME.id && m.profiles && m.profiles.role === "student");
   const ids = [...new Set(classes.flatMap((c) => c.students.map((m) => m.user_id)))];
+  const seenRes = ids.length ? await sb.from("exercise_reviews").select("student_id,exercise_id,seen_at").in("student_id", ids) : { data: [] };
+  const seen = {};
+  for (const r of seenRes.data || []) (seen[r.student_id] = seen[r.student_id] || {})[r.exercise_id] = new Date(r.seen_at).getTime();
   const [prog, subs] = ids.length ? await Promise.all([
     sb.from("progress").select("user_id,doc,updated_at").in("user_id", ids).then(must),
     sb.from("submissions").select("id,user_id,lesson_id,exercise_id,item_index,prompt,content,created_at,profiles(full_name,email),reviews(id,corrected,comment,score,created_at)")
       .in("user_id", ids).order("created_at", { ascending: false }).limit(500).then(must),
   ]) : [[], []];
-  return { classes, ids, subs, progOf: Object.fromEntries(prog.map((p) => [p.user_id, p])),
+  return { classes, ids, subs, seen, progOf: Object.fromEntries(prog.map((p) => [p.user_id, p])),
     people: Object.fromEntries(classes.flatMap((c) => c.students.map((m) => [m.user_id, m.profiles]))) };
 }
 const classPicker = (classes, onChange) => (classes.length > 1 ? h("label", { class: "sub" }, "Lớp ",
@@ -324,12 +327,16 @@ route(/^teacher$/, async () => {
       if (rows.some((r) => r.id === m.user_id)) continue;
       const p = d.progOf[m.user_id], doc = p ? p.doc : {}, st = docStats(doc);
       const mine = d.subs.filter((s) => s.user_id === m.user_id);
-      rows.push({ id: m.user_id, name: who(m.profiles), cls: c.name, st, doc, updated: p && p.updated_at,
+      // Bài tập học viên đã làm mà giáo viên chưa xem (hoặc làm tiếp sau lần xem gần nhất).
+      const mySeen = (d.seen || {})[m.user_id] || {};
+      const newEx = st.lessons.flatMap((ls) => ls.ex).filter((e) => e.done && e.auto
+        && (mySeen[e.x.id] || 0) < Math.max(...e.rows.filter((r) => r.a && r.a.done).map((r) => r.a.t || 0))).length;
+      rows.push({ id: m.user_id, name: who(m.profiles), cls: c.name, st, doc, updated: p && p.updated_at, newEx,
         todayReviews: (doc.log || []).filter((e) => e.k === "card" && dayNum(e.t) === today).length,
         waiting: mine.filter((s) => !s.reviews.length).length, written: mine.length });
     }
     // Người cần nhắc lên trước, sau đó tới người có bài chờ chữa, rồi theo tên.
-    rows.sort((a, b) => b.st.flags.length - a.st.flags.length || b.waiting - a.waiting || a.name.localeCompare(b.name));
+    rows.sort((a, b) => b.st.flags.length - a.st.flags.length || (b.waiting + b.newEx) - (a.waiting + a.newEx) || a.name.localeCompare(b.name));
     const waiting = rows.reduce((n, r) => n + r.waiting, 0);
     const activeToday = rows.filter((r) => r.st.idle === 0).length, needNudge = rows.filter((r) => r.st.flags.length).length;
     const avgWords = rows.length ? Math.round(rows.reduce((n, r) => n + r.st.learned, 0) / rows.length) : 0;
@@ -342,7 +349,7 @@ route(/^teacher$/, async () => {
         h("div", { class: "stat" }, h("b", {}, `${activeToday}/${rows.length}`), h("span", {}, "có học hôm nay")),
         h("div", { class: "stat" + (needNudge ? " hot" : "") }, h("b", {}, needNudge), h("span", {}, "cần nhắc")),
         h("a", { class: "stat" + (waiting ? " hot" : ""), href: "#/teacher/grade", style: "color:inherit" }, h("b", {}, waiting), h("span", {}, "bài chờ chữa →")),
-        h("div", { class: "stat" }, h("b", {}, avgWords), h("span", {}, "từ đã học, trung bình")),
+        h("div", { class: "stat" + (rows.some((r) => r.newEx) ? " hot" : "") }, h("b", {}, rows.reduce((n, r) => n + r.newEx, 0)), h("span", {}, "bài tập chưa xem")),
         h("div", { class: "stat" }, h("b", {}, avgTest == null ? "—" : avgTest + "%"), h("span", {}, "điểm kiểm tra gần nhất, TB"))),
       rows.length ? rows.map((r) => h("a", { class: "card person", href: `#/teacher/student/${r.id}` },
         h("div", { class: "row", style: "justify-content:space-between;flex-wrap:nowrap" },
@@ -351,7 +358,8 @@ route(/^teacher$/, async () => {
         h("div", { class: "sub" }, `${r.st.learned} từ · tuần này ${r.st.active7}/7 ngày · hôm nay ${r.todayReviews} lượt ôn`,
           r.st.tests.length ? ` · kiểm tra ${r.st.tests[r.st.tests.length - 1].score}/${r.st.tests[r.st.tests.length - 1].n}` : "",
           shown.length > 1 ? ` · ${r.cls}` : ""),
-        r.written ? h("div", { class: r.waiting ? "flag" : "sub" }, r.waiting ? `${r.waiting} bài viết chờ chữa` : `${r.written} bài viết, đã chữa hết`) : null))
+        r.written ? h("div", { class: r.waiting ? "flag" : "sub" }, r.waiting ? `${r.waiting} bài viết chờ chữa` : `${r.written} bài viết, đã chữa hết`) : null,
+        r.newEx ? h("div", { class: "flag" }, `${r.newEx} bài tập mới chưa xem`) : null))
         : h("div", { class: "card sub" }, d.classes.length ? "Chưa thấy học viên nào trong lớp. Nếu lớp đã có học viên mà không hiện ở đây, quản trị cần chạy tệp supabase/migration-004-co-teachers.sql trong Supabase."
           : "Bạn chưa có lớp nào. Tạo lớp ở bên dưới, hoặc nhờ quản trị xếp bạn vào một lớp."));
 
@@ -491,25 +499,49 @@ route(/^teacher\/student\/([\w-]+)$/, async (uid) => {
         st.tests.slice().reverse().slice(0, 10).map((t) => h("tr", {}, h("td", {}, fmtTime(t.t)), h("td", {}, scopeName(t.scope)),
           h("td", {}, h("b", {}, `${t.score}/${t.n}`)), h("td", {}, `${t.vocab[0]}/${t.vocab[1]}`), h("td", {}, `${t.grammar[0]}/${t.grammar[1]}`))))));
 
-    // --- Từng bài: từ vựng và bài tập, bấm mở để xem từng câu đúng sai ---
-    add(h("h2", {}, "Bài tập đã làm"));
-    for (const ls of st.lessons) {
-      const touched = ls.learned || ls.ex.some((e) => e.done);
-      if (!touched) continue;
-      add(h("div", { class: "card" },
-        h("h3", {}, `Bài ${ls.l.id} `, h("span", { class: "zh" }, ls.l.title.zh)),
-        h("div", { class: "sub" }, `Từ vựng: đã học ${ls.learned}/${ls.l.items.length}, đã thuộc ${ls.known}`),
-        ls.ex.map((e) => h("details", { style: "margin-top:8px" },
-          h("summary", {}, h("b", {}, e.x.title), h("span", { class: "sub" }, e.auto ? ` · làm ${e.done}/${e.rows.length} câu, đúng ${e.right}` : ` · đã viết ${e.done}/${e.rows.length}`)),
-          e.done ? h("ol", { class: "ex" }, e.rows.map((r) => {
+    // --- Bài tập: giáo viên xem từng câu đúng sai, đánh giá và xác nhận đã xem ---
+    const exRes = await sb.from("exercise_reviews").select("exercise_id,rating,comment,seen_at").eq("student_id", uid);
+    const seenOf = Object.fromEntries((exRes.data || []).map((r) => [r.exercise_id, r]));
+    const done = st.lessons.flatMap((ls) => ls.ex.filter((e) => e.done).map((e) => ({ ...e, l: ls.l,
+      last: Math.max(...e.rows.filter((r) => r.a && r.a.done).map((r) => r.a.t || 0)) })));
+    // Chưa xem: chưa có đánh giá, hoặc học viên đã làm tiếp sau lần giáo viên xem gần nhất.
+    const isNew = (e) => !seenOf[e.x.id] || new Date(seenOf[e.x.id].seen_at).getTime() < e.last;
+    const fresh = done.filter(isNew).sort((a, b) => b.last - a.last), old = done.filter((e) => !isNew(e));
+    const exCard = (e) => {
+      const prev = seenOf[e.x.id];
+      const rating = h("select", {}, [["", "Chưa xếp loại"], ["good", "Tốt"], ["ok", "Đạt"], ["redo", "Cần làm lại"]]
+        .map(([v, n]) => h("option", { value: v, selected: prev && prev.rating === v }, n)));
+      const comment = h("textarea", { placeholder: "Nhận xét cho học viên (không bắt buộc)", style: "min-height:54px" }, prev ? prev.comment || "" : "");
+      return h("div", { class: "card ex" },
+        h("div", {}, h("b", {}, `Bài ${e.l.id} · ${e.x.title}`),
+          h("span", { class: "sub" }, e.auto ? ` · làm ${e.done}/${e.rows.length} câu, đúng ${e.right}` : ` · đã viết ${e.done}/${e.rows.length}`, ` · ${fmtTime(e.last)}`)),
+        prev && !isNew(e) ? h("div", { class: "sub" }, `Đã xem lúc ${when(prev.seen_at)}`) : prev ? h("div", { class: "flag" }, "Học viên đã làm tiếp sau lần bạn xem gần nhất") : null,
+        h("details", { style: "margin-top:6px" }, h("summary", { class: "sub" }, "Xem từng câu"),
+          h("ol", { class: "ex" }, e.rows.map((r) => {
             if (!e.auto) return h("li", {}, h("div", { class: "sub" }, r.it.prompt || r.it.q), r.a && r.a.done ? h("div", { class: "zh" }, r.a.v) : h("span", { class: "sub" }, "(chưa viết)"));
             const [mine, right] = answerText(e.x, r.it, r.a);
             return h("li", {}, h("span", { class: "zh" }, r.it.q || r.it.words.join(" / ")), e.x.type === "position" ? ` （${r.it.word}）` : "",
               r.a && r.a.done ? h("div", { class: "fb " + (r.a.ok ? "ok" : "bad") }, r.a.ok ? "Đúng: " : "Sai: ", h("span", { class: "zh" }, mine),
                 r.a.ok ? "" : [" · đáp án: ", h("span", { class: "zh" }, right)]) : h("div", { class: "sub" }, "(chưa làm)"));
-          })) : h("div", { class: "sub" }, "Chưa làm bài này.")))));
-    }
-    if (!st.lessons.some((ls) => ls.learned || ls.ex.some((e) => e.done))) add(h("div", { class: "card sub" }, "Học viên chưa làm bài tập nào."));
+          }))),
+        exRes.error ? null : [comment,
+          h("div", { class: "row", style: "margin-top:6px" }, h("label", { class: "sub" }, "Xếp loại ", rating),
+            h("button", { class: "btn pri", onclick: async (ev) => {
+              ev.target.disabled = true;
+              const { error } = await sb.from("exercise_reviews").upsert({ student_id: uid, exercise_id: e.x.id, lesson_id: e.l.id, teacher_id: ME.id,
+                rating: rating.value || null, comment: comment.value.trim() || null, seen_at: new Date().toISOString() });
+              if (error) { ev.target.disabled = false; return alert("Chưa lưu được: " + error.message); }
+              render();
+            } }, prev && !isNew(e) ? "Cập nhật đánh giá" : "Đã xem"))]);
+    };
+    add(h("h2", {}, `Bài tập chưa xem (${fresh.length})`),
+      exRes.error ? h("div", { class: "card" }, "Để đánh giá và xác nhận đã xem bài tập, cần chạy tệp supabase/migration-005-exercise-reviews.sql trong Supabase → SQL Editor rồi tải lại trang. Trong lúc chờ, bạn vẫn xem được từng câu đúng sai bên dưới.") : null,
+      fresh.length ? fresh.map(exCard) : h("div", { class: "card sub" }, done.length ? "Bạn đã xem hết các bài tập học viên làm." : "Học viên chưa làm bài tập nào."),
+      old.length ? h("details", { style: "margin-top:8px" }, h("summary", { class: "sub" }, `Bài tập đã xem (${old.length})`), old.map(exCard)) : null,
+      h("details", { style: "margin-top:8px" }, h("summary", { class: "sub" }, "Từ vựng theo từng bài"),
+        h("div", { class: "wrap" }, h("table", { class: "cmp" }, h("tr", {}, ["Bài", "Đã học", "Đã thuộc"].map((t) => h("th", {}, t))),
+          st.lessons.filter((ls) => ls.learned).map((ls) => h("tr", {}, h("td", {}, `Bài ${ls.l.id} `, h("span", { class: "zh" }, ls.l.title.zh)),
+            h("td", {}, `${ls.learned}/${ls.l.items.length}`), h("td", {}, ls.known)))))));
 
     // --- Bài viết: chấm, sửa, góp ý ---
     const latest = [], seen = new Set();
@@ -721,4 +753,18 @@ function importCard() {
   return h("div", { class: "card" }, h("b", {}, "Chuyển tiến độ đã học trên máy này vào tài khoản"),
     h("div", { class: "sub" }, "Thẻ ôn, bài làm và sổ từ bạn đã có ở bản chạy trên máy sẽ được gộp vào tài khoản đang đăng nhập. Dữ liệu trên máy vẫn giữ nguyên."),
     h("div", { class: "row", style: "margin-top:8px" }, h("button", { class: "btn pri", onclick: (e) => importLocalProgress(e.target) }, "Chuyển vào tài khoản")));
+}
+
+// Học viên mở một bài tập: hiện đánh giá của giáo viên cho bài đó (nếu có).
+function exerciseReviewBox(x) {
+  if (!ONLINE || teacherOnly()) return null;
+  const box = h("div", {});
+  sb.from("exercise_reviews").select("rating,comment,seen_at,profiles!exercise_reviews_teacher_id_fkey(full_name,email)")
+    .eq("student_id", ME.id).eq("exercise_id", x.id).maybeSingle().then(({ data }) => {
+      if (!data || (!data.rating && !data.comment)) return;
+      box.replaceChildren(h("div", { class: "fb model" },
+        h("b", {}, `Giáo viên ${who(data.profiles)} đã xem bài này`, data.rating ? ` · ${{ good: "Tốt", ok: "Đạt", redo: "Cần làm lại" }[data.rating]}` : "", ` · ${when(data.seen_at)}`),
+        data.comment ? h("div", { style: "white-space:pre-wrap" }, data.comment) : null));
+    });
+  return box;
 }
