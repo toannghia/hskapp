@@ -138,6 +138,13 @@ async function loadLessons() {
       emoji: v.emoji || "", img: v.img || (imgs[v.n] ? `data/images/${pad(d.id)}/${imgs[v.n]}` : ""), imgCredit: v.imgCredit,
       clip: v.clip, ex: v.ex || [],
     }));
+    // Bài tập đặt câu sinh từ phần cấu trúc: mỗi điểm "cách dùng" một đề, đặt trước bài kể lại.
+    const pts = d.grammar.filter((g) => g.kind === "cách dùng" && g.id);
+    if (pts.length && !d.exercises.some((x) => x.type === "compose")) {
+      const at = d.exercises.findIndex((x) => x.type === "retell");
+      d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-compose`, type: "compose", title: "Đặt câu với cấu trúc",
+        items: pts.map((g) => { const pt = (g.points || [])[0] || {}; return { prompt: `Đặt một câu có dùng: ${g.title}`, word: g.title, pattern: pt.pattern, model: (pt.examples || [])[0] }; }) });
+    }
     return d;
   });
 }
@@ -427,6 +434,8 @@ function tabGrammar(l) {
     const card = h("div", { class: "card" },
       h("h3", {}, h("span", { class: "zh" }, g.title), h("span", { class: "tag acc" }, g.kind)),
       h("div", { class: "sub" }, g.summary));
+    const compose = l.exercises.find((x) => x.type === "compose");
+    if (compose && compose.items.some((it) => it.word === g.title)) card.firstChild.append(h("a", { class: "btn mini", style: "float:right", href: `#/ex/${l.id}/${compose.id}` }, "✍ Đặt câu"));
     for (const pt of g.points || []) {
       card.append(h("p", {}, h("b", { class: "zh", style: "color:var(--acc)" }, pt.pattern), h("br"), pt.explain),
         h("ul", { class: "exs" }, pt.examples.map((x) => h("li", {},
@@ -612,6 +621,34 @@ const EX = {
         teacherBox(x, it, i, a, draw), history(a));
     }
     return out;
+  },
+  compose(x, it, i, draw) {
+    const k = ansKey(x, i), a = P.answers[k] || {};
+    // Các phần chữ Hán trong tên cấu trúc đều phải có mặt trong câu thì mới tính là đã dùng.
+    const parts = it.word.match(/[一-鿿]+/g) || [];
+    const uses = (v) => parts.every((w) => v.includes(w));
+    const note = h("span", { class: "sub" });
+    const ta = h("textarea", { class: "zh", placeholder: "Viết câu của bạn bằng tiếng Trung…", oninput: () => refresh() }, a.v || "");
+    const refresh = () => {
+      const v = ta.value.trim();
+      note.textContent = !v ? "" : !uses(v) ? `Câu chưa có ${it.word}` : a.done && v === a.v ? `Đã lưu lúc ${fmtTime(a.t)}` : a.done ? "Có thay đổi chưa lưu" : "";
+      note.style.color = v && !uses(v) ? "var(--bad)" : "";
+    };
+    refresh();
+    return [h("b", {}, "Đặt một câu có dùng: ", h("span", { class: "zh", style: "color:var(--acc)" }, it.word)),
+      it.pattern ? h("div", { class: "sub zh" }, it.pattern) : null, ta,
+      h("div", { class: "row", style: "margin-top:6px" },
+        h("button", { class: "btn pri", onclick: () => {
+          const v = ta.value.trim();
+          if (!v || !uses(v)) return ta.focus();
+          if (v === a.v && a.done) return;
+          P.answers[k] = { ...a, v, done: true, t: Date.now(), hist: a.done ? keepHist(a) : a.hist };
+          logEvent({ k: "write", l: null, r: k });
+          save(); draw();
+          if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
+        } }, a.done ? "Lưu bản mới" : "Lưu câu"), note),
+      a.done && it.model ? h("div", { class: "fb model" }, "Câu mẫu để so: ", h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(it.model.zh) }, it.model.zh), h("div", { class: "sub" }, it.model.vi)) : null,
+      a.done ? teacherBox(x, it, i, a, draw) : null, history(a)];
   },
   retell(x, it, i, draw) {
     const k = ansKey(x, i), a = P.answers[k] || {};
