@@ -141,7 +141,7 @@ async function loadLessons() {
     }));
     // 练一练 của sách: mỗi câu luyện đi kèm một mục cấu trúc, làm xong lưu lại và gửi giáo viên chữa.
     const drills = d.grammar.flatMap((g) => (g.book && g.book.drill ? g.book.drill.items : []).map((text, k) => (
-      { gid: g.id, word: g.title, task: g.book.drill.title, text, first: k === 0, prompt: `[${g.title}] ${g.book.drill.title}: ${text}` })));
+      { gid: g.id, word: g.title, task: g.book.drill.title, text, tokens: (g.book.drill.tokens || [])[k], first: k === 0, prompt: `[${g.title}] ${g.book.drill.title}: ${text}` })));
     if (drills.length && !d.exercises.some((x) => x.type === "drill")) {
       const at = d.exercises.findIndex((x) => x.type === "retell");
       d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-drill`, type: "drill", title: "练一练 theo sách", items: drills });
@@ -405,20 +405,22 @@ function tabWords(l) {
 
 // ---------- Bài khóa: đánh dấu từ mới, bấm vào từ để tra ----------
 const HAN = /[一-鿿]/;
+// Một dòng chữ đã tách từ: từ nào cũng bấm được để xem pinyin và nghĩa. Dùng cho bài khóa và phần cấu trúc.
+function tokenLine(l, toks, repaint) {
+  const byN = l.byN || (l.byN = Object.fromEntries(l.items.map((i) => [i.n, i])));
+  return toks.map(([w, n]) => {
+    if (!HAN.test(w)) return w;
+    const g = l.gloss[w], item = n ? byN[n] : null;
+    const info = item && item.hanzi === w ? { hanzi: w, pinyin: item.pinyin, vi: item.vi, pos: item.pos, n, item }
+      : { hanzi: w, pinyin: g ? g[0] : "", vi: g ? g[1] : "", pos: "", n, base: item };
+    const saved = P.saved[w] && !P.saved[w].del;
+    return h("span", { class: "w" + (n ? " new" : "") + (saved ? " saved" : ""), onclick: (e) => { e.stopPropagation(); openWord(info, l, e.currentTarget, repaint || (() => {})); } },
+      h("ruby", {}, w, h("rt", {}, info.pinyin)));
+  });
+}
 function tabText(l) {
   const box = h("div", { class: "card text" });
-  const byN = Object.fromEntries(l.items.map((i) => [i.n, i]));
-  const paint = () => {
-    box.replaceChildren(...l.textTokens.map((para) => h("p", {}, para.map(([w, n]) => {
-      if (!HAN.test(w)) return w;
-      const g = l.gloss[w], item = n ? byN[n] : null;
-      const info = item && item.hanzi === w ? { hanzi: w, pinyin: item.pinyin, vi: item.vi, pos: item.pos, n, item }
-        : { hanzi: w, pinyin: g ? g[0] : "", vi: g ? g[1] : "", pos: "", n, base: item };
-      const saved = P.saved[w] && !P.saved[w].del;
-      return h("span", { class: "w" + (n ? " new" : "") + (saved ? " saved" : ""), onclick: (e) => openWord(info, l, e.currentTarget, paint) },
-        h("ruby", {}, w, h("rt", {}, info.pinyin)));
-    }))));
-  };
+  const paint = () => box.replaceChildren(...l.textTokens.map((para) => h("p", {}, tokenLine(l, para, paint))));
   paint();
   add(
     [].concat(l.audio.text).map(audio),
@@ -458,8 +460,11 @@ function openWord(info, l, el, repaint) {
 // ---------- Cấu trúc ----------
 // Nội dung một mục cấu trúc, xếp theo sách: lời giải thích tiếng Việt, rồi nguyên văn giải thích và ví dụ của sách.
 // Mục chưa có phần của sách thì hiện ví dụ tự soạn. Dùng chung cho thẻ "Cấu trúc" và phiên ôn cấu trúc.
-function grammarBody(g) {
+function grammarBody(g, l) {
   const book = g.book && g.book.parts;
+  // Câu của sách: bấm vào từ để tra, bấm loa để nghe cả câu. Dữ liệu cũ chưa tách từ thì hiện chữ thường.
+  const bookLine = (zh, toks) => toks && l ? h("span", { class: "text tap" }, tokenLine(l, toks)) : h("span", { class: "zh" }, zh);
+  const hear = (zh) => h("button", { class: "btn mini say", title: "Nghe cả câu", onclick: () => speak(zh) }, "🔊");
   const zhLine = (t) => h("span", { class: "zh", style: "cursor:pointer", title: "Bấm để nghe", onclick: () => speak(t) }, t);
   const out = [g.summary ? h("div", { class: "sub" }, g.summary) : null];
   for (const pt of g.points || []) {
@@ -467,8 +472,9 @@ function grammarBody(g) {
     if (!book) out.push(h("ul", { class: "exs" }, pt.examples.map((x) => h("li", {}, zhLine(x.zh), h("br"), h("span", { class: "sub" }, x.vi)))));
   }
   if (book) out.push(h("div", { class: "book" }, h("div", { class: "sub" }, "Theo sách"), book.map((pt) => [
-    pt.explain ? h("p", { class: "zh" }, pt.explain) : null,
-    pt.examples.length ? h("ol", { class: "exs" }, pt.examples.map((x) => h("li", {}, zhLine(x)))) : null])));
+    pt.explain ? h("p", {}, bookLine(pt.explain, pt.explainTokens)) : null,
+    pt.examples.length ? h("ol", { class: "exs" }, pt.examples.map((x) => typeof x === "string" ? h("li", {}, zhLine(x))
+      : h("li", {}, bookLine(x.zh, x.tokens), hear(x.zh), x.vi ? h("div", { class: "sub" }, x.vi) : null))) : null])));
   if (g.compare) {
     const [a, b] = g.title.split("và").map((x) => x.trim());
     out.push(h("p", {}, g.compare.same), h("div", { class: "wrap" }, h("table", { class: "cmp" },
@@ -489,7 +495,7 @@ function tabGrammar(l) {
     const n = drill ? drill.items.filter((it) => it.gid === g.id).length : 0;
     add(h("div", { class: "card" },
       h("h3", {}, h("span", { class: "zh" }, g.title), h("span", { class: "tag acc" }, g.kind), g.extra ? h("span", { class: "tag" }, "ngoài phần chú thích của sách") : null),
-      grammarBody(g),
+      grammarBody(g, l),
       h("div", { class: "row", style: "margin-top:10px" },
         n ? h("a", { class: "btn mini", href: `#/ex/${l.id}/${drill.id}` }, `练一练 · ${n} câu`) : null,
         compose && compose.items.some((it) => it.word === g.title) ? h("a", { class: "btn mini", href: `#/ex/${l.id}/${compose.id}` }, "✍ Đặt câu") : null)));
@@ -670,7 +676,7 @@ const EX = {
     const refresh = () => { const v = ta.value.trim(); note.textContent = a.done && v === a.v ? `Đã lưu lúc ${fmtTime(a.t)}` : a.done && v ? "Có thay đổi chưa lưu" : ""; };
     refresh();
     return [it.first ? h("div", { class: "drillhead" }, h("b", { class: "zh" }, it.word), h("span", { class: "sub zh" }, ` ${it.task}`)) : null,
-      h("div", { class: "zh", style: "white-space:pre-line" }, it.text), ta,
+      it.tokens ? h("div", { class: "text tap", style: "white-space:pre-line" }, tokenLine(curLesson, it.tokens)) : h("div", { class: "zh", style: "white-space:pre-line" }, it.text), ta,
       h("div", { class: "row", style: "margin-top:6px" },
         h("button", { class: "btn pri", onclick: () => {
           const v = ta.value.trim();

@@ -47,7 +47,7 @@ route(/^gram\/(\w+)$/, (scope) => {
   const stage = h("div", {});
   add(stage, h("div", { style: "margin-top:36px;text-align:center" }, h("a", { href: back, class: "btn" }, "Thoát phiên ôn")));
 
-  const explain = (g) => grammarBody(g);
+  const explain = (g, l) => grammarBody(g, l);
 
   function finish() {
     document.onkeydown = null;
@@ -74,7 +74,7 @@ route(/^gram\/(\w+)$/, (scope) => {
           ask ? [h("div", { class: "sub" }, "Nói hoặc viết câu này bằng tiếng Trung, có dùng cấu trúc trên:"), h("p", { style: "font-size:18px" }, ask.vi)]
             : h("div", { class: "sub" }, "Hai từ này giống và khác nhau ở đâu? Tự nhớ lại rồi mới xem."),
           ta,
-          open ? [ask ? h("div", { class: "fb model" }, "Câu mẫu: ", h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(ask.zh) }, ask.zh)) : null, explain(g)] : null),
+          open ? [ask ? h("div", { class: "fb model" }, "Câu mẫu: ", h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(ask.zh) }, ask.zh)) : null, explain(g, lessonById(k.lesson))] : null),
         open ? [h("div", { class: "sub", style: "margin-top:8px" }, "Tự chấm: bạn nhớ cấu trúc này đến đâu?"),
           h("div", { class: "grade" }, [["Quên", "bad"], ["Khó", ""], ["Nhớ", "ok"], ["Dễ", "ok"]].map(([label, cls], gr) =>
             h("button", { class: "btn " + cls, onclick: () => done(gr) }, label, h("small", {}, ivlLabel(card, gr)))))]

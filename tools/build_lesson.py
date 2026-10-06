@@ -301,6 +301,18 @@ def book_grammar(n, authored):
     return out + [{**g, "extra": True} for g in left]
 
 
+def book_vi(n):
+    """Bản dịch tiếng Việt của ví dụ trong sách: mỗi dòng là mã mục, số phần, số ví dụ, câu dịch (cách nhau bằng tab)."""
+    f = ROOT / "data" / "book" / "vi" / f"{n:02d}.tsv"
+    out = {}
+    if f.exists():
+        for line in f.read_text().splitlines():
+            if line.strip():
+                gid, k, j, text = line.split("\t", 3)
+                out[(gid, int(k), int(j))] = text
+    return out
+
+
 def load(n):
     authored = json.loads((ROOT / "data" / "authored" / f"{n:02d}.json").read_text())
     src, warnings = authored["source"], []
@@ -409,12 +421,26 @@ def main():
         scope = {**known, **{v["hanzi"]: {"p": v["pinyin"], "vi": v["vi"]} for v in d["vocab"]}}
         tokens = tokenize(text, own, scope, warnings)
         used = {t[0] for para in tokens for t in para}
+        # Phần cấu trúc theo sách cũng tách từ để bấm tra được; bản dịch ví dụ đọc từ data/book/vi nếu có.
+        grammar = book_grammar(n, authored.get("grammar", []))
+        vi = book_vi(n)
+        cut = lambda t: tokenize([t], own, scope, [])[0]
+        for g in grammar:
+            bk = g.get("book") or {}
+            for k, part in enumerate(bk.get("parts") or []):
+                part["explainTokens"] = cut(part["explain"])
+                part["examples"] = [{"zh": x, "tokens": cut(x), "vi": vi.get((g["id"], k, j), "")} for j, x in enumerate(part["examples"])]
+            if bk.get("drill"):
+                bk["drill"]["tokens"] = [cut(x) for x in bk["drill"]["items"]]
+            for part in bk.get("parts") or []:
+                used |= {t[0] for t in part["explainTokens"]} | {t[0] for x in part["examples"] for t in x["tokens"]}
+            used |= {t[0] for x in (bk.get("drill") or {}).get("tokens", []) for t in x}
         lesson = {"id": n, "title": authored["title"], "audio": d["audio"],
                   "vocab": d["vocab"], "names": d["names"], "text": text, "textTokens": tokens,
                   "gloss": {w: [e["p"], e["vi"]] for w, e in scope.items() if w in used and w not in own},
                   # Từng chữ đơn trong bảng từ: cách đọc và nghĩa của riêng chữ đó, dùng ở trang cách viết.
                   "chars": char_table({c for v in d["vocab"] for c in v["hanzi"]}),
-                  "grammar": book_grammar(n, authored.get("grammar", [])), "exercises": authored.get("exercises", []),
+                  "grammar": grammar, "exercises": authored.get("exercises", []),
                   "warnings": warnings}
         (out_dir / f"{n:02d}.json").write_text(json.dumps(lesson, ensure_ascii=False, indent=1))
         chars = sum(len(p) for p in text)
