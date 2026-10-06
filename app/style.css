@@ -100,7 +100,7 @@ input.type { width: 100%; text-align: center; font-family: var(--han); font-size
 
 /* Bài tập */
 .ex li { margin: 12px 0; }
-.ex select { font-family: var(--han); font-size: 19px; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); }
+.ex li select { font-family: var(--han); font-size: 19px; padding: 4px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); }
 .ex textarea { width: 100%; min-height: 84px; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); margin-top: 6px; }
 .ex textarea.zh { font-size: 20px; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0; min-height: 44px; }
@@ -199,3 +199,10 @@ option { background: var(--card); color: var(--ink); }
   h1 { font-size: 21px; }
   .card { padding: 12px; }
 }
+
+/* Thẻ gập: bấm vào tiêu đề để mở hoặc đóng, mũi tên bên phải cho biết trạng thái */
+details.fold > summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary::after { content: "›"; font-size: 24px; line-height: 1; color: var(--acc); transition: transform .15s; flex: none; padding: 0 4px; }
+details.fold[open] > summary::after { transform: rotate(90deg); }
+details.fold > ol { margin-top: 8px; }

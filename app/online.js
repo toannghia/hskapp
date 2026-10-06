@@ -513,10 +513,11 @@ route(/^teacher\/student\/([\w-]+)$/, async (uid) => {
         .map(([v, n]) => h("option", { value: v, selected: prev && prev.rating === v }, n)));
       const comment = h("textarea", { placeholder: "Nhận xét cho học viên (không bắt buộc)", style: "min-height:54px" }, prev ? prev.comment || "" : "");
       return h("div", { class: "card ex" },
-        h("div", {}, h("b", {}, `Bài ${e.l.id} · ${e.x.title}`),
-          h("span", { class: "sub" }, e.auto ? ` · làm ${e.done}/${e.rows.length} câu, đúng ${e.right}` : ` · đã viết ${e.done}/${e.rows.length}`, ` · ${fmtTime(e.last)}`)),
-        prev && !isNew(e) ? h("div", { class: "sub" }, `Đã xem lúc ${when(prev.seen_at)}`) : prev ? h("div", { class: "flag" }, "Học viên đã làm tiếp sau lần bạn xem gần nhất") : null,
-        h("details", { style: "margin-top:6px" }, h("summary", { class: "sub" }, "Xem từng câu"),
+        // Bấm vào tiêu đề để mở hoặc đóng phần từng câu.
+        h("details", { class: "fold" },
+          h("summary", {}, h("span", {}, h("b", {}, `Bài ${e.l.id} · ${e.x.title}`),
+            h("span", { class: "sub" }, e.auto ? ` · làm ${e.done}/${e.rows.length} câu, đúng ${e.right}` : ` · đã viết ${e.done}/${e.rows.length}`, ` · ${fmtTime(e.last)}`),
+            prev && !isNew(e) ? h("div", { class: "sub" }, `Đã xem lúc ${when(prev.seen_at)}`) : prev ? h("div", { class: "flag" }, "Học viên đã làm tiếp sau lần bạn xem gần nhất") : null)),
           h("ol", { class: "ex" }, e.rows.map((r) => {
             if (!e.auto) return h("li", {}, h("div", { class: "sub" }, r.it.prompt || r.it.q), r.a && r.a.done ? h("div", { class: "zh" }, r.a.v) : h("span", { class: "sub" }, "(chưa viết)"));
             const [mine, right] = answerText(e.x, r.it, r.a);
