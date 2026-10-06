@@ -28,7 +28,7 @@ function priorities() {
   const again = relearnItems().length;
   if (again) out.push({ t: `Học lại ${again} từ đã quên`, s: "Nhớ đúng hai lần liên tiếp thì từ đó rời danh sách.", href: "#/study/relearn/flash" });
   const due = dueItems().length;
-  if (due) out.push({ t: `Ôn ${due} thẻ đến hạn`, s: "Để lâu sẽ quên, nên làm đầu tiên.", href: "#/study/due/flash" });
+  if (due) out.push({ t: `Ôn ${due} thẻ đến hạn`, s: "Để lâu sẽ quên, nên làm đầu tiên.", href: "#/study/due/mix" });
   const redo = wrongDue().length;
   if (redo) out.push({ t: `Làm lại ${redo} câu bài tập đã sai`, s: "Đúng hai lần liên tiếp thì câu đó rời sổ câu sai.", href: "#/redo" });
   const gram = gramDue().length;
@@ -36,7 +36,7 @@ function priorities() {
   const weak = weakItems().length;
   if (weak) out.push({ t: `Luyện ${weak} từ hay quên`, s: "Những từ bạn đã quên từ hai lần trở lên.", href: "#/study/weak/flash" });
   const fresh = newItemsToday().length;
-  if (fresh) out.push({ t: `Học ${fresh} từ mới`, s: "Theo số từ mới mỗi ngày bạn đã đặt.", href: "#/study/due/flash" });
+  if (fresh) out.push({ t: `Học ${fresh} từ mới`, s: "Theo số từ mới mỗi ngày bạn đã đặt.", href: "#/study/due/mix" });
   for (const l of LESSONS) {
     const x = l.exercises.find((e) => !exSummary(l, e));
     if (x) { out.push({ t: `Làm bài tập: ${x.title}`, s: `Bài ${l.id} · chưa làm`, href: `#/ex/${l.id}/${x.id}` }); break; }

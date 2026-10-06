@@ -304,8 +304,9 @@ route(/^$/, () => {
       h("div", { class: "stat" }, h("b", {}, doneToday), h("span", {}, "lượt ôn đã làm hôm nay")),
       h("div", { class: "stat" }, h("b", {}, streak()), h("span", {}, "ngày học liên tiếp"))),
     h("div", { class: "card row" },
-      h("button", { class: "btn pri big", disabled: !(due.length + fresh.length), onclick: () => go("#/study/due/flash") },
+      h("button", { class: "btn pri big", disabled: !(due.length + fresh.length), onclick: () => go("#/study/due/mix") },
         due.length + fresh.length ? `Bắt đầu ôn (${due.length + fresh.length} thẻ)` : "Hôm nay đã ôn xong"),
+      due.length + fresh.length ? h("a", { class: "btn", href: "#/study/due/flash", title: "Ôn tất cả bằng thẻ lật, tự chấm" }, "Chỉ thẻ lật") : null,
       h("span", { class: "sub" }, `Đã học ${items.filter((i) => P.cards[i.id]).length}/${items.length} từ · `,
         h("label", {}, "từ mới mỗi ngày ",
           h("select", { onchange: (e) => { P.settings.newPerDay = Number(e.target.value); save(); render(); } },
@@ -706,7 +707,19 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   const total = queue.length;
   const tally = { right: 0, wrong: 0 };
   const stage = h("div", {});
-  const name = (MODES.find((m) => m[0] === mode) || [])[1] || "";
+  // Ôn trộn: mỗi từ được hỏi bằng kiểu hợp với độ thuộc của nó, càng thuộc càng khó.
+  const mix = mode === "mix";
+  const canHear = "speechSynthesis" in window;
+  function pickMode(it) {
+    const c = P.cards[it.id];
+    if (!c || !c.reps) return "flash";                       // từ mới hoặc vừa quên: xem lại thẻ
+    if (c.ivl < 2) return "vi";                              // mới học: nhận ra nghĩa
+    if (c.ivl < 5) return "han";                             // nhớ được vài ngày: từ nghĩa chọn chữ
+    if (c.ivl < 12) return clozeOf(it).length ? "cloze" : "han";   // khoảng một tuần: dùng trong câu
+    if (c.ivl < 25 || !canHear || !it.ex.length) return "type";    // hơn chục ngày: tự gõ chữ
+    return "dict";                                           // đã thuộc lâu: nghe chép cả câu
+  }
+  const name = () => (mix ? "Ôn trộn · " : "") + ((MODES.find((m) => m[0] === mode) || [])[1] || "");
   add(stage, h("div", { style: "margin-top:36px;text-align:center" }, h("a", { href: back, class: "btn" }, "Thoát phiên ôn")));
 
   const picture = (it) => {
@@ -725,7 +738,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
       h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null),
       mode === "cloze" ? null : exampleView(it, 1)));
   const head = () => h("div", { class: "row sub", style: "justify-content:space-between" },
-    h("span", {}, name), h("span", {}, `Còn ${queue.length} thẻ · đúng ${tally.right} · sai ${tally.wrong}`));
+    h("span", {}, name()), h("span", {}, `Còn ${queue.length} thẻ · đúng ${tally.right} · sai ${tally.wrong}`));
 
   function finish() {
     document.onkeydown = null;
@@ -745,6 +758,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   function next() {
     if (!queue.length) return finish();
     const it = queue[0];
+    if (mix) mode = pickMode(it);
     (mode === "flash" ? flash : mode === "dict" ? dictation : quiz)(it);
   }
   // Nghe chép câu: nghe một câu ví dụ, gõ lại, so từng chữ với câu đúng.
