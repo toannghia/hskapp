@@ -132,7 +132,7 @@ async function loadLessons() {
   LESSONS = (await store.lessons()).map(({ d, imgs }) => {
     d.items = d.vocab.map((v) => ({
       id: `${d.id}:${v.n}`, lesson: d.id, n: v.n, hanzi: v.hanzi, pinyin: v.pinyin, pos: v.pos, vi: v.vi,
-      emoji: v.emoji || "", img: imgs[v.n] ? `/data/images/${pad(d.id)}/${imgs[v.n]}` : "",
+      emoji: v.emoji || "", img: v.img || (imgs[v.n] ? `data/images/${pad(d.id)}/${imgs[v.n]}` : ""), imgCredit: v.imgCredit,
       clip: v.clip, ex: v.ex || [],
     }));
     return d;
@@ -649,7 +649,15 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   const name = (MODES.find((m) => m[0] === mode) || [])[1] || "";
   add(stage, h("div", { style: "margin-top:36px;text-align:center" }, h("a", { href: back, class: "btn" }, "Thoát phiên ôn")));
 
-  const picture = (it) => it.img ? h("img", { src: it.img, alt: "" }) : h("div", { class: "emoji" }, it.emoji);
+  const picture = (it) => {
+    if (!it.img) return h("div", { class: "emoji" }, it.emoji);
+    const el = h("img", { alt: "" });
+    // Ảnh không tải được thì quay về hình biểu tượng.
+    const fallback = () => el.replaceWith(h("div", { class: "emoji" }, it.emoji || "🖼️"));
+    el.onerror = fallback;
+    mediaUrl(it.img).then((u) => (u ? (el.src = u) : fallback()));
+    return el;
+  };
   // Thẻ đáp án gọn một hàng để kết quả và nút "Tiếp" nằm trọn trong màn hình điện thoại.
   const answerCard = (it, ok) => h("div", { class: "answer " + (ok ? "ok" : "bad") },
     h("div", { class: "zh" }, it.hanzi),

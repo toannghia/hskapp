@@ -702,7 +702,7 @@ route(/^admin$/, async () => {
         h("div", {}, lessons.length ? `Đang có ${lessons.length} bài trên máy chủ: ${lessons.map((l) => l.id).join(", ")}` : "Chưa có bài nào trên máy chủ."),
         HAS_LOCAL ? h("div", { class: "row", style: "margin-top:8px" },
           h("button", { class: "btn pri", onclick: (e) => syncContent(e.target, log, false) }, "Đưa bài học từ máy này lên"),
-          h("button", { class: "btn", onclick: (e) => syncContent(e.target, log, true) }, "Đưa cả âm thanh lên (chỉ tệp mới)"))
+          h("button", { class: "btn", onclick: (e) => syncContent(e.target, log, true) }, "Đưa cả âm thanh và ảnh lên (chỉ tệp mới)"))
           : h("div", { class: "sub" }, "Để nạp nội dung, mở app từ máy có dữ liệu bài học (node server.js) với địa chỉ có ?online=1."),
         log));
   } catch (e) {
@@ -736,7 +736,7 @@ async function syncContent(btn, log, withAudio) {
       const data = await (await fetch(`/data/lessons/${pad(m.id)}.json`)).json();
       must(await sb.from("lessons").upsert({ id: data.id, data, updated_at: new Date().toISOString() }));
       if (!withAudio) continue;
-      for (const path of [data.audio.text, data.audio.vocab, data.audio.workbook, data.vocab.map((v) => v.clip)].flat().filter(Boolean)) {
+      for (const path of [data.audio.text, data.audio.vocab, data.audio.workbook, data.vocab.map((v) => v.clip), data.vocab.map((v) => v.img)].flat().filter(Boolean)) {
         // Tệp đã có trên máy chủ với đúng dung lượng thì bỏ qua; tệp mới hoặc đã thay đổi mới tải lên.
         const have = await remoteSize(path);
         const res = await fetch("/" + path);
@@ -747,7 +747,7 @@ async function syncContent(btn, log, withAudio) {
           continue;
         }
         log.textContent = `Bài ${m.id}: đang tải lên ${path}… (đã tải ${sent}, bỏ qua ${skipped} tệp đã có)`;
-        const { error } = await sb.storage.from("media").upload(path, await res.blob(), { upsert: true, contentType: path.endsWith(".m4a") ? "audio/mp4" : "audio/mpeg" });
+        const { error } = await sb.storage.from("media").upload(path, await res.blob(), { upsert: true, contentType: /\.jpe?g$/.test(path) ? "image/jpeg" : path.endsWith(".png") ? "image/png" : path.endsWith(".m4a") ? "audio/mp4" : "audio/mpeg" });
         if (error) throw error;
         sent++;
       }

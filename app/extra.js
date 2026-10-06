@@ -447,3 +447,16 @@ route(/^write\/w\/(.+)$/, (raw) => {
   for (const l of LESSONS) if (l.gloss && l.gloss[word]) { found = { pinyin: l.gloss[word][0], vi: l.gloss[word][1] }; break; }
   writePage(word, found || {}, { back: "javascript:history.back()" });
 });
+
+// ---------- Nguồn ảnh minh hoạ ----------
+// Ảnh lấy từ Wikimedia Commons theo giấy phép mở; trang này ghi tác giả và giấy phép của từng ảnh.
+route(/^credits$/, () => {
+  const rows = LESSONS.flatMap((l) => l.items.filter((i) => i.imgCredit).map((i) => ({ l, i })));
+  add(h("h1", {}, "Nguồn ảnh minh hoạ"),
+    h("p", { class: "sub" }, "Ảnh dùng trong kiểu ôn “Nhìn hình đoán từ” lấy từ Wikimedia Commons, thuộc phạm vi công cộng hoặc giấy phép Creative Commons. Ảnh đã được thu nhỏ; bấm vào tên tác giả để mở trang gốc của ảnh."),
+    rows.length ? h("div", { class: "wrap" }, h("table", { class: "cmp" },
+      h("tr", {}, ["Bài", "Từ", "Tác giả", "Giấy phép"].map((t) => h("th", {}, t))),
+      rows.map(({ l, i }) => h("tr", {}, h("td", {}, l.id), h("td", { class: "zh" }, i.hanzi),
+        h("td", {}, h("a", { href: i.imgCredit.url, target: "_blank", rel: "noopener" }, i.imgCredit.author)), h("td", {}, i.imgCredit.license)))))
+      : h("div", { class: "card sub" }, "Chưa có ảnh minh hoạ nào."));
+});

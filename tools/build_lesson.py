@@ -310,6 +310,14 @@ def load(n):
         if not v["vi"] and entry:
             v["vi"] = entry["vi"]
             warnings.append(f"Từ {v['n']} {v['hanzi']}: nghĩa lấy từ từ điển")
+    # Ảnh minh hoạ có giấy phép mở (tools/fetch_images.py): đường dẫn ảnh và thông tin ghi nguồn.
+    credits_file = ROOT / "data" / "images" / f"{n:02d}" / "credits.json"
+    credits = json.loads(credits_file.read_text()) if credits_file.exists() else {}
+    for v in vocab:
+        c = credits.get(str(v["n"]))
+        if c and (credits_file.parent / c["file"]).exists():
+            v["img"] = f"data/images/{n:02d}/{c['file']}"
+            v["imgCredit"] = {"author": c["author"], "license": c["license"], "url": c["url"]}
     # Câu ví dụ cách dùng (tự soạn) trong data/authored/src/examples-*.tsv: số bài, từ, câu Trung, nghĩa Việt.
     for v in vocab:
         ex = examples().get((n, v["hanzi"]))
