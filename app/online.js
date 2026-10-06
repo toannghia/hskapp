@@ -702,7 +702,7 @@ route(/^admin$/, async () => {
         h("div", {}, lessons.length ? `Đang có ${lessons.length} bài trên máy chủ: ${lessons.map((l) => l.id).join(", ")}` : "Chưa có bài nào trên máy chủ."),
         HAS_LOCAL ? h("div", { class: "row", style: "margin-top:8px" },
           h("button", { class: "btn pri", onclick: (e) => syncContent(e.target, log, false) }, "Đưa bài học từ máy này lên"),
-          h("button", { class: "btn", onclick: (e) => syncContent(e.target, log, true) }, "Đưa cả âm thanh lên"))
+          h("button", { class: "btn", onclick: (e) => syncContent(e.target, log, true) }, "Đưa cả âm thanh lên (chỉ tệp mới)"))
           : h("div", { class: "sub" }, "Để nạp nội dung, mở app từ máy có dữ liệu bài học (node server.js) với địa chỉ có ?online=1."),
         log));
   } catch (e) {
@@ -714,6 +714,21 @@ route(/^admin$/, async () => {
 // Đọc bài học và âm thanh từ máy chủ chạy trên máy này rồi ghi lên Supabase.
 async function syncContent(btn, log, withAudio) {
   btn.disabled = true;
+  // Danh sách tệp đã có trên máy chủ, theo từng thư mục: {đường dẫn: dung lượng}. Mỗi thư mục chỉ hỏi một lần.
+  const remote = {};
+  const remoteSize = async (path) => {
+    const dir = path.slice(0, path.lastIndexOf("/"));
+    if (!remote[dir]) {
+      remote[dir] = {};
+      for (let offset = 0; ; offset += 1000) {
+        const page = must(await sb.storage.from("media").list(dir, { limit: 1000, offset }));
+        for (const f of page) if (f.metadata) remote[dir][`${dir}/${f.name}`] = f.metadata.size;
+        if (page.length < 1000) break;
+      }
+    }
+    return remote[dir][path];
+  };
+  let sent = 0, skipped = 0;
   try {
     const list = await (await fetch("/api/lessons")).json();
     for (const m of list) {
@@ -722,16 +737,25 @@ async function syncContent(btn, log, withAudio) {
       must(await sb.from("lessons").upsert({ id: data.id, data, updated_at: new Date().toISOString() }));
       if (!withAudio) continue;
       for (const path of [data.audio.text, data.audio.vocab, data.audio.workbook, data.vocab.map((v) => v.clip)].flat().filter(Boolean)) {
-        log.textContent = `Bài ${m.id}: đang tải lên ${path}…`;
-        const blob = await (await fetch("/" + path)).blob();
-        const { error } = await sb.storage.from("media").upload(path, blob, { upsert: true, contentType: path.endsWith(".m4a") ? "audio/mp4" : "audio/mpeg" });
+        // Tệp đã có trên máy chủ với đúng dung lượng thì bỏ qua; tệp mới hoặc đã thay đổi mới tải lên.
+        const have = await remoteSize(path);
+        const res = await fetch("/" + path);
+        if (!res.ok) throw new Error(`Không đọc được ${path} trên máy này`);
+        if (have != null && have === Number(res.headers.get("content-length"))) {
+          if (res.body) res.body.cancel();
+          skipped++;
+          continue;
+        }
+        log.textContent = `Bài ${m.id}: đang tải lên ${path}… (đã tải ${sent}, bỏ qua ${skipped} tệp đã có)`;
+        const { error } = await sb.storage.from("media").upload(path, await res.blob(), { upsert: true, contentType: path.endsWith(".m4a") ? "audio/mp4" : "audio/mpeg" });
         if (error) throw error;
+        sent++;
       }
     }
-    log.textContent = `Xong: đã đưa ${list.length} bài lên${withAudio ? " kèm âm thanh" : ""}.`;
+    log.textContent = `Xong: đã đưa ${list.length} bài lên` + (withAudio ? `, tải ${sent} tệp âm thanh mới hoặc đã thay đổi, bỏ qua ${skipped} tệp đã có sẵn.` : ".");
   } catch (e) {
     console.error(e);
-    log.textContent = "Dừng vì lỗi: " + (e.message || e);
+    log.textContent = `Dừng vì lỗi: ${e.message || e}. Đã tải ${sent} tệp, bỏ qua ${skipped}; bấm lại để chạy tiếp, các tệp đã lên sẽ không tải lại.`;
   }
   btn.disabled = false;
 }
