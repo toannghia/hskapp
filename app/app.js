@@ -39,6 +39,7 @@ function merge(mine, theirs) {
   for (const [id, r] of Object.entries(mine.relearn || {})) out.relearn[id] = newer(r, out.relearn[id], "t");
   // Thẻ ôn cấu trúc và sổ câu sai cũng gộp theo thời điểm như trên.
   if (mine.gcards || out.gcards) { out.gcards = out.gcards || {}; for (const [id, c] of Object.entries(mine.gcards || {})) out.gcards[id] = newer(c, out.gcards[id], "last"); }
+  if (mine.confuse || out.confuse) { out.confuse = out.confuse || {}; for (const [id, c] of Object.entries(mine.confuse || {})) out.confuse[id] = newer(c, out.confuse[id], "t"); }
   if (mine.wrong || out.wrong) { out.wrong = out.wrong || {}; for (const [id, w] of Object.entries(mine.wrong || {})) out.wrong[id] = newer(w, out.wrong[id], "t"); }
   const seen = new Set(out.log.map((e) => e.id));
   out.log = out.log.concat(mine.log.filter((e) => !seen.has(e.id))).sort((a, b) => a.t - b.t);
@@ -192,6 +193,24 @@ function backfillRelearn() {
   if (Object.keys(P.relearn).length) save();
 }
 const relearnItems = () => { const r = P.relearn || {}; return allItems().filter((i) => r[i.id] && !r[i.id].done).sort((a, b) => r[a.id].since - r[b.id].since); };
+// Cặp từ hay nhầm: chọn nhầm từ này thành từ kia thì ghi lại, lần sau cố ý cho hai từ đứng chung một câu hỏi.
+// Mỗi lần chọn đúng khi từ kia cũng có mặt thì trừ một; về 0 là hết nhầm.
+const pairKey = (a, b) => [a.id, b.id].sort().join("|");
+function confusedWith(it) {
+  const ids = Object.entries(P.confuse || {}).filter(([k, c]) => c.n > 0 && k.split("|").includes(it.id)).map(([k]) => k.split("|").find((x) => x !== it.id));
+  return ids.length ? allItems().filter((o) => ids.includes(o.id)) : [];
+}
+function noteConfuse(it, picked, opts) {
+  P.confuse = P.confuse || {};
+  if (picked !== it) { const k = pairKey(it, picked); P.confuse[k] = { n: ((P.confuse[k] || {}).n || 0) + 1, t: Date.now() }; }
+  else for (const o of opts) { const k = o !== it && pairKey(it, o), c = k && P.confuse[k]; if (c && c.n > 0) P.confuse[k] = { n: c.n - 1, t: Date.now() }; }
+  save();
+}
+function confusePairs() {
+  const byId = new Map(allItems().map((i) => [i.id, i]));
+  return Object.entries(P.confuse || {}).filter(([, c]) => c.n > 0).map(([k, c]) => ({ a: byId.get(k.split("|")[0]), b: byId.get(k.split("|")[1]), n: c.n }))
+    .filter((p) => p.a && p.b).sort((x, y) => y.n - x.n);
+}
 function grade(item, g, mode) {
   P.cards[item.id] = nextCard(P.cards[item.id], g);
   trackRelearn(item.id, g > 0);
@@ -825,11 +844,14 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
     // Câu điền từ: đưa các từ cùng từ loại lên trước để không loại được đáp án chỉ nhờ ngữ pháp.
     const sent = mode === "cloze" ? shuffle(clozeOf(it))[0] : null;
     if (sent) others = others.filter((o) => !sent[0].includes(o.hanzi)).sort((a, b) => (b.pos === it.pos) - (a.pos === it.pos));
-    others = others.slice(0, 3);
+    // Từ từng bị nhầm với từ này được đưa vào làm đáp án nhiễu trước tiên.
+    const foes = confusedWith(it).filter((o) => others.includes(o));
+    others = [...foes, ...others.filter((o) => !foes.includes(o))].slice(0, 3);
     const opts = shuffle([it, ...others]);
     const hanOpts = mode !== "vi";
     const typing = mode === "type" || (mode === "cloze" && P.settings.clozeType);
     let picked = null;
+    const choose = (o) => { picked = o; noteConfuse(it, o, opts); draw(); };
     const gap = () => { const at = sent[0].indexOf(it.hanzi); return [sent[0].slice(0, at), h("span", { class: "gap" }, picked ? it.hanzi : "　　"), sent[0].slice(at + it.hanzi.length)]; };
     const prompt = {
       vi: () => [h("div", { class: "big" }, it.hanzi), speakBtn(it)],
@@ -862,10 +884,10 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
       }
       body.push(h("div", { class: "opts" + (hanOpts ? " han" : "") }, opts.map((o) =>
         h("button", { class: "btn" + (picked ? (o === it ? " ok" : o === picked ? " bad" : "") : ""), disabled: !!picked,
-          onclick: () => { picked = o; draw(); } }, hanOpts ? o.hanzi : o.vi))));
+          onclick: () => choose(o) }, hanOpts ? o.hanzi : o.vi))));
       if (picked) body.push(after(picked === it));
       document.onkeydown = (e) => {
-        if (!picked && "1234".includes(e.key) && opts[e.key - 1]) { picked = opts[e.key - 1]; draw(); }
+        if (!picked && "1234".includes(e.key) && opts[e.key - 1]) choose(opts[e.key - 1]);
         else if (picked && e.key === "Enter") done(it, picked === it ? 2 : 0);
       };
       stage.replaceChildren(...body.flat());
@@ -881,6 +903,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
 route(/^saved$/, () => {
   const items = savedItems();
   const again = relearnItems();
+  const pairs = confusePairs();
   add(h("h1", {}, "Sổ từ"),
     h("h2", {}, `Từ cần học lại (${again.length})`),
     h("div", { class: "sub" }, `Từ nào bạn quên hoặc làm sai sẽ tự vào đây. Nhớ đúng ${RELEARN_GOAL} lần liên tiếp thì từ đó tự rời danh sách.`),
@@ -894,6 +917,11 @@ route(/^saved$/, () => {
         h("td", {}, i.vi, i.lesson ? h("span", { class: "tag" }, `bài ${i.lesson}`) : null),
         h("td", { class: "sub", style: "white-space:nowrap" }, `đã nhớ ${P.relearn[i.id].streak}/${RELEARN_GOAL}`)))))]
       : h("div", { class: "card sub" }, "Hiện không có từ nào cần học lại."),
+    pairs.length ? [h("h2", {}, `Cặp từ hay nhầm (${pairs.length})`),
+      h("div", { class: "sub" }, "Bạn từng chọn nhầm từ này thành từ kia. Hai từ sẽ được hỏi chung trong cùng một câu cho tới khi bạn phân biệt được."),
+      h("div", { class: "pairs" }, pairs.map((p) => h("div", { class: "card pair" },
+        [p.a, p.b].map((i) => h("div", { onclick: () => pronounce(i) }, h("span", { class: "zh" }, i.hanzi), h("span", { class: "p" }, ` ${i.pinyin}`), h("div", { class: "sub" }, i.vi))),
+        h("span", { class: "tag" }, `nhầm ${p.n} lần`))))] : null,
     h("h2", {}, `Từ bạn đã lưu (${items.length})`),
     h("div", { class: "sub" }, "Những từ bạn lưu khi đọc bài khóa. Chúng cũng được đưa vào lịch ôn hằng ngày."),
     items.length ? h("div", { class: "row", style: "margin:12px 0" },

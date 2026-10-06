@@ -232,3 +232,6 @@ details.fold > ol { margin-top: 8px; }
 a.stat { display: block; color: inherit; }
 .miss { background: var(--bad-soft); color: var(--bad); border-radius: 3px; }
 .extra { color: var(--bad); text-decoration: line-through; }
+.pair { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: center; padding: 10px 14px; margin: 8px 0; }
+.pair > div { cursor: pointer; min-width: 0; } .pair .zh { font-size: 24px; } .pair .p { color: var(--acc); }
+@media (max-width: 480px) { .pair { grid-template-columns: 1fr 1fr; } .pair .tag { grid-column: 1 / -1; justify-self: start; margin-left: 0; } }
