@@ -133,7 +133,7 @@ async function loadLessons() {
     d.items = d.vocab.map((v) => ({
       id: `${d.id}:${v.n}`, lesson: d.id, n: v.n, hanzi: v.hanzi, pinyin: v.pinyin, pos: v.pos, vi: v.vi,
       emoji: v.emoji || "", img: imgs[v.n] ? `/data/images/${pad(d.id)}/${imgs[v.n]}` : "",
-      clip: v.clip,
+      clip: v.clip, ex: v.ex || [],
     }));
     return d;
   });
@@ -231,6 +231,16 @@ async function pronounce(x) {
     player.playbackRate = slow() ? 0.75 : 1;
     await player.play();
   } catch { speak(x.hanzi); }
+}
+// Câu ví dụ cách dùng của một từ: tô đậm từ đang học, bấm vào câu để nghe đọc cả câu.
+function exampleView(item, max = 2) {
+  if (!item.ex || !item.ex.length) return null;
+  return h("div", { class: "examples" }, item.ex.slice(0, max).map(([zh, vi]) => {
+    const at = zh.indexOf(item.hanzi);
+    const body = at < 0 ? [zh] : [zh.slice(0, at), h("b", {}, item.hanzi), zh.slice(at + item.hanzi.length)];
+    return h("div", { class: "example", title: "Bấm để nghe", onclick: (e) => { e.stopPropagation(); speak(zh); } },
+      h("div", { class: "zh" }, body), h("div", { class: "sub" }, vi));
+  }));
 }
 const speakBtn = (x) => h("button", { class: "btn", title: "Nghe phát âm", onclick: (e) => { e.stopPropagation(); pronounce(x); } }, "🔊");
 
@@ -336,7 +346,7 @@ function tabWords(l) {
       h("td", {}, h("span", { class: "dot " + status(i.id), title: { new: "Chưa học", learn: "Đang học", known: "Đã thuộc" }[status(i.id)] })),
       h("td", { class: "h", onclick: () => pronounce(i) }, i.hanzi),
       h("td", { class: "p" }, i.pinyin),
-      h("td", {}, i.emoji ? i.emoji + " " : "", i.vi, h("span", { class: "tag" }, i.pos)),
+      h("td", {}, i.emoji ? i.emoji + " " : "", i.vi, h("span", { class: "tag" }, i.pos), exampleView(i, 1)),
       h("td", {}, h("a", { class: "btn", href: `#/write/${l.id}/${i.n}`, title: "Xem cách viết và tập viết" }, "✍")))))),
     h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe."));
 }
@@ -378,6 +388,7 @@ function openWord(info, l, el, repaint) {
       h("div", { class: "py" }, info.pinyin || "—", info.pos ? h("span", { class: "tag" }, info.pos) : null,
         info.n ? h("span", { class: "tag acc" }, `từ mới số ${info.n}`) : null),
       h("div", {}, info.vi || "Chưa có nghĩa cho từ này."),
+      info.item ? exampleView(info.item, 1) : null,
       info.base ? h("div", { class: "sub" }, `Từ gốc trong bảng từ mới: ${info.base.hanzi} (${info.base.pinyin}) ${info.base.vi}`) : null,
       h("div", { class: "row", style: "margin-top:8px" },
         speakBtn(info.item || info.hanzi),
@@ -631,7 +642,8 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   const answerCard = (it, ok) => h("div", { class: "answer " + (ok ? "ok" : "bad") },
     h("div", { class: "zh" }, it.hanzi),
     h("div", {}, h("b", {}, ok ? "Đúng" : "Chưa đúng"), h("span", { style: "color:var(--acc)" }, ` · ${it.pinyin}`),
-      h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null)));
+      h("div", {}, it.emoji ? it.emoji + " " : "", it.vi, it.pos ? h("span", { class: "tag" }, it.pos) : null),
+      exampleView(it, 1)));
   const head = () => h("div", { class: "row sub", style: "justify-content:space-between" },
     h("span", {}, name), h("span", {}, `Còn ${queue.length} thẻ · đúng ${tally.right} · sai ${tally.wrong}`));
 
@@ -663,7 +675,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
         h("div", { class: "card flash", onclick: () => { if (!open) { open = true; draw(); } } },
           h("div", { class: "big" }, it.hanzi),
           open ? [h("div", { class: "py" }, it.pinyin), h("div", { class: "vi" }, it.emoji ? it.emoji + " " : "", it.vi),
-            it.pos ? h("span", { class: "tag" }, it.pos) : null, it.img ? picture(it) : null]
+            it.pos ? h("span", { class: "tag" }, it.pos) : null, it.img ? picture(it) : null, exampleView(it)]
             : h("div", { class: "sub" }, card ? "Bấm để xem nghĩa" : "Từ mới · bấm để xem nghĩa"),
           speakBtn(it)),
         open ? h("div", { class: "grade" }, [["Quên", "bad"], ["Khó", ""], ["Nhớ", "ok"], ["Dễ", "ok"]].map(([label, cls], g) =>

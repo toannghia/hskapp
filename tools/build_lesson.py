@@ -81,6 +81,27 @@ def cvdict():
     return _dict
 
 
+_examples = None
+
+
+def examples():
+    """{(số bài, từ): [[câu Trung, nghĩa Việt], …]}. Câu nào không chứa từ của nó thì báo và bỏ qua."""
+    global _examples
+    if _examples is None:
+        _examples = {}
+        for f in sorted((ROOT / "data" / "authored" / "src").glob("examples-*.tsv")):
+            for ln, line in enumerate(f.read_text().splitlines(), 1):
+                if not line.strip():
+                    continue
+                lesson, word, zh, vi = line.split("\t")
+                # Từ ly hợp có thể bị tách ra trong câu (吵了一架), nên chỉ cần các chữ xuất hiện đúng thứ tự.
+                if not re.search(".*".join(map(re.escape, word)), zh):
+                    print(f"  ! {f.name}:{ln}: câu ví dụ không chứa từ {word}")
+                    continue
+                _examples.setdefault((int(lesson), word), []).append([zh, vi])
+    return _examples
+
+
 _hanzi = None
 
 
@@ -289,6 +310,11 @@ def load(n):
         if not v["vi"] and entry:
             v["vi"] = entry["vi"]
             warnings.append(f"Từ {v['n']} {v['hanzi']}: nghĩa lấy từ từ điển")
+    # Câu ví dụ cách dùng (tự soạn) trong data/authored/src/examples-*.tsv: số bài, từ, câu Trung, nghĩa Việt.
+    for v in vocab:
+        ex = examples().get((n, v["hanzi"]))
+        if ex:
+            v["ex"] = ex
     # Hình gợi ý (biểu tượng) cho các từ có thể hình dung được, dùng ở kiểu ôn "Nhìn hình đoán từ".
     emoji_file = ROOT / "data" / "emoji.json"
     emoji = json.loads(emoji_file.read_text()) if emoji_file.exists() else {}

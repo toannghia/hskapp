@@ -206,3 +206,10 @@ details.fold > summary::-webkit-details-marker { display: none; }
 details.fold > summary::after { content: "›"; font-size: 24px; line-height: 1; color: var(--acc); transition: transform .15s; flex: none; padding: 0 4px; }
 details.fold[open] > summary::after { transform: rotate(90deg); }
 details.fold > ol { margin-top: 8px; }
+
+/* Câu ví dụ cách dùng của từ */
+.examples { margin-top: 6px; display: grid; gap: 6px; text-align: left; }
+.example { border-left: 3px solid var(--line); padding: 2px 0 2px 10px; cursor: pointer; }
+.example .zh { font-size: 18px; line-height: 1.5; }
+.example .zh b { color: var(--acc); }
+.flash .examples { width: 100%; max-width: 520px; margin-top: 12px; }
