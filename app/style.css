@@ -230,3 +230,5 @@ details.fold > ol { margin-top: 8px; }
 .sent { font-size: 24px; line-height: 1.7; }
 .gap { display: inline-block; min-width: 2.2em; margin: 0 3px; padding: 0 4px; text-align: center; border-bottom: 2px solid var(--acc); color: var(--acc); }
 a.stat { display: block; color: inherit; }
+.miss { background: var(--bad-soft); color: var(--bad); border-radius: 3px; }
+.extra { color: var(--bad); text-decoration: line-through; }

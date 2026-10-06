@@ -208,11 +208,11 @@ function streak() {
 }
 
 // ---------- Phát âm ----------
-function speak(text) {
+function speak(text, rate) {
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = "zh-CN"; u.rate = P && P.settings.slow === false ? 0.9 : 0.6;
+  u.lang = "zh-CN"; u.rate = rate || (P && P.settings.slow === false ? 0.9 : 0.6);
   const v = speechSynthesis.getVoices().find((x) => x.lang.replace("_", "-").startsWith("zh-CN"));
   if (v) u.voice = v;
   speechSynthesis.speak(u);
@@ -321,7 +321,7 @@ route(/^$/, () => {
 
 // ---------- Trang bài học ----------
 const TABS = [["words", "Từ mới"], ["text", "Bài khóa"], ["grammar", "Cấu trúc"], ["ex", "Bài tập"]];
-const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["cloze", "Điền từ vào câu"], ["type", "Gõ chữ Hán"], ["write", "Tập viết"]];
+const MODES = [["flash", "Thẻ lật"], ["vi", "Chữ → nghĩa"], ["han", "Nghĩa → chữ"], ["listen", "Nghe chọn từ"], ["pic", "Nhìn hình đoán từ"], ["cloze", "Điền từ vào câu"], ["dict", "Nghe chép câu"], ["type", "Gõ chữ Hán"], ["write", "Tập viết"]];
 
 route(/^lesson\/(\d+)\/(\w+)$/, (id, tab) => {
   const l = lessonById(id);
@@ -471,6 +471,19 @@ function tabEx(l) {
 }
 
 const stripPunct = (s) => s.replace(/[。，！？、；：“”\s.,!?]/g, "");
+// So hai chuỗi theo từng chữ: trả về [chuỗi đã gõ với chữ thừa bị gạch, chuỗi đúng với chữ còn thiếu được tô].
+function charDiff(a, b) {
+  const n = a.length, m = b.length, t = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) t[i][j] = a[i] === b[j] ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+  const mine = [], right = [];
+  let i = 0, j = 0;
+  while (i < n || j < m) {
+    if (i < n && j < m && a[i] === b[j]) { mine.push(a[i]); right.push(b[j]); i++; j++; }
+    else if (j < m && (i === n || t[i][j + 1] >= t[i + 1][j])) right.push(h("span", { class: "miss" }, b[j++]));
+    else mine.push(h("span", { class: "extra" }, a[i++]));
+  }
+  return [mine, right];
+}
 const blankify = (q, filled) => q.split("___").flatMap((part, i, arr) => (i < arr.length - 1 ? [part, filled] : [part]));
 
 route(/^ex\/(\d+)\/([\w-]+)$/, (lid, xid) => {
@@ -652,6 +665,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   // Điền từ vào câu: chỉ những từ có câu ví dụ chứa đúng từ đó.
   const clozeOf = (i) => i.ex.filter(([zh]) => zh.includes(i.hanzi));
   if (mode === "cloze") queue = queue.filter((i) => clozeOf(i).length);
+  if (mode === "dict") queue = queue.filter((i) => i.ex.length);
   const total = queue.length;
   const tally = { right: 0, wrong: 0 };
   const stage = h("div", {});
@@ -694,7 +708,45 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   function next() {
     if (!queue.length) return finish();
     const it = queue[0];
-    (mode === "flash" ? flash : quiz)(it);
+    (mode === "flash" ? flash : mode === "dict" ? dictation : quiz)(it);
+  }
+  // Nghe chép câu: nghe một câu ví dụ, gõ lại, so từng chữ với câu đúng.
+  // Gõ đúng cả câu thì tính "nhớ", sai chỗ khác nhưng đúng từ đang học thì tính "khó", còn lại là "quên".
+  function dictation(it) {
+    const [zh, vi] = shuffle(it.ex)[0];
+    const want = stripPunct(zh);
+    let typed = null, hint = false;
+    const input = h("textarea", { class: "zh wide", placeholder: "Gõ lại câu bạn nghe được", autocomplete: "off" });
+    const score = () => (stripPunct(typed) === want ? 2 : typed.includes(it.hanzi) ? 1 : 0);
+    const submit = () => { if (input.value.trim()) { typed = input.value.trim(); draw(); } };
+    const draw = () => {
+      const body = [head(),
+        h("div", { class: "card flash quiz slim" },
+          h("div", { class: "row", style: "justify-content:center" },
+            h("button", { class: "btn", onclick: () => speak(zh) }, "🔊 Nghe lại"),
+            h("button", { class: "btn", onclick: () => speak(zh, 0.4) }, "🐢 Chậm hơn"),
+            typed == null && !hint ? h("button", { class: "btn", onclick: () => { hint = true; draw(); } }, "Gợi ý nghĩa") : null),
+          hint || typed != null ? h("div", { class: "sub" }, vi) : null,
+          "speechSynthesis" in window ? null : h("div", { class: "sub" }, "Thiết bị này không có giọng đọc tiếng Trung nên chưa dùng được kiểu ôn này."))];
+      if (typed == null) {
+        body.push(input, h("div", { class: "row", style: "margin-top:10px" },
+          h("button", { class: "btn pri", onclick: submit }, "Kiểm tra"),
+          h("button", { class: "btn", onclick: () => { typed = "？"; draw(); } }, "Không nghe ra")));
+      } else {
+        const g = score(), [mine, right] = charDiff(stripPunct(typed), want);
+        body.push(h("div", { class: "answer " + (g ? "ok" : "bad"), style: "display:block" },
+          h("b", {}, g === 2 ? "Đúng cả câu" : g === 1 ? `Chưa đúng hết, nhưng đúng từ ${it.hanzi}` : "Chưa đúng"),
+          g === 2 ? null : h("div", { class: "sub" }, "Bạn gõ: ", h("span", { class: "zh", style: "font-size:20px;white-space:normal" }, mine)),
+          h("div", { class: "sub" }, "Câu đúng: ", h("span", { class: "zh", style: "font-size:20px;white-space:normal" }, g === 2 ? zh : right)),
+          h("div", { class: "sub" }, `${it.hanzi} · ${it.pinyin} · ${it.vi}`)),
+          h("button", { class: "btn pri big next", style: "width:100%;margin-top:10px", onclick: () => done(it, g) }, "Tiếp"));
+      }
+      stage.replaceChildren(...body.flat().filter(Boolean));
+      if (typed == null) input.focus(); else stage.querySelector(".next").scrollIntoView({ block: "nearest", behavior: "smooth" });
+    };
+    document.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); typed == null ? submit() : done(it, score()); } };
+    draw();
+    speak(zh);
   }
   function flash(it) {
     let open = false;
