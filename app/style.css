@@ -181,3 +181,6 @@ option { background: var(--card); color: var(--ink); }
 /* Chữa bài: chữ bị bỏ gạch đỏ, chữ thêm vào tô xanh */
 .del { color: var(--bad); text-decoration: line-through; background: var(--bad-soft); border-radius: 3px; }
 .ins { color: var(--ok); background: var(--ok-soft); border-radius: 3px; font-weight: 700; }
+
+/* Mục menu bị ẩn theo vai trò phải ẩn cả trong menu điện thoại */
+#top nav a[hidden] { display: none; }

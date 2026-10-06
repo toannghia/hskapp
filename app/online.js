@@ -84,11 +84,25 @@ function joinScreen() {
     h("p", { class: "sub" }, "Nếu bạn là giáo viên, hãy báo quản trị để được cấp quyền, rồi tải lại trang này.")));
 }
 
+// Giáo viên (không phải quản trị) chỉ làm việc với lớp: xem tiến độ học viên, chấm và chữa bài.
+const teacherOnly = () => ONLINE && ME && ME.role === "teacher";
+// Trang chủ của giáo viên là trang Giáo viên. Trả về true nếu đã chuyển hướng.
+function teacherHome() {
+  if (!teacherOnly()) return false;
+  go("#/teacher");
+  return true;
+}
 function drawAccount() {
   const nav = $("#top nav");
   nav.querySelectorAll(".role").forEach((x) => x.remove());
-  nav.append(h("a", { class: "role", href: "#/reviews" }, "Bài đã chữa"));
-  if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, "Giáo viên"));
+  if (teacherOnly()) {
+    // Ẩn các mục học tập (Hôm nay, Bảng điểm, Đánh giá, Sổ từ, Lịch sử) và dòng ghi nguồn từ điển.
+    nav.querySelectorAll("a:not(.role)").forEach((a) => { a.hidden = true; });
+    $("#top .brand").setAttribute("href", "#/teacher");
+    const foot = document.querySelector("footer");
+    if (foot) foot.hidden = true;
+  } else nav.append(h("a", { class: "role", href: "#/reviews" }, "Bài đã chữa"));
+  if (ME.role !== "student") nav.append(h("a", { class: "role", href: "#/teacher" }, teacherOnly() ? "Lớp và học viên" : "Giáo viên"));
   if (ME.role === "admin") nav.append(h("a", { class: "role", href: "#/admin" }, "Quản trị"));
   nav.append(h("a", { class: "role", href: "#/password" }, "Mật khẩu"));
   nav.append(h("a", { class: "role", href: "#", title: ME.email, onclick: async (e) => { e.preventDefault(); await sb.auth.signOut(); location.reload(); } }, "Đăng xuất"));
@@ -312,6 +326,7 @@ route(/^teacher$/, async () => {
     const pick = (key, options) => h("select", { onchange: (e) => { f[key] = e.target.value; if (key === "cls") { f.student = ""; render(); } else paint(); } },
       options.map(([v, n]) => h("option", { value: v, selected: f[key] === v }, n)));
     const students = ids.filter(inClass).map((id) => [id, who(people[id])]).sort((a, b) => a[1].localeCompare(b[1]));
+    const before = view.children.length;
     add(h("h2", {}, "Chữa bài viết của học viên"),
       h("div", { class: "row" },
         h("label", {}, "Lớp ", pick("cls", [["", "Tất cả lớp"], ...classes.map((c) => [c.id, c.name])])),
@@ -319,10 +334,13 @@ route(/^teacher$/, async () => {
         h("label", {}, "Hiện ", pick("show", [["waiting", "Bài chờ chữa"], ["graded", "Bài đã chữa"], ["all", "Tất cả"]]))),
       list);
     paint();
+    const gradingNodes = [...view.children].slice(before);
 
     // --- Lớp và tiến độ ---
     const name = h("input", { placeholder: "Tên lớp mới", style: "padding:9px" });
-    add(h("h2", {}, "Lớp của tôi"),
+    const waitingAll = subs.filter((s) => !s.reviews.length).length;
+    add(waitingAll ? h("div", { class: "card warn" }, h("b", {}, `Có ${waitingAll} bài viết đang chờ chữa`), h("span", { class: "sub" }, " · xem ở cuối trang, hoặc bấm vào cột “Bài viết” của từng học viên.")) : null,
+      h("h2", {}, "Lớp của tôi"),
       classes.map((c) => h("div", { class: "card" },
         h("h3", {}, c.name, h("span", { class: "tag acc" }, `mã lớp: ${c.code}`)),
         c.class_members.length ? h("div", { class: "wrap" }, h("table", { class: "cmp" },
@@ -345,6 +363,8 @@ route(/^teacher$/, async () => {
         if (error) return alert("Chưa tạo được lớp: " + error.message);
         render();
       } }, "Tạo lớp")));
+    // Đưa phần chữa bài xuống dưới danh sách lớp, để mở trang là thấy ngay học viên.
+    view.append(...gradingNodes);
   } catch (e) {
     console.error(e);
     view.replaceChildren(h("h1", {}, "Giáo viên"), h("div", { class: "card" }, "Không tải được dữ liệu lớp: " + (e.message || e)));

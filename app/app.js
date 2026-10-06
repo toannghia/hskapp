@@ -270,6 +270,7 @@ const add = (...kids) => view.append(...kids.flat(Infinity).filter((k) => k != n
 
 // ---------- Trang chủ ----------
 route(/^$/, () => {
+  if (typeof teacherHome === "function" && teacherHome()) return;
   const due = dueItems(), fresh = newItemsToday(), items = allItems();
   const today = dayNum();
   const doneToday = P.log.filter((e) => dayNum(e.t) === today && e.k === "card").length;
