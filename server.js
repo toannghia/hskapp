@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Máy chủ nhỏ cho app ôn HSK5: phục vụ giao diện, dữ liệu bài học, âm thanh,
 // và lưu tiến độ học vào data/user/progress.json để Mac và điện thoại dùng chung.
-// Chạy: node server.js  (không cần cài thêm gì)
+// Chạy: node server.js  (giọng đọc Edge cần chạy "npm install" một lần; thiếu thì app dùng giọng của thiết bị)
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -58,6 +58,28 @@ function listImages(lesson) {
   return out;
 }
 
+// Giọng đọc Microsoft Edge: mỗi câu sinh một lần rồi lưu ở audio/tts, lần sau dùng lại tệp.
+const TTS_DIR = path.join(ROOT, "audio", "tts");
+let tts = null;
+try { tts = require("./api/_tts"); require.resolve("msedge-tts"); } catch { tts = null; }
+const making = new Map();             // câu đang sinh dở: các yêu cầu trùng chờ chung một lần sinh
+async function ttsFile(text) {
+  const name = `${tts.key(text)}.mp3`, file = path.join(TTS_DIR, name);
+  if (fs.existsSync(file)) return name;
+  if (!making.has(name)) {
+    making.set(name, tts.synth(text).then((audio) => {
+      fs.mkdirSync(TTS_DIR, { recursive: true });
+      fs.writeFileSync(file + ".tmp", audio);
+      fs.renameSync(file + ".tmp", file);
+    }).finally(() => making.delete(name)));
+  }
+  await making.get(name);
+  return name;
+}
+function listTts() {
+  try { return fs.readdirSync(TTS_DIR).filter((f) => f.endsWith(".mp3")).map((f) => [f, fs.statSync(path.join(TTS_DIR, f)).size]); } catch { return []; }
+}
+
 function serveFile(req, res, file) {
   fs.stat(file, (err, st) => {
     if (err || !st.isFile()) return send(res, 404, { error: "not found" });
@@ -84,6 +106,15 @@ http.createServer((req, res) => {
   if (pathname === "/api/lessons") return send(res, 200, listLessons());
   const img = pathname.match(/^\/api\/images\/(\d+)$/);
   if (img) return send(res, 200, listImages(img[1]));
+  if (pathname === "/api/tts") {
+    if (!tts) return send(res, 503, { error: "Chưa cài giọng đọc Edge: chạy npm install trong thư mục app" });
+    const text = tts.clean(new URL(req.url, "http://x").searchParams.get("text"));
+    if (!tts.valid(text)) return send(res, 400, { error: "Câu cần đọc phải có chữ Hán và không quá 300 ký tự" });
+    ttsFile(text).then((name) => send(res, 200, { url: `/audio/tts/${name}` }))
+      .catch((e) => send(res, 502, { error: "Không đọc được câu này: " + (e.message || e) }));
+    return;
+  }
+  if (pathname === "/api/tts-files") return send(res, 200, listTts());
   if (pathname === "/api/progress" && req.method === "GET") return send(res, 200, readProgress());
   if (pathname === "/api/progress" && req.method === "PUT") {
     let body = "";

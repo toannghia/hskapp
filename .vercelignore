@@ -3,3 +3,7 @@
 !/app
 !/api
 !/vercel.json
+# Thư viện giọng đọc Edge cho hàm api/tts.js
+!/package.json
+!/package-lock.json
+!/.npmrc

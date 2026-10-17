@@ -1,0 +1,14 @@
+{
+  "name": "hsk5-app",
+  "private": true,
+  "description": "Ôn HSK5: giao diện, máy chủ trên máy và hàm Vercel",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "msedge-tts": "^2.1.0"
+  }
+}

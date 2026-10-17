@@ -712,6 +712,13 @@ route(/^admin$/, async () => {
 });
 
 // Đọc bài học và âm thanh từ máy chủ chạy trên máy này rồi ghi lên Supabase.
+// Phiên đăng nhập gửi kèm khi xin tệp đọc của giọng Edge (hàm api/tts.js chỉ phục vụ người đã đăng nhập).
+async function authHeader() {
+  if (!ONLINE || !sb) return {};
+  const session = must(await sb.auth.getSession()).session;
+  return session ? { Authorization: `Bearer ${session.access_token}` } : {};
+}
+
 async function syncContent(btn, log, withAudio) {
   btn.disabled = true;
   // Danh sách tệp đã có trên máy chủ, theo từng thư mục: {đường dẫn: dung lượng}. Mỗi thư mục chỉ hỏi một lần.
@@ -748,6 +755,20 @@ async function syncContent(btn, log, withAudio) {
         }
         log.textContent = `Bài ${m.id}: đang tải lên ${path}… (đã tải ${sent}, bỏ qua ${skipped} tệp đã có)`;
         const { error } = await sb.storage.from("media").upload(path, await res.blob(), { upsert: true, contentType: /\.jpe?g$/.test(path) ? "image/jpeg" : path.endsWith(".png") ? "image/png" : path.endsWith(".m4a") ? "audio/mp4" : "audio/mpeg" });
+        if (error) throw error;
+        sent++;
+      }
+    }
+    // Tệp đọc giọng Edge đã sinh sẵn trên máy (audio/tts): đưa lên thư mục tts của kho để bản online dùng ngay.
+    if (withAudio) {
+      const files = await (await fetch("/api/tts-files")).json();
+      for (const [name, size] of files) {
+        const path = `tts/${name}`;
+        if ((await remoteSize(path)) === size) { skipped++; continue; }
+        log.textContent = `Đang tải lên tệp đọc ${path}… (đã tải ${sent}, bỏ qua ${skipped} tệp đã có)`;
+        const res = await fetch(`/audio/tts/${name}`);
+        if (!res.ok) throw new Error(`Không đọc được audio/tts/${name} trên máy này`);
+        const { error } = await sb.storage.from("media").upload(path, await res.blob(), { upsert: true, contentType: "audio/mpeg" });
         if (error) throw error;
         sent++;
       }

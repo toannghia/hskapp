@@ -243,22 +243,56 @@ function streak() {
 }
 
 // ---------- Phát âm ----------
-function speak(text, rate) {
+// Câu và từ chưa có tệp đọc của giáo trình được đọc bằng giọng Microsoft Edge: máy chủ sinh tệp mp3 một lần,
+// lưu lại, lần sau chỉ trả đường dẫn. Máy chủ không đọc được thì dùng giọng của thiết bị.
+function deviceSpeak(text, rate) {
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = "zh-CN"; u.rate = rate || (P && P.settings.slow === false ? 0.9 : 0.6);
+  u.lang = "zh-CN"; u.rate = rate * 0.75;
   const v = speechSynthesis.getVoices().find((x) => x.lang.replace("_", "-").startsWith("zh-CN"));
   if (v) u.voice = v;
   speechSynthesis.speak(u);
 }
+const ttsUrls = {};
+function ttsUrl(text) {
+  const t = text.replace(/[•·]/g, "").replace(/\s+/g, " ").trim();
+  if (!ttsUrls[t]) {
+    ttsUrls[t] = (async () => {
+      const headers = typeof authHeader === "function" ? await authHeader() : {};
+      const r = await fetch("/api/tts?text=" + encodeURIComponent(t), { headers });
+      if (!r.ok) throw new Error(`tts ${r.status}`);
+      return (await r.json()).url;
+    })();
+    ttsUrls[t].catch(() => delete ttsUrls[t]);    // lỗi thì lần sau thử lại
+  }
+  return ttsUrls[t];
+}
+// rate: tốc độ phát, 1 là bình thường; không truyền thì theo nút "Đọc chậm".
+let speakSeq = 0;
+async function speak(text, rate) {
+  const r = rate || (slow() ? 0.8 : 1), seq = ++speakSeq;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  player.pause();
+  try {
+    const url = await ttsUrl(text);
+    if (seq !== speakSeq) return;                 // người dùng đã bấm câu khác trong lúc chờ
+    player.src = url;
+    player.preservesPitch = true;
+    player.playbackRate = r;
+    await player.play();
+  } catch (e) {
+    if (seq === speakSeq) deviceSpeak(text, r);
+  }
+}
 // Từ mới được phát bằng tệp đọc thật của giáo trình (mỗi từ một tệp, cắt sẵn);
-// từ chưa có tệp riêng thì dùng giọng đọc của thiết bị.
+// từ chưa có tệp riêng thì đọc bằng giọng Edge như trên.
 const player = new Audio();
-const slow = () => P.settings.slow !== false;     // mặc định đọc chậm
+const slow = () => P && P.settings.slow !== false;     // mặc định đọc chậm
 async function pronounce(x) {
   if (typeof x === "string") return speak(x);
   if (!x.clip) return speak(x.hanzi);
+  ++speakSeq;                                     // bỏ câu Edge đang chờ tải, nếu có
   try {
     const url = await mediaUrl(x.clip);
     if (!url) return speak(x.hanzi);
@@ -775,7 +809,7 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
   const stage = h("div", {});
   // Ôn trộn: mỗi từ được hỏi bằng kiểu hợp với độ thuộc của nó, càng thuộc càng khó.
   const mix = mode === "mix";
-  const canHear = "speechSynthesis" in window;
+  const canHear = true;                                      // giọng Edge, thiếu thì giọng của thiết bị
   function pickMode(it) {
     const c = P.cards[it.id];
     if (!c || !c.reps) return "flash";                       // từ mới hoặc vừa quên: xem lại thẻ
@@ -841,10 +875,10 @@ route(/^study\/(\w+)\/(\w+)$/, (scope, mode) => {
         h("div", { class: "card flash quiz slim" },
           h("div", { class: "row", style: "justify-content:center" },
             h("button", { class: "btn", onclick: () => speak(zh) }, "🔊 Nghe lại"),
-            h("button", { class: "btn", onclick: () => speak(zh, 0.4) }, "🐢 Chậm hơn"),
+            h("button", { class: "btn", onclick: () => speak(zh, 0.6) }, "🐢 Chậm hơn"),
             typed == null && !hint ? h("button", { class: "btn", onclick: () => { hint = true; draw(); } }, "Gợi ý nghĩa") : null),
           hint || typed != null ? h("div", { class: "sub" }, vi) : null,
-          "speechSynthesis" in window ? null : h("div", { class: "sub" }, "Thiết bị này không có giọng đọc tiếng Trung nên chưa dùng được kiểu ôn này."))];
+        )];
       if (typed == null) {
         body.push(input, h("div", { class: "row", style: "margin-top:10px" },
           h("button", { class: "btn pri", onclick: submit }, "Kiểm tra"),
