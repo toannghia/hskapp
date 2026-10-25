@@ -240,3 +240,17 @@ a.stat { display: block; color: inherit; }
 table.cmp.zh td { font-size: 18px; } .drillhead { margin: 4px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
 .text.tap { font-size: 20px; line-height: 1.8; } .text.tap rt { display: none; }
 .btn.mini.say { min-height: 28px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+/* Bảng kết hợp từ */
+.colloc { margin-top: 12px; }
+.chead { padding: 6px 0; border-bottom: 2px solid var(--acc); }
+.crow { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.cpair { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.cpair .text.tap { font-size: 21px; }
+.cpair .plus { color: var(--mute); }
+.combos { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; margin-top: 8px; }
+.combo { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 1px; padding: 6px 9px; border: 1px solid var(--line);
+  border-radius: 9px; background: var(--bg); color: var(--ink); cursor: pointer; }
+.combo .zh { font-size: 18px; } .combo .py { color: var(--acc); font-size: 12px; } .combo .vi { color: var(--mute); font-size: 13px; line-height: 1.3; }
+.cex { margin-top: 8px; padding: 6px 10px; border-left: 3px solid var(--line); }
+.cnote { margin-top: 6px; font-size: 14px; line-height: 1.5; } .cnote b { color: var(--acc); font-weight: 600; }
+.cex .btn.mini { min-height: 28px; padding: 0 10px; margin-left: 6px; vertical-align: middle; }

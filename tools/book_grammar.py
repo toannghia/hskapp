@@ -20,7 +20,7 @@ NUM = re.compile(r"^[（(]\s*(\d{1,2})\s*[）)]\s*")
 PUNCT = "。，：；？！、“”"
 END = "。？！）)”…"
 NOISE = re.compile(r"nhantriviet|^Hoc T|^Học T|rung toi|trung toi|^Chu thich|^Chú thích|标准教程|^HSK")
-HEADS = {"动词", "宾语", "定语", "中心语", "补语", "主语", "谓语", "状语", "数量词", "名词", "形容词", "副词", "量词", "介词"}
+HEADS = {"数量", "动词", "宾语", "定语", "中心语", "补语", "主语", "谓语", "状语", "数量词", "名词", "形容词", "副词", "量词", "介词"}
 GAP = "____"
 
 
@@ -146,35 +146,64 @@ def drill_item(lines):
     return "\n".join(out)
 
 
-def groups(lines, gap=0.0235):
-    out = []
-    for l in sorted(lines, key=lambda l: (l["p"], l["y"])):
-        if out and out[-1][-1]["p"] == l["p"] and l["y"] - out[-1][-1]["y"] < gap:
-            out[-1].append(l)
-        else:
-            out.append([l])
-    return [{"t": "".join(x["t"] for x in g), "y": sum(x["y"] for x in g) / len(g), "p": g[0]["p"]} for g in out]
+LATIN_NOTE = re.compile(r"\s*[（(][^（）()]*[A-Za-z][^（）()]*[）)]")    # chú thích pinyin của bản tiếng Việt, ví dụ （xianyan, tuoi sang）
+
+
+FIX = json.loads((OUT / "fix.json").read_text()) if (OUT / "fix.json").exists() else {}
+LESSON = 0
+
+
+def cell(lines):
+    """Chữ trong một ô bảng kết hợp từ: bỏ chú thích pinyin, khoảng trắng, dấu phẩy lạc; sửa chữ đọc nhầm."""
+    t = LATIN_NOTE.sub("", "".join(l["t"] for l in lines))
+    t = re.sub(r"\s+|，(?=[一-鿿])", "", t)
+    t = re.sub(r"(?<=[一-鿿])[lI|1](?=[一-鿿（])", "/", t)          # dấu "/" bị đọc thành l, I, 1
+    t = re.sub(r"[•·]", "", t)
+    t = re.sub(r"[⋯…]+", "……", t)
+    t = t.lstrip("：:")
+    for old, new in FIX.get("text", {}).items():
+        t = t.replace(old, new)
+    return t.strip("/")
 
 
 def parse_collocations(rs, warn):
+    """Bảng 词语搭配: mỗi bảng có hàng tên cột (动词 + 宾语…), dưới là các dòng hai ô trái, phải.
+
+    Một ô dài có thể xuống dòng; ô bên kia khi đó nằm giữa theo chiều dọc, ở hàng riêng. Vì vậy gom các hàng
+    sát nhau thành một dòng của bảng, trừ khi cả hai hàng đều đã đủ hai ô (hai dòng riêng đứng sát nhau).
+    """
     tables, cur = [], None
     for r in rs:
-        cells = [l for l in r if l["t"] != "+"]
+        cells = [l for l in r if l["t"] not in ("+", "十")]
         if cells and all(l["t"] in HEADS for l in cells) and len(cells) == 2:
-            cur = {"head": [c["t"] for c in cells], "lines": []}
+            cur = {"head": [{"数量": "数量词"}.get(c["t"], c["t"]) for c in cells], "split": (cells[0]["x"] + cells[1]["x"]) / 2 - 0.04, "rows": []}
             tables.append(cur)
-        elif cur:
-            cur["lines"] += cells
+        elif cur and cells:
+            cur["rows"].append(cells)
     out = []
     for t in tables:
-        left, right = groups([l for l in t["lines"] if l["x"] < 0.55]), groups([l for l in t["lines"] if l["x"] >= 0.55])
-        if len(left) != len(right):
-            warn.append(f"bảng kết hợp từ {'+'.join(t['head'])}: {len(left)} ô trái, {len(right)} ô phải")
+        groups = []
+        for r in t["rows"]:
+            left = [l for l in r if l["x"] < t["split"]]
+            right = [l for l in r if l["x"] >= t["split"]]
+            both = bool(left) and bool(right)
+            g = groups[-1] if groups else None
+            # Dòng đang gom còn thiếu một ô thì cho phép xa hơn một chút (ô xuống dòng nằm phía trên dòng chính).
+            near = 0.022 if (g and g["L"] and g["R"]) else 0.035
+            if g and g["p"] == r[0]["p"] and r[0]["y"] - g["y"] < near and not (both and g["L"] and g["R"]):
+                g["L"] += left; g["R"] += right; g["y"] = r[0]["y"]
+            else:
+                groups.append({"p": r[0]["p"], "y": r[0]["y"], "L": left, "R": right})
         pairs = []
-        for a in left:           # ô phải gần nhất theo chiều dọc
-            b = min((x for x in right if x["p"] == a["p"]), key=lambda x: abs(x["y"] - a["y"]), default=None)
-            if b:
-                pairs.append([a["t"], b["t"]])
+        for g in groups:
+            a, b = cell(g["L"]), cell(g["R"])
+            # Ô trái bị bản quét bỏ sót hẳn: bổ sung tay trong data/book/fix.json.
+            a = a or FIX.get("missing", {}).get(str(LESSON), {}).get(b, "")
+            a, b = FIX.get("rows", {}).get(str(LESSON), {}).get(f"{a}→{b}", [a, b])      # cả dòng sửa tay
+            if a and b:
+                pairs.append([a, b])
+            else:
+                warn.append(f"bảng kết hợp từ {'+'.join(t['head'])}: dòng thiếu một ô ({a or b})")
         out.append({"head": t["head"], "rows": pairs})
     return out
 
@@ -208,6 +237,8 @@ def parse_compare(rs):
 
 
 def lesson(n):
+    global LESSON
+    LESSON = n
     src = json.loads((ROOT / "data" / "authored" / f"{n:02d}.json").read_text())["source"]
     rs = section(src["book"], src["text"][-1]["page"])
     warn = []

@@ -517,8 +517,24 @@ function grammarBody(g, l) {
   }
   if (g.collocations) out.push(h("div", { class: "wrap" }, h("table", { class: "cmp" }, g.collocations.map((c) =>
     h("tr", {}, h("td", { class: "zh", style: "font-size:22px;white-space:nowrap" }, c.word), h("td", { class: "zh" }, c.with.join("　")))))));
-  for (const t of g.table || []) out.push(h("div", { class: "wrap" }, h("table", { class: "cmp zh" },
-    h("tr", {}, t.head.map((x) => h("th", {}, x))), t.rows.map((r) => h("tr", {}, r.map((x) => h("td", {}, x)))))));
+  // Bảng kết hợp từ: mỗi dòng hiện hai vế (bấm tra từng từ), các tổ hợp kèm pinyin và nghĩa (bấm để nghe),
+  // rồi một câu ví dụ đầy đủ. Dữ liệu cũ chỉ có hai ô chữ thì hiện như bảng thường.
+  const words = (toks, zh) => toks && l ? h("span", { class: "text tap" }, tokenLine(l, toks)) : h("span", { class: "zh" }, zh);
+  // Câu ví dụ của bảng: bản dịch ẩn, bấm "Xem nghĩa" mới hiện, để tự đoán nghĩa trước.
+  const exampleToggle = (ex) => {
+    const vi = h("div", { class: "sub", hidden: true }, ex.vi);
+    const btn = h("button", { class: "btn mini", onclick: () => { vi.hidden = !vi.hidden; btn.textContent = vi.hidden ? "Xem nghĩa" : "Ẩn nghĩa"; } }, "Xem nghĩa");
+    return h("div", { class: "cex" }, h("span", { class: "sub" }, "Ví dụ: "), words(ex.tokens, ex.zh), hear(ex.zh), ex.vi ? btn : null, vi);
+  };
+  for (const t of g.table || []) out.push(h("div", { class: "colloc" },
+    h("div", { class: "chead" }, h("b", { class: "zh" }, t.head.join(" + ")), t.headVi ? h("span", { class: "sub" }, ` ${t.headVi.join(" + ")}`) : null),
+    t.rows.map((r) => Array.isArray(r) ? h("div", { class: "crow" }, h("span", { class: "zh" }, r[0], " + ", r[1])) : h("div", { class: "crow" },
+      h("div", { class: "cpair" }, words(r.leftTokens, r.left), h("span", { class: "plus" }, "+"), words(r.rightTokens, r.right)),
+      r.note ? h("div", { class: "cnote" }, r.note.explain ? h("div", {}, h("b", {}, "Giải thích: "), r.note.explain) : null,
+        r.note.usage ? h("div", {}, h("b", {}, "Cách dùng: "), r.note.usage) : null) : null,
+      h("div", { class: "combos" }, r.combos.map((c) => h("button", { class: "combo", title: "Bấm để nghe", onclick: () => speak(c.zh) },
+        h("span", { class: "zh" }, c.zh), h("span", { class: "py" }, c.py), c.vi ? h("span", { class: "vi" }, c.vi) : null))),
+      r.ex ? exampleToggle(r.ex) : null))));
   return out;
 }
 function tabGrammar(l) {

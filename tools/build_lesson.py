@@ -301,6 +301,67 @@ def book_grammar(n, authored):
     return out + [{**g, "extra": True} for g in left]
 
 
+HEAD_VI = {"动词": "động từ", "宾语": "tân ngữ", "定语": "định ngữ", "中心语": "trung tâm ngữ", "状语": "trạng ngữ",
+           "补语": "bổ ngữ", "主语": "chủ ngữ", "谓语": "vị ngữ", "数量词": "số lượng từ", "名词": "danh từ"}
+TONE = {c: t for t, cs in enumerate(["āēīōūǖ", "áéíóúǘ", "ǎěǐǒǔǚ", "àèìòùǜ"], 1) for c in cs}
+
+
+def tone(py):
+    return next((TONE[c] for c in py if c in TONE), 0)
+
+
+def combos(head, left, right):
+    """Các tổ hợp của một dòng bảng kết hợp từ: mỗi lựa chọn bên trái ghép với mỗi lựa chọn bên phải.
+
+    Ngoặc chỉ phần có thể bỏ, ví dụ 艰苦（的）条件 → 艰苦的条件. Cột số lượng từ viết tắt 一盘/局 nghĩa là 一盘, 一局.
+    Trả về từng cặp (vế trái, vế phải) còn giữ ngoặc, để tách từ từng vế riêng cho đúng pinyin.
+    """
+    opts = lambda t: [o for o in re.sub(r"[＋+]", "", t).split("/") if o]
+    L, R = opts(left), opts(right)
+    if head[0] == "数量词":
+        L = [o if re.match(r"[一二两三四五六七八九十几半]", o) else "一" + o for o in L]
+    return [(a, b) for a in L for b in R]
+
+
+# Từ đa âm mà từ điển hay cho cách đọc ít dùng hơn.
+PY_FIX = {"重点": "zhòngdiǎn", "中国": "Zhōngguó", "着": "zhe", "得": "de", "地": "de"}
+PAREN = re.compile(r"[（）()]")
+
+
+def pinyin_of(tokens, scope):
+    """Pinyin của một cụm đã tách từ, có đổi thanh của 一 và 不 theo chữ đứng sau."""
+    syl = [(w, PY_FIX.get(w) or (scope[w]["p"] if w in scope and scope[w].get("p") else w)) for w, _ in tokens]
+    out = ""
+    for i, (w, p) in enumerate(syl):
+        nxt = tone(syl[i + 1][1]) if i + 1 < len(syl) else 0
+        if w == "一" and nxt:
+            p = "yí" if nxt == 4 else "yì"
+        elif w == "不" and nxt == 4:
+            p = "bú"
+        out += p if not HAN.match(w) else (" " if out and not out.endswith(" ") else "") + p
+    return out.strip()
+
+
+def book_colloc(n):
+    """Chú thích tự soạn cho bảng kết hợp từ (data/book/colloc/NN.tsv).
+
+    Mỗi dòng bảng (khóa "trái→phải") có: "N<tab>khóa<tab>giải thích<tab>cách dùng" và "S<tab>khóa<tab>câu<tab>nghĩa câu";
+    mỗi tổ hợp có "C<tab>tổ hợp<tab>nghĩa".
+    """
+    f = ROOT / "data" / "book" / "colloc" / f"{n:02d}.tsv"
+    gloss, sent, note = {}, {}, {}
+    if f.exists():
+        for line in f.read_text().splitlines():
+            parts = line.split("\t")
+            if parts[0] == "C" and len(parts) == 3:
+                gloss[parts[1]] = parts[2]
+            elif parts[0] == "S" and len(parts) == 4:
+                sent[parts[1]] = [parts[2], parts[3]]
+            elif parts[0] == "N" and len(parts) == 4:
+                note[parts[1]] = {"explain": parts[2], "usage": parts[3]}
+    return gloss, sent, note
+
+
 def book_vi(n):
     """Bản dịch tiếng Việt của ví dụ trong sách: mỗi dòng là mã mục, số phần, số ví dụ, câu dịch (cách nhau bằng tab)."""
     f = ROOT / "data" / "book" / "vi" / f"{n:02d}.tsv"
@@ -432,6 +493,28 @@ def main():
                 part["examples"] = [{"zh": x, "tokens": cut(x), "vi": vi.get((g["id"], k, j), "")} for j, x in enumerate(part["examples"])]
             if bk.get("drill"):
                 bk["drill"]["tokens"] = [cut(x) for x in bk["drill"]["items"]]
+            # Bảng kết hợp từ: mỗi dòng có các tổ hợp (kèm pinyin, nghĩa) và một câu ví dụ đầy đủ.
+            if g.get("table"):
+                cgloss, csent, cnote = book_colloc(n)
+                for t in g["table"]:
+                    t["headVi"] = [HEAD_VI.get(x, "") for x in t["head"]]
+                    rows = []
+                    for left, right in t["rows"]:
+                        row = {"left": left, "right": right, "leftTokens": cut(left), "rightTokens": cut(right), "combos": []}
+                        for a, b in combos(t["head"], left, right):
+                            toks = [x for x in cut(a) + cut(b) if not PAREN.fullmatch(x[0])]
+                            c = PAREN.sub("", a + b)
+                            row["combos"].append({"zh": c, "py": pinyin_of(toks, scope), "vi": cgloss.get(c, "")})
+                            used |= {x[0] for x in toks}
+                        if f"{left}→{right}" in cnote:
+                            row["note"] = cnote[f"{left}→{right}"]
+                        if f"{left}→{right}" in csent:
+                            zh, vi_s = csent[f"{left}→{right}"]
+                            row["ex"] = {"zh": zh, "tokens": cut(zh), "vi": vi_s}
+                            used |= {x[0] for x in row["ex"]["tokens"]}
+                        used |= {x[0] for x in row["leftTokens"] + row["rightTokens"]}
+                        rows.append(row)
+                    t["rows"] = rows
             for part in bk.get("parts") or []:
                 used |= {t[0] for t in part["explainTokens"]} | {t[0] for x in part["examples"] for t in x["tokens"]}
             used |= {t[0] for x in (bk.get("drill") or {}).get("tokens", []) for t in x}

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Sinh sẵn tệp đọc giọng Edge (audio/tts/<mã>.mp3) cho mọi câu và từ mà app có thể đọc:
-// từ mới chưa có tệp đọc của giáo trình, câu ví dụ của từ mới, ví dụ phần cấu trúc (tự soạn và của sách).
+// từ mới chưa có tệp đọc của giáo trình, câu ví dụ của từ mới, ví dụ phần cấu trúc (tự soạn và của sách),
+// các tổ hợp và câu ví dụ của bảng kết hợp từ.
 // Tệp đã có thì bỏ qua, nên chạy lại bao nhiêu lần cũng được. Sau đó vào Quản trị của bản online,
 // bấm "Đưa cả âm thanh và ảnh lên (chỉ tệp mới)" để đưa các tệp này lên kho.
 //   node tools/tts_warm.js            # tất cả các bài
@@ -22,6 +23,11 @@ function texts(lesson) {
   for (const g of lesson.grammar) {
     for (const pt of g.points || []) for (const x of pt.examples || []) out.push(x.zh);
     for (const part of (g.book && g.book.parts) || []) for (const x of part.examples) out.push(typeof x === "string" ? x : x.zh);
+    for (const t of g.table || []) for (const r of t.rows || []) {
+      if (Array.isArray(r)) continue;
+      for (const c of r.combos || []) out.push(c.zh);
+      if (r.ex) out.push(r.ex.zh);
+    }
   }
   return out;
 }
