@@ -448,5 +448,18 @@
  "10.19": {
   "hanzi": "匹",
   "pinyin": "pǐ"
+ },
+ "22.34": {
+  "hanzi": "知觉",
+  "pinyin": "zhījué",
+  "pos": "danh từ",
+  "vi": "tri giác, cảm giác"
+ },
+ "20.33": {
+  "pos": "động từ / giới từ",
+  "vi": "dựa vào; căn cứ vào"
+ },
+ "22.p1": {
+  "vi": "\"Cô bé bán diêm\" (truyện cổ tích của Andersen)"
  }
 }

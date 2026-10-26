@@ -434,7 +434,15 @@ function tabWords(l) {
         } }, h("span", {}, i.emoji ? i.emoji + " " : "", i.vi, i.pos ? h("span", { class: "tag" }, i.pos) : null), arrow),
         box);
     })),
-    h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe, bấm vào dòng nghĩa để xem câu ví dụ."));
+    h("div", { class: "sub", style: "margin-top:8px" }, "Chấm xám: chưa học · vàng: đang học · xanh: đã thuộc (khoảng ôn từ 7 ngày). Bấm vào chữ Hán để nghe, bấm vào dòng nghĩa để xem câu ví dụ."),
+    // Danh sách phụ cuối bảng từ của sách: tên riêng (专有名词) và thuật ngữ (科学名词). Không đưa vào lịch ôn.
+    ["专有名词", "科学名词"].map((grp) => {
+      const list = (l.names || []).filter((x) => (x.group || "专有名词") === grp);
+      return list.length ? [h("h2", {}, grp === "专有名词" ? "Tên riêng " : "Thuật ngữ khoa học ", h("span", { class: "zh sub" }, grp)),
+        h("div", { class: "wordlist" }, list.map((x) => h("div", { class: "word" },
+          h("div", { class: "wtop" }, h("span", { class: "h", onclick: () => speak(x.hanzi) }, x.hanzi), h("span", { class: "p" }, x.pinyin)),
+          h("div", { class: "wmean" }, h("span", {}, x.vi)))))] : null;
+    }));
 }
 
 // ---------- Bài khóa: đánh dấu từ mới, bấm vào từ để tra ----------

@@ -21,7 +21,7 @@ POS = r"(đgt\./tt\.|dt\./đgt\.|đgt\./dt\.|tt\./đgt\.|dt\./tt\.|tt\./phó\.|�
 ONE = {"đgt.": "động từ", "dgt.": "động từ", "agt.": "động từ", "dt.": "danh từ", "đt.": "đại từ",
        "tt.": "tính từ", "phó.": "phó từ", "lượng.": "lượng từ", "liên.": "liên từ", "giới.": "giới từ",
        "trợ.": "trợ từ", "thán.": "thán từ", "số.": "số từ"}
-ENTRY = re.compile(r"^\*?\s*\.?\s*(\d{1,2})\s*[\.．,，]\s*([（(]?[一-鿿]+[)）]?[一-鿿]*)")
+ENTRY = re.compile(r"^[*#]?\s*\.?\s*(\d{1,2})\s*[\.．,，]\s*([（(《]?[一-鿿]+[)）》]?[一-鿿]*[》]?)")
 NUM_ONLY = re.compile(r"^\*?\s*(\d{1,2})\s*[\.．]$")
 PURE_HAN = re.compile(r"^[（(]?[一-鿿]+[)）]?[一-鿿]*$")
 HAN = re.compile(r"[一-鿿]")
@@ -185,12 +185,14 @@ def build_vocab(book, pages):
     vocab, names = [], []
     for p in pages:
         zh, vi = page(book, "zh", p), page(book, "vi", p)
-        names_y = min((l["y"] for l in zh if "专有名词" in l["t"]), default=9)
+        # Tiêu đề danh sách phụ (专有名词, 科学名词…) ở cùng cột với bảng từ; tiêu đề nằm ở cột bài khóa thì không tính.
+        names_y = min((l["y"] for l in zh if 0.5 < l["x"] < 0.7 and 3 <= len(l["t"].strip()) <= 6 and l["t"].strip().endswith("名词")), default=9)
+        names_head = next((l["t"].strip() for l in zh if l["x"] > 0.5 and l["y"] == names_y), "")
         heads = []
         for l in zh:
             m = ENTRY.match(l["t"])
             if m and l["x"] > 0.5:
-                heads.append((l, int(m.group(1)), re.sub(r"[（()）]", "", m.group(2)), l["t"].lstrip().startswith("*")))
+                heads.append((l, int(m.group(1)), re.sub(r"[（()）]", "", m.group(2)), l["t"].lstrip()[:1] in "*#"))
                 continue
             # OCR đôi khi tách số thứ tự và chữ Hán thành hai mảnh nằm cạnh nhau.
             m = NUM_ONLY.match(l["t"].strip())
@@ -200,6 +202,11 @@ def build_vocab(book, pages):
                 if side:
                     heads.append((l, int(m.group(1)), re.sub(r"[（()）\s]", "", side[0]["t"]), l["t"].lstrip().startswith("*")))
         heads.sort(key=lambda h: h[0]["y"])
+        # Số lọt khỏi thứ tự giữa hai số kề nhau (dấu * đọc thành #3…) thì lấy theo vị trí: 2, 33, 4 → 2, 3, 4.
+        for i in range(1, len(heads) - 1):
+            a, b, c = heads[i - 1][1], heads[i][1], heads[i + 1][1]
+            if c - a == 2 and b != a + 1:
+                heads[i] = (heads[i][0], a + 1, *heads[i][2:])
         for i, (l, num, hanzi, star) in enumerate(heads):
             top = l["y"] - 0.012
             bottom = heads[i + 1][0]["y"] - 0.012 if i + 1 < len(heads) else l["y"] + 0.05
@@ -216,6 +223,8 @@ def build_vocab(book, pages):
                 pos, gloss = "", text[len(pinyin):]
             entry = {"n": num, "hanzi": hanzi, "pinyin": pinyin.strip(), "pos": pos_name(pos),
                      "vi": gloss.strip(" ;,"), "outOfSyllabus": star, "page": p}
+            if l["y"] > names_y:
+                entry["group"] = "科学名词" if "科学" in names_head else "专有名词"
             (names if l["y"] > names_y else vocab).append(entry)
     vocab.sort(key=lambda v: v["n"])
     return vocab, names
@@ -392,10 +401,12 @@ def load(n):
         seen.add(v["n"])
     for v in vocab:
         v.update(fixes.get(f"{n}.{v['n']}", {}))
+    for v in names:                                     # mục của danh sách phụ: khóa "số bài.p số thứ tự"
+        v.update(fixes.get(f"{n}.p{v['n']}", {}))
     # Mục OCR đọc hỏng hoàn toàn được bổ sung tay trong vocab-fix.json.
     for key, fix in fixes.items():
         lesson_no, num = key.split(".")
-        if int(lesson_no) == n and int(num) not in seen:
+        if int(lesson_no) == n and num.isdigit() and int(num) not in seen:
             vocab.append({"n": int(num), "pos": "", "outOfSyllabus": False, **fix})
     vocab.sort(key=lambda v: v["n"])
     for v in vocab + names:
