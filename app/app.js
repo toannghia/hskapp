@@ -424,6 +424,7 @@ function tabWords(l) {
       return h("div", { class: "word" },
         h("div", { class: "wtop" },
           h("span", { class: "dot " + status(i.id), title: { new: "Chưa học", learn: "Đang học", known: "Đã thuộc" }[status(i.id)] }),
+          h("span", { class: "num", title: "Số thứ tự trong sách" }, i.n),
           h("span", { class: "h", onclick: () => pronounce(i) }, i.hanzi),
           h("span", { class: "p" }, i.pinyin),
           h("a", { class: "btn mini", href: `#/write/${l.id}/${i.n}`, title: "Xem cách viết và tập viết" }, "✍")),
@@ -439,8 +440,8 @@ function tabWords(l) {
     ["专有名词", "科学名词"].map((grp) => {
       const list = (l.names || []).filter((x) => (x.group || "专有名词") === grp);
       return list.length ? [h("h2", {}, grp === "专有名词" ? "Tên riêng " : "Thuật ngữ khoa học ", h("span", { class: "zh sub" }, grp)),
-        h("div", { class: "wordlist" }, list.map((x) => h("div", { class: "word" },
-          h("div", { class: "wtop" }, h("span", { class: "h", onclick: () => speak(x.hanzi) }, x.hanzi), h("span", { class: "p" }, x.pinyin)),
+        h("div", { class: "wordlist" }, list.map((x) => h("div", { class: "word nodot" },
+          h("div", { class: "wtop" }, h("span", { class: "num" }, x.n), h("span", { class: "h", onclick: () => speak(x.hanzi) }, x.hanzi), h("span", { class: "p" }, x.pinyin)),
           h("div", { class: "wmean" }, h("span", {}, x.vi)))))] : null;
     }));
 }

@@ -254,3 +254,6 @@ table.cmp.zh td { font-size: 18px; } .drillhead { margin: 4px 0 8px; padding-top
 .cex { margin-top: 8px; padding: 6px 10px; border-left: 3px solid var(--line); }
 .cnote { margin-top: 6px; font-size: 14px; line-height: 1.5; } .cnote b { color: var(--acc); font-weight: 600; }
 .cex .btn.mini { min-height: 28px; padding: 0 10px; margin-left: 6px; vertical-align: middle; }
+.wtop .num { flex: none; width: 24px; text-align: right; color: var(--mute); font-size: 13px; font-variant-numeric: tabular-nums; }
+/* Dòng nghĩa thẳng hàng với chữ Hán: chấm 9px + khoảng 10px + số 24px + khoảng 10px. */
+.word .wmean { margin-left: 53px; } .word.nodot .wmean { margin-left: 34px; }
