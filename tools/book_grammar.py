@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OCR = ROOT / "data" / "ocr"
 OUT = ROOT / "data" / "book"
 
-NUM = re.compile(r"^[（(]\s*(\d{1,2})\s*[）)]\s*")
+NUM = re.compile(r"^[（(]\s*(\d{1,2}|[Il|])\s*[）)]\s*")
 PUNCT = "。，：；？！、“”"
 END = "。？！）)”…"
 NOISE = re.compile(r"nhantriviet|^Hoc T|^Học T|rung toi|trung toi|^Chu thich|^Chú thích|标准教程|^HSK")
@@ -72,15 +72,18 @@ def is_head(r):
     cells = [l for l in r if not (re.fullmatch(r"\d{1,2}", l["t"]) or l["x"] < 0.17 and len(l["t"]) <= 2)]      # bỏ số thứ tự đứng trước
     if len(cells) == 2 and len(cells[0]["t"]) == 1 and cells[0]["x"] < 0.2 <= cells[1]["x"]:     # số thứ tự bị đọc thành chữ
         cells = cells[1:]
-    if len(cells) != 1:
+    if not cells:
         return None
     l = cells[0]
-    t = re.sub(r"^[\d•·\s]+", "", l["t"])
+    joined = "".join(c["t"] for c in cells)
+    t = re.sub(r"^[\d•·\s]+", "", joined).strip("“”\"'")
     if not (0.17 <= l["x"] <= 0.265) or not (1 <= len(t) <= 12) or NUM.match(t):
         return None
-    if any(c in PUNCT for c in t) or not re.search(r"[一-鿿]", t):
+    if any(c in "。，：；？！、" for c in t) or not re.search(r"[一-鿿]", t):
         return None
-    return t
+    if len(cells) > 1 and "……" not in t and "⋯" not in t:
+        return None
+    return re.sub(r"[•·]", "", re.sub(r"[⋯…]+", "……", t))
 
 
 def join(r):
@@ -100,9 +103,15 @@ def parse_points(rs):
             points.append(cur)
             drill, ex_x = None, None
             continue
+        text = join(r)
+        if cur is None or drill is not None:
+            m_quo = re.match(r"^[“\"]([\u4e00-\u9fff]{1,6})[”\"]，(?:动词|名词|形容词|副词|介词|连词|代词|助词|量词|叹词)", text)
+            if m_quo and (cur is None or m_quo.group(1) != cur["word"]):
+                cur = {"word": m_quo.group(1), "parts": [], "drill": None}
+                points.append(cur)
+                drill, ex_x = None, None
         if cur is None:
             continue
-        text = join(r)
         if "练一练" in text or "做一做" in text:
             drill = {"title": re.split(r"[：:]", text, maxsplit=1)[-1].strip() if re.search(r"[：:]", text) else "", "items": []}
             cur["drill"] = drill
@@ -239,12 +248,14 @@ def parse_compare(rs):
 def lesson(n):
     global LESSON
     LESSON = n
-    src = json.loads((ROOT / "data" / "authored" / f"{n:02d}.json").read_text())["source"]
+    authored = json.loads((ROOT / "data" / "authored" / f"{n:02d}.json").read_text())
+    src = authored["source"]
+    less_f = ROOT / "data" / "lessons" / f"{n:02d}.json"
+    vocab = [v["hanzi"] for v in json.loads(less_f.read_text()).get("vocab", [])] if less_f.exists() else []
     rs = section(src["book"], src["text"][-1]["page"])
     warn = []
     if not rs:
         return None, ["không tìm thấy phần 注释"]
-    cut = lambda key: next((i for i, r in enumerate(rs) if any(key in l["t"] for l in r)), None)
     cut = lambda key: next((i for i, r in enumerate(rs) if any(re.search(key, l["t"]) for l in r)), None)
     a, b = cut("词语搭配"), cut("词语[辨辦辩]析")
     end_pts = a if a is not None else b if b is not None else len(rs)
@@ -253,6 +264,8 @@ def lesson(n):
         "collocations": parse_collocations(rs[a + 1:b if b is not None and b > a else len(rs)], warn) if a is not None else [],
         "compare": parse_compare(rs[b + 1:]) if b is not None else [],
     }
+    import book_exercises
+    data["exercises"] = book_exercises.build_all_book_exercises(n, data["compare"], vocab)
     if a is None:
         warn.append("không thấy mục 词语搭配")
     if b is None:

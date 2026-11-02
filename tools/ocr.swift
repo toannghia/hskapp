@@ -16,8 +16,10 @@ try? FileManager.default.createDirectory(atPath: out, withIntermediateDirectorie
 
 func render(_ page: PDFPage, width: CGFloat) -> CGImage {
   let box = page.bounds(for: .mediaBox)
-  let s = width / box.width
-  let w = Int(box.width * s), h = Int(box.height * s)
+  let rot = page.rotation % 180 != 0
+  let bw = rot ? box.height : box.width, bh = rot ? box.width : box.height
+  let s = width / bw
+  let w = Int(bw * s), h = Int(bh * s)
   let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0,
                       space: CGColorSpaceCreateDeviceRGB(),
                       bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)!

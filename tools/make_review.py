@@ -33,14 +33,16 @@ audio{{width:100%;margin-top:6px}}li{{margin:4px 0}}.warn{{border-color:var(--ac
 if d["warnings"]:
     w('<div class="card warn"><b>Cảnh báo cần soát</b><ul>' + "".join(f"<li>{e(x)}</li>" for x in d["warnings"]) + "</ul></div>")
 
-w(f'<h2>Từ mới ({len(d["vocab"])})</h2><audio controls preload="none" src="../{e(d["audio"]["vocab"])}"></audio>')
+v_auds = d["audio"]["vocab"] if isinstance(d["audio"]["vocab"], list) else [d["audio"]["vocab"]]
+w(f'<h2>Từ mới ({len(d["vocab"])})</h2>' + "".join(f'<audio controls preload="none" src="../{e(a)}"></audio>' for a in v_auds))
 w('<div class="wrap"><table><tr><th>#</th><th>Chữ Hán</th><th>Pinyin</th><th>Từ loại</th><th>Nghĩa</th></tr>')
 for v in d["vocab"]:
     star = '<span class="tag">ngoài đề cương</span>' if v.get("outOfSyllabus") else ""
     w(f'<tr><td>{v["n"]}</td><td class="h">{e(v["hanzi"])}</td><td>{e(v["pinyin"])}</td><td>{e(v["pos"])}</td><td>{e(v["vi"])}{star}</td></tr>')
 w("</table></div>")
 
-w(f'<h2>Bài khóa ({sum(len(p) for p in d["text"])} chữ)</h2><audio controls preload="none" src="../{e(d["audio"]["text"])}"></audio><div class="card zh">')
+t_auds = d["audio"]["text"] if isinstance(d["audio"]["text"], list) else [d["audio"]["text"]]
+w(f'<h2>Bài khóa ({sum(len(p) for p in d["text"])} chữ)</h2>' + "".join(f'<audio controls preload="none" src="../{e(a)}"></audio>' for a in t_auds) + '<div class="card zh">')
 for p in d["text"]:
     w(f'<p class="t">{e(p)}</p>')
 w("</div>")
@@ -69,19 +71,26 @@ for g in d["grammar"]:
 w("<h2>Bài tập (kèm đáp án)</h2>")
 for x in d["exercises"]:
     w(f'<div class="card"><h3>{e(x["title"])}</h3>')
+    if x.get("context"):
+        w(f'<pre class="zh" style="white-space:pre-wrap">{e(x["context"])}</pre>')
     if x["type"] == "fill":
         w(f'<p class="zh">{e("　".join(x["bank"]))}</p>')
     w("<ol>")
     for i in x["items"]:
         if x["type"] == "fill":
-            w(f'<li class="zh">{e(i["q"])} <span class="ans">{e(i["a"])}</span></li>')
+            ans = " ／ ".join(i["a"]) if isinstance(i["a"], list) else i["a"]
+            w(f'<li class="zh">{e(i["q"])} <span class="ans">{e(ans)}</span></li>')
         elif x["type"] == "choice":
             opts = " / ".join(i["options"])
-            w(f'<li><span class="zh">{e(i["q"])}（{e(opts)}）<span class="ans">{e(i["options"][i["a"]])}</span></span><br><span class="vi">{e(i["why"])}</span></li>')
+            psg = f'<div class="zh" style="white-space:pre-wrap">{e(i["passage"])}</div>' if i.get("passage") else ""
+            w(f'<li>{psg}<span class="zh">{e(i["q"])}（{e(opts)}）<span class="ans">{e(i["options"][i["a"]])}</span></span><br><span class="vi" style="white-space:pre-line">{e(i.get("why", ""))}</span></li>')
+        elif x["type"] == "match":
+            w(f'<li class="zh">{e(i["l"])} — <span class="ans">{e(i["r"])}</span></li>')
         elif x["type"] == "position":
             w(f'<li class="zh">{e(i["q"])}（{e(i["word"])}）<span class="ans">{e(i["a"])}</span></li>')
         elif x["type"] == "order":
-            w(f'<li><span class="zh">{e(" / ".join(i["words"]))}<br><span class="ans">{e(i["a"])}</span></span><br><span class="vi">{e(i["vi"])}</span></li>')
+            vi = f'<br><span class="vi">{e(i["vi"])}</span>' if i.get("vi") else ""
+            w(f'<li><span class="zh">{e(" / ".join(i["words"]))}<br><span class="ans">{e(i["a"])}</span></span>{vi}</li>')
         elif x["type"] == "translate":
             w(f'<li>{e(i["q"])}<br><span class="ans">{e(i["a"])}</span></li>')
         elif x["type"] == "retell":

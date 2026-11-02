@@ -141,18 +141,19 @@ async function loadLessons() {
     }));
     // 练一练 của sách: mỗi câu luyện đi kèm một mục cấu trúc, làm xong lưu lại và gửi giáo viên chữa.
     const drills = d.grammar.flatMap((g) => (g.book && g.book.drill ? g.book.drill.items : []).map((text, k) => (
-      { gid: g.id, word: g.title, task: g.book.drill.title, text, tokens: (g.book.drill.tokens || [])[k], first: k === 0, prompt: `[${g.title}] ${g.book.drill.title}: ${text}` })));
+      { gid: g.id, word: g.title, task: g.book.drill.title, text, a: (g.book.drill.answers || [])[k], tokens: (g.book.drill.tokens || [])[k], first: k === 0, prompt: `[${g.title}] ${g.book.drill.title}: ${text}` })));
     if (drills.length && !d.exercises.some((x) => x.type === "drill")) {
-      const at = d.exercises.findIndex((x) => x.type === "retell");
-      d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-drill`, type: "drill", title: "练一练 theo sách", items: drills });
+      let lastGt = -1;
+      d.exercises.forEach((x, idx) => { if (x.group === "gt") lastGt = idx; });
+      const at = lastGt >= 0 ? lastGt + 1 : d.exercises.findIndex((x) => x.type === "retell");
+      d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-drill`, group: "gt", type: "drill", title: "注释 · 练一练 (Luyện tập ngữ pháp trong sách)", items: drills });
     }
-    // Bài tập đặt câu sinh từ phần cấu trúc: mỗi điểm "cách dùng" một đề, đặt trước bài kể lại.
+    // Bài tập đặt câu sinh từ phần cấu trúc: mỗi điểm "cách dùng" một đề, xếp vào nhóm luyện thêm cuối bài.
     // Xếp theo mã mục (thứ tự lúc soạn) để thứ tự đề không đổi khi phần cấu trúc được xếp lại theo sách.
     const gnum = (g) => Number((g.id.match(/-g(\d+)$/) || [0, 999])[1]);
     const pts = d.grammar.filter((g) => g.kind === "cách dùng" && g.id).sort((a, b) => gnum(a) - gnum(b));
     if (pts.length && !d.exercises.some((x) => x.type === "compose")) {
-      const at = d.exercises.findIndex((x) => x.type === "retell");
-      d.exercises.splice(at < 0 ? d.exercises.length : at, 0, { id: `${pad(d.id)}-compose`, type: "compose", title: "Đặt câu với cấu trúc",
+      d.exercises.push({ id: `${pad(d.id)}-compose`, group: "extra", type: "compose", title: "Luyện thêm (ngoài sách): Đặt câu với cấu trúc",
         items: pts.map((g) => { const pt = (g.points || [])[0] || {}; return { prompt: `Đặt một câu có dùng: ${g.title}`, word: g.title, pattern: pt.pattern, model: (pt.examples || [])[0] }; }) });
     }
     return d;
@@ -289,8 +290,26 @@ async function speak(text, rate) {
 // từ chưa có tệp riêng thì đọc bằng giọng Edge như trên.
 const player = new Audio();
 const slow = () => P && P.settings.slow !== false;     // mặc định đọc chậm
+function findVocab(w) {
+  if (!w) return null;
+  const clean = String(w).replace(/^[A-D]\.\s*/, "").trim();
+  return (curLesson && curLesson.items && curLesson.items.find((i) => i.hanzi === clean))
+    || LESSONS.flatMap((l) => l.items || []).find((i) => i.hanzi === clean) || null;
+}
+function vocabHint(w) {
+  const v = findVocab(w);
+  return v ? `${v.pinyin} — ${v.vi}` : "";
+}
 async function pronounce(x) {
-  if (typeof x === "string") return speak(x);
+  if (typeof x === "string") {
+    const clean = x.replace(/^[A-D]\.\s*/, "").replace(/___+/g, "，").replace(/\s*／\s*/g, "，").trim();
+    if (!clean) return;
+    if (clean.length <= 6 && !/[，。！？、]/.test(clean)) {
+      const hit = findVocab(clean);
+      if (hit && hit.clip) x = hit;
+      else return speak(clean);
+    } else return speak(clean);
+  }
   if (!x.clip) return speak(x.hanzi);
   ++speakSeq;                                     // bỏ câu Edge đang chờ tải, nếu có
   try {
@@ -566,7 +585,7 @@ const ansKey = (x, i) => `${x.id}:${i}`;
 let curLesson = null;
 // Bản online gắn thêm nút nộp bài và phần giáo viên đã chấm vào dưới mỗi bài viết.
 const teacherBox = (x, it, i, a, draw) => (typeof submitBox === "function" ? submitBox(curLesson, x, it, i, a, draw) : null);
-const AUTO = new Set(["fill", "choice", "position", "order"]);
+const AUTO = new Set(["fill", "choice", "position", "order", "match"]);
 function exSummary(l, x) {
   const got = x.items.map((_, i) => P.answers[ansKey(x, i)]).filter((a) => a && a.done);
   if (!got.length) return "";
@@ -574,13 +593,24 @@ function exSummary(l, x) {
   if (AUTO.has(x.type)) return `Đã làm ${got.length}/${x.items.length} câu, đúng ${got.filter((a) => a.ok).length} · ${fmtTime(last)}`;
   return `Đã viết ${got.length}/${x.items.length} · ${fmtTime(last)}`;
 }
+const EX_GROUPS = [
+  ["gt", "Bài tập Giáo trình (课后练习 · 注释)"],
+  ["ext", "Mở rộng & Vận dụng (扩展 · 运用)"],
+  ["wb", "Sách bài tập (练习册 · 听力 / 阅读 / 书写)"],
+  ["extra", "Luyện thêm (ngoài sách)"],
+];
 function tabEx(l) {
-  add(l.exercises.length ? null : h("div", { class: "card sub" }, "Bài này chưa có bài tập."),
-    l.exercises.map((x) => h("div", { class: "card" },
+  const renderCard = (x) => h("div", { class: "card" },
     h("h3", {}, x.title),
     h("div", { class: "sub" }, `${x.items.length} câu · `, exSummary(l, x) || "Chưa làm"),
     h("div", { class: "row", style: "margin-top:8px" },
-      h("button", { class: "btn pri", onclick: () => go(`#/ex/${l.id}/${x.id}`) }, exSummary(l, x) ? "Xem lại / làm tiếp" : "Làm bài")))),
+      h("button", { class: "btn pri", onclick: () => go(`#/ex/${l.id}/${x.id}`) }, exSummary(l, x) ? "Xem lại / làm tiếp" : "Làm bài")));
+  const grouped = EX_GROUPS.flatMap(([gk, gtitle]) => {
+    const xs = l.exercises.filter((x) => (x.group || "gt") === gk);
+    return xs.length ? [h("h2", {}, gtitle), ...xs.map(renderCard)] : [];
+  });
+  add(l.exercises.length ? null : h("div", { class: "card sub" }, "Bài này chưa có bài tập."),
+    grouped,
     h("h2", {}, "Âm thanh sách bài tập"),
     l.audio.workbook.map((a, i) => [h("div", { class: "sub" }, `Phần ${i + 1}`), audio(a)]));
 }
@@ -610,7 +640,7 @@ route(/^ex\/(\d+)\/([\w-]+)$/, (lid, xid) => {
     list.replaceChildren(...x.items.map((it, i) => h("li", {}, EX[x.type](x, it, i, draw))));
     const done = x.items.filter((_, i) => (P.answers[ansKey(x, i)] || {}).done).length;
     foot.replaceChildren(...[
-      AUTO.has(x.type) ? h("button", { class: "btn pri big", disabled: !x.items.some((_, i) => { const a = P.answers[ansKey(x, i)]; return a && a.v != null && a.v !== "" && !a.done; }),
+      AUTO.has(x.type) ? h("button", { class: "btn pri big", disabled: !x.items.some((_, i) => { const a = P.answers[ansKey(x, i)]; return a && !a.done && (Array.isArray(a.v) ? a.v.some(Boolean) : a.v != null && a.v !== ""); }),
         onclick: () => { checkAll(l, x); draw(); } }, "Kiểm tra") : null,
       done ? h("button", { class: "btn", onclick: () => {
         if (!confirm("Xóa bài làm hiện tại của bài tập này để làm lại? Lịch sử các lần làm trước vẫn được giữ.")) return;
@@ -634,11 +664,26 @@ route(/^ex\/(\d+)\/([\w-]+)$/, (lid, xid) => {
         h("b", {}, `${i + 1}. ${e.title}`), h("div", { class: "sub" }, exSummary(l, e) || "Chưa làm")))));
   };
   const foot = h("div", { class: "row", style: "margin-top:14px" });
+  const wordBankBox = x.type === "fill" ? h("div", { class: "card" },
+    h("div", { class: "row", style: "margin-bottom:8px" },
+      h("b", {}, "Từ cho sẵn (bấm vào từ để nghe thử):"),
+      h("button", { class: "btn", onclick: () => speak(x.bank.join("，")) }, "🔊 Nghe tất cả")),
+    h("div", { class: "chips" }, x.bank.map((w) => {
+      const v = findVocab(w);
+      return h("button", { class: "btn zh", title: vocabHint(w) || "Bấm để nghe phát âm", onclick: () => pronounce(w) },
+        "🔊 ", w, v ? h("span", { class: "sub", style: "font-size:12px;margin-left:4px" }, v.pinyin) : null);
+    }))) : null;
+  const lessonAudioBox = x.id.endsWith("-retell") && l.audio && l.audio.text ? h("div", { class: "card" },
+    h("div", { class: "sub" }, "Nghe lại bài khóa trước khi kể lại:"), [].concat(l.audio.text).map(audio)) : null;
   add(
     h("a", { href: `#/lesson/${l.id}/ex`, class: "sub" }, `← Bài ${l.id}: bài tập`),
     h("h1", {}, x.title),
     typeof exerciseReviewBox === "function" ? exerciseReviewBox(x) : null,
-    x.type === "fill" ? h("div", { class: "card zh" }, "Từ cho sẵn: ", x.bank.join("　")) : null,
+    lessonAudioBox,
+    x.context ? h("div", { class: "card zh", style: "white-space:pre-wrap" },
+      h("div", { style: "margin-bottom:6px" }, h("button", { class: "btn", onclick: () => speak(x.context) }, "🔊 Nghe đọc nội dung")),
+      x.context) : null,
+    wordBankBox,
     h("div", { class: "card" }, list, foot), nav);
   draw();
 });
@@ -650,14 +695,22 @@ function setDraft(x, i, v) {
 }
 function isRight(x, it, v) {
   if (x.type === "choice") return v === it.a;
-  if (x.type === "order") return stripPunct((v || []).join("")) === stripPunct(it.a);
+  if (x.type === "match") return v === it.r;
+  if (x.type === "order") {
+    const u = stripPunct((v || []).join(""));
+    return String(it.a).split("/").some((ans) => u === stripPunct(ans));
+  }
+  if (x.type === "fill" && Array.isArray(it.a)) {
+    return Array.isArray(v) && v.length === it.a.length && it.a.every((ans, idx) => v[idx] === ans);
+  }
+  if (typeof it.a === "string" && it.a.includes("/")) return it.a.split("/").includes(v);
   return v === it.a;
 }
 function checkAll(l, x) {
   let right = 0, n = 0;
   x.items.forEach((it, i) => {
     const k = ansKey(x, i), a = P.answers[k];
-    if (!a || a.v == null || a.v === "" || (Array.isArray(a.v) && !a.v.length)) return;
+    if (!a || a.v == null || a.v === "" || (Array.isArray(a.v) && !a.v.some(Boolean))) return;
     n++;
     a.ok = isRight(x, it, a.v); a.done = true; a.t = Date.now();
     if (typeof trackWrong === "function") trackWrong(k, a.ok);
@@ -667,25 +720,103 @@ function checkAll(l, x) {
   save();
 }
 const feedback = (a, correctText, why) => !a || !a.done ? null
-  : h("div", { class: "fb " + (a.ok ? "ok" : "bad") }, a.ok ? "Đúng" : ["Chưa đúng. Đáp án: ", h("span", { class: "zh" }, correctText)], why ? ` — ${why}` : "");
+  : h("div", { class: "fb " + (a.ok ? "ok" : "bad"), style: why && why.includes("\n") ? "white-space:pre-line" : "" },
+    a.ok ? "Đúng " : ["Chưa đúng. Đáp án: ", h("span", { class: "zh" }, correctText), " "],
+    correctText ? speakBtn(String(correctText).split("/")[0].replace(/—/g, "")) : null,
+    why ? (why.includes("\n") ? [h("button", { class: "btn", style: "margin-left:6px", onclick: () => speak(why.replace(/^录音文本：\s*/, "")) }, "🔊 Nghe lời thoại"), `\n${why}`] : ` — ${why}`) : "");
+
+function fillSpokenText(it, a) {
+  const parts = it.q.split("___");
+  if (Array.isArray(it.a)) {
+    const vals = a.done ? it.a : (Array.isArray(a.v) ? a.v : []);
+    return parts.map((p, idx) => p + (idx < parts.length - 1 ? (vals[idx] || "，") : "")).join("");
+  }
+  const val = a.done ? String(it.a).split("/")[0] : (a.v || "，");
+  return parts.join(val);
+}
 
 const EX = {
   fill(x, it, i, draw) {
     const a = P.answers[ansKey(x, i)] || {};
-    const sel = h("select", { disabled: a.done, onchange: (e) => { setDraft(x, i, e.target.value); draw(); } },
-      h("option", { value: "" }, "…"), x.bank.map((w) => h("option", { value: w, selected: a.v === w }, w)));
-    return [h("span", { class: "zh" }, blankify(it.q, sel)), feedback(a, it.a)];
+    if (Array.isArray(it.a)) {
+      const cur = Array.isArray(a.v) ? a.v : [];
+      const parts = it.q.split("___");
+      const nodes = [];
+      parts.forEach((p, b) => {
+        nodes.push(p);
+        if (b < parts.length - 1) {
+          nodes.push(h("select", { disabled: a.done, onchange: (e) => {
+            const val = e.target.value;
+            if (val) pronounce(val);
+            const next = it.a.map((_, idx) => idx === b ? val : (cur[idx] || ""));
+            setDraft(x, i, next); draw();
+          } }, h("option", { value: "" }, "…"), x.bank.map((w) => h("option", { value: w, selected: cur[b] === w }, w))));
+          if (cur[b]) nodes.push(" ", speakBtn(cur[b]), " ");
+        }
+      });
+      return [h("span", { class: "zh" }, nodes), " ", speakBtn(fillSpokenText(it, a)), feedback(a, it.a.join(" ／ "))];
+    }
+    const sel = h("select", { disabled: a.done, onchange: (e) => {
+      if (e.target.value) pronounce(e.target.value);
+      setDraft(x, i, e.target.value); draw();
+    } }, h("option", { value: "" }, "…"), x.bank.map((w) => h("option", { value: w, selected: a.v === w }, w)));
+    return [h("span", { class: "zh" }, blankify(it.q, sel)),
+      a.v ? [" ", h("button", { class: "btn", title: "Nghe từ đã chọn", onclick: () => pronounce(a.v) }, `🔊 ${a.v}`)] : null,
+      " ", speakBtn(fillSpokenText(it, a)),
+      feedback(a, it.a)];
   },
   choice(x, it, i, draw) {
     const a = P.answers[ansKey(x, i)] || {};
-    return [h("div", { class: "zh" }, it.q),
+    const isListenOnlyQ = /^第\s*\d+\s*题$/.test((it.q || "").trim());
+    const spokenQ = () => {
+      if (it.q.includes("___") && (a.v != null || a.done)) {
+        const chosen = String(it.options[a.done ? it.a : a.v] || "").replace(/^[A-D]\.\s*/, "");
+        const parts = chosen.split(/\s*／\s*/);
+        let idx = 0;
+        return it.q.replace(/___/g, () => parts[idx++] || parts[0] || "，");
+      }
+      return it.q;
+    };
+    return [
+      it.section ? h("div", { class: "drillhead" }, h("b", {}, it.section)) : null,
+      it.audio ? audio(it.audio) : null,
+      it.passage ? h("div", { class: "card zh", style: "white-space:pre-wrap;margin:8px 0" },
+        h("div", { style: "margin-bottom:6px" }, h("button", { class: "btn", onclick: () => speak(it.passage) }, "🔊 Nghe đọc đoạn văn")),
+        it.passage) : null,
+      h("div", { class: "zh", style: "white-space:pre-wrap" }, it.q, !isListenOnlyQ ? [" ", h("button", { class: "btn", title: "Nghe đọc câu", onclick: () => speak(spokenQ()) }, "🔊")] : null),
       h("div", { class: "row", style: "margin-top:6px" }, it.options.map((o, j) =>
-        h("button", { class: "btn zh" + (a.v === j ? " on" : ""), disabled: a.done, onclick: () => { setDraft(x, i, j); draw(); } }, o))),
+        h("div", { class: "row", style: "gap:4px" },
+          h("button", { class: "btn zh" + (a.v === j ? " on" : ""), disabled: a.done, onclick: () => {
+            if (!x.id.endsWith("-wb-listen")) pronounce(o);
+            setDraft(x, i, j); draw();
+          } }, o),
+          h("button", { class: "btn", title: "Nghe thử phương án này", onclick: (e) => { e.stopPropagation(); pronounce(o); } }, "🔊")))),
       feedback(a, it.options[it.a], it.why)];
+  },
+  match(x, it, i, draw) {
+    const a = P.answers[ansKey(x, i)] || {};
+    const gItems = x.items.filter((m) => m.group === it.group);
+    const opts = gItems.map((m) => m.r).slice().sort((p, q) => p.localeCompare(q, "zh"));
+    const head = (i === 0 || x.items[i - 1].group !== it.group) ? h("div", { class: "drillhead" },
+      h("b", {}, `Nhóm (${it.group}) — Từ cột phải (bấm để nghe thử): `),
+      h("div", { class: "chips", style: "margin-top:6px" }, opts.map((w) => h("button", { class: "btn zh", title: vocabHint(w) || "Bấm để nghe phát âm", onclick: () => pronounce(w) }, "🔊 ", w)))) : null;
+    const sel = h("select", { class: "zh", disabled: a.done, onchange: (e) => {
+      if (e.target.value) pronounce(e.target.value);
+      setDraft(x, i, e.target.value); draw();
+    } }, h("option", { value: "" }, "— Chọn từ ghép —"), opts.map((w) => h("option", { value: w, selected: a.v === w }, w)));
+    return [head,
+      h("div", { class: "row zh" },
+        h("button", { class: "btn zh", title: vocabHint(it.l) || "Bấm để nghe phát âm", onclick: () => pronounce(it.l) }, "🔊 ", h("b", {}, it.l)),
+        h("span", { class: "sub" }, "↔"),
+        sel,
+        a.v ? h("button", { class: "btn", title: "Nghe cụm từ đã ghép", onclick: () => speak(it.l + a.v) }, "🔊 Nghe cụm") : null),
+      feedback(a, `${it.l} — ${it.r}`)];
   },
   position(x, it, i, draw) {
     const a = P.answers[ansKey(x, i)] || {};
-    return [h("div", { class: "zh" }, it.q, "　（", h("b", {}, it.word), "）"),
+    const cleanSentence = it.q.replace(/[A-D]/g, "");
+    return [h("div", { class: "zh" }, it.q, " ", speakBtn(cleanSentence), "　（",
+      h("button", { class: "btn zh", title: vocabHint(it.word) || "Bấm để nghe từ cần điền", onclick: () => pronounce(it.word) }, "🔊 ", h("b", {}, it.word)), "）"),
       h("div", { class: "row", style: "margin-top:6px" }, ["A", "B", "C", "D"].map((o) =>
         h("button", { class: "btn" + (a.v === o ? " on" : ""), disabled: a.done, onclick: () => { setDraft(x, i, o); draw(); } }, o))),
       feedback(a, it.a)];
@@ -698,25 +829,32 @@ const EX = {
     const used = [...built];
     const left = pool.filter((p) => { const at = used.indexOf(p.w); if (at >= 0) { used.splice(at, 1); return false; } return true; });
     return [
-      h("div", { class: "chips built" }, built.length ? built.map((w, j) => h("button", { class: "btn on", disabled: a.done,
-        onclick: () => { setDraft(x, i, built.filter((_, q) => q !== j)); draw(); } }, w)) : h("span", { class: "sub" }, "Bấm các từ bên dưới theo đúng thứ tự")),
-      h("div", { class: "chips" }, left.map((p) => h("button", { class: "btn", disabled: a.done, onclick: () => { setDraft(x, i, [...built, p.w]); draw(); } }, p.w))),
+      h("div", { class: "chips built" }, built.length ? [
+        ...built.map((w, j) => h("button", { class: "btn on", disabled: a.done,
+          onclick: () => { setDraft(x, i, built.filter((_, q) => q !== j)); draw(); } }, w)),
+        h("button", { class: "btn", title: "Nghe câu đã ghép", onclick: () => speak(built.join("")) }, "🔊 Nghe câu")
+      ] : h("span", { class: "sub" }, "Bấm các từ bên dưới theo đúng thứ tự (bấm từ sẽ phát âm)")),
+      h("div", { class: "chips" }, left.map((p) => h("button", { class: "btn", disabled: a.done, onclick: () => {
+        pronounce(p.w);
+        setDraft(x, i, [...built, p.w]); draw();
+      } }, "🔊 ", p.w))),
       feedback(a, it.a, a.done ? it.vi : "")];
   },
   translate(x, it, i, draw) {
     const k = ansKey(x, i), a = P.answers[k] || {};
     const toZh = it.dir === "vi-zh";
     const ta = h("textarea", { class: toZh ? "zh" : "", placeholder: toZh ? "Viết câu tiếng Trung của bạn…" : "Viết câu tiếng Việt của bạn…", disabled: a.done }, a.v || "");
-    const out = [h("div", { class: toZh ? "" : "zh" }, it.q), ta];
+    const out = [h("div", { class: toZh ? "" : "zh" }, it.q, !toZh ? [" ", speakBtn(it.q)] : null), ta];
     if (!a.done) {
       out.push(h("div", { class: "row", style: "margin-top:6px" },
         h("button", { class: "btn pri", onclick: () => {
           if (!ta.value.trim()) return ta.focus();
           P.answers[k] = { ...a, v: ta.value.trim(), done: true, t: Date.now() }; save(); draw();
           if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, ta.value.trim(), draw);
-        } }, "Lưu và xem đáp án mẫu")));
+        } }, "Lưu và xem đáp án mẫu"),
+        toZh ? h("button", { class: "btn", onclick: () => { if (ta.value.trim()) speak(ta.value.trim()); } }, "🔊 Nghe thử câu") : null));
     } else {
-      out.push(h("div", { class: "fb model" }, "Đáp án mẫu: ", h("span", { class: toZh ? "zh" : "" }, it.a)),
+      out.push(h("div", { class: "fb model" }, "Đáp án mẫu: ", h("span", { class: toZh ? "zh" : "" }, it.a), toZh ? [" ", speakBtn(it.a)] : null),
         h("div", { class: "row", style: "margin-top:6px" }, h("span", { class: "sub" }, "Tự chấm:"),
           [["ok", "Đúng ý"], ["near", "Gần đúng"], ["bad", "Chưa đúng"]].map(([v, name]) =>
             h("button", { class: "btn" + (a.self === v ? (v === "bad" ? " bad" : " ok") : ""), onclick: () => {
@@ -734,8 +872,13 @@ const EX = {
     const ta = h("textarea", { class: "zh", placeholder: "Viết câu trả lời của bạn…", oninput: () => refresh() }, a.v || "");
     const refresh = () => { const v = ta.value.trim(); note.textContent = a.done && v === a.v ? `Đã lưu lúc ${fmtTime(a.t)}` : a.done && v ? "Có thay đổi chưa lưu" : ""; };
     refresh();
-    return [it.first ? h("div", { class: "drillhead" }, h("b", { class: "zh" }, it.word), h("span", { class: "sub zh" }, ` ${it.task}`)) : null,
-      it.tokens ? h("div", { class: "text tap", style: "white-space:pre-line" }, tokenLine(curLesson, it.tokens)) : h("div", { class: "zh", style: "white-space:pre-line" }, it.text), ta,
+    return [it.first ? h("div", { class: "drillhead" },
+      h("button", { class: "btn zh", onclick: () => pronounce(it.word) }, "🔊 ", h("b", {}, it.word)),
+      h("span", { class: "sub zh" }, ` ${it.task}`)) : null,
+      h("div", { class: "row" },
+        it.tokens ? h("div", { class: "text tap", style: "white-space:pre-line;flex:1" }, tokenLine(curLesson, it.tokens)) : h("div", { class: "zh", style: "white-space:pre-line;flex:1" }, it.text),
+        speakBtn(it.text)),
+      ta,
       h("div", { class: "row", style: "margin-top:6px" },
         h("button", { class: "btn pri", onclick: () => {
           const v = ta.value.trim();
@@ -745,7 +888,10 @@ const EX = {
           logEvent({ k: "write", l: null, r: k });
           save(); draw();
           if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
-        } }, a.done ? "Lưu bản mới" : "Lưu"), note),
+        } }, a.done ? "Lưu bản mới" : "Lưu"),
+        h("button", { class: "btn", onclick: () => { if (ta.value.trim()) speak(ta.value.trim()); } }, "🔊 Nghe câu"),
+        note),
+      a.done && it.a ? h("div", { class: "fb model" }, "Đáp án tham khảo (sách): ", h("span", { class: "zh" }, it.a), " ", speakBtn(it.a)) : null,
       a.done ? teacherBox(x, it, i, a, draw) : null, history(a)];
   },
   compose(x, it, i, draw) {
@@ -761,7 +907,8 @@ const EX = {
       note.style.color = v && !uses(v) ? "var(--bad)" : "";
     };
     refresh();
-    return [h("b", {}, "Đặt một câu có dùng: ", h("span", { class: "zh", style: "color:var(--acc)" }, it.word)),
+    return [h("b", {}, "Đặt một câu có dùng: ",
+      h("button", { class: "btn zh", style: "color:var(--acc)", onclick: () => pronounce(it.word) }, "🔊 ", it.word)),
       it.pattern ? h("div", { class: "sub zh" }, it.pattern) : null, ta,
       h("div", { class: "row", style: "margin-top:6px" },
         h("button", { class: "btn pri", onclick: () => {
@@ -772,25 +919,31 @@ const EX = {
           logEvent({ k: "write", l: null, r: k });
           save(); draw();
           if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
-        } }, a.done ? "Lưu bản mới" : "Lưu câu"), note),
-      a.done && it.model ? h("div", { class: "fb model" }, "Câu mẫu để so: ", h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(it.model.zh) }, it.model.zh), h("div", { class: "sub" }, it.model.vi)) : null,
+        } }, a.done ? "Lưu bản mới" : "Lưu câu"),
+        h("button", { class: "btn", onclick: () => { if (ta.value.trim()) speak(ta.value.trim()); } }, "🔊 Nghe câu"),
+        note),
+      a.done && it.model ? h("div", { class: "fb model" }, "Câu mẫu để so: ", h("span", { class: "zh", style: "cursor:pointer", onclick: () => speak(it.model.zh) }, it.model.zh), " ", speakBtn(it.model.zh), h("div", { class: "sub" }, it.model.vi)) : null,
       a.done ? teacherBox(x, it, i, a, draw) : null, history(a)];
   },
   retell(x, it, i, draw) {
     const k = ansKey(x, i), a = P.answers[k] || {};
-    const kws = h("div", {});
+    const kws = h("div", { class: "chips", style: "margin:6px 0" });
     const count = h("span", { class: "sub" });
-    const ta = h("textarea", { class: "zh", style: "min-height:150px", placeholder: "Viết bài kể lại của bạn bằng tiếng Trung…",
+    const ta = h("textarea", { class: "zh", style: "min-height:150px", placeholder: "Viết bài của bạn bằng tiếng Trung…",
       oninput: () => refresh() }, a.v || "");
     const refresh = () => {
       const v = ta.value;
-      kws.replaceChildren(...it.keywords.map((w) => h("span", { class: "kw" + (v.includes(w) ? " used" : "") }, w)));
+      kws.replaceChildren(...it.keywords.map((w) => h("button", {
+        class: "btn zh kw" + (v.includes(w) ? " used on" : ""),
+        title: vocabHint(w) || "Bấm để nghe phát âm",
+        onclick: () => pronounce(w)
+      }, "🔊 ", w)));
       const used = it.keywords.filter((w) => v.includes(w)).length;
-      count.textContent = `${(v.match(/[一-鿿]/g) || []).length} chữ · dùng ${used}/${it.keywords.length} từ gợi ý`
+      count.textContent = `${(v.match(/[一-鿿]/g) || []).length} chữ · dùng ${used}/${it.keywords.length} từ gợi ý (bấm vào từ để nghe)`
         + (a.done ? ` · đã lưu lúc ${fmtTime(a.t)}` : "") + (a.done && v !== a.v ? " · có thay đổi chưa lưu" : "");
     };
     refresh();
-    return [h("b", {}, it.prompt), kws, ta,
+    return [h("div", { class: "row" }, h("b", {}, it.prompt), speakBtn(it.prompt.replace(/^[^：:]+[：:]\s*/, ""))), kws, ta,
       h("div", { class: "row", style: "margin-top:6px" },
         h("button", { class: "btn pri", onclick: () => {
           const v = ta.value.trim();
@@ -800,7 +953,9 @@ const EX = {
           logEvent({ k: "write", l: null, r: k });
           save(); draw();
           if (typeof autoSubmit === "function") autoSubmit(curLesson, x, it, i, v, draw);
-        } }, a.done ? "Lưu bản mới" : "Lưu bài viết"), count),
+        } }, a.done ? "Lưu bản mới" : "Lưu bài viết"),
+        h("button", { class: "btn", onclick: () => { if (ta.value.trim()) speak(ta.value.trim()); } }, "🔊 Nghe bài viết"),
+        count),
       teacherBox(x, it, i, a, draw), history(a)];
   },
 };

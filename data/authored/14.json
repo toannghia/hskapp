@@ -95,6 +95,28 @@
    "id": "14-g2"
   },
   {
+   "title": "为……所……",
+   "kind": "cách dùng",
+   "summary": "Cấu trúc bị động thường dùng trong văn viết (tương đương 被……): 为 đặt trước tác nhân gây ra hành động, 所 đặt trước động từ.",
+   "points": [
+    {
+     "pattern": "Chủ ngữ + 为 + Danh từ/Đại từ + 所 + Động từ",
+     "explain": "Biểu thị nghĩa bị động (bị/được ai hoặc cái gì tác động), mang sắc thái trang trọng, hay gặp với các động từ tâm lý hoặc nhận thức như 感动、吸引、知、接受.",
+     "examples": [
+      {
+       "zh": "四合院的对称结构为人们所称道。",
+       "vi": "Kết cấu đối xứng của tứ hợp viện được mọi người ca ngợi."
+      },
+      {
+       "zh": "大家深深地为他的精神所感动。",
+       "vi": "Mọi người vô cùng cảm động trước tinh thần của anh ấy."
+      }
+     ]
+    }
+   ],
+   "id": "14-g2b"
+  },
+  {
    "title": "起",
    "kind": "cách dùng",
    "summary": "Động từ; ngoài nghĩa \"dậy, lên\" còn dùng trong cụm 起作用 và làm bổ ngữ sau động từ.",

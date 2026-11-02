@@ -446,6 +446,8 @@ function answerText(x, it, a) {
   if (!a || a.v == null || a.v === "") return ["(chưa làm)", ""];
   if (x.type === "choice") return [it.options[a.v], it.options[it.a]];
   if (x.type === "order") return [(a.v || []).join(""), it.a];
+  if (x.type === "match") return [String(a.v), String(it.r)];
+  if (Array.isArray(it.a)) return [(Array.isArray(a.v) ? a.v : [a.v]).join(" ／ "), it.a.join(" ／ ")];
   return [String(a.v), String(it.a)];
 }
 
@@ -521,7 +523,7 @@ route(/^teacher\/student\/([\w-]+)$/, async (uid) => {
           h("ol", { class: "ex" }, e.rows.map((r) => {
             if (!e.auto) return h("li", {}, h("div", { class: "sub" }, r.it.prompt || r.it.q), r.a && r.a.done ? h("div", { class: "zh" }, r.a.v) : h("span", { class: "sub" }, "(chưa viết)"));
             const [mine, right] = answerText(e.x, r.it, r.a);
-            return h("li", {}, h("span", { class: "zh" }, r.it.q || r.it.words.join(" / ")), e.x.type === "position" ? ` （${r.it.word}）` : "",
+            return h("li", {}, h("span", { class: "zh" }, r.it.q || r.it.l || (r.it.words || []).join(" / ")), e.x.type === "position" ? ` （${r.it.word}）` : "",
               r.a && r.a.done ? h("div", { class: "fb " + (r.a.ok ? "ok" : "bad") }, r.a.ok ? "Đúng: " : "Sai: ", h("span", { class: "zh" }, mine),
                 r.a.ok ? "" : [" · đáp án: ", h("span", { class: "zh" }, right)]) : h("div", { class: "sub" }, "(chưa làm)"));
           }))),

@@ -142,27 +142,43 @@ route(/^redo(?:\/(all))?$/, (all) => {
   }
   function show(r) {
     const { x, it, l } = r;
-    let v = x.type === "order" ? [] : null, ok = null;
+    let v = (x.type === "order" || Array.isArray(it.a)) ? [] : null, ok = null;
     const check = () => { ok = isRight(x, it, v); trackWrong(r.key, ok); logEvent({ k: "redo", l: l.id, r: r.key, ok }); save(); ok ? tally.right++ : tally.wrong++; draw(); };
-    const pick = (val) => { v = val; check(); };
+    const pick = (val) => { if (typeof val === "string") pronounce(val); v = val; check(); };
     const optBtn = (val, label, cls = "") => h("button", { class: "btn " + cls + (ok != null && isRight(x, it, val) ? " ok" : ok === false && v === val ? " bad" : ""), disabled: ok != null, onclick: () => pick(val) }, label);
     const body = {
-      fill: () => [h("div", { class: "zh sent" }, blankify(it.q, h("span", { class: "gap" }, ok != null ? it.a : "　　"))),
-        h("div", { class: "chips" }, x.bank.map((w) => optBtn(w, w)))],
-      choice: () => [h("div", { class: "zh sent" }, it.q), h("div", { class: "chips" }, it.options.map((o, j) => optBtn(j, o)))],
-      position: () => [h("div", { class: "zh sent" }, it.q, "　（", h("b", {}, it.word), "）"),
+      fill: () => Array.isArray(it.a) ? [
+        h("div", { class: "zh sent" }, it.q, " ", speakBtn(it.q.replace(/___/g, "，"))),
+        h("div", { class: "chips built" }, v.length ? v.map((w, j) => h("button", { class: "btn on", disabled: ok != null, onclick: () => { v = v.filter((_, q) => q !== j); draw(); } }, w)) : h("span", { class: "sub" }, `Chọn lần lượt ${it.a.length} từ cần điền`)),
+        h("div", { class: "chips" }, x.bank.map((w) => h("button", { class: "btn zh", disabled: ok != null || v.length >= it.a.length, onclick: () => { pronounce(w); v = [...v, w]; if (v.length === it.a.length) check(); else draw(); } }, "🔊 ", w))),
+      ] : [h("div", { class: "zh sent" }, blankify(it.q, h("span", { class: "gap" }, ok != null ? it.a : "　　")), " ", speakBtn(it.q.replace(/___/g, "，"))),
+        h("div", { class: "chips" }, x.bank.map((w) => optBtn(w, `🔊 ${w}`, "zh")))],
+      choice: () => [
+        it.audio ? audio(it.audio) : null,
+        it.passage ? h("div", { class: "card zh", style: "white-space:pre-wrap;margin:8px 0" }, it.passage) : null,
+        h("div", { class: "zh sent" }, it.q),
+        h("div", { class: "chips" }, it.options.map((o, j) => optBtn(j, o, "zh")))],
+      match: () => {
+        const gItems = x.items.filter((m) => m.group === it.group);
+        const opts = gItems.map((m) => m.r).slice().sort((p, q) => p.localeCompare(q, "zh"));
+        return [
+          h("div", { class: "zh sent" }, h("b", {}, it.l), " ", speakBtn(it.l), " ↔ ？"),
+          h("div", { class: "chips" }, opts.map((w) => optBtn(w, `🔊 ${w}`, "zh"))),
+        ];
+      },
+      position: () => [h("div", { class: "zh sent" }, it.q, "　（", h("b", {}, it.word), " ", speakBtn(it.word), "）"),
         h("div", { class: "row" }, ["A", "B", "C", "D"].map((o) => optBtn(o, o)))],
       order: () => {
         const used = [...v];
         const left = shuffleOnce.filter((w) => { const at = used.indexOf(w); if (at >= 0) { used.splice(at, 1); return false; } return true; });
         return [h("div", { class: "chips built" }, v.length ? v.map((w, j) => h("button", { class: "btn on", disabled: ok != null, onclick: () => { v = v.filter((_, q) => q !== j); draw(); } }, w))
             : h("span", { class: "sub" }, "Bấm các từ bên dưới theo đúng thứ tự")),
-          h("div", { class: "chips" }, left.map((w) => h("button", { class: "btn", disabled: ok != null, onclick: () => { v = [...v, w]; draw(); } }, w))),
+          h("div", { class: "chips" }, left.map((w) => h("button", { class: "btn", disabled: ok != null, onclick: () => { pronounce(w); v = [...v, w]; draw(); } }, "🔊 ", w))),
           ok == null ? h("button", { class: "btn pri", disabled: !v.length, onclick: check }, "Kiểm tra") : null];
       },
     }[x.type];
     const shuffleOnce = x.type === "order" ? shuffle(it.words) : null;
-    const answer = () => x.type === "choice" ? it.options[it.a] : it.a;
+    const answer = () => x.type === "choice" ? it.options[it.a] : x.type === "match" ? `${it.l} — ${it.r}` : Array.isArray(it.a) ? it.a.join(" ／ ") : it.a;
     const goNext = () => { queue.shift(); next(); };
     const draw = () => {
       const w = P.wrong[r.key] || {};

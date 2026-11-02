@@ -310,6 +310,26 @@ def book_grammar(n, authored):
     return out + [{**g, "extra": True} for g in left]
 
 
+def book_exercises(n, authored_exs, vocab_words):
+    """Ghép toàn bộ bài tập chính thức trong sách (练习, 词语辨析, 扩展, 运用, 练习册) từ data/book/NN.json,
+    sau đó xếp các bài tập tự biên soạn ở cuối với nhãn 'Luyện thêm (ngoài sách): …'."""
+    f = ROOT / "data" / "book" / f"{n:02d}.json"
+    book_exs = json.loads(f.read_text()).get("exercises", []) if f.exists() else []
+    for ex in book_exs:
+        if ex.get("id") == f"{n:02d}-writing" and ex.get("items"):
+            if not ex["items"][0].get("keywords"):
+                ex["items"][0]["keywords"] = vocab_words[:12]
+    extra_exs = []
+    for ex in authored_exs:
+        if ex.get("type") == "retell" and any(b.get("id") == f"{n:02d}-retell" for b in book_exs):
+            continue
+        title = ex.get("title", "")
+        if not title.startswith("Luyện thêm"):
+            title = f"Luyện thêm (ngoài sách): {title}"
+        extra_exs.append({**ex, "title": title, "group": "extra"})
+    return book_exs + extra_exs
+
+
 HEAD_VI = {"动词": "động từ", "宾语": "tân ngữ", "定语": "định ngữ", "中心语": "trung tâm ngữ", "状语": "trạng ngữ",
            "补语": "bổ ngữ", "主语": "chủ ngữ", "谓语": "vị ngữ", "数量词": "số lượng từ", "名词": "danh từ"}
 TONE = {c: t for t, cs in enumerate(["āēīōūǖ", "áéíóúǘ", "ǎěǐǒǔǚ", "àèìòùǜ"], 1) for c in cs}
@@ -529,12 +549,13 @@ def main():
             for part in bk.get("parts") or []:
                 used |= {t[0] for t in part["explainTokens"]} | {t[0] for x in part["examples"] for t in x["tokens"]}
             used |= {t[0] for x in (bk.get("drill") or {}).get("tokens", []) for t in x}
+        exercises = book_exercises(n, authored.get("exercises", []), [v["hanzi"] for v in d["vocab"]])
         lesson = {"id": n, "title": authored["title"], "audio": d["audio"],
                   "vocab": d["vocab"], "names": d["names"], "text": text, "textTokens": tokens,
                   "gloss": {w: [e["p"], e["vi"]] for w, e in scope.items() if w in used and w not in own},
                   # Từng chữ đơn trong bảng từ: cách đọc và nghĩa của riêng chữ đó, dùng ở trang cách viết.
                   "chars": char_table({c for v in d["vocab"] for c in v["hanzi"]}),
-                  "grammar": grammar, "exercises": authored.get("exercises", []),
+                  "grammar": grammar, "exercises": exercises,
                   "warnings": warnings}
         (out_dir / f"{n:02d}.json").write_text(json.dumps(lesson, ensure_ascii=False, indent=1))
         chars = sum(len(p) for p in text)
